@@ -127,7 +127,7 @@
     },
     {
       "id": "yan-r4",
-      "name": "惠侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -144,6 +144,10 @@
         {
           "label": "《史记·十二诸侯年表》",
           "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -191,7 +195,7 @@
     },
     {
       "id": "yan-r6",
-      "name": "顷侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -200,6 +204,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕顷侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -215,7 +223,7 @@
     },
     {
       "id": "yan-r7",
-      "name": "哀侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -224,6 +232,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕哀侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -239,22 +251,24 @@
     },
     {
       "id": "yan-r8",
-      "name": "郑侯",
+      "name": "郑",
       "roles": [
         "君主"
       ],
-      "bio": "姬姓，谥郑侯。相传在位三十六年，事迹载录甚略，年代见于《燕世家》，前764–前729年在位。",
+      "bio": "姬姓，称燕郑侯。《史记索隐》指出谥法无“郑”，推测“郑”或为其名；此说存疑。相传在位三十六年，前764–前729年。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕郑侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [
-        "郑侯"
-      ],
+      "posthumousNames": [],
       "templeNames": [],
       "title": "燕郑侯",
       "ancestralXing": "姬",
@@ -263,7 +277,7 @@
     },
     {
       "id": "yan-r9",
-      "name": "穆侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -272,6 +286,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕穆侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -287,7 +305,7 @@
     },
     {
       "id": "yan-r10",
-      "name": "宣侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -296,6 +314,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕宣侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -311,7 +333,7 @@
     },
     {
       "id": "yan-r11",
-      "name": "桓侯",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -320,6 +342,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕桓侯"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -335,7 +361,7 @@
     },
     {
       "id": "yan-r12",
-      "name": "庄公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -348,6 +374,10 @@
         {
           "label": "《史记·燕召公世家》",
           "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -363,7 +393,7 @@
     },
     {
       "id": "yan-r13",
-      "name": "襄公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -372,6 +402,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕襄公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -387,7 +421,7 @@
     },
     {
       "id": "yan-r14",
-      "name": "桓公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -396,6 +430,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕桓公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -411,7 +449,7 @@
     },
     {
       "id": "yan-r15",
-      "name": "宣公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -420,6 +458,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕宣公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -435,7 +477,7 @@
     },
     {
       "id": "yan-r16",
-      "name": "昭公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -444,6 +486,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕昭公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -459,7 +505,7 @@
     },
     {
       "id": "yan-r17",
-      "name": "武公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -468,6 +514,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕武公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -483,7 +533,7 @@
     },
     {
       "id": "yan-r18",
-      "name": "文公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -492,6 +542,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕前文公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -507,7 +561,7 @@
     },
     {
       "id": "yan-r19",
-      "name": "懿公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -516,6 +570,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕懿公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -531,7 +589,7 @@
     },
     {
       "id": "yan-r20",
-      "name": "惠公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -540,6 +598,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕惠公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -555,7 +617,7 @@
     },
     {
       "id": "yan-r21",
-      "name": "悼公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -564,6 +626,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕悼公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -579,7 +645,7 @@
     },
     {
       "id": "yan-r22",
-      "name": "共公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -588,6 +654,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕共公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -603,7 +673,7 @@
     },
     {
       "id": "yan-r23",
-      "name": "平公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -612,6 +682,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕平公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -627,7 +701,7 @@
     },
     {
       "id": "yan-r24",
-      "name": "简公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -636,6 +710,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕简公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -699,7 +777,7 @@
     },
     {
       "id": "yan-r27",
-      "name": "闵公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -708,6 +786,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕闵公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -747,7 +829,7 @@
     },
     {
       "id": "yan-r30",
-      "name": "文公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -756,6 +838,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕后文公"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -771,7 +857,7 @@
     },
     {
       "id": "yan-r31",
-      "name": "易王",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -780,6 +866,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕易王"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -841,7 +931,7 @@
     },
     {
       "id": "yan-r34",
-      "name": "惠王",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -850,6 +940,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕惠王"
+        },
+        {
+          "label": "《史记三家注·燕召公世家》",
+          "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -2108,6 +2202,10 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "《史记三家注·燕召公世家》",
+        "url": "https://ctext.org/wiki.pl?chapter=554855&if=gb&remap=gb"
       }
     ],
     "notes": [
@@ -2130,7 +2228,8 @@
       "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的燕记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
-      "2026-10-05：开国候选逐项复核后保留原概述：ji-shi。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+      "2026-10-05：开国候选逐项复核后保留原概述：ji-shi。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+      "2026-10-05称谓字段修正：按库内 SQL 查询，清空燕国诸君中误将侯、公、王号写入 persons.name 的本名字段；《史记索隐》称惠侯以下诸君“皆无名”，唯郑侯的注语称“郑或是名”，故将其名谨慎记录为“郑”，不再列作谥号。既有posthumousNames与卡片称号按史料称谓保留；燕桓公两段在位属于同一人物，按person记录修正一次。"
     ]
   }
 }
