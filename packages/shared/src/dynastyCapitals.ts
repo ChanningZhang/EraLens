@@ -53,6 +53,7 @@ export type ReignCapitalTenureRow = {
   capital?: {
     ref: EntityRef;
     label: string;
+    modernName: string;
     subtitle?: string;
   };
   tenure: {
