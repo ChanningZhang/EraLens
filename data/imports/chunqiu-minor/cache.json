@@ -1720,11 +1720,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "西周威公少子，《韩非子》作根，《纪年》作杰；赵韩扶持下据巩为东周惠公。",
+      "bio": "姬姓，名班，《韩非子》作根、《纪年》作杰。西周威公少子，前367年周王畿分裂时在赵、韩支持下据巩立国，称东周惠公；《史记·六国年表》引《纪年》记其于前360年卒。",
       "links": [
         {
-          "label": "维基百科",
+          "label": "东周国",
           "url": "https://zh.wikipedia.org/wiki/东周国"
+        },
+        {
+          "label": "东周惠公",
+          "url": "https://zh.wikipedia.org/wiki/東周惠公"
+        },
+        {
+          "label": "《史记·周本纪》",
+          "url": "https://ctext.org/shiji/zhou-ben-ji"
         }
       ],
       "birth": null,
@@ -2036,6 +2044,88 @@
       "ancestralXing": "姬",
       "title": "虎",
       "dynastyId": "teng-chunqiu"
+    },
+    {
+      "id": "zhou-guo-zhaowenjun",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名不详，东周惠公之后、东周武公之前的东周国君。《吕氏春秋·报更》记张仪游秦途中经过东周并受到昭文君接见；据此其活动年代推在秦惠王时期（前337—前311年），确切即位、卒年不详。",
+      "links": [
+        {
+          "label": "昭文君",
+          "url": "https://zh.wikipedia.org/wiki/東周昭文君"
+        },
+        {
+          "label": "东周国",
+          "url": "https://zh.wikipedia.org/wiki/东周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "昭文君"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "昭文君",
+      "dynastyId": "zhou-guo-east"
+    },
+    {
+      "id": "zhou-guo-wu",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名不详，承昭文君为东周国君。周赧王三十四年（前281年），楚欲联合齐、韩攻秦并图周，武公奉周赧王之命劝说楚令尹昭子放弃计划；其确切即位、卒年不详。",
+      "links": [
+        {
+          "label": "武公",
+          "url": "https://zh.wikipedia.org/wiki/東周武公"
+        },
+        {
+          "label": "东周国",
+          "url": "https://zh.wikipedia.org/wiki/东周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "武公",
+      "dynastyId": "zhou-guo-east"
+    },
+    {
+      "id": "zhou-guo-last-ruler",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名、谥号不详，东周国末君。秦庄襄王元年（前249年），秦相吕不韦讨伐与诸侯谋秦的东周君并尽取其地，东周国灭亡。其与周赧王去世后东周国延续七年的关系见《史记·秦本纪》《秦始皇本纪》附录《秦记》。",
+      "links": [
+        {
+          "label": "东周君",
+          "url": "https://zh.wikipedia.org/wiki/东周君"
+        },
+        {
+          "label": "东周国",
+          "url": "https://zh.wikipedia.org/wiki/东周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "东周君",
+      "dynastyId": "zhou-guo-east"
     }
   ],
   "dynastyGroups": [],
@@ -2351,16 +2441,29 @@
       "feudalRank": {
         "periods": [
           {
-            "rank": "君",
+            "rank": "公",
             "start": {
               "year": -367,
               "month": 1,
               "confidence": "year"
             },
             "end": {
+              "year": -280,
+              "month": 12,
+              "confidence": "interpolated_by_other"
+            }
+          },
+          {
+            "rank": "君",
+            "start": {
+              "year": -279,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
               "year": -249,
               "month": 12,
-              "confidence": "month"
+              "confidence": "year"
             }
           }
         ]
@@ -3738,28 +3841,6 @@
       "isMain": false
     },
     {
-      "id": "reign-missing-zhou-guo-east--360",
-      "dynastyId": "zhou-guo-east",
-      "personId": "system-missing-ruler",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": -360,
-        "month": 1,
-        "abs": -4308,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -249,
-        "month": 12,
-        "abs": -2965,
-        "confidence": "year"
-      },
-      "startAbs": -4308,
-      "endAbs": -2965,
-      "isMain": false
-    },
-    {
       "id": "reign-missing-xue-chunqiu--485",
       "dynastyId": "xue-chunqiu",
       "personId": "system-missing-ruler",
@@ -3939,6 +4020,78 @@
       },
       "startAbs": -3864,
       "endAbs": -3769,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-zhaowenjun-zhou-guo-east",
+      "dynastyId": "zhou-guo-east",
+      "personId": "zhou-guo-zhaowenjun",
+      "title": "昭文君",
+      "eraNames": [],
+      "start": {
+        "year": -359,
+        "month": 1,
+        "abs": -4296,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -321,
+        "month": 12,
+        "abs": -3829,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -4296,
+      "endAbs": -3829,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-wu-zhou-guo-east",
+      "dynastyId": "zhou-guo-east",
+      "personId": "zhou-guo-wu",
+      "title": "武公",
+      "eraNames": [],
+      "start": {
+        "year": -320,
+        "month": 1,
+        "abs": -3828,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -280,
+        "month": 12,
+        "abs": -3337,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -3828,
+      "endAbs": -3337,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-last-ruler-zhou-guo-east",
+      "dynastyId": "zhou-guo-east",
+      "personId": "zhou-guo-last-ruler",
+      "title": "东周君",
+      "eraNames": [],
+      "start": {
+        "year": -279,
+        "month": 1,
+        "abs": -3336,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -249,
+        "month": 12,
+        "abs": -2965,
+        "confidence": "year"
+      },
+      "startAbs": -3336,
+      "endAbs": -2965,
       "claimTrack": null,
       "claimLabel": null,
       "isMain": false
@@ -4285,6 +4438,24 @@
       "fromRef": "person:teng-r16",
       "toRef": "person:teng-r17",
       "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-gen-zhou-guo-zhaowenjun-succession",
+      "fromRef": "person:zhou-guo-gen",
+      "toRef": "person:zhou-guo-zhaowenjun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-zhaowenjun-zhou-guo-wu-succession",
+      "fromRef": "person:zhou-guo-zhaowenjun",
+      "toRef": "person:zhou-guo-wu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-wu-zhou-guo-last-ruler-succession",
+      "fromRef": "person:zhou-guo-wu",
+      "toRef": "person:zhou-guo-last-ruler",
+      "kind": "succession"
     }
   ],
   "manifest": {
@@ -4300,11 +4471,11 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "persons": 71,
+      "persons": 74,
       "dynasties": 8,
-      "reigns": 65,
+      "reigns": 67,
       "events": 1,
-      "relations": 54
+      "relations": 57
     },
     "sources": [
       {
@@ -4674,6 +4845,30 @@
       {
         "label": "《春秋左传正义》卷四：隐公十一年称滕侯、桓公二年已称滕子",
         "url": "https://zh.wikisource.org/zh-hans/春秋左传正义/卷04"
+      },
+      {
+        "label": "东周昭文君",
+        "url": "https://zh.wikipedia.org/wiki/東周昭文君"
+      },
+      {
+        "label": "东周武公",
+        "url": "https://zh.wikipedia.org/wiki/東周武公"
+      },
+      {
+        "label": "东周君",
+        "url": "https://zh.wikipedia.org/wiki/东周君"
+      },
+      {
+        "label": "《吕氏春秋·报更》",
+        "url": "https://ctext.org/lv-shi-chun-qiu/bao-geng/zh"
+      },
+      {
+        "label": "《资治通鉴》卷四",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷004"
+      },
+      {
+        "label": "《史记·秦本纪》",
+        "url": "https://ctext.org/shiji/qin-ben-ji/zh"
       }
     ],
     "notes": [
@@ -4690,7 +4885,7 @@
       "东西周惠公泳道的年精度起年统一记为前366年；前367年为西周威公卒、周王畿分立之年，东周国的分立事件仍按前367年记。",
       "清理对已在本包中删除的 dai-founded 事件的孤儿关系；该关系不再写入 relations。",
       "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
-      "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。惠公从有据的前366年起始，惠公、武公、文公具体继位年失考；以三位连续君主在前366年至前256年（含两端）共111年间各分37年作插值，区间分别为前366—前330、前329—前293、前292—前256，内侧边界均标 interpolated，前366与前256锚点保持确定。此均分为年代估算，不是史料所载在位年数。东周惠公之后至秦灭前仍为史料缺。",
+      "东周国君主顺序与泳道位置（2026-10-05）：依用户指定仅保留东周惠公→东周昭文君→东周武公→东周君四位君主，不设中间史料缺占位。惠公卒年取《史记·六国年表》引《纪年》前360年；昭文君见张仪一事据《吕氏春秋·报更》，其活动年代推在秦惠王前337—前311年；武公在周赧王三十四年（前281）活动据《资治通鉴》卷四；末君前249年见《史记·秦本纪》，东周国在周赧王死后仍延续至此前七年。由于后面三位君主的准确即位、卒年均无可靠记载，为呈现连续继位并避免把事件年份直接当作继位边界，泳道按相邻衔接估置为：昭文君前359—前321（约39年）、武公前320—前280（约41年）、东周君前279—前249（约31年）。前359为惠公卒年后按顺序继位规则衔接；其他不详端点标为 interpolated_by_other 或 approximate_year。三段日期用于时间轴定位，不声称是史载年次；相邻端点按年桶首尾连续，事件锚点均落在对应君主的在位区间内。",
       "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
       "滕国世系复核（2026-10-02）：对照维基百科滕国国君表、张志鹏《滕国新考》（2011）及其所引金文、传世文献。西周早期第二世滕公、第三世滕侯保留称谓；第五世采用张志鹏“命仲之子、滕伯文之父”考证，同时补存滕虎及另一谱系说，不把叔父与父亲合为一人。西周中期滕公、滕侯和两周之际滕侯苏（另一释名𩵦）补为未定位君主，滕仲是否为君保留存疑；不凭时代排序将其固定到第7—12世。",
       "西周具体在位年复核：撤下 teng-r20—teng-r24 原估算在位段及 teng-r25—teng-r30 六个虚拟均分段，删除六个无独立证据的匿名人物。前六世仅能与武王、成康、康昭、昭穆等宽泛时代联系，没有可靠逐任起讫锚点；伯文-950年及庄公-748年均非史料记载。已知人物与有据关系保留。始封君仅在约-1045年保留始封年桶（右端失考），庄公仅在-716年保留可考卒年桶（左端失考），均不表示只在位一年。其间-1044至-717年以系统史料缺汇总无法复原的连续世系和逐任边界，端点为可考年桶之外的覆盖范围，不是任何君主即位／卒年；该范围包含部分有称谓或名字、但不能可靠定位的君主。",
@@ -4713,10 +4908,10 @@
       "同步修复杞简公qi-state-r6误写“齐灭杞”，并纠正qi-state-r5、qi-state-chu将杞出公写作亡国末君的表述；末君为简公，楚灭杞据《史记·楚世家》。",
       "2026-10-05称谓字段修正：按库内 SQL 查询，将杞武公、杞靖公、杞共公、杞德公、杞成公的谥号从 persons.name 移出；《史记·陈杞世家》只载其称号、世系与年次，未载上述本名。杞共公另有辑本异说，缺乏足以定名的可靠依据，故本库留空。西周武公原名“武公”与谥号相同，现据《史记·周本纪》及《史记集解》未载本名而清空；后世表所见“共”出处未详。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。杞国数据采用该表战国栏所列“伯”。",
-      "东周国等级标签复核（2026-10-05）：“周代诸侯列国”表将东周国标作“君”。“君”不是公、侯、伯、子、男五等爵中的一等，但并非误标：东周国是前367年从周王畿分立的战国小国，《史记·秦本纪》记其末君为“东周君”，前249年秦灭东周时仍以此称之；故按用户指定的来源表保留单字 feudalRank“君”。《东周列国志》关于由公降君的说法是后世叙事，不作为本字段的等级沿革依据。",
+      "东周国爵位沿革修订（2026-10-05）：按用户指定，东周国自前367年建国时爵位记“公”，末君东周君即位后降为“君”；分期字段以末君约前279年起记“君”，止于前249年灭国。秦庄襄王元年史称“东周君”；具体降爵年无记载，泳道分期为按用户要求的约略定位。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。",
-      "“君”依条目语境标记：如东周国为国君称号、卫嗣君为降等后的称号；它不是公、侯、伯、子、男之外的一等通用爵。各条具体含义不由程序统一推断。",
+      "“君”依条目语境标记；东周国末段按用户指定作为由公降君后的称谓，卫嗣君亦为降等后的称谓；它不是公、侯、伯、子、男之外的一等通用爵。各条含义不由程序统一推断。",
       "滕国爵称沿革复核（2026-10-05）：用户提供的模板截图明确将西周、春秋栏滕国标为“侯”。《春秋》前712年（鲁隐公十一年）称滕侯；《春秋左传正义》释鲁桓公二年（前710）“隐十一年称侯，今称子者，盖时王所黜”，并言“自是以下，滕当称子”。故数据以前710年首见“滕子”的记事年作为称子分期起点，精度为年；该年是称谓最早明证，不断言正式降爵恰发生于该年。"
     ]
   }

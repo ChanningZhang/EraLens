@@ -21,7 +21,7 @@
     "generatedAt": "2026-10-02",
     "counts": {
       "location_mapping": 1265,
-      "locationMappings": 1264
+      "locationMappings": 1263
     },
     "sources": [
       {
@@ -15836,35 +15836,6 @@
       "kind": "reign",
       "externalId": "reign-missing-yelang--119",
       "historicalName": "夜郎"
-    },
-    {
-      "start": {
-        "year": -367,
-        "month": 1,
-        "abs": -4392,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -249,
-        "month": 12,
-        "abs": -2965,
-        "confidence": "month"
-      },
-      "startAbs": -4392,
-      "endAbs": -2965,
-      "role": "primary",
-      "note": "东周国始封于巩；今址为巩义市康店镇康北村东周故城遗址。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/东周国"
-        }
-      ],
-      "id": "map-reign:reign-missing-zhou-guo-east--360:cap-zhou-guo-east-gong-367",
-      "locationId": "loc-82f0372c24cb2702712a9a90a50e525f",
-      "kind": "reign",
-      "externalId": "reign-missing-zhou-guo-east--360",
-      "historicalName": "巩"
     },
     {
       "start": {
