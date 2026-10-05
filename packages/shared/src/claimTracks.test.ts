@@ -142,7 +142,6 @@ describe("claimDetailFacts", () => {
         claimLabel: "绍兴监国",
       }),
     ).toEqual([
-      { label: "身份", value: "并立" },
       { label: "据点", value: "绍兴监国" },
     ]);
   });

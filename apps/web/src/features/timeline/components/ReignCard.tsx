@@ -7,7 +7,6 @@ import {
   formatReignSpanTooltip,
   isInterpolatedConfidence,
   isParallelClaim,
-  PARALLEL_CLAIM_LABEL,
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
@@ -108,9 +107,7 @@ function ReignCardImpl({
     const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
     const regionLabel = resolveDynastyName(dynasty, reign.startAbs);
     const timeTooltip = formatReignSpanTooltip(reign);
-    const claimTooltip = parallel
-      ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
-      : undefined;
+    const claimTooltip = parallel && reign.claimLabel ? reign.claimLabel : undefined;
     const tooltipText = buildReignCardTooltip({
       showMeta: showMeta && detail !== "below", meta,
       timeTooltip,

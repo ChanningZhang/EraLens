@@ -219,7 +219,6 @@ describe("buildEntityDetail reign", () => {
     });
     expect(detail.facts).toEqual(
       expect.arrayContaining([
-        { label: "身份", value: "并立" },
         { label: "据点", value: "绍兴监国" },
       ]),
     );

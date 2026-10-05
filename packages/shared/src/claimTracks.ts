@@ -130,15 +130,10 @@ export function resolveConcurrencySpans(
   return spans;
 }
 
-export const PARALLEL_CLAIM_LABEL = "并立";
-
 export function claimDetailFacts(
   reign: Pick<Reign, "claimTrack" | "claimLabel">,
 ): Array<{ label: string; value: string }> {
   const facts: Array<{ label: string; value: string }> = [];
-  if (isParallelClaim(reign)) {
-    facts.push({ label: "身份", value: PARALLEL_CLAIM_LABEL });
-  }
   if (reign.claimLabel) {
     facts.push({ label: "据点", value: reign.claimLabel });
   }
