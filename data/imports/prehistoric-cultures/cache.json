@@ -26,6 +26,42 @@
     {
       "kind": "culture",
       "timeMode": "span",
+      "id": "peiligang",
+      "name": "裴李岗文化",
+      "dateNote": "约前7000—前5000年；区域遗址年代与分期略有差异。贾湖遗存二、三期与裴李岗文化大体同时，一期较早；学界对贾湖遗存是否单列为文化或归入裴李岗文化有不同处理。",
+      "start": { "year": -7000, "month": 1, "abs": -83988, "confidence": "approximate_year" },
+      "end": { "year": -5000, "month": 12, "abs": -59977, "confidence": "approximate_year" },
+      "summary": "河南中西部至淮河上游的新石器文化，聚落、墓地、陶器及磨盘磨棒等遗存显示定居生活和农业发展。贾湖遗存与其有密切的年代和文化联系，但分类关系仍有不同说法。",
+      "startAbs": -83988,
+      "endAbs": -59977
+    },
+    {
+      "kind": "culture",
+      "timeMode": "span",
+      "id": "laoguantai-dadiwan-i",
+      "name": "老官台／大地湾一期文化",
+      "dateNote": "约前6000—前5000年；老官台、大地湾一期、白家村等名称及涵盖范围在学界存在分歧，年代为前仰韶阶段的概括范围。",
+      "start": { "year": -6000, "month": 1, "abs": -71988, "confidence": "approximate_year" },
+      "end": { "year": -5000, "month": 12, "abs": -59977, "confidence": "approximate_year" },
+      "summary": "渭河流域的前仰韶时期遗存，以秦安大地湾一期、临潼老官台等遗址为代表。陶器、石器、房址和农业相关遗存，呈现西北地区由采集狩猎向定居与早期农业发展的过程。",
+      "startAbs": -71988,
+      "endAbs": -59977
+    },
+    {
+      "kind": "culture",
+      "timeMode": "span",
+      "id": "cishan",
+      "name": "磁山文化",
+      "dateNote": "约前6000—前5600年；碳十四测年和校正年代的表述因测年批次及采用框架而异。",
+      "start": { "year": -6000, "month": 1, "abs": -71988, "confidence": "approximate_year" },
+      "end": { "year": -5600, "month": 12, "abs": -67177, "confidence": "approximate_year" },
+      "summary": "河北南部太行山东麓的新石器文化，以磁山遗址命名。陶盂与支架、石磨盘和磨棒、窖穴及植物遗存，为研究北方早期定居聚落和农业生计提供了重要材料。",
+      "startAbs": -71988,
+      "endAbs": -67177
+    },
+    {
+      "kind": "culture",
+      "timeMode": "span",
       "id": "hemudu",
       "name": "河姆渡文化",
       "dateNote": "河姆渡遗址四期碳十四：一期约前5000–前4500，四期约前3600–前3300；亦作前5000–前3000。",
@@ -173,7 +209,7 @@
       "persons": 0,
       "dynasties": 0,
       "reigns": 0,
-      "events": 12,
+      "events": 15,
       "relations": 0
     },
     "sources": [
@@ -228,14 +264,423 @@
       {
         "label": "三星堆遗址",
         "url": "https://zh.wikipedia.org/wiki/三星堆遗址"
+      },
+      {
+        "label": "河南省文物考古研究院：贾湖遗址",
+        "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=222"
+      },
+      {
+        "label": "贾湖遗址中心地理坐标研究",
+        "url": "https://html.rhhz.net/DSJYJ/20170306.htm"
+      },
+      {
+        "label": "中国国家博物馆：史前社会的阶段性变化",
+        "url": "https://www.chnmuseum.cn/yj/xscg/xslw/202012/t20201217_248584.shtml"
+      },
+      {
+        "label": "中国科学院自然科学史研究所：淮河上游八千年前的辉煌（贾湖与裴李岗）",
+        "url": "https://agri-history.ihns.ac.cn/agrobiology/jiahu.htm"
+      },
+      {
+        "label": "天水市人民政府：大地湾文化",
+        "url": "https://www.tianshui.gov.cn/info/4801/1035882.htm"
+      },
+      {
+        "label": "故宫博物院：磁山文化",
+        "url": "https://www.dpm.org.cn/lemmas/240276.html"
+      },
+      {
+        "label": "OpenStreetMap：河姆渡遗址点位",
+        "url": "https://mapcarta.com/W1032432801"
+      },
+      {
+        "label": "渑池县人民政府：仰韶村遗址简介",
+        "url": "https://www.mianchi.gov.cn/23482/2024/2/2158567.html"
+      },
+      {
+        "label": "仰韶村遗址文化剖面坐标资料",
+        "url": "https://lib-bingchuan.museum.chaoxing.com/info/36454.jspx"
+      },
+      {
+        "label": "赤峰市红山区人民政府：红山文化遗址",
+        "url": "https://www.hongshanqu.gov.cn/zjhs/whls/wwgj/"
+      },
+      {
+        "label": "红山后遗址定位资料",
+        "url": "https://www.earlychcoinage.com/sites/NMG_0038"
+      },
+      {
+        "label": "泰安市人民政府：大汶口国家考古遗址公园",
+        "url": "https://www.taian.gov.cn/art/2022/4/18/art_46736_10311328.html"
+      },
+      {
+        "label": "OpenStreetMap：大汶口遗址点位",
+        "url": "https://mapcarta.com/W1055036775"
+      },
+      {
+        "label": "联合国教科文组织世界遗产中心：良渚古城遗址",
+        "url": "https://whc.unesco.org/zh/list/1592/"
+      },
+      {
+        "label": "良渚古城遗址坐标资料",
+        "url": "https://www.wikidata.org/wiki/Q66672360"
+      },
+      {
+        "label": "临洮县博物馆：马家窑遗址",
+        "url": "https://www.ltbwg.cn/sys-nd/406.html"
+      },
+      {
+        "label": "马家窑遗址坐标研究",
+        "url": "https://html.rhhz.net/DSJYJ/20200222.htm"
+      },
+      {
+        "label": "山东地情档案：城子崖遗址",
+        "url": "https://shandong-chorography.org/database/a/section/70/article/39/"
+      },
+      {
+        "label": "OpenStreetMap：城子崖遗址点位",
+        "url": "https://mapcarta.com/N12847382911"
+      },
+      {
+        "label": "陶寺遗址聚落形态考古研究",
+        "url": "https://www.sciengine.com/doi/pdf/5A4893C0BBE4464093CF965B0F0C175F"
+      },
+      {
+        "label": "陶寺遗址坐标资料",
+        "url": "https://dbpedia.org/page/Taosi"
+      },
+      {
+        "label": "陕西省：石峁遗址保护条例",
+        "url": "https://www.shaanxi.gov.cn/zfxxgk/zcwjk/dfxfg/202402/W020240226369297352266.pdf"
+      },
+      {
+        "label": "OpenStreetMap：石峁遗址点位",
+        "url": "https://mapcarta.com/N4535483104"
+      },
+      {
+        "label": "OpenStreetMap：二里头遗址点位",
+        "url": "https://mapcarta.com/W851367302"
+      },
+      {
+        "label": "四川省文物考古研究院：三星堆遗址考古研究",
+        "url": "https://www.sckg.com/uploads/soft/20240924/2-240924145H24Y.pdf"
+      },
+      {
+        "label": "OpenStreetMap：三星堆遗址点位",
+        "url": "https://mapcarta.com/W418286621"
+      },
+      {
+        "label": "河南省人民政府：二里头遗址",
+        "url": "https://english.henan.gov.cn/2023/03-22/2711850.html"
+      },
+      {
+        "label": "郑州市文物局：裴李岗遗址",
+        "url": "https://wwj.zhengzhou.gov.cn/country/3176236.jhtml"
+      },
+      {
+        "label": "OpenStreetMap地点坐标（Mapcarta）：裴李岗村",
+        "url": "https://mapcarta.com/39339964"
+      },
+      {
+        "label": "Wikimedia Commons：磁山遗址地图坐标",
+        "url": "https://commons.wikimedia.org/wiki/Category:Cishan_Site?uselang=zh-my"
       }
     ],
     "notes": [
       "不建王朝行或在位卡片：此类为考古学文化/遗址，不是文献世系国号。事件不挂 集中普通关联，以免把二里头等同夏、三星堆等同商。",
       "史前文化以可考碳十四年代窗口建模为 span，端点 confidence 标 approximate_year；起止年是文化年代范围，不显示为已知月日。",
       "收录教科书与文明探源常用条目：贾湖、河姆渡、仰韶、红山、大汶口、良渚、马家窑、龙山、陶寺、石峁、二里头、三星堆。半坡、牛河梁、殷墟不另立，以免与仰韶/红山/商重复。",
+      "2026-10：按用户要求补充前仰韶阶段代表文化裴李岗、老官台／大地湾一期及磁山文化，扩展原有代表性条目范围以填补贾湖与仰韶条目间的时间线空档；各条目按各自区域文化范围并行展示，不表示单线继承。年代采用可核来源支持的约略范围；贾湖与裴李岗的分类关系、老官台／大地湾命名范围及磁山测年存在学术差异，已保留在 dateNote。",
       "各文化按考古文化或遗址的年代范围使用 span；起止端点以 approximate_year 表示约略年代，1月和12月仅作年精度区间定位，不代表考古学上的已知月份。三星堆按三星堆文化二三期起点至该遗址下限建模，祭祀坑年代保留在 dateNote 中。",
-      "三星堆条自二三期（约前2000）起至遗址下限前1100，含祭祀坑，不含宝墩一期。半坡、庙底沟、马家窑诸类型不另立事件。"
+      "三星堆条自二三期（约前2000）起至遗址下限前1100，含祭祀坑，不含宝墩一期。半坡、庙底沟、马家窑诸类型不另立事件。",
+      "2026-10：为15条史前文化记录添加命名或代表遗址地点映射，使用 WGS84 遗址代表点；空间精度标记为 approximate。考古文化分布范围通常大于单一遗址点，地图点只表示关联遗址，不表示文化边界。"
     ]
-  }
+  },
+  "locationMappings": [
+    {
+      "id": "map-event:jiahu:loc-prehistoric-jiahu-site",
+      "locationId": "loc-prehistoric-jiahu-site",
+      "kind": "event",
+      "externalId": "jiahu",
+      "historicalName": "贾湖遗址",
+      "note": "以贾湖遗址中心为代表点；文化与遗址范围不由单点表示。",
+      "links": [
+        {
+          "label": "河南省文物考古研究院：贾湖遗址",
+          "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=222"
+        },
+        {
+          "label": "贾湖遗址中心地理坐标研究",
+          "url": "https://html.rhhz.net/DSJYJ/20170306.htm"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:hemudu:loc-prehistoric-hemudu-site",
+      "locationId": "loc-prehistoric-hemudu-site",
+      "kind": "event",
+      "externalId": "hemudu",
+      "historicalName": "河姆渡遗址",
+      "note": "采用河姆渡遗址范围代表点；河姆渡文化分布范围更广。",
+      "links": [
+        {
+          "label": "河姆渡遗址",
+          "url": "https://zh.wikipedia.org/wiki/河姆渡遗址"
+        },
+        {
+          "label": "OpenStreetMap：河姆渡遗址点位",
+          "url": "https://mapcarta.com/W1032432801"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:yangshao:loc-prehistoric-yangshao-site",
+      "locationId": "loc-prehistoric-yangshao-site",
+      "kind": "event",
+      "externalId": "yangshao",
+      "historicalName": "仰韶村遗址",
+      "note": "采用仰韶村遗址文化剖面附近代表点；仰韶文化分布范围更广。",
+      "links": [
+        {
+          "label": "渑池县人民政府：仰韶村遗址简介",
+          "url": "https://www.mianchi.gov.cn/23482/2024/2/2158567.html"
+        },
+        {
+          "label": "仰韶村遗址文化剖面坐标资料",
+          "url": "https://lib-bingchuan.museum.chaoxing.com/info/36454.jspx"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:hongshan:loc-prehistoric-hongshan-site",
+      "locationId": "loc-prehistoric-hongshan-site",
+      "kind": "event",
+      "externalId": "hongshan",
+      "historicalName": "红山后遗址",
+      "note": "红山文化的命名地代表点；红山文化分布跨越多个区域，该点不表示文化边界。",
+      "links": [
+        {
+          "label": "赤峰市红山区人民政府：红山文化遗址",
+          "url": "https://www.hongshanqu.gov.cn/zjhs/whls/wwgj/"
+        },
+        {
+          "label": "红山后遗址定位资料",
+          "url": "https://www.earlychcoinage.com/sites/NMG_0038"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:dawenkou:loc-prehistoric-dawenkou-site",
+      "locationId": "loc-prehistoric-dawenkou-site",
+      "kind": "event",
+      "externalId": "dawenkou",
+      "historicalName": "大汶口遗址",
+      "note": "以大汶口文化命名遗址为代表点；文化分布范围更广。",
+      "links": [
+        {
+          "label": "泰安市人民政府：大汶口国家考古遗址公园",
+          "url": "https://www.taian.gov.cn/art/2022/4/18/art_46736_10311328.html"
+        },
+        {
+          "label": "OpenStreetMap：大汶口遗址点位",
+          "url": "https://mapcarta.com/W1055036775"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:liangzhu:loc-prehistoric-liangzhu-site",
+      "locationId": "loc-prehistoric-liangzhu-site",
+      "kind": "event",
+      "externalId": "liangzhu",
+      "historicalName": "良渚古城遗址",
+      "note": "采用良渚古城遗址代表点；良渚遗址群及文化分布范围更广。",
+      "links": [
+        {
+          "label": "联合国教科文组织世界遗产中心：良渚古城遗址",
+          "url": "https://whc.unesco.org/zh/list/1592/"
+        },
+        {
+          "label": "良渚古城遗址坐标资料",
+          "url": "https://www.wikidata.org/wiki/Q66672360"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:majiayao:loc-prehistoric-majiayao-site",
+      "locationId": "loc-prehistoric-majiayao-site",
+      "kind": "event",
+      "externalId": "majiayao",
+      "historicalName": "马家窑遗址",
+      "note": "以马家窑文化命名遗址为代表点；马家窑文化分布范围更广。",
+      "links": [
+        {
+          "label": "临洮县博物馆：马家窑遗址",
+          "url": "https://www.ltbwg.cn/sys-nd/406.html"
+        },
+        {
+          "label": "马家窑遗址坐标研究",
+          "url": "https://html.rhhz.net/DSJYJ/20200222.htm"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:longshan:loc-prehistoric-longshan-site",
+      "locationId": "loc-prehistoric-longshan-site",
+      "kind": "event",
+      "externalId": "longshan",
+      "historicalName": "城子崖遗址",
+      "note": "采用龙山文化命名遗址城子崖代表点；龙山文化分布范围更广。",
+      "links": [
+        {
+          "label": "山东地情档案：城子崖遗址",
+          "url": "https://shandong-chorography.org/database/a/section/70/article/39/"
+        },
+        {
+          "label": "OpenStreetMap：城子崖遗址点位",
+          "url": "https://mapcarta.com/N12847382911"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:taosi:loc-prehistoric-taosi-site",
+      "locationId": "loc-prehistoric-taosi-site",
+      "kind": "event",
+      "externalId": "taosi",
+      "historicalName": "陶寺遗址",
+      "note": "采用陶寺遗址代表点；点位仅作地图定位，不表示遗址边界。",
+      "links": [
+        {
+          "label": "陶寺遗址聚落形态考古研究",
+          "url": "https://www.sciengine.com/doi/pdf/5A4893C0BBE4464093CF965B0F0C175F"
+        },
+        {
+          "label": "陶寺遗址坐标资料",
+          "url": "https://dbpedia.org/page/Taosi"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:shimao:loc-prehistoric-shimao-site",
+      "locationId": "loc-prehistoric-shimao-site",
+      "kind": "event",
+      "externalId": "shimao",
+      "historicalName": "石峁遗址",
+      "note": "采用石峁遗址代表点；点位仅作地图定位，不表示遗址边界。",
+      "links": [
+        {
+          "label": "陕西省：石峁遗址保护条例",
+          "url": "https://www.shaanxi.gov.cn/zfxxgk/zcwjk/dfxfg/202402/W020240226369297352266.pdf"
+        },
+        {
+          "label": "OpenStreetMap：石峁遗址点位",
+          "url": "https://mapcarta.com/N4535483104"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:erlitou:loc-prehistoric-erlitou-site",
+      "locationId": "loc-prehistoric-erlitou-site",
+      "kind": "event",
+      "externalId": "erlitou",
+      "historicalName": "二里头遗址",
+      "note": "采用二里头遗址代表点；不据此将二里头文化等同文献夏朝。",
+      "links": [
+        {
+          "label": "河南省人民政府：二里头遗址",
+          "url": "https://english.henan.gov.cn/2023/03-22/2711850.html"
+        },
+        {
+          "label": "OpenStreetMap：二里头遗址点位",
+          "url": "https://mapcarta.com/W851367302"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:sanxingdui:loc-prehistoric-sanxingdui-site",
+      "locationId": "loc-prehistoric-sanxingdui-site",
+      "kind": "event",
+      "externalId": "sanxingdui",
+      "historicalName": "三星堆遗址",
+      "note": "采用三星堆遗址代表点；不据此将三星堆文化等同商朝。",
+      "links": [
+        {
+          "label": "四川省文物考古研究院：三星堆遗址考古研究",
+          "url": "https://www.sckg.com/uploads/soft/20240924/2-240924145H24Y.pdf"
+        },
+        {
+          "label": "OpenStreetMap：三星堆遗址点位",
+          "url": "https://mapcarta.com/W418286621"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:peiligang:loc-prehistoric-peiligang-site",
+      "locationId": "loc-prehistoric-peiligang-site",
+      "kind": "event",
+      "externalId": "peiligang",
+      "historicalName": "裴李岗遗址",
+      "note": "以裴李岗村附近位置表示文化命名遗址；地图点为近似定位，不表示遗址边界或文化分布范围。",
+      "links": [
+        {
+          "label": "郑州市文物局：裴李岗遗址",
+          "url": "https://wwj.zhengzhou.gov.cn/country/3176236.jhtml"
+        },
+        {
+          "label": "OpenStreetMap地点坐标（Mapcarta）：裴李岗村",
+          "url": "https://mapcarta.com/39339964"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:laoguantai-dadiwan-i:loc-prehistoric-dadiwan-site",
+      "locationId": "loc-prehistoric-dadiwan-site",
+      "kind": "event",
+      "externalId": "laoguantai-dadiwan-i",
+      "historicalName": "大地湾遗址",
+      "note": "采用老官台／大地湾一期代表遗址大地湾遗址定位；坐标为遗址代表点，不表示文化分布范围。",
+      "links": [
+        {
+          "label": "天水市人民政府：大地湾文化",
+          "url": "https://www.tianshui.gov.cn/info/4801/1035882.htm"
+        },
+        {
+          "label": "Bettinger et al.：The Transition to Agriculture at Dadiwan",
+          "url": "https://www.researchgate.net/publication/233934649_The_Transition_to_Agriculture_at_Dadiwan_People's_Republic_of_China"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    },
+    {
+      "id": "map-event:cishan:loc-prehistoric-cishan-site",
+      "locationId": "loc-prehistoric-cishan-site",
+      "kind": "event",
+      "externalId": "cishan",
+      "historicalName": "磁山遗址",
+      "note": "采用磁山文化命名遗址代表点；地图点不表示遗址边界或文化分布范围。",
+      "links": [
+        {
+          "label": "故宫博物院：磁山文化",
+          "url": "https://www.dpm.org.cn/lemmas/240276.html"
+        },
+        {
+          "label": "Wikimedia Commons：磁山遗址地图坐标",
+          "url": "https://commons.wikimedia.org/wiki/Category:Cishan_Site?uselang=zh-my"
+        }
+      ],
+      "spatialPrecision": "approximate"
+    }
+  ]
 }

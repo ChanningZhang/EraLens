@@ -1372,6 +1372,111 @@
       "longitude": 114.895675,
       "latitude": 30.402416,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-prehistoric-jiahu-site",
+      "modernName": "河南省漯河市舞阳县北舞渡镇贾湖村贾湖遗址",
+      "longitude": 113.673889,
+      "latitude": 33.618889,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-hemudu-site",
+      "modernName": "浙江省宁波市余姚市河姆渡镇河姆渡遗址",
+      "longitude": 121.34902,
+      "latitude": 29.96399,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-yangshao-site",
+      "modernName": "河南省三门峡市渑池县仰韶镇仰韶村南仰韶村遗址",
+      "longitude": 111.777333,
+      "latitude": 34.810528,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-hongshan-site",
+      "modernName": "内蒙古自治区赤峰市红山区红山后遗址",
+      "longitude": 118.984532,
+      "latitude": 42.322947,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-dawenkou-site",
+      "modernName": "山东省泰安市岱岳区大汶口镇大汶口遗址",
+      "longitude": 117.08597,
+      "latitude": 35.9453,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-liangzhu-site",
+      "modernName": "浙江省杭州市余杭区瓶窑镇良渚古城遗址",
+      "longitude": 119.985278,
+      "latitude": 30.396667,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-majiayao-site",
+      "modernName": "甘肃省定西市临洮县西坪乡马家窑村马家窑遗址",
+      "longitude": 104.228,
+      "latitude": 35.201,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-longshan-site",
+      "modernName": "山东省济南市章丘区龙山街道城子崖遗址",
+      "longitude": 117.35252,
+      "latitude": 36.73402,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-taosi-site",
+      "modernName": "山西省临汾市襄汾县陶寺乡陶寺遗址",
+      "longitude": 111.49717,
+      "latitude": 35.890603,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-shimao-site",
+      "modernName": "陕西省榆林市神木市高家堡镇石峁遗址",
+      "longitude": 110.32538,
+      "latitude": 38.56564,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-erlitou-site",
+      "modernName": "河南省洛阳市偃师区翟镇镇二里头村二里头遗址",
+      "longitude": 112.69077,
+      "latitude": 34.69134,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-sanxingdui-site",
+      "modernName": "四川省德阳市广汉市三星堆镇三星堆遗址",
+      "longitude": 104.19986,
+      "latitude": 30.99361,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-peiligang-site",
+      "modernName": "河南省郑州市新郑市新村镇裴李岗村西裴李岗遗址附近",
+      "longitude": 113.65239,
+      "latitude": 34.43717,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-dadiwan-site",
+      "modernName": "甘肃省天水市秦安县五营镇邵店村大地湾遗址",
+      "longitude": 105.904,
+      "latitude": 35.015,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-prehistoric-cishan-site",
+      "modernName": "河北省邯郸市武安市磁山镇磁山遗址",
+      "longitude": 114.117989,
+      "latitude": 36.575589,
+      "coordinateSystem": "WGS84"
     }
   ],
   "manifest": {
@@ -1385,7 +1490,7 @@
     },
     "scope": "cn",
     "counts": {
-      "locations": 196
+      "locations": 211
     },
     "sources": [
       {
@@ -1403,12 +1508,33 @@
       {
         "label": "高德地图地理编码",
         "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      },
+      {
+        "label": "新郑市人民政府：裴李岗遗址",
+        "url": "https://www.xinzheng.gov.cn/jqjd.jhtml"
+      },
+      {
+        "label": "OpenStreetMap地点坐标（Mapcarta）：裴李岗村",
+        "url": "https://mapcarta.com/39339964"
+      },
+      {
+        "label": "Bettinger et al.：The Transition to Agriculture at Dadiwan",
+        "url": "https://www.researchgate.net/publication/233934649_The_Transition_to_Agriculture_at_Dadiwan_People's_Republic_of_China"
+      },
+      {
+        "label": "故宫博物院：磁山文化",
+        "url": "https://www.dpm.org.cn/lemmas/240276.html"
+      },
+      {
+        "label": "Wikimedia Commons：磁山遗址地图坐标",
+        "url": "https://commons.wikimedia.org/wiki/Category:Cishan_Site?uselang=zh-my"
       }
     ],
     "notes": [
       "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
       "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。",
-      "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。"
+      "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。",
+      "2026-10-05：新增裴李岗、大地湾、磁山三处前仰韶遗址坐标。裴李岗取裴李岗村附近OSM点，大地湾取考古研究论文公布的遗址坐标，磁山取遗址地图坐标；均作代表性近似点，不表示遗址边界。"
     ]
   }
 }

@@ -9,7 +9,7 @@
   },
   "scope": "cn",
   "counts": {
-    "locations": 196,
+    "locations": 211,
     "persons": 0,
     "dynastyGroups": 0,
     "dynasties": 0,
@@ -35,11 +35,32 @@
     {
       "label": "高德地图地理编码",
       "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    },
+    {
+      "label": "新郑市人民政府：裴李岗遗址",
+      "url": "https://www.xinzheng.gov.cn/jqjd.jhtml"
+    },
+    {
+      "label": "OpenStreetMap地点坐标（Mapcarta）：裴李岗村",
+      "url": "https://mapcarta.com/39339964"
+    },
+    {
+      "label": "Bettinger et al.：The Transition to Agriculture at Dadiwan",
+      "url": "https://www.researchgate.net/publication/233934649_The_Transition_to_Agriculture_at_Dadiwan_People's_Republic_of_China"
+    },
+    {
+      "label": "故宫博物院：磁山文化",
+      "url": "https://www.dpm.org.cn/lemmas/240276.html"
+    },
+    {
+      "label": "Wikimedia Commons：磁山遗址地图坐标",
+      "url": "https://commons.wikimedia.org/wiki/Category:Cishan_Site?uselang=zh-my"
     }
   ],
   "notes": [
     "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
     "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。",
-    "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。"
+    "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。",
+    "2026-10-05：新增裴李岗、大地湾、磁山三处前仰韶遗址坐标。裴李岗取裴李岗村附近OSM点，大地湾取考古研究论文公布的遗址坐标，磁山取遗址地图坐标；均作代表性近似点，不表示遗址边界。"
   ]
 }
