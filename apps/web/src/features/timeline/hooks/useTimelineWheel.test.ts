@@ -1,8 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   applyStageVerticalScroll,
   createFramePanAccumulator,
   createFrameZoomAccumulator,
+  createWebKitGestureHandlers,
   isStageVerticallyScrollable,
   isZoomWheel,
   resolveWheelAction,
@@ -10,6 +11,51 @@ import {
   wheelDeltaPx,
   wheelZoomFactor,
 } from "./useTimelineWheel";
+
+describe("Safari gesture ownership", () => {
+  function harness() {
+    let touchActive = false;
+    const zoom = { queue: vi.fn(), flush: vi.fn() };
+    const gestures = createWebKitGestureHandlers({
+      isTouchActive: () => touchActive,
+      isEditableTarget: () => false,
+      pan: { flush: vi.fn() }, zoom,
+    });
+    const event = (scale: number) => Object.assign(new Event("gesture", { cancelable: true }), { scale, clientX: 120 });
+    return { gestures, zoom, event, setTouch: (value: boolean) => { touchActive = value; } };
+  }
+
+  it("does not apply Safari's second zoom path to an iPhone pinch", () => {
+    const h = harness();
+    h.setTouch(true);
+    const start = h.event(1);
+    h.gestures.start(start);
+    h.gestures.change(h.event(1.4));
+    h.setTouch(false);
+    h.gestures.change(h.event(1.6));
+    h.gestures.end(h.event(1.6));
+    expect(start.defaultPrevented).toBe(true);
+    expect(h.zoom.queue).not.toHaveBeenCalled();
+  });
+
+  it("ignores orphan gesturechange events after an interruption", () => {
+    const h = harness();
+    h.gestures.start(h.event(1));
+    h.gestures.reset();
+    h.gestures.change(h.event(2));
+    expect(h.zoom.queue).not.toHaveBeenCalled();
+  });
+
+  it("keeps Safari trackpad pinch working without touch contacts", () => {
+    const h = harness();
+    h.gestures.start(h.event(1));
+    h.gestures.change(h.event(1.5));
+    h.gestures.change(h.event(1.8));
+    h.gestures.end(h.event(1.8));
+    expect(h.zoom.queue.mock.calls).toEqual([[1.5, 120], [1.2, 120]]);
+    expect(h.zoom.flush).toHaveBeenCalledTimes(2);
+  });
+});
 
 describe("resolveWheelAction", () => {
   it("zooms when pinching anywhere on the page", () => {

@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   buildLaneOrderIndex,
@@ -26,6 +26,7 @@ import { useStageViewportSize } from "../hooks/useStageViewportHeight";
 import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { createFramePanAccumulator, createFrameZoomAccumulator } from "../hooks/useTimelineWheel";
+import { createTimelinePointerController } from "../hooks/timelinePointerController";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
 import { viewportStore } from "../state/viewportStore";
@@ -82,19 +83,10 @@ function sameReignIds(a: readonly Reign[] | undefined, b: readonly Reign[]): boo
 
 export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
-  const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
-  const timelineGestureRef = useRef<{
-    mode: "pending" | "pan" | "scroll" | "pinch" | "map-pan";
-    x: number;
-    y: number;
-    time: number;
-    velocity: number;
-    distance: number;
-  } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
-  const mapPanTimerRef = useRef<number | null>(null);
   const timelinePanRef = useRef<ReturnType<typeof createFramePanAccumulator> | null>(null);
   const timelineZoomRef = useRef<ReturnType<typeof createFrameZoomAccumulator> | null>(null);
+  const pointerControllerRef = useRef<ReturnType<typeof createTimelinePointerController> | null>(null);
   const [eventsExpanded, setEventsExpanded] = useState(false);
   const [mapScale, setMapScale] = useState(1);
   const [mapOffset, setMapOffset] = useState({ x: 0, y: 0 });
@@ -170,13 +162,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     if (Math.abs(velocity) > 0.045) timelineInertiaRef.current = requestAnimationFrame(step);
   };
 
-  const clearMapPanTimer = () => {
-    if (mapPanTimerRef.current !== null) {
-      window.clearTimeout(mapPanTimerRef.current);
-      mapPanTimerRef.current = null;
-    }
-  };
-
   const isPointOverMap = (clientX: number, clientY: number) => {
     const stage = stageRef.current;
     if (!stage || !mapLayout) return false;
@@ -194,122 +179,30 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       target.closest("button, a, [role='button'], [data-map-pan-exclude]"),
     );
 
-  const onStagePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === "mouse") {
-      if (event.button !== 0 || isInteractiveTarget(event.target) || !isPointOverMap(event.clientX, event.clientY)) return;
-    } else if (event.pointerType !== "touch") return;
-    stopTimelineInertia();
-    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    const points = [...timelinePointersRef.current.values()];
-    if (points.length >= 2) {
-      clearMapPanTimer();
-      timelinePanRef.current?.flush();
-      const [a, b] = points;
-      timelineGestureRef.current = {
-        mode: "pinch",
-        x: (a.x + b.x) / 2,
-        y: (a.y + b.y) / 2,
-        time: performance.now(),
-        velocity: 0,
-        distance: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)),
-      };
-    } else {
-      timelineGestureRef.current = {
-        mode: event.pointerType === "mouse" ? "map-pan" : "pending",
-        x: event.clientX,
-        y: event.clientY,
-        time: performance.now(),
-        velocity: 0,
-        distance: 0,
-      };
-    }
-    event.currentTarget.setPointerCapture(event.pointerId);
-    if (event.pointerType === "touch" && points.length === 1 &&
-      !isInteractiveTarget(event.target) && isPointOverMap(event.clientX, event.clientY)) {
-      mapPanTimerRef.current = window.setTimeout(() => {
-        if (timelineGestureRef.current?.mode === "pending" && timelinePointersRef.current.size === 1) {
-          timelineGestureRef.current = { ...timelineGestureRef.current, mode: "map-pan" };
-        }
-        mapPanTimerRef.current = null;
-      }, 450);
-    }
-  };
+  // The installed listeners read the latest map geometry after renders.
+  const mapPanTargetRef = useRef<(event: PointerEvent) => boolean>(() => false);
+  mapPanTargetRef.current = (event) =>
+    !isInteractiveTarget(event.target) && isPointOverMap(event.clientX, event.clientY);
 
-  const onStagePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!timelinePointersRef.current.has(event.pointerId)) return;
-    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    const points = [...timelinePointersRef.current.values()];
-    const gesture = timelineGestureRef.current;
-    if (!gesture) return;
-    if (points.length >= 2) {
-      const [a, b] = points;
-      const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
-      const midpointX = (a.x + b.x) / 2;
-      if (gesture.mode === "pinch" && gesture.distance > 0) {
-        timelineZoom().queue(distance / gesture.distance, midpointX);
-      }
-      timelineGestureRef.current = { ...gesture, mode: "pinch", distance, x: midpointX, y: (a.y + b.y) / 2 };
-      event.preventDefault();
-      return;
-    }
-
-    const dx = event.clientX - gesture.x;
-    const dy = event.clientY - gesture.y;
-    if (gesture.mode === "map-pan") {
-      setMapOffset((offset) => ({ x: offset.x + dx, y: offset.y + dy }));
-      timelineGestureRef.current = { ...gesture, x: event.clientX, y: event.clientY };
-      event.preventDefault();
-      return;
-    }
-    if (gesture.mode === "pending") {
-      if (Math.max(Math.abs(dx), Math.abs(dy)) < 7) return;
-      clearMapPanTimer();
-      if (Math.abs(dx) >= Math.abs(dy) * 1.2) {
-        timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
-      } else {
-        event.currentTarget.scrollTop -= dy;
-        timelineGestureRef.current = { ...gesture, mode: "scroll", x: event.clientX, y: event.clientY };
-      }
-      event.preventDefault();
-      return;
-    }
-    if (gesture.mode === "scroll") {
-      event.currentTarget.scrollTop -= dy;
-      timelineGestureRef.current = { ...gesture, x: event.clientX, y: event.clientY };
-      event.preventDefault();
-      return;
-    }
-    if (gesture.mode !== "pan") return;
-    const now = performance.now();
-    const delta = event.clientX - gesture.x;
-    const dt = now - gesture.time;
-    timelinePan().queue(delta);
-    timelineGestureRef.current = {
-      ...gesture,
-      x: event.clientX,
-      y: event.clientY,
-      time: now,
-      velocity: dt > 0 ? delta / dt : gesture.velocity,
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+    const controller = createTimelinePointerController({
+      stage,
+      lifecycleTarget: window,
+      visibilityTarget: document,
+      pan: timelinePan(),
+      zoom: timelineZoom(),
+      isMapPanTarget: (event) => mapPanTargetRef.current(event),
+      moveMap: (dx, dy) => setMapOffset((offset) => ({ x: offset.x + dx, y: offset.y + dy })),
+      stopInertia: stopTimelineInertia,
+      startInertia: startTimelineInertia,
+    });
+    pointerControllerRef.current = controller;
+    return () => {
+      pointerControllerRef.current = null;
+      controller.dispose();
     };
-    event.preventDefault();
-  };
-
-  const onStagePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!timelinePointersRef.current.has(event.pointerId)) return;
-    clearMapPanTimer();
-    timelinePointersRef.current.delete(event.pointerId);
-    const gesture = timelineGestureRef.current;
-    timelineGestureRef.current = null;
-    timelinePanRef.current?.flush();
-    timelineZoomRef.current?.flush();
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-    if (gesture?.mode === "pan" && timelinePointersRef.current.size === 0) startTimelineInertia(gesture.velocity);
-  };
-  useEffect(() => () => {
-    stopTimelineInertia();
-    clearMapPanTimer();
-    timelinePanRef.current?.cancel();
-    timelineZoomRef.current?.cancel();
   }, []);
 
   const dynastiesById = useMemo(() => {
@@ -680,10 +573,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       data-timeline-stage
       data-testid="timeline-workspace"
       data-map-vertical-alignment={mapVerticalAlignment}
-      onPointerDown={onStagePointerDown}
-      onPointerMove={onStagePointerMove}
-      onPointerUp={onStagePointerUp}
-      onPointerCancel={onStagePointerUp}
+      onPointerDown={(event) => pointerControllerRef.current?.pointerDown(event.nativeEvent)}
+      onPointerMove={(event) => pointerControllerRef.current?.pointerMove(event.nativeEvent)}
       style={{
         ["--center-guide-x" as string]: `${centerGuideX(viewport)}px`,
         ...(stageViewportHeight > 0

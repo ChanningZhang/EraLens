@@ -210,40 +210,72 @@ type WebKitGestureEvent = Event & {
   clientX: number;
 };
 
-let gestureLastScale = 1;
-
-function onGestureStart(event: Event) {
-  if (isEditableTarget(event.target)) return;
-  event.preventDefault();
-  wheelPan.flush();
-  wheelZoom.flush();
-  gestureLastScale = (event as WebKitGestureEvent).scale;
+/** Safari trackpad gestures only; touchscreen pinch is owned by the stage. */
+export function createWebKitGestureHandlers(options: {
+  isTouchActive(): boolean;
+  isEditableTarget(target: EventTarget | null): boolean;
+  pan: Pick<ReturnType<typeof createFramePanAccumulator>, "flush">;
+  zoom: Pick<ReturnType<typeof createFrameZoomAccumulator>, "flush" | "queue">;
+}) {
+  let lastScale = 1;
+  let active = false;
+  const reset = () => { active = false; lastScale = 1; };
+  return {
+    reset,
+    start(event: Event) {
+      reset();
+      if (options.isEditableTarget(event.target)) return;
+      event.preventDefault();
+      if (options.isTouchActive()) return;
+      options.pan.flush();
+      options.zoom.flush();
+      lastScale = (event as WebKitGestureEvent).scale;
+      active = true;
+    },
+    change(event: Event) {
+      if (options.isEditableTarget(event.target)) return;
+      event.preventDefault();
+      if (!active || options.isTouchActive()) { reset(); return; }
+      const ge = event as WebKitGestureEvent;
+      const factor = ge.scale / lastScale;
+      lastScale = ge.scale;
+      if (Math.abs(factor - 1) > 0.0005) options.zoom.queue(factor, ge.clientX);
+    },
+    end(event: Event) {
+      if (!options.isEditableTarget(event.target)) event.preventDefault();
+      if (active) options.zoom.flush();
+      reset();
+    },
+  };
 }
 
-function onGestureChange(event: Event) {
-  if (isEditableTarget(event.target)) return;
-  event.preventDefault();
-
-  const ge = event as WebKitGestureEvent;
-  const factor = ge.scale / gestureLastScale;
-  gestureLastScale = ge.scale;
-  if (Math.abs(factor - 1) <= 0.0005) return;
-
-  wheelZoom.queue(factor, ge.clientX);
+let activeTouchCount = 0;
+const gestures = createWebKitGestureHandlers({
+  isTouchActive: () => activeTouchCount > 0,
+  isEditableTarget,
+  pan: wheelPan,
+  zoom: wheelZoom,
+});
+function onTouchChange(event: Event) {
+  activeTouchCount = (event as TouchEvent).touches.length;
+  gestures.reset();
 }
-
-function onGestureEnd(event: Event) {
-  if (isEditableTarget(event.target)) return;
-  event.preventDefault();
-  wheelZoom.flush();
-  gestureLastScale = 1;
+function resetInput() {
+  activeTouchCount = 0;
+  gestures.reset();
+  wheelPan.cancel();
+  wheelZoom.cancel();
 }
+function onInputVisibilityChange() { if (document.hidden) resetInput(); }
 
 type TimelineWheelHost = Window & {
   __eralensTimelineWheel?: (event: WheelEvent) => void;
   __eralensTimelineGestureStart?: (event: Event) => void;
   __eralensTimelineGestureChange?: (event: Event) => void;
   __eralensTimelineGestureEnd?: (event: Event) => void;
+  __eralensTimelineTouchChange?: (event: Event) => void;
+  __eralensTimelineInputReset?: () => void;
+  __eralensTimelineInputVisibilityChange?: () => void;
 };
 
 /** Window capture listeners — survive Ruler/Stage remounts from HMR. */
@@ -265,12 +297,28 @@ export function installTimelineWheel() {
   if (host.__eralensTimelineGestureEnd) {
     window.removeEventListener("gestureend", host.__eralensTimelineGestureEnd, GESTURE_OPTS);
   }
-  window.addEventListener("gesturestart", onGestureStart, GESTURE_OPTS);
-  window.addEventListener("gesturechange", onGestureChange, GESTURE_OPTS);
-  window.addEventListener("gestureend", onGestureEnd, GESTURE_OPTS);
-  host.__eralensTimelineGestureStart = onGestureStart;
-  host.__eralensTimelineGestureChange = onGestureChange;
-  host.__eralensTimelineGestureEnd = onGestureEnd;
+  window.addEventListener("gesturestart", gestures.start, GESTURE_OPTS);
+  window.addEventListener("gesturechange", gestures.change, GESTURE_OPTS);
+  window.addEventListener("gestureend", gestures.end, GESTURE_OPTS);
+  host.__eralensTimelineGestureStart = gestures.start;
+  host.__eralensTimelineGestureChange = gestures.change;
+  host.__eralensTimelineGestureEnd = gestures.end;
+
+  for (const type of ["touchstart", "touchend", "touchcancel"]) {
+    if (host.__eralensTimelineTouchChange) window.removeEventListener(type, host.__eralensTimelineTouchChange, true);
+    window.addEventListener(type, onTouchChange, { capture: true, passive: true });
+  }
+  for (const type of ["blur", "pagehide"]) {
+    if (host.__eralensTimelineInputReset) window.removeEventListener(type, host.__eralensTimelineInputReset);
+    window.addEventListener(type, resetInput);
+  }
+  if (host.__eralensTimelineInputVisibilityChange) {
+    document.removeEventListener("visibilitychange", host.__eralensTimelineInputVisibilityChange);
+  }
+  document.addEventListener("visibilitychange", onInputVisibilityChange);
+  host.__eralensTimelineTouchChange = onTouchChange;
+  host.__eralensTimelineInputReset = resetInput;
+  host.__eralensTimelineInputVisibilityChange = onInputVisibilityChange;
 }
 
 export function useTimelineWheel() {
