@@ -120,10 +120,11 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
 export function resolvePersonDetailTitle(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
-  options: { preQin?: boolean } = {},
+  options: { preQin?: boolean; reignTitle?: string | null } = {},
 ): string {
   if (options.preQin) {
     return firstNonEmpty(
+      options.reignTitle,
       resolvePosthumousAppellation(personContext)?.name,
       personContext?.title,
       personName,
@@ -181,10 +182,12 @@ export function resolvePreQinNameFacts(
 
 /** Pre-Qin card primary follows the shared large-title priority order. */
 function resolvePreQinCardPrimary(
+  reign: ReignLabelFields,
   personContext?: PersonDisplayContext | null,
   personName?: string | null,
 ): string | null {
   return firstNonEmpty(
+    reign.title,
     firstAppellation(personContext?.posthumousNames),
     personContext?.title,
     personName,
@@ -198,7 +201,7 @@ function resolvePreQinGivenName(
 ): string | null {
   if (!personName || isPlaceholderPersonName(personName)) return null;
   const appellation =
-    resolvePreQinCardPrimary(personContext, personName) ??
+    resolvePreQinCardPrimary(reign, personContext, personName) ??
     firstNonEmpty(reign.title) ??
     personName;
   if (!appellation || givenNameIsRedundant(appellation, personName)) return null;
@@ -217,7 +220,7 @@ export function resolveReignPrimaryLabel(
 ): string {
   const personalName = personalNamePrimary(personName);
   if (usesPreQinCardLayout(reign)) {
-    return resolvePreQinCardPrimary(personContext, personalName) ?? "";
+    return resolvePreQinCardPrimary(reign, personContext, personalName) ?? "";
   }
   if (!personalName) {
     return firstNonEmpty(
