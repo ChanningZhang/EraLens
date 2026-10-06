@@ -114,6 +114,14 @@
         {
           "label": "河北省文物考古研究院：河北百年百项重要考古发现—中山王墓",
           "url": "https://www.hbswwkg.com/2021-12/26/content_8697074.html"
+        },
+        {
+          "label": "河北省民族事务委员会：战国第八雄·中山的华夏化与儒化",
+          "url": "https://mw.hebei.gov.cn/system/2023/08/18/030242432.shtml"
+        },
+        {
+          "label": "《史记·赵世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
         }
       ],
       "birth": null,
@@ -424,7 +432,33 @@
       "isMain": false
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "zhongshan-cuo-assumes-kingship",
+      "name": "中山厝参与相王",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -323,
+        "month": 12,
+        "abs": -3853,
+        "confidence": "year"
+      },
+      "atAbs": -3853,
+      "summary": "-323年，中山君厝参与魏国公孙衍倡议的五国相王，通过与韩、赵、魏、燕等国结盟、互认王号，争取与大国对等的政治身份，并抗衡秦、齐、楚的影响。中山以较小国力进入称王诸国之列，王号体现外交承认与自身政治诉求；后来的中山王器铭也保存了其王号，不能把王称理解为周天子授爵。",
+      "dateNote": "采用前323年系年；五国相王的参与及赵是否实际称王应区分，不能将赵武灵王拒绝王号改写为同年正式称王。",
+      "links": [
+        {
+          "label": "河北省民族事务委员会：战国第八雄·中山的华夏化与儒化",
+          "url": "https://mw.hebei.gov.cn/system/2023/08/18/030242432.shtml"
+        },
+        {
+          "label": "《史记·赵世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
+        }
+      ]
+    }
+  ],
   "relations": [],
   "manifest": {
     "slug": "chunqiu-zhanguo/zhongshan",
@@ -443,7 +477,7 @@
       "dynasties": 1,
       "reigns": 8,
       "missingReigns": 0,
-      "events": 0,
+      "events": 1,
       "relations": 0,
       "capitals": 0
     },
@@ -611,6 +645,14 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "河北省民族事务委员会：战国第八雄·中山的华夏化与儒化",
+        "url": "https://mw.hebei.gov.cn/system/2023/08/18/030242432.shtml"
+      },
+      {
+        "label": "《史记·赵世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
       }
     ],
     "notes": [
@@ -635,7 +677,9 @@
       "2026-10-05：开国候选逐项复核后保留原概述：zhongshan-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05称谓字段修正：按库内 SQL 查询，将中山文公、桓公、成公仅存的称号从 persons.name 移出；所属人物概述均注明本名失载，保留 posthumousNames 与称号。桓公两段在位属于同一人物，按person记录修正一次。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06爵称变动事件：zhongshan-cuo-assumes-kingship，对应zhongshan的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

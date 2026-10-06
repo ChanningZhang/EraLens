@@ -142,6 +142,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/赵武灵王"
+        },
+        {
+          "label": "《史记·赵世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
+        },
+        {
+          "label": "《资治通鉴》卷3",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
         }
       ],
       "birth": null,
@@ -166,6 +174,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/赵惠文王"
+        },
+        {
+          "label": "《史记·赵世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
+        },
+        {
+          "label": "《资治通鉴》卷3",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
         }
       ],
       "birth": null,
@@ -550,7 +566,33 @@
       "isMain": false
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "zhao-huiwen-royal-accession",
+      "name": "赵惠文王以王号受国",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -299,
+        "month": 12,
+        "abs": -3565,
+        "confidence": "year"
+      },
+      "atAbs": -3565,
+      "summary": "-299年，赵武灵王将国政交给王子何，何以王号即位，是为赵惠文王，武灵王自号主父。此前武灵王曾在列国相王时表示不愿徒有王名；胡服骑射及向中山、北方扩张之后，他选择由新王治理国政，自己继续领兵经营边疆。此次传国明确使用王号，并形成主父与在位国王并存的权力格局。",
+      "dateNote": "《史记·赵世家》武灵王二十七年五月戊申大朝、立何为王；农历月日未可靠换算，按年精度。采用惠文王王年起点，不断言武灵王此前从未使用王称。",
+      "links": [
+        {
+          "label": "《史记·赵世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
+        },
+        {
+          "label": "《资治通鉴》卷3",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
+        }
+      ]
+    }
+  ],
   "relations": [],
   "manifest": {
     "slug": "chunqiu-zhanguo/zhao-warring",
@@ -569,7 +611,7 @@
       "dynasties": 1,
       "reigns": 10,
       "missingReigns": 0,
-      "events": 0,
+      "events": 1,
       "relations": 0,
       "capitals": 0
     },
@@ -777,6 +819,14 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《史记·赵世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
+      },
+      {
+        "label": "《资治通鉴》卷3",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
       }
     ],
     "notes": [
@@ -802,7 +852,9 @@
       "赵王朝止于前228年邯郸陷落；赵嘉前228至前222年续立已由chunqiu-minor的dai-warring单独收录，不将赵主泳道重复延至前222年。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
-      "赵武灵王时期是否自称王及赵惠文王称王时间，来源有异说。本包以《史记》表中赵惠文王王年自前299年起作为王阶段起点；前296年是灭中山年，不作改称年。"
+      "赵武灵王时期是否自称王及赵惠文王称王时间，来源有异说。本包以《史记》表中赵惠文王王年自前299年起作为王阶段起点；前296年是灭中山年，不作改称年。",
+      "2026-10-06爵称变动事件：zhao-huiwen-royal-accession，对应zhao-warring的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

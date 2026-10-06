@@ -18,7 +18,7 @@ function fixture(onQuery?:(sql:string,db:DatabaseSync)=>void) {
   for(const id of ["a","b"]) insert("dynasties",{id,name:id,scope:"cn",region:"east_asia",start_year:500,start_month:1,end_year:520,end_month:12,start_abs:absMonth(500,1),end_abs:absMonth(520,12),start_confidence:"year",end_confidence:"year",color_token:"ochre"});
   for(const id of ["old","future","ordinary","rival"]) insert("persons",{id,name:id,...(id==="ordinary"?{birth_year:500,birth_month:1,death_year:510,death_month:12}:{})});
   for(const [id,personId,dynastyId,start,end,track] of [["r-old","old","a",502,504,null],["r-next","future","b",507,510,null],["r-rival","rival","b",505,508,"parallel"]] as const) insert("reigns",{id,person_id:personId,dynasty_id:dynastyId,title:personId,start_year:start,start_month:1,end_year:end,end_month:12,start_abs:absMonth(start,1),end_abs:absMonth(end,12),start_confidence:"year",end_confidence:"year",claim_track:track,is_informal_monarch:0});
-  insert("events",{id:"event",name:"event",kind:"politics",time_mode:"point",at_year:505,at_month:6,at_day:15,at_confidence:"day",at_abs:absMonth(505,6)});
+  insert("events",{id:"event",name:"event",kind:"politics",time_mode:"point",at_year:505,at_month:6,at_day:15,at_confidence:"day",at_abs:absMonth(505,6),links:JSON.stringify([{label:"史料",url:"https://example.org/source"}])});
   insert("entity_associations",{a_type:"dynasty",a_id:"a",b_type:"event",b_id:"event"});
   insert("entity_associations",{a_type:"event",a_id:"event",b_type:"person",b_id:"old"});
   insert("relations",{id:"fate",from_type:"person",from_id:"old",to_type:"person",to_id:"future",kind:"surrender",at_abs:absMonth(505,12)});
@@ -41,6 +41,8 @@ describe("SQLite timeline layers",() => {
     expect(e.events[0].participantIds).toEqual(["old"]);
     expect(e.events[0].dynastyIds).toEqual(["a"]);
     expect(e.events[0].locationMappings[0].id).toBe("mapping");
+    expect(e.events[0].links).toEqual([{label:"史料",url:"https://example.org/source"}]);
+    expect((await repo.getEntity({type:"event",id:"event"})).links).toEqual(e.events[0].links);
     expect(combineTimelineLayers(r,e,p)).toEqual(await repo.getTimeline(query));
   });
   it("performs no queries for an empty search or a pre-cancelled request",async () => {

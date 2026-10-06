@@ -4780,6 +4780,114 @@
     {
       "aRef": "person:temujin",
       "bRef": "person:tolui"
+    },
+    {
+      "aRef": "dynasty:teng-chunqiu",
+      "bRef": "event:teng-first-zi-title"
+    },
+    {
+      "aRef": "dynasty:chu-chunqiu",
+      "bRef": "event:chu-wu-assumes-kingship"
+    },
+    {
+      "aRef": "event:chu-wu-assumes-kingship",
+      "bRef": "person:chu-r16"
+    },
+    {
+      "aRef": "dynasty:wu-chunqiu",
+      "bRef": "event:wu-shoumeng-assumes-kingship"
+    },
+    {
+      "aRef": "event:wu-shoumeng-assumes-kingship",
+      "bRef": "person:wu-r0"
+    },
+    {
+      "aRef": "dynasty:yue-chunqiu",
+      "bRef": "event:yue-goujian-royal-title"
+    },
+    {
+      "aRef": "event:yue-goujian-royal-title",
+      "bRef": "person:gou-jian"
+    },
+    {
+      "aRef": "dynasty:wei-warring",
+      "bRef": "event:wei-hui-assumes-kingship"
+    },
+    {
+      "aRef": "event:wei-hui-assumes-kingship",
+      "bRef": "person:wei-r2"
+    },
+    {
+      "aRef": "dynasty:qi-chunqiu",
+      "bRef": "event:qi-wei-xuzhou-mutual-kingship"
+    },
+    {
+      "aRef": "event:qi-wei-xuzhou-mutual-kingship",
+      "bRef": "person:qi-r35"
+    },
+    {
+      "aRef": "event:qi-wei-xuzhou-mutual-kingship",
+      "bRef": "person:wei-r2"
+    },
+    {
+      "aRef": "dynasty:qin",
+      "bRef": "event:qin-huiwen-assumes-kingship"
+    },
+    {
+      "aRef": "event:qin-huiwen-assumes-kingship",
+      "bRef": "person:qin-r25"
+    },
+    {
+      "aRef": "dynasty:wei-weiguo",
+      "bRef": "event:wei-si-demotes-to-jun"
+    },
+    {
+      "aRef": "event:wei-si-demotes-to-jun",
+      "bRef": "person:weiguo-r43"
+    },
+    {
+      "aRef": "dynasty:han-warring",
+      "bRef": "event:han-xuanhui-assumes-kingship"
+    },
+    {
+      "aRef": "event:han-xuanhui-assumes-kingship",
+      "bRef": "person:han-r6"
+    },
+    {
+      "aRef": "dynasty:yan-chunqiu",
+      "bRef": "event:yan-yi-assumes-kingship"
+    },
+    {
+      "aRef": "event:yan-yi-assumes-kingship",
+      "bRef": "person:yan-r31"
+    },
+    {
+      "aRef": "dynasty:zhongshan",
+      "bRef": "event:zhongshan-cuo-assumes-kingship"
+    },
+    {
+      "aRef": "event:zhongshan-cuo-assumes-kingship",
+      "bRef": "person:zhongshan-r4"
+    },
+    {
+      "aRef": "dynasty:song-chunqiu",
+      "bRef": "event:song-yan-assumes-kingship"
+    },
+    {
+      "aRef": "event:song-yan-assumes-kingship",
+      "bRef": "person:song-r33"
+    },
+    {
+      "aRef": "dynasty:zhao-warring",
+      "bRef": "event:zhao-huiwen-royal-accession"
+    },
+    {
+      "aRef": "event:zhao-huiwen-royal-accession",
+      "bRef": "person:zhao-r5"
+    },
+    {
+      "aRef": "event:zhao-huiwen-royal-accession",
+      "bRef": "person:zhao-r6"
     }
   ],
   "manifest": {
@@ -4789,7 +4897,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1195
+      "associations": 1222
     },
     "sources": [
       {

@@ -76,7 +76,7 @@ export function rowsForPackage(slug, cache) {
     ...point(row.at, "at"), at_abs: row.atAbs ?? row.at?.abs ?? null,
     ...point(row.start, "start"), start_abs: row.startAbs ?? row.start?.abs ?? null,
     ...point(row.end, "end"), end_abs: row.endAbs ?? row.end?.abs ?? null,
-    summary: row.summary ?? null, meaning: row.meaning ?? null, content: row.content ?? null,
+    summary: row.summary ?? null, meaning: row.meaning ?? null, content: row.content ?? null, links: row.links ?? [],
   }));
   const associations = (cache.associations ?? []).map(row => {
     assertEntityAssociation(row);

@@ -35,7 +35,7 @@ CREATE TABLE events (
   at_year INTEGER, at_month INTEGER, at_day INTEGER, at_abs INTEGER,
   start_year INTEGER, start_month INTEGER, start_day INTEGER, start_abs INTEGER,
   end_year INTEGER, end_month INTEGER, end_day INTEGER, end_abs INTEGER,
-  summary TEXT, meaning TEXT, content TEXT
+  summary TEXT, meaning TEXT, content TEXT, links TEXT NOT NULL DEFAULT '[]'
 );
 CREATE TABLE entity_associations (
  a_type TEXT NOT NULL CHECK(a_type IN ('dynasty','event','person')),

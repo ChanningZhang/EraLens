@@ -814,6 +814,14 @@
         {
           "label": "张志鹏《滕国新考》（宋灭滕及前296年系年考证）",
           "url": "https://www.fdgwz.org.cn/Web/Show/1428"
+        },
+        {
+          "label": "《资治通鉴》卷3",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
+        },
+        {
+          "label": "《史记·宋微子世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷038"
         }
       ],
       "birth": null,
@@ -1743,7 +1751,33 @@
       "isMain": false
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "song-yan-assumes-kingship",
+      "name": "宋君偃称王",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -318,
+        "month": 12,
+        "abs": -3793,
+        "confidence": "year"
+      },
+      "atAbs": -3793,
+      "summary": "-318年，宋君偃采用王号，宋由公称转入称王阶段。此前君偃逐兄剔成而取得国君之位，诸强国相继称王后，他也以王号宣示地位。此后宋攻伐齐、楚、魏等邻国，扩张领土并力求强盛，最终引起诸强国干预；称王并未使宋摆脱夹处大国之间的处境。",
+      "dateNote": "《资治通鉴》周慎靓王三年记宋初称王；《史记》以君偃十一年叙述称王，其即位及称王绝对纪年有异说，采用前318年系年。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷3",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
+        },
+        {
+          "label": "《史记·宋微子世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷038"
+        }
+      ]
+    }
+  ],
   "relations": [],
   "manifest": {
     "slug": "chunqiu-zhanguo/song-chunqiu",
@@ -1762,7 +1796,7 @@
       "dynasties": 1,
       "reigns": 34,
       "missingReigns": 0,
-      "events": 0,
+      "events": 1,
       "relations": 0,
       "capitals": 0
     },
@@ -2162,6 +2196,14 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《资治通鉴》卷3",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷003"
+      },
+      {
+        "label": "《史记·宋微子世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷038"
       }
     ],
     "notes": [
@@ -2184,7 +2226,9 @@
       "2026-10-05：开国候选逐项复核后保留原概述：song-weizi。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05称谓字段修正：按库内 SQL 查询，将宋哀公误填入 persons.name 的谥号移出；《史记·宋微子世家》仅记其称号与在位承继，未载本名。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06爵称变动事件：song-yan-assumes-kingship，对应song-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

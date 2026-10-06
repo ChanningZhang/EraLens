@@ -293,6 +293,16 @@ describe("buildEntityDetail reign", () => {
 });
 
 describe("buildEntityDetail event", () => {
+  it.each(["politics", "idiom", "poetry"] as const)("shows %s sources separately from full text", (kind) => {
+    const links = [{ label: "史料", url: "https://example.org/source" }];
+    const event = EventSchema.parse({ id: "sourced-event", name: "事件", kind, timeMode: "point", at: { year: 505, month: 12 }, atAbs: absMonth(505, 12), links, meaning: "典故释义", content: "史料正文" });
+    const detail = buildEntityDetail({ dynasties: [], reigns: [], persons: [], events: [event], relations: [] }, { type: "event", id: event.id });
+    expect(detail.links).toEqual(links);
+    if (kind !== "idiom") expect(detail.content).toBe("史料正文");
+    const unsourced = { ...event, links: undefined };
+    expect(buildEntityDetail({ dynasties: [], reigns: [], persons: [], events: [unsourced], relations: [] }, { type: "event", id: event.id }).links).toEqual([]);
+  });
+
   it("shows a Chinese kind label instead of the stored enum", () => {
     const store = {
       dynasties: [],

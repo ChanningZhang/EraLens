@@ -616,6 +616,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/秦惠文王"
+        },
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+        },
+        {
+          "label": "《史记·秦本纪》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷005"
         }
       ],
       "birth": null,
@@ -1686,6 +1694,31 @@
       },
       "atAbs": -3097,
       "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。"
+    },
+    {
+      "id": "qin-huiwen-assumes-kingship",
+      "name": "秦惠文君称王",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -325,
+        "month": 12,
+        "abs": -3877,
+        "confidence": "year"
+      },
+      "atAbs": -3877,
+      "summary": "-325年，秦惠文君采用王号，此后称秦惠文王。商鞅变法以来秦国军力增强，已夺取魏的河西等地；在齐魏采用王号的背景下，秦以称王宣示与东方强国对等的地位。次年重新起算王年，王号成为此后秦君的常用称谓，标志秦由传统伯爵称谓进入诸侯争王的政治秩序。",
+      "dateNote": "《资治通鉴》周显王四十四年记夏四月戊午秦初称王；原为传统历法，未作可靠公历月日换算，故保留年精度。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+        },
+        {
+          "label": "《史记·秦本纪》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷005"
+        }
+      ]
     }
   ],
   "relations": [],
@@ -1706,7 +1739,7 @@
       "dynasties": 1,
       "reigns": 31,
       "missingReigns": 0,
-      "events": 2,
+      "events": 3,
       "relations": 0,
       "capitals": 0
     },
@@ -2102,6 +2135,14 @@
       {
         "label": "《史记·秦本纪》",
         "url": "https://zh.wikisource.org/wiki/史記/卷005"
+      },
+      {
+        "label": "《资治通鉴》卷2",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+      },
+      {
+        "label": "《史记·秦本纪》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷005"
       }
     ],
     "notes": [
@@ -2128,7 +2169,9 @@
       "2026-10-05：开国候选逐项复核后保留原概述：ying-qi。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
-      "秦前288年秦、齐短暂称帝后旋即去帝号，史籍仅能支持年内短期变化，未将其伪装成年精度连续分期；保留稳定阶段秦伯、秦王及前221年秦帝制的分期。"
+      "秦前288年秦、齐短暂称帝后旋即去帝号，史籍仅能支持年内短期变化，未将其伪装成年精度连续分期；保留稳定阶段秦伯、秦王及前221年秦帝制的分期。",
+      "2026-10-06爵称变动事件：qin-huiwen-assumes-kingship，对应qin的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

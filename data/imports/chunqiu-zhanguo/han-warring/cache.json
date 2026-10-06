@@ -162,6 +162,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/韩宣惠王"
+        },
+        {
+          "label": "《史记·韩世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷045"
+        },
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
         }
       ],
       "birth": null,
@@ -620,7 +628,33 @@
       "isMain": false
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "han-xuanhui-assumes-kingship",
+      "name": "韩宣惠君称王",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -323,
+        "month": 12,
+        "abs": -3853,
+        "confidence": "year"
+      },
+      "atAbs": -3853,
+      "summary": "-323年，韩宣惠君采用王号，韩国由侯称转入称王阶段。秦、齐、魏已经采用王号，列国又通过外交活动互认名号，韩借此争取与强国对等的身份。同年燕也称王，赵武灵王却以实力不足拒绝采用王称；这说明称王取决于各国的政治选择，并非周王统一升爵。",
+      "dateNote": "采用前323年系年；五国相王的参与及赵是否实际称王应区分，不能将赵武灵王拒绝王号改写为同年正式称王。",
+      "links": [
+        {
+          "label": "《史记·韩世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷045"
+        },
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+        }
+      ]
+    }
+  ],
   "relations": [],
   "manifest": {
     "slug": "chunqiu-zhanguo/han-warring",
@@ -639,7 +673,7 @@
       "dynasties": 1,
       "reigns": 11,
       "missingReigns": 0,
-      "events": 0,
+      "events": 1,
       "relations": 0,
       "capitals": 0
     },
@@ -839,6 +873,14 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《史记·韩世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷045"
+      },
+      {
+        "label": "《资治通鉴》卷2",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
       }
     ],
     "notes": [
@@ -860,7 +902,9 @@
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：开国经历逐条复核并改写：han-jing。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06爵称变动事件：han-xuanhui-assumes-kingship，对应han-warring的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

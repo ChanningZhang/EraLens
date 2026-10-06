@@ -88,7 +88,7 @@ export function mapEvent(row: Row, associations: readonly EntityAssociation[], l
     end: point(row.end_year, row.end_month, row.end_day) ? { ...point(row.end_year, row.end_month, row.end_day), confidence: own(row, "end_confidence") } : undefined,
     atAbs: n(row.at_abs), startAbs: n(row.start_abs), endAbs: n(row.end_abs),
     ...eventAssociationIds(String(row.id),associations),
-    summary: own(row, "summary"), meaning: own(row, "meaning"), content: own(row, "content"),
+    summary: own(row, "summary"), meaning: own(row, "meaning"), content: own(row, "content"), links: json(row.links, []),
     locationMappings,
   });
 }

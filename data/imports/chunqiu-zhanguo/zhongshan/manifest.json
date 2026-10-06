@@ -15,7 +15,7 @@
     "dynasties": 1,
     "reigns": 8,
     "missingReigns": 0,
-    "events": 0,
+    "events": 1,
     "relations": 0,
     "capitals": 0,
     "dynastyGroups": 0,
@@ -187,6 +187,14 @@
     {
       "label": "《史记·十二诸侯年表》",
       "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    },
+    {
+      "label": "河北省民族事务委员会：战国第八雄·中山的华夏化与儒化",
+      "url": "https://mw.hebei.gov.cn/system/2023/08/18/030242432.shtml"
+    },
+    {
+      "label": "《史记·赵世家》",
+      "url": "https://zh.wikisource.org/zh-hans/史記/卷043"
     }
   ],
   "notes": [
@@ -211,6 +219,8 @@
     "2026-10-05：开国候选逐项复核后保留原概述：zhongshan-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
     "2026-10-05称谓字段修正：按库内 SQL 查询，将中山文公、桓公、成公仅存的称号从 persons.name 移出；所属人物概述均注明本名失载，保留 posthumousNames 与称号。桓公两段在位属于同一人物，按person记录修正一次。",
     "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "2026-10-06爵称变动事件：zhongshan-cuo-assumes-kingship，对应zhongshan的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+    "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
   ]
 }

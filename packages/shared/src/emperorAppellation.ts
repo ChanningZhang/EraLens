@@ -126,8 +126,6 @@ function hasPreQinAppellation(
   return Boolean(firstNonEmpty(
     personName,
     firstAppellation(personContext?.personAltNames),
-    personContext?.personAncestralXing,
-    personContext?.personClanShi,
     personContext?.title,
     firstAppellation(personContext?.posthumousNames),
     firstAppellation(personContext?.templeNames),

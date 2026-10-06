@@ -224,6 +224,8 @@ INSERT INTO location_mapping (
 
 ### events（point / span）
 
+缓存中的 `links: [{label,url}]` 写入 `events.links`（JSON 文本，默认 `[]`），由共享详情映射到“来源”。`content` 用于正文，不能放史料来源目录。
+
 事件只用 `point` 或 `span`。point 使用 `at_year/month/day/at_confidence`；span 使用独立起止日期与 confidence。真实持续不足一个日历年的过程记为 point，满一年及以上记为 span；不得从占位年月计算持续时间。点事件无需持续时间精度字段。
 
 ```sql

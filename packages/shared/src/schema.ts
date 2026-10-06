@@ -290,6 +290,7 @@ export const EventSchema = z
     summary: z.string().optional(),
     meaning: z.string().optional(),
     content: z.string().optional(),
+    links: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
     locationMappings: z.array(LocationMappingSchema).default([]),
   })
   .superRefine((event, ctx) => {

@@ -488,7 +488,7 @@ export function buildEntityDetail(
       summary: event.summary,
       related: options.includeRelated === false ? [] : uniqueRelatedItems([...locationRelated, ...ordinaryRelated]),
       capitalTenures: [],
-      links: [],
+      links: event.links ?? [],
     };
   }
 
@@ -519,7 +519,7 @@ export function buildEntityDetail(
     content: event.content,
     related: options.includeRelated === false ? [] : uniqueRelatedItems([...locationRelated, ...ordinaryRelated]),
     capitalTenures: [],
-    links: [],
+    links: event.links ?? [],
   };
 }
 

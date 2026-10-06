@@ -60,6 +60,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/勾践"
+        },
+        {
+          "label": "《史记·越王勾践世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷041"
         }
       ],
       "birth": null,
@@ -591,7 +595,29 @@
       "isMain": false
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "yue-goujian-royal-title",
+      "name": "勾践以越王称号即位",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -496,
+        "month": 12,
+        "abs": -5929,
+        "confidence": "approximate_year"
+      },
+      "atAbs": -5929,
+      "summary": "约-496年，允常去世，勾践继位，《史记》称其为越王。吴王阖庐乘越国新丧出兵，勾践在檇李迎战并击败吴军，阖庐伤重而死，吴越争衡由此加剧。史书中的王号体现越君自有的政治称谓，与周礼记事中的爵称应分开理解；现存记载不足以确认勾践即位之年就是越国首次称王之年。",
+      "dateNote": "依勾践元年及檇李之战通行系年定位；仅确认勾践时使用王称，首次称王时间及其与允常王号的关系未详。",
+      "links": [
+        {
+          "label": "《史记·越王勾践世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷041"
+        }
+      ]
+    }
+  ],
   "relations": [],
   "manifest": {
     "slug": "chunqiu-zhanguo/yue-chunqiu",
@@ -610,7 +636,7 @@
       "dynasties": 1,
       "reigns": 11,
       "missingReigns": 0,
-      "events": 0,
+      "events": 1,
       "relations": 0,
       "capitals": 0
     },
@@ -798,6 +824,10 @@
       {
         "label": "《史记·越王勾践世家》",
         "url": "https://zh.wikisource.org/wiki/史記/卷041"
+      },
+      {
+        "label": "《史记·越王勾践世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷041"
       }
     ],
     "notes": [
@@ -823,7 +853,9 @@
       "2026-10-05：开国经历逐条复核并改写：yue-r3。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
-      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
+      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。",
+      "2026-10-06爵称变动事件：yue-goujian-royal-title，对应yue-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }

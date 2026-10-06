@@ -66,6 +66,18 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/魏惠成王"
+        },
+        {
+          "label": "魏惠王（称王、逢泽及纪年异说）",
+          "url": "https://zh.wikipedia.org/wiki/魏惠王"
+        },
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+        },
+        {
+          "label": "《史记·魏世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷044"
         }
       ],
       "birth": null,
@@ -523,6 +535,35 @@
       },
       "atAbs": -4069,
       "summary": "孙膑减灶诱敌，于马陵伏击魏军，庞涓战死，魏国元气大伤。"
+    },
+    {
+      "id": "wei-hui-assumes-kingship",
+      "name": "魏惠王称王与逢泽会盟",
+      "kind": "politics",
+      "timeMode": "point",
+      "at": {
+        "year": -344,
+        "month": 12,
+        "abs": -4105,
+        "confidence": "approximate_year"
+      },
+      "atAbs": -4105,
+      "summary": "约-344年，魏惠王召集诸侯在逢泽会盟，并率诸侯朝见周天子。魏凭战国前期的强势地位争取诸侯领导权，通行叙述把惠王称王与这次会盟相联系。王号突破韩、赵、魏原受封为侯的等级；随后魏与齐互认王号，称王成为战国诸国以实力争取对等地位的政治手段。",
+      "dateNote": "采用前344年系年，按通行称王与逢泽会盟系年标约年；魏惠王称王、改元与徐州相王的系年存在不同解释，不能以同年会盟直接证明独立称王仪式。",
+      "links": [
+        {
+          "label": "魏惠王（称王、逢泽及纪年异说）",
+          "url": "https://zh.wikipedia.org/wiki/魏惠王"
+        },
+        {
+          "label": "《资治通鉴》卷2",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+        },
+        {
+          "label": "《史记·魏世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷044"
+        }
+      ]
     }
   ],
   "relations": [],
@@ -543,7 +584,7 @@
       "dynasties": 1,
       "reigns": 8,
       "missingReigns": 0,
-      "events": 3,
+      "events": 4,
       "relations": 0,
       "capitals": 0
     },
@@ -727,6 +768,18 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "魏惠王（称王、逢泽及纪年异说）",
+        "url": "https://zh.wikipedia.org/wiki/魏惠王"
+      },
+      {
+        "label": "《资治通鉴》卷2",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷002"
+      },
+      {
+        "label": "《史记·魏世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷044"
       }
     ],
     "notes": [
@@ -749,7 +802,9 @@
       "2026-10-05：开国经历逐条复核并改写：wei-wen。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：wei-warring。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06爵称变动事件：wei-hui-assumes-kingship，对应wei-warring的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
     ]
   }
 }
