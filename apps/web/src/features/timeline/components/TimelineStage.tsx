@@ -357,6 +357,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       string,
       {
         title?: string;
+        personAltNames?: string[];
         ancestralXing?: string;
         clanShi?: string;
         posthumousNames?: string[];
@@ -369,11 +370,13 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         person.ancestralXing ||
         person.clanShi ||
         person.title ||
+        person.altNames.length ||
         person.posthumousNames.length ||
         person.templeNames.length
       ) {
         map.set(person.id, {
           title: person.title,
+          personAltNames: person.altNames,
           ancestralXing: person.ancestralXing,
           clanShi: person.clanShi,
           posthumousNames: person.posthumousNames,

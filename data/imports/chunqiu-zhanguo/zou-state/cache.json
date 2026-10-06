@@ -244,7 +244,7 @@
     },
     {
       "id": "zou-r10",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -254,7 +254,7 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
@@ -557,7 +557,7 @@
     },
     {
       "id": "zou-missing-after-he-1",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -567,7 +567,7 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
@@ -600,7 +600,7 @@
     },
     {
       "id": "zou-missing-after-kaogong-1",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -610,13 +610,13 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
     {
       "id": "zou-missing-after-kaogong-2",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -635,7 +635,7 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
@@ -737,7 +737,7 @@
     },
     {
       "id": "zou-missing-after-mugong-1",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -756,13 +756,13 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
     {
       "id": "zou-missing-after-mugong-2",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -781,7 +781,7 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "？",
+      "title": "",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     }

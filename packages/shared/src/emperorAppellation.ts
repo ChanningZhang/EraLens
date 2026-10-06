@@ -29,6 +29,7 @@ const PLACEHOLDER_PERSON_NAME = /^(缺失|史料缺|不明)$/;
 /** Stored 姓/氏 and person-level 庙谥 from import. */
 export type PersonDisplayContext = {
   title?: string | null;
+  personAltNames?: string[];
   personAncestralXing?: string | null;
   personClanShi?: string | null;
   posthumousNames?: string[];
@@ -41,6 +42,7 @@ export type PreQinClanContext = PersonDisplayContext;
 export function buildPreQinClanContext(
   person?: {
     title?: string | null;
+    altNames?: string[];
     ancestralXing?: string | null;
     clanShi?: string | null;
     posthumousNames?: string[];
@@ -49,6 +51,7 @@ export function buildPreQinClanContext(
 ): PersonDisplayContext {
   return {
     title: person?.title,
+    personAltNames: person?.altNames,
     personAncestralXing: person?.ancestralXing,
     personClanShi: person?.clanShi,
     posthumousNames: person?.posthumousNames,
@@ -116,6 +119,21 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
   return null;
 }
 
+function hasPreQinAppellation(
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+): boolean {
+  return Boolean(firstNonEmpty(
+    personName,
+    firstAppellation(personContext?.personAltNames),
+    personContext?.personAncestralXing,
+    personContext?.personClanShi,
+    personContext?.title,
+    firstAppellation(personContext?.posthumousNames),
+    firstAppellation(personContext?.templeNames),
+  ));
+}
+
 /** Large title in person details. Pre-Qin people prefer appellations over personal names. */
 export function resolvePersonDetailTitle(
   personName?: string | null,
@@ -128,7 +146,7 @@ export function resolvePersonDetailTitle(
       resolvePosthumousAppellation(personContext)?.name,
       personContext?.title,
       personName,
-    ) ?? "";
+    ) ?? (hasPreQinAppellation(personName, personContext) ? "" : "？");
   }
   return firstNonEmpty(
     personName,
@@ -191,7 +209,7 @@ function resolvePreQinCardPrimary(
     firstAppellation(personContext?.posthumousNames),
     personContext?.title,
     personName,
-  );
+  ) ?? (hasPreQinAppellation(personName, personContext) ? null : "？");
 }
 
 function resolvePreQinGivenName(

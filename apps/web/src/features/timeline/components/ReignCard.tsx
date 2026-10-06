@@ -10,8 +10,6 @@ import {
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
-import { useQuery } from "@tanstack/react-query";
-import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
 import {
   buildReignCardTooltip,
@@ -84,18 +82,7 @@ function ReignCardImpl({
       selection.focusReignId === reign.id) ||
     (selection.selected?.type === "reign" && selection.selected.id === reign.id);
 
-  const personQuery = useQuery({
-    queryKey: ["person", reign.personId],
-    queryFn: async () => {
-      const repo = await getRepository();
-      const detailEntity = await repo.getEntity({ type: "person", id: reign.personId });
-      return detailEntity.title;
-    },
-    enabled: !personNameFromTimeline,
-    staleTime: 5 * 60_000,
-  });
-
-  const personName = personNameFromTimeline ?? personQuery.data;
+  const personName = personNameFromTimeline;
   const { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText } = useMemo(() => {
     const clan = buildPreQinClanContext(personClan);
     const label = resolveReignCardLabel(reign, personName, { cardWidthPx: visualWidth, clan });
