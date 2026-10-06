@@ -152,6 +152,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-cb4d41325d9e27b63ee876fa63edb8eb','辽宁省抚顺市新宾满族自治县永陵镇二道村附近界藩山城遗址',124.849567,41.670843,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ce682c985f4b881033df398af3a13567','山西省太原市',112.549656,37.870451,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-cf3e297dd8fb8b96d544c6c985bba47c','河南省郑州市中牟县官渡镇',113.98,34.72,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-changchun-xinjing-center-approx','吉林省长春市',125.322758,43.892561,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d0231a628469cb0d67dc543490ea94a1','内蒙古自治区呼和浩特市和林格尔县',111.821695,40.379226,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d0f912cc274515214338b7c96ffce31f','山东省济宁市曲阜市',116.986212,35.581933,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d111d3facba210da70660efdd42050d7','山西省晋城市高平市长平之战遗址',112.92,35.8,'WGS84');

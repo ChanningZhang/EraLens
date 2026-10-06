@@ -26,7 +26,7 @@
 
 - 所有时间使用 `AbsMonth`：`absMonth(year, month) = toAstroYear(year) * 12 + month - 1`，其中公元前年份 `toAstroYear(year) = year + 1`。公元前年份以负数存入 `*_year`。
 - 相邻时间区间的归属统一经过 `packages/shared/src/timelineOwnership.ts`，按精度由 `timelineIntervals.ts` 裁定。调用侧不得自建端点判断、分组规则或手写 `+1 年/月` 截断。
-- 真正并立或语义上可共存的区间保留并行记录，并用 `claim_track` 或对应实体分组表达；不得让接续裁定合并并存数据。
+- 真正并立或语义上可共存的区间保留并行记录；在位轨道用 `claim_track` 表达，实体分组只用于聚类独立实体，不代替并立轨道；不得让接续裁定合并并存数据。
 - 年精度点事件与命运线使用 12 月作为年桶右缘；泳道起年和迄年的占位月份分别为 1 月和 12 月。占位月份不得显示成已知月份。
 - 所有日期的史料精度、历法换算、置信度和展示统一遵循 [日期处理 Skill](.cursor/skills/eralens-date-handling/SKILL.md)。界面年份仍统一显示带符号年份（如「-221年」「2026年」），事件轴仍在视口内时事件名必须可见。
 
@@ -51,7 +51,7 @@
 ## 关键展示语义
 
 - 金色是正统覆盖色，泳道本色由完整目录顺序稳定分配；禁止把 `color_token` 写为 `gold`。正统覆盖由 `reigns.is_main` 标记，并立 track 不标为正统主线。
-- 并立君主用 `claim_track` 分行；同时并存的政权用 `dynasty_groups` 聚类；同一王朝的改名阶段合并为一条 `dynasties` 记录，`name` 的 JSON `periods` 保存分时名称。人物总览与在位详情读取 `alt_names` 首项；泳道按视口时间通过共享解析函数取名，名称切换不依赖 reign 边界。
+- 同一王朝行内的并立君主、竞争政权或政治主张用 `claim_track` 分行，并以 `claim_label` 标明轨道身份；不得把 `dynasty_groups` 当作并立政权轨道。`dynasty_groups` 仅将多条独立王朝记录聚为共同历史类别/时期。确需独立王朝泳道时才新增 `dynasties` 记录。同一王朝的改名阶段合并为一条 `dynasties` 记录，`name` 的 JSON `periods` 保存分时名称。人物总览与在位详情读取 `alt_names` 首项；泳道按视口时间通过共享解析函数取名，名称切换不依赖 reign 边界。
 - 卡片宽度遵循在位时长与缩放比例；文字放不下时调整排版，不改变时间几何。相续泳道的标签颜色取舞台中线对应相位。
 - 无 reign 且生卒可核的人物显示在人物层，君主不重复进入人物层。帝王卡、事件、人物和王朝名点击共用详情抽屉。
 - 跨王朝命运线表达有史料依据的杀害、投降、禅让、被俘或灭国关系；灭国线从末君指向灭国方当时的君主，不据此推断末君被杀或被俘。事件时点是纵向主轴，端点解析与绘制沿用 `reignFateRelations.ts` 和 `reignFateLayout.ts`。
