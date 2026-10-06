@@ -78,7 +78,7 @@ description: >-
 ## 先秦称谓与纯谥字（2026-10-06）
 
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
-- 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`，完整旧称可保留在 `altNames`。
+- 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
 - 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
 - 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝优先 `claimLabel`，其次 `dynasties.altNames[0]`。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。

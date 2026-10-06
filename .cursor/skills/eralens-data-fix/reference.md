@@ -65,3 +65,5 @@
 该对象位于包 `cache.json` 顶层；`manifest.json` 是统一生成器写出的副本，不直接编辑。
 
 先秦称谓约定：`posthumousNames: ["庄"]`、`title: "庄公"`；卡片与详情大字优先级为 `reigns.title → persons.title → posthumousNames → persons.name`。详情称呼有 reign 焦点同前三项；无焦点仍为谥字 → persons.title。
+
+无可靠谥号记载的先秦人物：`name: "车辅"`、`title: "邾子车辅"`、`posthumousNames: []`。完整称呼允许含国名与本名，不能仅存「子」「侯」「君」等孤立爵称；单字本名和通称不按长度机械扩写。
