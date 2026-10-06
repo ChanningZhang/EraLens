@@ -1049,6 +1049,7 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('eve
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','sino-japanese-amity-treaty','person','zaichun');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','sino-tibetan-war','person','zaitian');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','song-jin-alliance-mongol','person','ogedei');
+INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','song-jin-alliance-mongol','person','wanyan-chenglin');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','song-jin-alliance-mongol','person','wanyan-shouxu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','song-jin-alliance-mongol','person','zhao-yun');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('event','song-yan-assumes-kingship','person','song-r33');

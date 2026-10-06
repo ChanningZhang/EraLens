@@ -1578,21 +1578,6 @@
       "eventId": "jingkang-incident"
     },
     {
-      "id": "rel-wanyan-liang-zhao-gou-killed",
-      "fromRef": "person:wanyan-liang",
-      "toRef": "person:zhao-gou",
-      "kind": "killed",
-      "at": {
-        "year": 1161,
-        "month": 11,
-        "abs": 13942,
-        "day": 26,
-        "confidence": "day"
-      },
-      "atAbs": 13942,
-      "eventId": "caishi-battle"
-    },
-    {
       "id": "rel-zhao-shi-hu-bilie-surrender",
       "fromRef": "person:zhao-shi",
       "toRef": "person:hu-bilie",
@@ -1877,16 +1862,30 @@
       "eventId": "jin-destroy-liao"
     },
     {
-      "id": "rel-wanyan-shouxu-ogedei-killed",
-      "fromRef": "person:wanyan-shouxu",
+      "id": "rel-wanyan-chenglin-ogedei-conquered",
+      "fromRef": "reign:reign-wanyan-chenglin-jin-nvzhen",
       "toRef": "person:ogedei",
-      "kind": "killed",
+      "kind": "conquered",
       "at": {
         "year": 1234,
         "month": 2,
         "abs": 14809,
         "day": 9,
-        "precision": "day",
+        "confidence": "day"
+      },
+      "atAbs": 14809,
+      "eventId": "song-jin-alliance-mongol"
+    },
+    {
+      "id": "rel-wanyan-chenglin-zhao-yun-conquered",
+      "fromRef": "reign:reign-wanyan-chenglin-jin-nvzhen",
+      "toRef": "person:zhao-yun",
+      "kind": "conquered",
+      "at": {
+        "year": 1234,
+        "month": 2,
+        "abs": 14809,
+        "day": 9,
         "confidence": "day"
       },
       "atAbs": 14809,
@@ -2543,6 +2542,22 @@
       {
         "label": "《史记·田儋列传》",
         "url": "https://ctext.org/text.pl?if=gb&node=8277&show=parallel"
+      },
+      {
+        "label": "《金史·本纪第五·海陵》",
+        "url": "https://zh.wikisource.org/zh-hans/金史/卷5"
+      },
+      {
+        "label": "《金史·列传第二十·完颜元宜》",
+        "url": "https://zh.wikisource.org/zh-hans/金史/卷82"
+      },
+      {
+        "label": "《金史·本纪第十八·哀宗下》",
+        "url": "https://zh.wikisource.org/zh-hans/金史/卷18"
+      },
+      {
+        "label": "《宋史·卷412·孟珙传》",
+        "url": "https://zh.wikisource.org/zh-hans/宋史/卷412"
       }
     ],
     "notes": [
@@ -2582,7 +2597,10 @@
       "2026-10-04：按用户要求增加中山第一次失国命运线：中山桓公前406年首段在位记录（reign-zhongshan-r2-zhongshan）→魏文侯（wei-wen），kind=conquered，约前406年。中山桓公约前406年失国、约前380年复国，故此线只表达魏灭中山造成的第一次失国，不表示桓公被杀、被俘或中山最终灭亡。年份按中山桓公条目及本包已采用的约前406年口径，atConfidence=approximate_year，12月仅为年桶右缘。《史记·魏世家》《乐毅列传》支持魏文侯遣将攻取中山；《史记·周本纪》所记前403年为韩、魏、赵正式列为诸侯之年。魏文侯泳道仍从前403年起，因年桶右缘至该卡起点相隔25个月，将接收方未来在位卡通用匹配上限扩至36个月。 起点显式引用桓公前406年首段在位记录，以免同年武公末段与桓公首段重叠时人物级端点无法唯一解析。",
       "2026-10-06：按《史记·陈杞世家》《管蔡世家》补入楚惠王相关命运线：陈湣公（chen-r25）→楚惠王（chu-r29），kind=killed，前478年；蔡侯齐（cai-r25）→楚惠王（chu-r29），kind=conquered，前447年。月份12仅作年桶右缘；蔡侯齐亡而非被杀，故灭国线不推断其死亡方式。",
       "2026-10-06更正并补充：吴王夫差→越王勾践的前473年关系原已有killed记录，不新增重复conquered关系。按用户澄清补入陈、蔡此前一度亡国的命运线：陈留（reign:reign-chen-r22-chen-chunqiu）→楚灵王（chu-r25），前534年；蔡灵侯（cai-r17）→楚灵王（chu-r25），前531年，均为kind=conquered。依据《左传·昭公八年》“陈君留奔郑”“楚师灭陈”及《史记·管蔡世家》楚灵王诱杀蔡灵侯、楚灭蔡记载。楚平王于前529/528年复立陈、蔡，两线表示前一次亡国，月份12仅作年桶右缘；蔡灵侯被杀的个人事实保留在人物资料中，命运线类型表示国家被灭。陈留的具体reign引用用于解决同年年精度接续导致person端点不唯一的问题。",
-      "2026-10-06修复：田巿被杀命运线由错误对象刘邦改指田荣。依据《史记·田儋列传》“田荣怒，追击杀齐王市于即墨”；刘邦与此事无关。"
+      "2026-10-06修复：田巿被杀命运线由错误对象刘邦改指田荣。依据《史记·田儋列传》“田荣怒，追击杀齐王市于即墨”；刘邦与此事无关。",
+      "2026-10-06修复：删除“完颜亮→赵构，kind=killed”的错误命运关系。依据《金史·海陵纪》，1161年十一月乙未，浙西兵马都统制完颜元宜等军反，海陵遇弑；《完颜元宜传》详述元宜等犯御营并杀海陵。赵构及南宋军队不是直接弑杀者；采石之战与随后瓜洲军中兵变分属不同事件，故不再将“采石之战”作为其死亡事件。",
+      "2026-10-06修复：按《金史·哀宗下》《宋史·孟珙传》将蔡州陷落记为蒙宋联军共同攻灭金朝。金哀宗完颜守绪于城破时自缢，末帝完颜承麟继位后为乱兵所害、金亡；灭国线从末帝完颜承麟分别指向当时蒙古大汗窝阔台与南宋皇帝赵昀，kind=conquered，不把哀宗自尽记作被窝阔台所杀。1234年的蒙古方按分时政权名“蒙古帝国”理解，不称“大元”。",
+      "2026-10-06修复：蔡州陷落命运线起点显式引用完颜承麟当日的在位记录 reign-wanyan-chenglin-jin-nvzhen。哀宗与承麟的继位、死亡同在一日，按共享区间归属规则，仅用人物 ID 会解析到前任，无法唯一指向末帝；故用 reign ID 定位灭国线起点。"
     ]
   }
 }

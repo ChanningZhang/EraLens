@@ -4131,6 +4131,10 @@
     },
     {
       "aRef": "event:song-jin-alliance-mongol",
+      "bRef": "person:wanyan-chenglin"
+    },
+    {
+      "aRef": "event:song-jin-alliance-mongol",
       "bRef": "person:zhao-yun"
     },
     {
@@ -4897,7 +4901,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1222
+      "associations": 1223
     },
     "sources": [
       {

@@ -215,7 +215,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   }, [data]);
 
   const boundsQuery = useDataBounds();
-  const capitalsQuery = useCapitalLocations(boundsQuery.data);
+  const capitalsQuery = useCapitalLocations(boundsQuery.data, data?.reigns);
   const allCapitals = capitalsQuery.data;
   const timelineCatalog = useTimelineCatalog();
 
@@ -260,26 +260,31 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const activeCapitals = useMemo(
     () => {
       const capitals = capitalsQuery.data ?? [];
-      // The map uses dynasty mappings; reign associations only determine monarch tenures.
-      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs);
+      // Reign-mapped capitals are only shown for the selected reign, never as ambient map points.
+      const visible = capitalsActiveAtAbs(
+        capitals.filter((capital) => capital.mappingKind !== "reign"),
+        labelAnchorAbs,
+      );
       const selected = selection.selected;
       if (!selected) {
         return visible;
       }
-      const reign = selected.type === "reign" ? data?.reigns.find((item) => item.id === selected.id) : undefined;
+      const reign = selected.type === "reign"
+        ? data?.reigns.find((item) => item.id === selected.id)
+        : selected.type === "person" && selection.focusReignId
+          ? data?.reigns.find((item) => item.id === selection.focusReignId)
+          : undefined;
       const personReigns = selected.type === "person" ? data?.reigns.filter((item) => item.personId === selected.id) ?? [] : [];
-      const dynastyIds = new Set<string>();
-      if (selected.type === "dynasty") dynastyIds.add(selected.id);
-      if (reign) dynastyIds.add(reign.dynastyId);
-      for (const item of personReigns) dynastyIds.add(item.dynastyId);
       const selectedCapitals = selected.type === "location_mapping"
         ? capitals.filter((capital) => capital.id === selected.id)
         : selected.type === "dynasty"
-          ? capitals.filter((capital) => dynastyIds.has(capital.dynastyId))
-          : capitalsForReigns(reign ? [reign] : personReigns, data?.reigns ?? [], capitals);
+          ? capitals.filter((capital) => capital.dynastyId === selected.id)
+          : reign
+            ? capitals.filter((capital) => capital.reignIds?.includes(reign.id))
+            : capitalsForReigns(personReigns, data?.reigns ?? [], capitals);
       return [...new Map([...visible, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
     },
-    [capitalsQuery.data, labelAnchorAbs, selection.selected, data?.reigns],
+    [capitalsQuery.data, labelAnchorAbs, selection.selected, selection.focusReignId, data?.reigns],
   );
   const nearbyEvents = useMemo(() => {
     if (!data) return [];
