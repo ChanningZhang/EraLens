@@ -107,6 +107,7 @@ async function rows(db: Awaited<ReturnType<SqliteDatabaseProvider["open"]>>, sql
 
 export class SqliteTimelineRepository implements TimelineRepository {
   private dbPromise: ReturnType<SqliteDatabaseProvider["open"]> | null = null;
+  private conqueredCountsCache: { version: string; value: Promise<Map<string, number>> } | null = null;
   constructor(
     private readonly provider: SqliteDatabaseProvider,
     private readonly settings: import("./repository").SettingsStore = {
@@ -232,7 +233,48 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const visiblePersonIds = reigns.filter(r => visibleDynastyIds.has(r.dynastyId) && rangeIntersectsWindow(r.startAbs,r.endAbs,query.fromAbs,query.toAbs)).map(r => r.personId);
     const persons = [...new Map([...captionPeople,...(await this.selectIds("persons",visiblePersonIds)).map(mapPerson)].map(p => [p.id,p])).values()];
     const dynastyGroups = (await this.selectIds("dynasty_groups",dynasties.flatMap(d => d.groupId ? [d.groupId] : []))).map(mapGroup);
-    return reignTimelineFromStore({ ...this.emptyStore(), dynasties, dynastyGroups, reigns, persons, relations },query,version);
+    const conqueredCounts = await this.conqueredDynastyCounts(version);
+    const timeline = reignTimelineFromStore({ ...this.emptyStore(), dynasties, dynastyGroups, reigns, persons, relations },query,version);
+    return {
+      ...timeline,
+      dynasties: timeline.dynasties.map(dynasty => ({
+        ...dynasty,
+        conqueredDynastyCount: conqueredCounts.get(dynasty.id) ?? 0,
+      })),
+    };
+  }
+
+  private conqueredDynastyCounts(version: string): Promise<Map<string, number>> {
+    if (this.conqueredCountsCache?.version === version) return this.conqueredCountsCache.value;
+    const value = (async () => {
+      const db = await this.database();
+      const rowsWithCounts = await rows(db, `
+        WITH fate_dynasties AS (
+          SELECT
+            CASE r.from_type WHEN 'reign' THEN from_reign.dynasty_id WHEN 'person' THEN from_person.dynasty_id END AS source_dynasty_id,
+            CASE r.to_type WHEN 'reign' THEN to_reign.dynasty_id WHEN 'person' THEN to_person.dynasty_id END AS target_dynasty_id
+          FROM relations r
+          LEFT JOIN reigns from_reign ON r.from_type='reign' AND from_reign.id=r.from_id
+          LEFT JOIN persons from_person ON r.from_type='person' AND from_person.id=r.from_id
+          LEFT JOIN reigns to_reign ON r.to_type='reign' AND to_reign.id=r.to_id
+          LEFT JOIN persons to_person ON r.to_type='person' AND to_person.id=r.to_id
+          WHERE r.kind<>'succession'
+        )
+        SELECT target_dynasty_id, COUNT(DISTINCT source_dynasty_id) AS dynasty_count
+        FROM fate_dynasties
+        WHERE source_dynasty_id IS NOT NULL
+          AND target_dynasty_id IS NOT NULL
+          AND source_dynasty_id<>target_dynasty_id
+        GROUP BY target_dynasty_id
+      `);
+      return new Map(rowsWithCounts.map(row => [String(row.target_dynasty_id), Number(row.dynasty_count)]));
+    })();
+    const cacheEntry = { version, value };
+    this.conqueredCountsCache = cacheEntry;
+    void value.catch(() => {
+      if (this.conqueredCountsCache === cacheEntry) this.conqueredCountsCache = null;
+    });
+    return value;
   }
 
   private async eventLayer(query: TimelineQuery, version: string): Promise<EventTimeline> {

@@ -15,6 +15,24 @@
   cursor: help;
 }
 
+/* SVG groups receive a browser-default focus ring around their full bounds.
+   Keep keyboard focus visible on the relationship itself instead. */
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible .path,
+.link:focus-visible .tick {
+  stroke: var(--color-ochre);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-ochre) 38%, transparent));
+}
+
+.link:focus-visible .originRing {
+  stroke: var(--color-ochre);
+  stroke-width: 2;
+}
+
 .hit {
   fill: none;
   stroke: transparent;

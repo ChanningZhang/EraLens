@@ -89,6 +89,8 @@ export const DynastySchema = z.object({
   ethnicity: z.string().trim().min(1).optional(),
   /** Time-varying one-character label from the cited Zhou states table. */
   feudalRank: DynastyFeudalRankDefinitionSchema.optional(),
+  /** Number of distinct dynasties this dynasty conquered, derived by the API. */
+  conqueredDynastyCount: z.number().int().nonnegative().optional(),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
   start: TimePointSchema,

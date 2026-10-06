@@ -2195,6 +2195,36 @@
       "ancestralXing": "姬",
       "title": "东周君",
       "dynastyId": "zhou-guo-east"
+    },
+    {
+      "id": "tian-rong",
+      "name": "田荣",
+      "roles": [
+        "君主"
+      ],
+      "bio": "秦末齐地军事首领，田儋从弟、田横之兄。田儋死后驱逐田假，立田巿为齐王；项羽分封后据齐反楚，前206年追杀田巿并自立为齐王。前205年项羽伐齐，田荣兵败逃至平原，为当地人所杀。",
+      "links": [
+        {
+          "label": "《史记·田儋列传》",
+          "url": "https://ctext.org/text.pl?if=gb&node=8277&show=parallel"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": -205,
+        "month": 12,
+        "abs": -2437,
+        "confidence": "year"
+      },
+      "altNames": [
+        "齐王田荣"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "妫",
+      "clanShi": "田",
+      "title": "齐王",
+      "dynastyId": "qi-chuhan"
     }
   ],
   "dynastyGroups": [],
@@ -2538,6 +2568,29 @@
         ]
       },
       "note": "战国周王畿小国，都巩（巩义）；前367年由西周威公少子根所立，非东周王朝（zhou-east）。前249年秦庄襄王灭。"
+    },
+    {
+      "id": "qi-chuhan",
+      "name": "齐",
+      "altNames": [
+        "齐",
+        "田齐"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -206,
+        "month": 1,
+        "abs": -2460,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -205,
+        "month": 12,
+        "abs": -2437,
+        "confidence": "year"
+      },
+      "note": "楚汉之际田荣据齐地自立为齐王，至前205年为项羽所败。"
     }
   ],
   "reigns": [
@@ -4164,6 +4217,30 @@
       "claimTrack": null,
       "claimLabel": null,
       "isMain": false
+    },
+    {
+      "id": "reign-tian-rong-qi-chuhan",
+      "dynastyId": "qi-chuhan",
+      "personId": "tian-rong",
+      "title": "齐王",
+      "eraNames": [],
+      "start": {
+        "year": -206,
+        "month": 1,
+        "abs": -2460,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -205,
+        "month": 12,
+        "abs": -2437,
+        "confidence": "year"
+      },
+      "startAbs": -2460,
+      "endAbs": -2437,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
     }
   ],
   "events": [
@@ -4565,9 +4642,9 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "persons": 74,
-      "dynasties": 8,
-      "reigns": 67,
+      "persons": 75,
+      "dynasties": 9,
+      "reigns": 68,
       "events": 2,
       "relations": 57
     },
@@ -4983,6 +5060,10 @@
       {
         "label": "东周君：爵位称谓与小说区别",
         "url": "https://zh.wikipedia.org/wiki/东周君"
+      },
+      {
+        "label": "《史记·田儋列传》",
+        "url": "https://ctext.org/text.pl?if=gb&node=8277&show=parallel"
       }
     ],
     "notes": [
@@ -5031,7 +5112,8 @@
       "2026-10-06爵称变动审计暂缓三项：xue-chunqiu侯→伯(-453)、ju-chunqiu侯→子(-453)原值只是春秋/战国分类边界，不能生成该年实际改爵事件。《春秋》已有更早的薛伯、莒子记载；zhou-guo-east公→君(约-279)为用户指定的末君定位，正史无该年降爵证据，“公贬为君”见小说《东周列国志》，不生成小说情节为史实事件。保留原字段，后续修订需分别考证。",
       "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
       "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：xue-r1、xue-r2、xue-r4、teng-r1、teng-r7、teng-r8、teng-r9、teng-r2、teng-r3、teng-r4、teng-r5、teng-r6、qi-state-r1、qi-state-r1b、qi-state-gong、qi-state-de、qi-state-r1c、qi-state-r2、qi-state-xiao、qi-state-r3、qi-state-r4、qi-state-dao、qi-state-yin、qi-state-xi、qi-state-r5、qi-state-ai、qi-state-chu、qi-state-r6、ju-r1、ju-r1b、ju-r2、ju-r3、ju-r5、ju-r6、ju-r7、zhou-guo-jie、zhou-guo-zao、zhou-guo-chao、zhou-guo-wugong、zhou-guo-jiu、zhou-guo-gen、teng-r16、teng-r17、zhou-guo-zhaowenjun、zhou-guo-wu。",
-      "2026-10-06单字爵称修复：全量检查persons.title的54条单字记录，14条为无可核谥号君主的孤立爵称，恢复有来源的完整称呼，保留独立persons.name与空posthumousNames；另40条为单字本名或尧、舜、禹、纣等通称，不能按单字长度机械补国名或爵称。本包修复：teng-r18→滕侯昃、teng-r19→滕公丘、teng-hou-su→滕侯苏。滕侯昃、滕公丘沿用列表及人物链接称呼；苏采用已有释名“苏”，完整称呼作滕侯苏，滕侯𩵦仍保留为检索异名；沿用原有身份争议与来源取舍，不提高世系或年代置信度。"
+      "2026-10-06单字爵称修复：全量检查persons.title的54条单字记录，14条为无可核谥号君主的孤立爵称，恢复有来源的完整称呼，保留独立persons.name与空posthumousNames；另40条为单字本名或尧、舜、禹、纣等通称，不能按单字长度机械补国名或爵称。本包修复：teng-r18→滕侯昃、teng-r19→滕公丘、teng-hou-su→滕侯苏。滕侯昃、滕公丘沿用列表及人物链接称呼；苏采用已有释名“苏”，完整称呼作滕侯苏，滕侯𩵦仍保留为检索异名；沿用原有身份争议与来源取舍，不提高世系或年代置信度。",
+      "2026-10-06：修复田巿被杀命运线的错误对象。依据《史记·田儋列传》，新增田荣及楚汉之际据齐自立的齐政权、田荣在位记录，使田巿→田荣关系可解析；前206年为追杀田巿、自立齐王之年，田荣败死于前205年。失载月份按年精度处理，12月为年桶占位。"
     ]
   }
 }
