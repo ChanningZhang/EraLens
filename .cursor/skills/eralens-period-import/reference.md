@@ -273,9 +273,9 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 ### 王朝分时名称
 
-`dynasties.name` 仍为文本。普通名称原样保存；分时名称保存 JSON 字符串，唯一顶层字段为 `periods`，各项含 `name`、`start`、`end`，日期使用带 confidence 的 HistoricalDate。代表名称放在 `altNames[0]`，不得在 JSON 中另存 default；原国号、自称及检索名保留在后续别名。
+`dynasties.name` 仍为文本。普通名称原样保存；分时名称保存 JSON 字符串，顶层字段为 `default` 与 `periods`，各项含 `name`、`start`、`end`，日期使用带 confidence 的 HistoricalDate。default 存俗称（如「成汉」），用于无时点或阶段范围外展示；altNames[0] 存代表国号或自称（如「成」），两者独立，其余别名保留检索词。
 
-人物总览、在位详情及相关人物摘要使用代表名称。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
+人物总览、在位详情及相关人物摘要优先 claimLabel，其次 altNames[0]。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
 
 同一王朝的改名阶段使用单一王朝 ID，跨包只能引用，不能重复拥有王朝行。整库构建直接从唯一所有者缓存写入最终王朝 ID 和全部引用；不再使用 `dynastyMerges` 增量入口。
 
@@ -298,7 +298,7 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 | 数据 | 入库 | 运行时 |
 |---|---|---|
 | 主线分类 | `cache.json.reigns[].isMain` → `reigns.is_main` | 运行时据此展示主线/正统标记 |
-| 王朝分时名称 | `dynasties.name` JSON 字符串，代表名称在 `alt_names[0]` | 共享解析器；阶段切换独立于 reign 边界 |
+| 王朝分时名称 | `dynasties.name` JSON 字符串，俗称在 `default`，国号/自称在 `alt_names[0]` | 共享解析器；阶段切换独立于 reign 边界 |
 | 检索别名 | `persons.alt_names` | 作为人工来源字段，由触发器合并进 `search_terms` |
 | 人物搜索索引 | `persons.search_terms` | 预生成姓名、别名、姓/氏组合、庙谥、title、朝代 + 庙谥；`text[]` GIN 完整词查询 |
 | 庙号/谥号/称呼 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | 泳道卡片优先 title；人物详情独立按年代优先 person 庙谥（618 年及以后优先庙号），缺失时才回退 title；**不**从 title 推导庙谥 |

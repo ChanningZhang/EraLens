@@ -2281,10 +2281,10 @@
   "dynasties": [
     {
       "id": "yuan",
-      "name": "{\"periods\":[{\"name\":\"蒙古帝国\",\"start\":{\"year\":1206,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"}},{\"name\":\"元\",\"start\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"},\"end\":{\"year\":1388,\"month\":11,\"confidence\":\"month\"}}]}",
+      "name": "{\"default\":\"元\",\"periods\":[{\"name\":\"蒙古帝国\",\"start\":{\"year\":1206,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"}},{\"name\":\"元\",\"start\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"},\"end\":{\"year\":1388,\"month\":11,\"confidence\":\"month\"}}]}",
       "altNames": [
-        "元",
         "大元",
+        "元",
         "蒙元",
         "北元",
         "残元",
@@ -2427,10 +2427,10 @@
     },
     {
       "id": "ming",
-      "name": "{\"periods\":[{\"name\":\"吴\",\"start\":{\"year\":1364,\"month\":2,\"day\":4,\"confidence\":\"day\"},\"end\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"}},{\"name\":\"明\",\"start\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"},\"end\":{\"year\":1644,\"month\":4,\"day\":25,\"confidence\":\"day\"}},{\"name\":\"南明\",\"start\":{\"year\":1644,\"month\":6,\"day\":19,\"confidence\":\"day\"},\"end\":{\"year\":1662,\"month\":6,\"day\":1,\"confidence\":\"day\"}}]}",
+      "name": "{\"default\":\"明\",\"periods\":[{\"name\":\"吴\",\"start\":{\"year\":1364,\"month\":2,\"day\":4,\"confidence\":\"day\"},\"end\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"}},{\"name\":\"明\",\"start\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"},\"end\":{\"year\":1644,\"month\":4,\"day\":25,\"confidence\":\"day\"}},{\"name\":\"南明\",\"start\":{\"year\":1644,\"month\":6,\"day\":19,\"confidence\":\"day\"},\"end\":{\"year\":1662,\"month\":6,\"day\":1,\"confidence\":\"day\"}}]}",
       "altNames": [
-        "明",
         "大明",
+        "明",
         "吴",
         "西吴",
         "南明"
@@ -2453,10 +2453,10 @@
     },
     {
       "id": "qing",
-      "name": "{\"periods\":[{\"name\":\"金\",\"start\":{\"year\":1616,\"month\":2,\"confidence\":\"month\"},\"end\":{\"year\":1636,\"month\":5,\"day\":14,\"confidence\":\"day\"}},{\"name\":\"清\",\"start\":{\"year\":1636,\"month\":5,\"day\":15,\"confidence\":\"day\"},\"end\":{\"year\":1912,\"month\":2,\"confidence\":\"month\"}}]}",
+      "name": "{\"default\":\"清\",\"periods\":[{\"name\":\"金\",\"start\":{\"year\":1616,\"month\":2,\"confidence\":\"month\"},\"end\":{\"year\":1636,\"month\":5,\"day\":14,\"confidence\":\"day\"}},{\"name\":\"清\",\"start\":{\"year\":1636,\"month\":5,\"day\":15,\"confidence\":\"day\"},\"end\":{\"year\":1912,\"month\":2,\"confidence\":\"month\"}}]}",
       "altNames": [
-        "清",
         "大清",
+        "清",
         "金",
         "后金"
       ],
@@ -6155,7 +6155,8 @@
       "2026-10-05：补足政权形成前经历：sun-yat-sen。边疆传统记载保留限定，近现代人物沿用原职位字段，不赋予帝王称谓。",
       "2026-10-05：补查并改写跨王统、更换政权与复国阶段人物：zhu-yousong、zhu-yujian、zhu-youlang。不只依据泳道第一位识别开国或重建统治；改号、继统与另建政权分开叙述。",
       "2026-10-05：开国候选逐项复核后保留原概述：xu-shouhui、zhang-shicheng、ming-yuzhen。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
-      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：song-han、ming。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。"
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：song-han、ming。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "2026-10-06：按用户要求恢复 name JSON 的 default 与 periods；default 保存俗称，未指定时点或时点不在名称阶段时使用 default。altNames[0] 恢复代表国号/自称，人物与在位详情仍优先 claimLabel、其次 altNames[0]；取代此前将代表显示名放入首项的约定。yuan：default=元，altNames[0]=大元；ming：default=明，altNames[0]=大明；qing：default=清，altNames[0]=大清。名称日期及精度不变；国号/自称选用本包已有别名与来源。"
     ]
   }
 }

@@ -53,7 +53,7 @@ docker compose up --build
 
 ### 王朝分时名称
 
-普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存仅含 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。代表显示名称放在 `altNames[0]`；人物与在位详情使用代表名称，泳道按视口时间切换名称。整库构建以导入源的最终记录和引用为准，不再运行旧的增量合并脚本。
+普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存含 `default` 与 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。`default` 保存俗称（如「成汉」），用于无时点或时点不在任何阶段内时的展示；`altNames[0]` 保存代表国号或自称（如「成」），与 default 独立。人物与在位详情优先使用 claimLabel，其次 altNames[0]；泳道与地图按视口时间切换阶段名称，阶段范围外回退 default。整库构建以导入源的最终记录和引用为准，不再运行旧的增量合并脚本。
 
 ### 时间轴分层查询与性能验证
 

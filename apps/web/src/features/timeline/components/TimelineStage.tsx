@@ -293,10 +293,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       return rangesIntersect(span.startAbs, span.endAbs, windowStart, windowEnd);
     });
   }, [data, viewport.centerAbs, eventDisplay, selection.selected]);
-  const dynastyNamesById = useMemo(() => {
-    const map = new Map<string, string>();
+  const catalogDynastiesById = useMemo(() => {
+    const map = new Map<string, Dynasty>();
     for (const dynasty of timelineCatalog?.dynasties ?? []) {
-      map.set(dynasty.id, dynasty.name);
+      map.set(dynasty.id, dynasty);
     }
     return map;
   }, [timelineCatalog]);
@@ -695,7 +695,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           <CapitalMapLayer
             capitals={activeCapitals}
             dynastiesById={dynastiesById}
-            dynastyNamesById={dynastyNamesById}
+            catalogDynastiesById={catalogDynastiesById}
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
             layout={mapLayout}

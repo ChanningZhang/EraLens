@@ -124,7 +124,10 @@
 }
 
 .settingsButton svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.settingsButton:hover { color: var(--color-ink); border-color: var(--color-accent); }
+/* Touch browsers can retain :hover after a tap, including when the panel closes. */
+@media (hover: hover) and (pointer: fine) {
+  .settingsButton:hover { color: var(--color-ink); border-color: var(--color-accent); }
+}
 
 .settingsPanel {
   position: absolute;

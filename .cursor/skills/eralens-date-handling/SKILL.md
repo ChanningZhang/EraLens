@@ -71,9 +71,9 @@ description: >-
 
 ## 王朝分时名称
 
-- `dynasties.name` 中 JSON `periods` 的起止日期使用 HistoricalDate 和独立端点 confidence；不在 JSON 中保存 default，代表名称位于 `altNames[0]`。
+- `dynasties.name` 中 JSON `periods` 的起止日期使用 HistoricalDate 和独立端点 confidence；JSON `default` 保存俗称；`altNames[0]` 独立保存代表国号或自称。
 - 名称阶段归属通过共享 `phaseOwnershipInterval()` 与 `timelineIntervals.ts` 裁定，不按 reign 边界拆分，也不手写年月截断。
-- 人物与在位详情使用代表名称；泳道按视口时点解析阶段名称。
+- 人物与在位详情优先 claimLabel，其次 altNames[0]；泳道与地图按视口时点解析阶段名称，无时点或阶段范围外回退 default。
 
 ## 共享实现与复核
 

@@ -1,6 +1,7 @@
 import type { z } from "zod";
 import type { HistoricalDate } from "./schema";
 export type DynastyNameDefinition = {
+  default: string;
   periods: Array<{ name: string; start: HistoricalDate; end: HistoricalDate }>;
 };
 export const DynastyNameDefinitionSchema: z.ZodType<DynastyNameDefinition>;

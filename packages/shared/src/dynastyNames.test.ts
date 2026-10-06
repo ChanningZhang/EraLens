@@ -10,7 +10,7 @@ import { buildPersonSearchTerms } from "./personSearchTerms";
 const date = (year: number, month = 1, day = 1) => ({ year, month, day, confidence: "day" as const });
 const dynasty = DynastySchema.parse({
   id: "changing-state", altNames: ["代表名称", "检索别名"],
-  name: JSON.stringify({ periods: [
+  name: JSON.stringify({ default: "俗称", periods: [
     { name: "旧名", start: date(1900), end: date(1901, 1, 15) },
     { name: "新名", start: date(1901, 1, 15), end: date(1902, 12, 31) },
   ] }),
@@ -32,12 +32,13 @@ describe("dynasty names", () => {
     expect(resolveDynastyDefaultName({ name: "唐", altNames: ["大唐"] })).toBe("唐");
   });
 
-  it("takes the representative name only from the first alias", () => {
-    expect(resolveDynastyDefaultName(dynasty)).toBe("代表名称");
-    expect(resolveDynastyName(dynasty)).toBe("代表名称");
-    expect(resolveDynastyName(dynasty, absMonth(1800))).toBe("代表名称");
-    expect(resolveDynastyName(dynasty, absMonth(2000))).toBe("代表名称");
-    expect(resolveDynastyDefaultName({ ...dynasty, altNames: ["新的代表名称"] })).toBe("新的代表名称");
+  it("takes the default name independently of aliases", () => {
+    expect(resolveDynastyDefaultName(dynasty)).toBe("俗称");
+    expect(resolveDynastyName(dynasty)).toBe("俗称");
+    expect(resolveDynastyName(dynasty, absMonth(1800))).toBe("俗称");
+    expect(resolveDynastyName(dynasty, absMonth(2000))).toBe("俗称");
+    expect(resolveDynastyDefaultName({ ...dynasty, altNames: ["新的国号"] })).toBe("俗称");
+    expect(resolveDynastyDefaultName({ ...dynasty, altNames: [] })).toBe("俗称");
   });
 
   it("switches in the middle of one reign without changing its geometry or ID", () => {
@@ -48,6 +49,14 @@ describe("dynasty names", () => {
     expect(reign.id).toBe("one-continuous-reign");
   });
 
+  it("uses default in a gap between name periods without using the first alias", () => {
+    const gap = { ...dynasty, name: JSON.stringify({ default: "俗称", periods: [
+      { name: "旧名", start: date(1900), end: date(1900, 12, 31) },
+      { name: "新名", start: date(1902), end: date(1902, 12, 31) },
+    ] }) };
+    expect(resolveDynastyName(gap, absMonth(1901, 6))).toBe("俗称");
+  });
+
   it("uses shared ownership at a day boundary", () => {
     const start = dynastyNameSearchEntries(dynasty, dynasty.startAbs).find(entry => entry.name === "新名")!.abs;
     expect(start).toBeCloseTo(absMonth(1901) + 15 / 31);
@@ -56,7 +65,7 @@ describe("dynasty names", () => {
   });
 
   it("keeps year ownership despite a more precise later start", () => {
-    const timed = { altNames: ["代表"], name: JSON.stringify({ periods: [
+    const timed = { altNames: ["代表"], name: JSON.stringify({ default: "俗称", periods: [
       { name: "旧", start: { year: 1364, month: 1, confidence: "year" }, end: { year: 1368, month: 12, confidence: "year" } },
       { name: "新", start: { year: 1368, month: 1, confidence: "month" }, end: { year: 1400, month: 12, confidence: "year" } },
     ] }) };
@@ -65,7 +74,7 @@ describe("dynasty names", () => {
   });
 
   it("supports BCE/CE intervals without a year zero", () => {
-    const timed = { altNames: ["代表"], name: JSON.stringify({ periods: [
+    const timed = { altNames: ["代表"], name: JSON.stringify({ default: "俗称", periods: [
       { name: "前", start: date(-2), end: date(-1, 12, 31) },
       { name: "后", start: date(1), end: date(2, 12, 31) },
     ] }) };
@@ -73,11 +82,11 @@ describe("dynasty names", () => {
     expect(resolveDynastyName(timed, absMonth(1))).toBe("后");
   });
 
-  it("rejects malformed JSON, obsolete defaults, wrong shapes, and missing representative aliases", () => {
-    for (const name of ["{bad", "[]", "null", '{"periods":[]}', JSON.stringify({ default: "obsolete", periods: JSON.parse(dynasty.name).periods })]) {
+  it("rejects malformed JSON, wrong shapes, and missing or empty defaults", () => {
+    for (const name of ["{bad", "[]", "null", '{"periods":[]}', JSON.stringify({ periods: JSON.parse(dynasty.name).periods }), JSON.stringify({ default: "  ", periods: JSON.parse(dynasty.name).periods })]) {
       expect(() => parseDynastyName(name)).toThrow();
     }
-    expect(DynastySchema.safeParse({ ...dynasty, altNames: [] }).success).toBe(false);
+    expect(DynastySchema.safeParse({ ...dynasty, altNames: [] }).success).toBe(true);
   });
 
   it("uses the representative name in focused and overview person details, including related summaries", () => {
@@ -90,8 +99,26 @@ describe("dynasty names", () => {
     expect(buildEntityDetail(associated, { type: "dynasty", id: dynasty.id }).related.find(item => item.ref.type === "person")?.subtitle).toBe("代表名称 · 太祖");
   });
 
+  it.each([
+    ["蜀汉", ["汉", "蜀", "季汉"], undefined, "汉"],
+    ["蜀汉", ["汉", "蜀", "季汉"], "并立称号", "并立称号"],
+    ["蜀汉", ["汉", "蜀", "季汉"], "  ", "汉"],
+    ["蜀汉", [], undefined, "蜀汉"],
+  ])("uses claim label then first alias for a focused plain dynasty: %s / %s / %s", (name, altNames, claimLabel, expected) => {
+    const plainStore: TimelineDataStore = {
+      ...store,
+      dynasties: [{ ...dynasty, name, altNames }],
+      reigns: [{ ...reign, claimLabel }],
+    };
+    expect(buildEntityDetail(plainStore, { type: "reign", id: reign.id }).subtitle).toBe(`${expected} · 君主`);
+    expect(buildEntityDetail(plainStore, { type: "person", id: "ruler" }, { focusReignId: reign.id }).subtitle)
+      .toBe(`${expected} · 君主`);
+    expect(buildEntityDetail(plainStore, { type: "person", id: "ruler" }).subtitle)
+      .toBe(`${altNames[0] || name} · 太祖`);
+  });
+
   it("resolves dynasty detail titles from optional time context", () => {
-    expect(buildEntityDetail(store, { type: "dynasty", id: dynasty.id }).title).toBe("代表名称");
+    expect(buildEntityDetail(store, { type: "dynasty", id: dynasty.id }).title).toBe("俗称");
     expect(buildEntityDetail(store, { type: "dynasty", id: dynasty.id }, { atAbs: absMonth(1901, 2) }).title).toBe("新名");
   });
 
@@ -100,9 +127,10 @@ describe("dynasty names", () => {
     const newer = searchEntities(store, "新名")[0]!;
     expect(resolveDynastyName(dynasty, newer.abs)).toBe("新名");
     expect(searchEntities(store, "名").filter(hit => hit.ref.type === "dynasty")).toHaveLength(1);
-    expect(searchEntities(store, "检索别名")[0]?.label).toBe("代表名称");
+    expect(searchEntities(store, "检索别名")[0]?.label).toBe("俗称");
+    expect(searchEntities(store, "俗称")[0]?.label).toBe("俗称");
     const terms = buildPersonSearchTerms({ ...store.persons[0]!, templeNames: ["太祖"] }, [reign], [dynasty]);
-    expect(terms).toEqual(expect.arrayContaining(["旧名太祖", "新名太祖", "代表名称太祖"]));
+    expect(terms).toEqual(expect.arrayContaining(["俗称太祖", "旧名太祖", "新名太祖", "代表名称太祖"]));
     expect(terms.some(term => term.includes("periods"))).toBe(false);
   });
 });

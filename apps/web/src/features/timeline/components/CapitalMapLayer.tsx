@@ -25,7 +25,7 @@ type PlacedCapital = {
 type Props = {
   capitals: readonly CapitalLocation[];
   dynastiesById: ReadonlyMap<string, Dynasty>;
-  dynastyNamesById: ReadonlyMap<string, string>;
+  catalogDynastiesById: ReadonlyMap<string, Dynasty>;
   laneColorMap: ReadonlyMap<string, ColorToken>;
   atAbs: number;
   layout: ChinaMapLayout | null;
@@ -42,21 +42,17 @@ function roleClassName(role: CapitalLocation["role"]) {
 function resolveDynastyName(
   capital: CapitalLocation,
   dynastiesById: ReadonlyMap<string, Dynasty>,
-  dynastyNamesById: ReadonlyMap<string, string>,
+  catalogDynastiesById: ReadonlyMap<string, Dynasty>,
   atAbs: number,
 ): string {
-  const raw = (
-    dynastiesById.get(capital.dynastyId)?.name ??
-    dynastyNamesById.get(capital.dynastyId) ??
-    capital.dynastyId
-  );
-  return nameAtAbs(dynastiesById.get(capital.dynastyId) ?? { name: raw }, atAbs);
+  const dynasty = dynastiesById.get(capital.dynastyId) ?? catalogDynastiesById.get(capital.dynastyId);
+  return dynasty ? nameAtAbs(dynasty, atAbs) : capital.dynastyId;
 }
 
 export function CapitalMapLayer({
   capitals,
   dynastiesById,
-  dynastyNamesById,
+  catalogDynastiesById,
   laneColorMap,
   atAbs,
   layout,
@@ -79,7 +75,7 @@ export function CapitalMapLayer({
       const point = projectGcj02InLayout(coordinate.x, coordinate.y, layout);
       return {
         capital,
-        dynastyName: resolveDynastyName(capital, dynastiesById, dynastyNamesById, atAbs),
+        dynastyName: resolveDynastyName(capital, dynastiesById, catalogDynastiesById, atAbs),
         x: point.x,
         y: point.y,
         color,
@@ -89,7 +85,7 @@ export function CapitalMapLayer({
     atAbs,
     capitals,
     dynastiesById,
-    dynastyNamesById,
+    catalogDynastiesById,
     layout,
     laneColorMap,
   ]);

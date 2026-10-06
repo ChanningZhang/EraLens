@@ -11,6 +11,7 @@ const periodSchema = z.object({
 { message: "Name period ends before its start" });
 
 export const DynastyNameDefinitionSchema = z.object({
+  default: z.string().trim().min(1),
   periods: z.array(periodSchema).min(1),
 }).strict().refine(({ periods }) => periods.every((period, i) => {
   if (i === 0) return true;
@@ -32,17 +33,15 @@ export function parseDynastyName(raw) {
 }
 
 export function validateDynastyName(dynasty) {
-  const parsed = parseDynastyName(dynasty.name);
-  if (typeof parsed !== "string" && !dynasty.altNames?.[0]?.trim()) throw new Error("A timed dynasty name requires altNames[0] as its representative name");
-  return parsed;
+  return parseDynastyName(dynasty.name);
 }
 
 export function resolveDynastyDefaultName(dynasty) {
   const parsed = validateDynastyName(dynasty);
-  return typeof parsed === "string" ? parsed : dynasty.altNames[0];
+  return typeof parsed === "string" ? parsed : parsed.default;
 }
 
 export function dynastyNameTerms(raw) {
   const parsed = parseDynastyName(raw);
-  return typeof parsed === "string" ? [parsed] : [...new Set(parsed.periods.map(p => p.name))];
+  return typeof parsed === "string" ? [parsed] : [...new Set([parsed.default, ...parsed.periods.map(p => p.name)])];
 }

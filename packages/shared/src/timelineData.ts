@@ -256,11 +256,7 @@ function buildPersonEntityDetail(
       ? dynastyMap.get(person.dynastyId)
       : undefined;
   const headingDynastyName = headingDynasty
-    ? focusReign && detailReign
-      ? usesPreQinCardLayout(detailReign)
-        ? headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
-        : resolveDynastyName(headingDynasty, detailReign.startAbs)
-      : headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
+    ? headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
     : undefined;
   const claimLabel = focusReign?.claimLabel?.trim();
   const heading = resolveReignDetailHeading(

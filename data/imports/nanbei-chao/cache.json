@@ -1535,10 +1535,10 @@
   "dynasties": [
     {
       "id": "wei-north",
-      "name": "{\"periods\":[{\"name\":\"代\",\"start\":{\"year\":386,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"}},{\"name\":\"魏\",\"start\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"},\"end\":{\"year\":535,\"month\":2,\"confidence\":\"month\"}}]}",
+      "name": "{\"default\":\"北魏\",\"periods\":[{\"name\":\"代\",\"start\":{\"year\":386,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"}},{\"name\":\"魏\",\"start\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"},\"end\":{\"year\":535,\"month\":2,\"confidence\":\"month\"}}]}",
       "altNames": [
-        "北魏",
         "魏",
+        "北魏",
         "拓跋魏"
       ],
       "scope": "cn",
@@ -4059,7 +4059,8 @@
       "2026-10-03族属口径修订：dynasties.ethnicity 按各政权在位皇帝所属皇族/宗族标注，不按实际掌权的权臣集团标注。北魏分裂后的东魏、西魏皇帝均出自北魏拓跋皇族，孝文帝改姓元，故两政权统一标“拓跋鲜卑”；不因高欢或宇文泰掌权而改变。",
       "2026-10-05：逐人补充开国前身份、势力积累、掌权与建国过程，区分称王、称帝、迁都和统一；文字保持中立简洁，按经历组织而不套固定句式。本批人物：xiao-daocheng、xiao-yan、chen-baxian、tuoba-gui、yuan-shan-jian、yuan-bao-ju、gao-yang、yuwen-jue、yang-jian。概述年份叙述历史行为，在位年桶归属另按共享日期规则；不将原历月日写成公历。",
       "2026-10-05：开国经历逐条复核并改写：hou-jing。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：liang-nan、han-houjing、wei-east。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。"
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：liang-nan、han-houjing、wei-east。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "2026-10-06：按用户要求恢复 name JSON 的 default 与 periods；default 保存俗称，未指定时点或时点不在名称阶段时使用 default。altNames[0] 恢复代表国号/自称，人物与在位详情仍优先 claimLabel、其次 altNames[0]；取代此前将代表显示名放入首项的约定。wei-north：default=北魏，altNames[0]=魏。名称日期及精度不变；国号/自称选用本包已有别名与来源。"
     ]
   }
 }
