@@ -23,13 +23,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "秦襄公",
+      "title": "襄公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦襄公"
+      ]
     },
     {
       "id": "qin-r1",
@@ -47,13 +50,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "秦文公",
+      "title": "文公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦文公"
+      ]
     },
     {
       "id": "qin-r2",
@@ -71,13 +77,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宪公"
+        "宪"
       ],
       "templeNames": [],
-      "title": "秦宪公",
+      "title": "宪公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦宪公"
+      ]
     },
     {
       "id": "qin-r3",
@@ -117,13 +126,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "秦武公",
+      "title": "武公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦武公"
+      ]
     },
     {
       "id": "qin-r5",
@@ -141,13 +153,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "德公"
+        "德"
       ],
       "templeNames": [],
-      "title": "秦德公",
+      "title": "德公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦德公"
+      ]
     },
     {
       "id": "qin-r6",
@@ -165,13 +180,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "秦宣公",
+      "title": "宣公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦宣公"
+      ]
     },
     {
       "id": "qin-r7",
@@ -189,13 +207,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "秦成公",
+      "title": "成公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦成公"
+      ]
     },
     {
       "id": "qin-r8",
@@ -213,13 +234,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "秦穆公",
+      "title": "穆公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦穆公"
+      ]
     },
     {
       "id": "qin-r9",
@@ -237,13 +261,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康公"
+        "康"
       ],
       "templeNames": [],
-      "title": "秦康公",
+      "title": "康公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦康公"
+      ]
     },
     {
       "id": "qin-r10",
@@ -261,13 +288,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "秦共公",
+      "title": "共公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦共公"
+      ]
     },
     {
       "id": "qin-r11",
@@ -285,13 +315,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "秦桓公",
+      "title": "桓公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦桓公"
+      ]
     },
     {
       "id": "qin-r12",
@@ -309,13 +342,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "景公"
+        "景"
       ],
       "templeNames": [],
-      "title": "秦景公",
+      "title": "景公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦景公"
+      ]
     },
     {
       "id": "qin-r13",
@@ -333,13 +369,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
-      "title": "秦哀公",
+      "title": "哀公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦哀公"
+      ]
     },
     {
       "id": "qin-r14",
@@ -357,13 +396,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "秦惠公",
+      "title": "惠公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦惠公"
+      ]
     },
     {
       "id": "qin-r15",
@@ -381,13 +423,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "秦悼公",
+      "title": "悼公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦悼公"
+      ]
     },
     {
       "id": "qin-r16",
@@ -405,13 +450,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "厉共公"
+        "厉共"
       ],
       "templeNames": [],
-      "title": "秦厉共公",
+      "title": "厉共公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦厉共公"
+      ]
     },
     {
       "id": "qin-r17",
@@ -429,13 +477,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "躁公"
+        "躁"
       ],
       "templeNames": [],
-      "title": "秦躁公",
+      "title": "躁公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦躁公"
+      ]
     },
     {
       "id": "qin-r18",
@@ -453,13 +504,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "怀公"
+        "怀"
       ],
       "templeNames": [],
-      "title": "秦怀公",
+      "title": "怀公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦怀公"
+      ]
     },
     {
       "id": "qin-r19",
@@ -477,13 +531,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "灵公"
+        "灵"
       ],
       "templeNames": [],
-      "title": "秦灵公",
+      "title": "灵公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦灵公"
+      ]
     },
     {
       "id": "qin-r20",
@@ -501,13 +558,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
-      "title": "秦简公",
+      "title": "简公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦简公"
+      ]
     },
     {
       "id": "qin-r21",
@@ -525,13 +585,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "秦惠公",
+      "title": "惠公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦惠公"
+      ]
     },
     {
       "id": "qin-r22",
@@ -549,13 +612,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "出公"
+        "出"
       ],
       "templeNames": [],
-      "title": "秦出公",
+      "title": "出公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦出公"
+      ]
     },
     {
       "id": "qin-r23",
@@ -573,13 +639,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
-      "title": "秦献公",
+      "title": "献公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦献公"
+      ]
     },
     {
       "id": "ying-quliang",
@@ -597,13 +666,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝公"
+        "孝"
       ],
       "templeNames": [],
-      "title": "秦孝公",
+      "title": "孝公",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦孝公"
+      ]
     },
     {
       "id": "qin-r25",
@@ -629,13 +701,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠文王"
+        "惠文"
       ],
       "templeNames": [],
-      "title": "秦惠文王",
+      "title": "惠文王",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦惠文王"
+      ]
     },
     {
       "id": "qin-r26",
@@ -653,13 +728,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武王"
+        "武"
       ],
       "templeNames": [],
-      "title": "秦武王",
+      "title": "武王",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦武王"
+      ]
     },
     {
       "id": "qin-r27",
@@ -677,13 +755,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭襄王"
+        "昭襄"
       ],
       "templeNames": [],
-      "title": "秦昭襄王",
+      "title": "昭襄王",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦昭襄王"
+      ]
     },
     {
       "id": "qin-r28",
@@ -701,13 +782,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝文王"
+        "孝文"
       ],
       "templeNames": [],
-      "title": "秦孝文王",
+      "title": "孝文王",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦孝文王"
+      ]
     },
     {
       "id": "qin-r29",
@@ -733,13 +817,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄襄王"
+        "庄襄"
       ],
       "templeNames": [],
-      "title": "秦庄襄王",
+      "title": "庄襄王",
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "dynastyId": "qin"
+      "dynastyId": "qin",
+      "altNames": [
+        "秦庄襄王"
+      ]
     },
     {
       "id": "shang-yang",
@@ -2171,7 +2258,8 @@
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "秦前288年秦、齐短暂称帝后旋即去帝号，史籍仅能支持年内短期变化，未将其伪装成年精度连续分期；保留稳定阶段秦伯、秦王及前221年秦帝制的分期。",
       "2026-10-06爵称变动事件：qin-huiwen-assumes-kingship，对应qin的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：ying-qi、qin-r1、qin-r2、qin-r4、qin-r5、qin-r6、qin-r7、qin-r8、qin-r9、qin-r10、qin-r11、qin-r12、qin-r13、qin-r14、qin-r15、qin-r16、qin-r17、qin-r18、qin-r19、qin-r20、qin-r21、qin-r22、qin-r23、ying-quliang、qin-r25、qin-r26、qin-r27、qin-r28、qin-r29。"
     ]
   }
 }

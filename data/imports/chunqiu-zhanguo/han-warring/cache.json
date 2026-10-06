@@ -23,13 +23,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "景侯"
+        "景"
       ],
       "templeNames": [],
-      "title": "韩景侯",
+      "title": "景侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩景侯"
+      ]
     },
     {
       "id": "han-r1",
@@ -47,13 +50,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "烈侯"
+        "烈"
       ],
       "templeNames": [],
-      "title": "韩烈侯",
+      "title": "烈侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩烈侯"
+      ]
     },
     {
       "id": "han-r2",
@@ -71,13 +77,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文侯"
+        "文"
       ],
       "templeNames": [],
-      "title": "韩文侯",
+      "title": "文侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩文侯"
+      ]
     },
     {
       "id": "han-r3",
@@ -95,13 +104,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀侯"
+        "哀"
       ],
       "templeNames": [],
-      "title": "韩哀侯",
+      "title": "哀侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩哀侯"
+      ]
     },
     {
       "id": "han-r4",
@@ -119,13 +131,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共侯"
+        "共"
       ],
       "templeNames": [],
-      "title": "韩共侯",
+      "title": "共侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩共侯"
+      ]
     },
     {
       "id": "han-r5",
@@ -143,13 +158,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐侯"
+        "釐"
       ],
       "templeNames": [],
-      "title": "韩釐侯",
+      "title": "釐侯",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩釐侯"
+      ]
     },
     {
       "id": "han-r6",
@@ -175,13 +193,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣惠王"
+        "宣惠"
       ],
       "templeNames": [],
-      "title": "韩宣惠王",
+      "title": "宣惠王",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩宣惠王"
+      ]
     },
     {
       "id": "han-r7",
@@ -199,13 +220,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄王"
+        "襄"
       ],
       "templeNames": [],
-      "title": "韩襄王",
+      "title": "襄王",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩襄王"
+      ]
     },
     {
       "id": "han-r8",
@@ -223,13 +247,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐王"
+        "釐"
       ],
       "templeNames": [],
-      "title": "韩釐王",
+      "title": "釐王",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩釐王"
+      ]
     },
     {
       "id": "han-r9",
@@ -247,13 +274,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓惠王"
+        "桓惠"
       ],
       "templeNames": [],
-      "title": "韩桓惠王",
+      "title": "桓惠王",
       "ancestralXing": "姬",
       "clanShi": "韩",
-      "dynastyId": "han-warring"
+      "dynastyId": "han-warring",
+      "altNames": [
+        "韩桓惠王"
+      ]
     },
     {
       "id": "han-r10",
@@ -904,7 +934,8 @@
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06爵称变动事件：han-xuanhui-assumes-kingship，对应han-warring的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：han-jing、han-r1、han-r2、han-r3、han-r4、han-r5、han-r6、han-r7、han-r8、han-r9。"
     ]
   }
 }

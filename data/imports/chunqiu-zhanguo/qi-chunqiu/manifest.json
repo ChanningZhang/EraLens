@@ -651,6 +651,7 @@
     "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
     "2026-10-06爵称变动事件：qi-wei-xuzhou-mutual-kingship，对应qi-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
     "2026-10-06：齐魏徐州相王事件按用户要求作为齐爵称变动挂在齐泳道，普通王朝关联仅齐；魏有独立的前344年称王事件。史事摘要保留魏惠王及两国背景，人物关联保留魏惠王。",
-    "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+    "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+    "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：lv-shang、qi-r1、qi-r2、qi-r3、qi-r4、qi-r5、qi-r6、qi-r7、qi-r8、qi-r9、qi-r10、qi-r11、qi-r12、qi-r13、jiang-xiaobai、qi-r17、qi-r18、qi-r20、qi-r21、qi-r22、qi-r23、qi-r24、qi-r25、qi-r27、qi-r28、qi-r29、qi-r30、jiang-dai、tian-he、qi-r34、qi-r35、qi-r36、qi-r37、qi-r38。"
   ]
 }

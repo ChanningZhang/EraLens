@@ -93,13 +93,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "丁公"
+        "丁"
       ],
       "templeNames": [],
-      "title": "宋丁公",
+      "title": "丁公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋丁公"
+      ]
     },
     {
       "id": "song-r4",
@@ -117,13 +120,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "湣公"
+        "湣"
       ],
       "templeNames": [],
-      "title": "宋湣公",
+      "title": "湣公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋湣公"
+      ]
     },
     {
       "id": "song-r5",
@@ -141,13 +147,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "炀公"
+        "炀"
       ],
       "templeNames": [],
-      "title": "宋炀公",
+      "title": "炀公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋炀公"
+      ]
     },
     {
       "id": "song-r6",
@@ -165,13 +174,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
-      "title": "宋厉公",
+      "title": "厉公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋厉公"
+      ]
     },
     {
       "id": "song-r7",
@@ -189,13 +201,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐公"
+        "釐"
       ],
       "templeNames": [],
-      "title": "宋釐公",
+      "title": "釐公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋釐公"
+      ]
     },
     {
       "id": "song-r8",
@@ -213,13 +228,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "宋惠公",
+      "title": "惠公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋惠公"
+      ]
     },
     {
       "id": "song-r9",
@@ -241,13 +259,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
-      "title": "宋哀公",
+      "title": "哀公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋哀公"
+      ]
     },
     {
       "id": "song-r10",
@@ -265,13 +286,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "戴公"
+        "戴"
       ],
       "templeNames": [],
-      "title": "宋戴公",
+      "title": "戴公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋戴公"
+      ]
     },
     {
       "id": "song-r11",
@@ -289,13 +313,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "宋武公",
+      "title": "武公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋武公"
+      ]
     },
     {
       "id": "song-r12",
@@ -313,13 +340,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "宋宣公",
+      "title": "宣公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋宣公"
+      ]
     },
     {
       "id": "song-r13",
@@ -337,13 +367,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "宋穆公",
+      "title": "穆公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋穆公"
+      ]
     },
     {
       "id": "song-r14",
@@ -361,13 +394,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "殇公"
+        "殇"
       ],
       "templeNames": [],
-      "title": "宋殇公",
+      "title": "殇公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋殇公"
+      ]
     },
     {
       "id": "song-r15",
@@ -385,13 +421,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "宋庄公",
+      "title": "庄公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋庄公"
+      ]
     },
     {
       "id": "song-r16",
@@ -413,13 +452,16 @@
         "abs": -8172
       },
       "posthumousNames": [
-        "湣公"
+        "湣"
       ],
       "templeNames": [],
-      "title": "宋湣公",
+      "title": "湣公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋湣公"
+      ]
     },
     {
       "id": "song-r17",
@@ -459,13 +501,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "宋桓公",
+      "title": "桓公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋桓公"
+      ]
     },
     {
       "id": "song-r19",
@@ -483,13 +528,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "宋襄公",
+      "title": "襄公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋襄公"
+      ]
     },
     {
       "id": "song-r20",
@@ -507,13 +555,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "宋成公",
+      "title": "成公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋成公"
+      ]
     },
     {
       "id": "song-r21",
@@ -553,13 +604,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "宋昭公",
+      "title": "昭公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋昭公"
+      ]
     },
     {
       "id": "song-r23",
@@ -577,13 +631,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "宋文公",
+      "title": "文公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋文公"
+      ]
     },
     {
       "id": "song-r24",
@@ -601,13 +658,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "宋共公",
+      "title": "共公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋共公"
+      ]
     },
     {
       "id": "song-r25",
@@ -625,13 +685,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
-      "title": "宋平公",
+      "title": "平公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋平公"
+      ]
     },
     {
       "id": "song-r26",
@@ -649,13 +712,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "元公"
+        "元"
       ],
       "templeNames": [],
-      "title": "宋元公",
+      "title": "元公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋元公"
+      ]
     },
     {
       "id": "song-r27",
@@ -673,13 +739,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "景公"
+        "景"
       ],
       "templeNames": [],
-      "title": "宋景公",
+      "title": "景公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋景公"
+      ]
     },
     {
       "id": "song-r28",
@@ -697,13 +766,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "宋昭公",
+      "title": "昭公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋昭公"
+      ]
     },
     {
       "id": "song-r29",
@@ -721,13 +793,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "宋悼公",
+      "title": "悼公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋悼公"
+      ]
     },
     {
       "id": "song-r30",
@@ -745,13 +820,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "休公"
+        "休"
       ],
       "templeNames": [],
-      "title": "宋休公",
+      "title": "休公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋休公"
+      ]
     },
     {
       "id": "song-r31",
@@ -769,13 +847,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "宋桓公",
+      "title": "桓公",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋桓公"
+      ]
     },
     {
       "id": "song-r32",
@@ -827,13 +908,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康王"
+        "康"
       ],
       "templeNames": [],
-      "title": "宋康王",
+      "title": "康王",
       "ancestralXing": "子",
       "clanShi": "宋",
-      "dynastyId": "song-chunqiu"
+      "dynastyId": "song-chunqiu",
+      "altNames": [
+        "宋康王"
+      ]
     },
     {
       "id": "zhuang-zhou",
@@ -2228,7 +2312,8 @@
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06爵称变动事件：song-yan-assumes-kingship，对应song-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：song-r3、song-r4、song-r5、song-r6、song-r7、song-r8、song-r9、song-r10、song-r11、song-r12、song-r13、song-r14、song-r15、song-r16、song-r18、song-r19、song-r20、song-r22、song-r23、song-r24、song-r25、song-r26、song-r27、song-r28、song-r29、song-r30、song-r31、song-r33。"
     ]
   }
 }

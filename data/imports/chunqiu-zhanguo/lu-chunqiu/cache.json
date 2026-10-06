@@ -45,13 +45,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "考公"
+        "考"
       ],
       "templeNames": [],
-      "title": "鲁考公",
+      "title": "考公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁考公"
+      ]
     },
     {
       "id": "lu-r2",
@@ -69,13 +72,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "炀公"
+        "炀"
       ],
       "templeNames": [],
-      "title": "鲁炀公",
+      "title": "炀公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁炀公"
+      ]
     },
     {
       "id": "lu-r3",
@@ -93,13 +99,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "幽公"
+        "幽"
       ],
       "templeNames": [],
-      "title": "鲁幽公",
+      "title": "幽公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁幽公"
+      ]
     },
     {
       "id": "lu-r4",
@@ -117,13 +126,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "魏公"
+        "魏"
       ],
       "templeNames": [],
-      "title": "鲁魏公",
+      "title": "魏公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁魏公"
+      ]
     },
     {
       "id": "lu-r5",
@@ -141,13 +153,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
-      "title": "鲁厉公",
+      "title": "厉公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁厉公"
+      ]
     },
     {
       "id": "lu-r6",
@@ -165,13 +180,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
-      "title": "鲁献公",
+      "title": "献公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁献公"
+      ]
     },
     {
       "id": "lu-r7",
@@ -189,13 +207,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "真公"
+        "真"
       ],
       "templeNames": [],
-      "title": "鲁真公",
+      "title": "真公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁真公"
+      ]
     },
     {
       "id": "lu-r8",
@@ -213,13 +234,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "鲁武公",
+      "title": "武公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁武公"
+      ]
     },
     {
       "id": "lu-r9",
@@ -237,13 +261,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "懿公"
+        "懿"
       ],
       "templeNames": [],
-      "title": "鲁懿公",
+      "title": "懿公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁懿公"
+      ]
     },
     {
       "id": "lu-r10",
@@ -283,13 +310,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝公"
+        "孝"
       ],
       "templeNames": [],
-      "title": "鲁孝公",
+      "title": "孝公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁孝公"
+      ]
     },
     {
       "id": "lu-r12",
@@ -307,13 +337,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "鲁惠公",
+      "title": "惠公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁惠公"
+      ]
     },
     {
       "id": "lu-r13",
@@ -331,13 +364,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "隐公"
+        "隐"
       ],
       "templeNames": [],
-      "title": "鲁隐公",
+      "title": "隐公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁隐公"
+      ]
     },
     {
       "id": "lu-r14",
@@ -355,13 +391,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "鲁桓公",
+      "title": "桓公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁桓公"
+      ]
     },
     {
       "id": "lu-r15",
@@ -379,13 +418,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "鲁庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁庄公"
+      ]
     },
     {
       "id": "lu-r16",
@@ -403,13 +445,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "闵公"
+        "闵"
       ],
       "templeNames": [],
-      "title": "鲁闵公",
+      "title": "闵公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁闵公"
+      ]
     },
     {
       "id": "lu-r17",
@@ -427,13 +472,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐公"
+        "釐"
       ],
       "templeNames": [],
-      "title": "鲁釐公",
+      "title": "釐公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁釐公"
+      ]
     },
     {
       "id": "lu-r18",
@@ -451,13 +499,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "鲁文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁文公"
+      ]
     },
     {
       "id": "lu-r19",
@@ -475,13 +526,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "鲁宣公",
+      "title": "宣公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁宣公"
+      ]
     },
     {
       "id": "lu-r20",
@@ -499,13 +553,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "鲁成公",
+      "title": "成公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁成公"
+      ]
     },
     {
       "id": "lu-r21",
@@ -523,13 +580,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "鲁襄公",
+      "title": "襄公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁襄公"
+      ]
     },
     {
       "id": "lu-r22",
@@ -569,13 +629,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "鲁昭公",
+      "title": "昭公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁昭公"
+      ]
     },
     {
       "id": "lu-r24",
@@ -593,13 +656,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "定公"
+        "定"
       ],
       "templeNames": [],
-      "title": "鲁定公",
+      "title": "定公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁定公"
+      ]
     },
     {
       "id": "lu-r25",
@@ -617,13 +683,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
-      "title": "鲁哀公",
+      "title": "哀公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁哀公"
+      ]
     },
     {
       "id": "lu-r26",
@@ -641,13 +710,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "鲁悼公",
+      "title": "悼公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁悼公"
+      ]
     },
     {
       "id": "lu-r27",
@@ -665,13 +737,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "元公"
+        "元"
       ],
       "templeNames": [],
-      "title": "鲁元公",
+      "title": "元公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁元公"
+      ]
     },
     {
       "id": "lu-r28",
@@ -689,13 +764,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "鲁穆公",
+      "title": "穆公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁穆公"
+      ]
     },
     {
       "id": "lu-r29",
@@ -713,13 +791,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "鲁共公",
+      "title": "共公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁共公"
+      ]
     },
     {
       "id": "lu-r30",
@@ -737,13 +818,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康公"
+        "康"
       ],
       "templeNames": [],
-      "title": "鲁康公",
+      "title": "康公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁康公"
+      ]
     },
     {
       "id": "lu-r31",
@@ -761,13 +845,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "景公"
+        "景"
       ],
       "templeNames": [],
-      "title": "鲁景公",
+      "title": "景公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁景公"
+      ]
     },
     {
       "id": "lu-r32",
@@ -785,13 +872,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
-      "title": "鲁平公",
+      "title": "平公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁平公"
+      ]
     },
     {
       "id": "lu-r33",
@@ -809,13 +899,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "鲁文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁文公"
+      ]
     },
     {
       "id": "lu-r34",
@@ -837,13 +930,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "顷公"
+        "顷"
       ],
       "templeNames": [],
-      "title": "鲁顷公",
+      "title": "顷公",
       "ancestralXing": "姬",
       "clanShi": "鲁",
-      "dynastyId": "lu-chunqiu"
+      "dynastyId": "lu-chunqiu",
+      "altNames": [
+        "鲁顷公"
+      ]
     }
   ],
   "dynastyGroups": [],
@@ -2195,7 +2291,8 @@
       "2026-10-05：开国经历逐条复核并改写：bo-qin。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：lu-chunqiu。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：lu-r1、lu-r2、lu-r3、lu-r4、lu-r5、lu-r6、lu-r7、lu-r8、lu-r9、lu-r11、lu-r12、lu-r13、lu-r14、lu-r15、lu-r16、lu-r17、lu-r18、lu-r19、lu-r20、lu-r21、lu-r23、lu-r24、lu-r25、lu-r26、lu-r27、lu-r28、lu-r29、lu-r30、lu-r31、lu-r32、lu-r33、lu-r34。"
     ]
   }
 }

@@ -43,13 +43,14 @@
       "altNames": [
         "姜子牙",
         "姜太公",
-        "太公"
+        "太公",
+        "齐太公"
       ],
       "posthumousNames": [
-        "太公"
+        "太"
       ],
       "templeNames": [],
-      "title": "齐太公",
+      "title": "太公",
       "ancestralXing": "姜",
       "clanShi": "吕",
       "dynastyId": "qi-chunqiu"
@@ -86,13 +87,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "丁公"
+        "丁"
       ],
       "templeNames": [],
-      "title": "齐丁公",
+      "title": "丁公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐丁公"
+      ]
     },
     {
       "id": "qi-r2",
@@ -122,13 +126,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "乙公"
+        "乙"
       ],
       "templeNames": [],
-      "title": "齐乙公",
+      "title": "乙公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐乙公"
+      ]
     },
     {
       "id": "qi-r3",
@@ -158,13 +165,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "癸公"
+        "癸"
       ],
       "templeNames": [],
-      "title": "齐癸公",
+      "title": "癸公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐癸公"
+      ]
     },
     {
       "id": "qi-r4",
@@ -202,13 +212,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
-      "title": "齐哀公",
+      "title": "哀公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐哀公"
+      ]
     },
     {
       "id": "qi-r5",
@@ -246,13 +259,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "胡公"
+        "胡"
       ],
       "templeNames": [],
-      "title": "齐胡公",
+      "title": "胡公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐胡公"
+      ]
     },
     {
       "id": "qi-r6",
@@ -278,13 +294,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
-      "title": "齐献公",
+      "title": "献公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐献公"
+      ]
     },
     {
       "id": "qi-r7",
@@ -310,13 +329,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "齐武公",
+      "title": "武公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐武公"
+      ]
     },
     {
       "id": "qi-r8",
@@ -342,13 +364,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
-      "title": "齐厉公",
+      "title": "厉公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐厉公"
+      ]
     },
     {
       "id": "qi-r9",
@@ -374,13 +399,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "齐文公",
+      "title": "文公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐文公"
+      ]
     },
     {
       "id": "qi-r10",
@@ -406,13 +434,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "齐成公",
+      "title": "成公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐成公"
+      ]
     },
     {
       "id": "qi-r11",
@@ -438,13 +469,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "齐庄公",
+      "title": "庄公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐庄公"
+      ]
     },
     {
       "id": "qi-r12",
@@ -470,13 +504,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐公"
+        "釐"
       ],
       "templeNames": [],
-      "title": "齐釐公",
+      "title": "釐公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐釐公"
+      ]
     },
     {
       "id": "qi-r13",
@@ -510,13 +547,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "齐襄公",
+      "title": "襄公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐襄公"
+      ]
     },
     {
       "id": "qi-r14",
@@ -588,13 +628,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "齐桓公",
+      "title": "桓公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐桓公"
+      ]
     },
     {
       "id": "qi-r16",
@@ -666,13 +709,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝公"
+        "孝"
       ],
       "templeNames": [],
-      "title": "齐孝公",
+      "title": "孝公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐孝公"
+      ]
     },
     {
       "id": "qi-r18",
@@ -702,13 +748,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "齐昭公",
+      "title": "昭公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐昭公"
+      ]
     },
     {
       "id": "qi-r19",
@@ -772,13 +821,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "懿公"
+        "懿"
       ],
       "templeNames": [],
-      "title": "齐懿公",
+      "title": "懿公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐懿公"
+      ]
     },
     {
       "id": "qi-r21",
@@ -804,13 +856,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "齐惠公",
+      "title": "惠公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐惠公"
+      ]
     },
     {
       "id": "qi-r22",
@@ -836,13 +891,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "顷公"
+        "顷"
       ],
       "templeNames": [],
-      "title": "齐顷公",
+      "title": "顷公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐顷公"
+      ]
     },
     {
       "id": "qi-r23",
@@ -868,13 +926,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "灵公"
+        "灵"
       ],
       "templeNames": [],
-      "title": "齐灵公",
+      "title": "灵公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐灵公"
+      ]
     },
     {
       "id": "qi-r24",
@@ -900,13 +961,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "齐庄公",
+      "title": "庄公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐庄公"
+      ]
     },
     {
       "id": "qi-r25",
@@ -936,13 +1000,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "景公"
+        "景"
       ],
       "templeNames": [],
-      "title": "齐景公",
+      "title": "景公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐景公"
+      ]
     },
     {
       "id": "qi-r26",
@@ -1006,13 +1073,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "齐悼公",
+      "title": "悼公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐悼公"
+      ]
     },
     {
       "id": "qi-r28",
@@ -1038,13 +1108,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
-      "title": "齐简公",
+      "title": "简公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐简公"
+      ]
     },
     {
       "id": "qi-r29",
@@ -1070,13 +1143,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
-      "title": "齐平公",
+      "title": "平公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐平公"
+      ]
     },
     {
       "id": "qi-r30",
@@ -1102,13 +1178,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "齐宣公",
+      "title": "宣公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐宣公"
+      ]
     },
     {
       "id": "jiang-dai",
@@ -1138,13 +1217,16 @@
         "abs": -4536
       },
       "posthumousNames": [
-        "康公"
+        "康"
       ],
       "templeNames": [],
-      "title": "齐康公",
+      "title": "康公",
       "ancestralXing": "姜",
       "clanShi": "齐",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐康公"
+      ]
     },
     {
       "id": "tian-he",
@@ -1174,13 +1256,16 @@
         "abs": -4596
       },
       "posthumousNames": [
-        "太公"
+        "太"
       ],
       "templeNames": [],
-      "title": "齐太公",
+      "title": "太公",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐太公"
+      ]
     },
     {
       "id": "qi-r33",
@@ -1236,13 +1321,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "齐桓公",
+      "title": "桓公",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐桓公"
+      ]
     },
     {
       "id": "qi-r35",
@@ -1276,13 +1364,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "威王"
+        "威"
       ],
       "templeNames": [],
-      "title": "齐威王",
+      "title": "威王",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐威王"
+      ]
     },
     {
       "id": "qi-r36",
@@ -1308,13 +1399,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣王"
+        "宣"
       ],
       "templeNames": [],
-      "title": "齐宣王",
+      "title": "宣王",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐宣王"
+      ]
     },
     {
       "id": "qi-r37",
@@ -1340,13 +1434,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "湣王"
+        "湣"
       ],
       "templeNames": [],
-      "title": "齐湣王",
+      "title": "湣王",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐湣王"
+      ]
     },
     {
       "id": "qi-r38",
@@ -1372,13 +1469,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄王"
+        "襄"
       ],
       "templeNames": [],
-      "title": "齐襄王",
+      "title": "襄王",
       "ancestralXing": "妫",
       "clanShi": "田",
-      "dynastyId": "qi-chunqiu"
+      "dynastyId": "qi-chunqiu",
+      "altNames": [
+        "齐襄王"
+      ]
     },
     {
       "id": "qi-r39",
@@ -3151,7 +3251,8 @@
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06爵称变动事件：qi-wei-xuzhou-mutual-kingship，对应qi-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
       "2026-10-06：齐魏徐州相王事件按用户要求作为齐爵称变动挂在齐泳道，普通王朝关联仅齐；魏有独立的前344年称王事件。史事摘要保留魏惠王及两国背景，人物关联保留魏惠王。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：lv-shang、qi-r1、qi-r2、qi-r3、qi-r4、qi-r5、qi-r6、qi-r7、qi-r8、qi-r9、qi-r10、qi-r11、qi-r12、qi-r13、jiang-xiaobai、qi-r17、qi-r18、qi-r20、qi-r21、qi-r22、qi-r23、qi-r24、qi-r25、qi-r27、qi-r28、qi-r29、qi-r30、jiang-dai、tian-he、qi-r34、qi-r35、qi-r36、qi-r37、qi-r38。"
     ]
   }
 }

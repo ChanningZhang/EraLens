@@ -163,10 +163,10 @@
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
-      "title": "虢公长父",
+      "title": "厉公",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -188,15 +188,16 @@
       ],
       "altNames": [
         "虢季子白",
-        "虢季"
+        "虢季",
+        "虢宣公"
       ],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "虢宣公",
+      "title": "宣公",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -217,15 +218,16 @@
         }
       ],
       "altNames": [
-        "虢季"
+        "虢季",
+        "虢文公"
       ],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "虢文公",
+      "title": "文公",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -1325,7 +1327,8 @@
       "2026-10-04称谓与私名复核：guo-east-zhong（东虢包）/guo-r1（西虢包）统一以title记录虢仲、虢叔；依《春秋左传正义·僖公五年》杜预注“仲、叔皆虢君字”，其“仲”“叔”属字/排行称谓。没有可靠史料支持早期虢仲私名为“忌”、虢叔私名为“珪”，亦未见其他可确认私名，故persons.name留空。注意勿与春秋晚期虢公忌父混为一人。",
       "2026-10-05：开国候选逐项复核后保留原概述：guo-r1。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：guo-r4、guo-r5、guo-r6。"
     ]
   },
   "locationMappings": [

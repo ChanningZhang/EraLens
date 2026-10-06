@@ -257,7 +257,9 @@ function buildPersonEntityDetail(
       : undefined;
   const headingDynastyName = headingDynasty
     ? focusReign && detailReign
-      ? resolveDynastyName(headingDynasty, detailReign.startAbs)
+      ? usesPreQinCardLayout(detailReign)
+        ? headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
+        : resolveDynastyName(headingDynasty, detailReign.startAbs)
       : headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
     : undefined;
   const claimLabel = focusReign?.claimLabel?.trim();

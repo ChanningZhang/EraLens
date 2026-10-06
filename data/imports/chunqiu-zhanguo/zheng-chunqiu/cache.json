@@ -23,13 +23,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "郑桓公",
+      "title": "桓公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑桓公"
+      ]
     },
     {
       "id": "zheng-r1",
@@ -47,13 +50,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "郑武公",
+      "title": "武公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑武公"
+      ]
     },
     {
       "id": "zheng-r2",
@@ -71,13 +77,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "郑庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑庄公"
+      ]
     },
     {
       "id": "zheng-r3",
@@ -95,13 +104,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "郑昭公",
+      "title": "昭公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑昭公"
+      ]
     },
     {
       "id": "zheng-r4",
@@ -119,13 +131,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
-      "title": "郑厉公",
+      "title": "厉公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑厉公"
+      ]
     },
     {
       "id": "zheng-r6",
@@ -187,13 +202,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "郑文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑文公"
+      ]
     },
     {
       "id": "zheng-r10",
@@ -211,13 +229,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "郑穆公",
+      "title": "穆公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑穆公"
+      ]
     },
     {
       "id": "zheng-r11",
@@ -235,13 +256,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "灵公"
+        "灵"
       ],
       "templeNames": [],
-      "title": "郑灵公",
+      "title": "灵公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑灵公"
+      ]
     },
     {
       "id": "zheng-r12",
@@ -259,13 +283,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "郑襄公",
+      "title": "襄公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑襄公"
+      ]
     },
     {
       "id": "zheng-r13",
@@ -283,13 +310,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "郑悼公",
+      "title": "悼公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑悼公"
+      ]
     },
     {
       "id": "zheng-r14",
@@ -307,13 +337,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "郑成公",
+      "title": "成公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑成公"
+      ]
     },
     {
       "id": "zheng-gongzi-xu",
@@ -353,13 +386,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐公"
+        "釐"
       ],
       "templeNames": [],
-      "title": "郑釐公",
+      "title": "釐公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑釐公"
+      ]
     },
     {
       "id": "zheng-r16",
@@ -377,13 +413,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
-      "title": "郑简公",
+      "title": "简公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑简公"
+      ]
     },
     {
       "id": "zheng-r17",
@@ -401,13 +440,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "定公"
+        "定"
       ],
       "templeNames": [],
-      "title": "郑定公",
+      "title": "定公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑定公"
+      ]
     },
     {
       "id": "zheng-r18",
@@ -425,13 +467,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
-      "title": "郑献公",
+      "title": "献公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑献公"
+      ]
     },
     {
       "id": "zheng-r19",
@@ -449,13 +494,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "声公"
+        "声"
       ],
       "templeNames": [],
-      "title": "郑声公",
+      "title": "声公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑声公"
+      ]
     },
     {
       "id": "zheng-r20",
@@ -473,13 +521,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
-      "title": "郑哀公",
+      "title": "哀公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑哀公"
+      ]
     },
     {
       "id": "zheng-r21",
@@ -497,13 +548,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "郑共公",
+      "title": "共公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑共公"
+      ]
     },
     {
       "id": "zheng-r22",
@@ -521,13 +575,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "幽公"
+        "幽"
       ],
       "templeNames": [],
-      "title": "郑幽公",
+      "title": "幽公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑幽公"
+      ]
     },
     {
       "id": "zheng-r23",
@@ -545,13 +602,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "𦈡公"
+        "𦈡"
       ],
       "templeNames": [],
-      "title": "郑𦈡公",
+      "title": "𦈡公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑𦈡公"
+      ]
     },
     {
       "id": "zheng-r24",
@@ -569,13 +629,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康公"
+        "康"
       ],
       "templeNames": [],
-      "title": "郑康公",
+      "title": "康公",
       "ancestralXing": "姬",
       "clanShi": "郑",
-      "dynastyId": "zheng-chunqiu"
+      "dynastyId": "zheng-chunqiu",
+      "altNames": [
+        "郑康公"
+      ]
     }
   ],
   "dynastyGroups": [],
@@ -1610,7 +1673,8 @@
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：开国候选逐项复核后保留原概述：zheng-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zheng-r0、zheng-r1、zheng-r2、zheng-r3、zheng-r4、zheng-r9、zheng-r10、zheng-r11、zheng-r12、zheng-r13、zheng-r14、zheng-r15、zheng-r16、zheng-r17、zheng-r18、zheng-r19、zheng-r20、zheng-r21、zheng-r22、zheng-r23、zheng-r24。"
     ]
   }
 }

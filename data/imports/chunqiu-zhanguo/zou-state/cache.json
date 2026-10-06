@@ -22,15 +22,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子挟",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子挟"
+      ]
     },
     {
       "id": "zou-r2",
@@ -47,15 +54,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子非",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子非"
+      ]
     },
     {
       "id": "zou-r3",
@@ -72,15 +86,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子成",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子成"
+      ]
     },
     {
       "id": "zou-r4",
@@ -97,15 +118,26 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
+        },
+        {
+          "label": "邾子车辅（名车辅，未载谥号）",
+          "url": "https://zh.wikipedia.org/wiki/邾子車輔"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子车辅",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子车辅"
+      ]
     },
     {
       "id": "zou-r5",
@@ -122,15 +154,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子将新",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子将新"
+      ]
     },
     {
       "id": "zou-r6",
@@ -147,15 +186,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子訾父",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子訾父"
+      ]
     },
     {
       "id": "zou-r7",
@@ -176,17 +222,24 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "邾武公",
+      "title": "武公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾武公"
+      ]
     },
     {
       "id": "zou-r8",
@@ -203,15 +256,22 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子叔术",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子叔术"
+      ]
     },
     {
       "id": "zou-r9",
@@ -232,19 +292,26 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子夏父",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子夏父"
+      ]
     },
     {
       "id": "zou-r10",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -264,7 +331,8 @@
       "altNames": [
         "邾安公",
         "邾惠公",
-        "邾仪父"
+        "邾仪父",
+        "邾子克"
       ],
       "roles": [
         "君主"
@@ -282,15 +350,23 @@
         {
           "label": "邾安公（异称）",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%89%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
+        },
+        {
+          "label": "邾子克（庄公、惠公异说）",
+          "url": "https://zh.wikipedia.org/wiki/邾子克"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "邾子克",
+      "title": "庄公",
       "ancestralXing": "曹",
       "dynastyId": "zou-state"
     },
@@ -300,7 +376,7 @@
       "roles": [
         "君主"
       ],
-      "bio": "邾宪公，克之子。传统年表系其在位于前677—前666年，后由邾文公继位；早期君主个人事迹记载较少。",
+      "bio": "琐，克之子。传统年表系其在位于前677—前666年，后由邾文公继位；早期君主个人事迹记载较少。",
       "links": [
         {
           "label": "周朝诸侯国君主列表·邾国",
@@ -311,19 +387,24 @@
           "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
         },
         {
-          "label": "邾宪公",
-          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%AA%E5%85%AC"
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
+        },
+        {
+          "label": "邾子琐（名琐，未载谥号）",
+          "url": "https://zh.wikipedia.org/wiki/邾子瑣"
         }
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [
-        "宪公"
-      ],
+      "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子琐",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子琐"
+      ]
     },
     {
       "id": "zou-r13",
@@ -344,17 +425,24 @@
         {
           "label": "邾文公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%96%87%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "邾文公",
+      "title": "文公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾文公"
+      ]
     },
     {
       "id": "zou-r14",
@@ -375,17 +463,24 @@
         {
           "label": "邾定公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%9A%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "定公"
+        "定"
       ],
       "templeNames": [],
-      "title": "邾定公",
+      "title": "定公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾定公"
+      ]
     },
     {
       "id": "zou-r15",
@@ -402,17 +497,24 @@
         {
           "label": "邾宣公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%A3%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "邾宣公",
+      "title": "宣公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾宣公"
+      ]
     },
     {
       "id": "zou-r16",
@@ -429,17 +531,24 @@
         {
           "label": "邾悼公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%82%BC%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "邾悼公",
+      "title": "悼公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾悼公"
+      ]
     },
     {
       "id": "zou-r17",
@@ -456,17 +565,24 @@
         {
           "label": "邾庄公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%BA%84%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "邾庄公",
+      "title": "庄公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾庄公"
+      ]
     },
     {
       "id": "zou-r18",
@@ -491,17 +607,24 @@
         {
           "label": "邾隐公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E9%9A%90%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "隐公"
+        "隐"
       ],
       "templeNames": [],
-      "title": "邾隐公",
+      "title": "隐公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾隐公"
+      ]
     },
     {
       "id": "zou-r19",
@@ -518,17 +641,24 @@
         {
           "label": "邾桓公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%A1%93%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "邾桓公",
+      "title": "桓公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾桓公"
+      ]
     },
     {
       "id": "zou-he",
@@ -545,19 +675,26 @@
         {
           "label": "邾子何",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AD%90%E4%BD%95"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾子何",
+      "title": "子",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾子何"
+      ]
     },
     {
       "id": "zou-missing-after-he-1",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -586,21 +723,28 @@
         {
           "label": "邾娄考公",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%A8%84%E8%80%83%E5%85%AC"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "考公"
+        "考"
       ],
       "templeNames": [],
-      "title": "邾娄考公",
+      "title": "考公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾娄考公"
+      ]
     },
     {
       "id": "zou-missing-after-kaogong-1",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -616,7 +760,7 @@
     },
     {
       "id": "zou-missing-after-kaogong-2",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -666,17 +810,24 @@
         {
           "label": "邾国君主世系图（据《春秋释例》等）",
           "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "邹穆公",
+      "title": "穆公",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邹穆公"
+      ]
     },
     {
       "id": "meng-ke",
@@ -725,19 +876,26 @@
         {
           "label": "邾国君主世系图（据《春秋释例》等）",
           "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        },
+        {
+          "label": "邾国君主列表（称谓、本名与记载来源）",
+          "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "邾君庆",
+      "title": "君",
       "ancestralXing": "曹",
-      "dynastyId": "zou-state"
+      "dynastyId": "zou-state",
+      "altNames": [
+        "邾君庆"
+      ]
     },
     {
       "id": "zou-missing-after-mugong-1",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -762,7 +920,7 @@
     },
     {
       "id": "zou-missing-after-mugong-2",
-      "name": "",
+      "name": "？",
       "roles": [
         "君主"
       ],
@@ -1119,7 +1277,7 @@
       "id": "reign-zou-r12-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r12",
-      "title": "琐",
+      "title": "",
       "start": {
         "year": -677,
         "month": 1,
@@ -1335,7 +1493,7 @@
       "id": "reign-zou-he-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-he",
-      "title": "子何",
+      "title": "",
       "start": {
         "year": -470,
         "month": 1,
@@ -1836,6 +1994,22 @@
       {
         "label": "《史记·十二诸侯年表》",
         "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "邾国君主列表（称谓、本名与记载来源）",
+        "url": "https://zh.wikipedia.org/wiki/邾国#國君列表"
+      },
+      {
+        "label": "邾子车辅（名车辅，未载谥号）",
+        "url": "https://zh.wikipedia.org/wiki/邾子車輔"
+      },
+      {
+        "label": "邾子克（庄公、惠公异说）",
+        "url": "https://zh.wikipedia.org/wiki/邾子克"
+      },
+      {
+        "label": "邾子琐（名琐，未载谥号）",
+        "url": "https://zh.wikipedia.org/wiki/邾子瑣"
       }
     ],
     "notes": [
@@ -1861,7 +2035,9 @@
       "2026-10-05：开国候选逐项复核后保留原概述：zou-r1。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05称谓字段修正：按库内 SQL 查询，将邾娄考公、邹穆公的公号从 persons.name 移出；传世文献以考公、穆公称之，未见可靠本名记录，称号与谥号继续保留。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06邾（邹）历任国君称谓字段复核：不把维基列表“谥号”列整体当作谥号。挟、非、成、车辅、将新、訾父、叔术、夏父、琐、何及庆均为本名，保存在persons.name；曹姓保留在ancestralXing，不据国名补造氏。无可核谥号者posthumousNames为空，表示未见可靠记载，不断言生前从未获谥；原邾子某称呼的title拆为爵称“子”，邾君庆拆为“君”，完整国名加称号加本名移入altNames供检索。已有可靠谥称按项目统一字段约定保留武公、庄公、文公、定公、宣公、悼公、隐公、桓公、考公、穆公，不带国名；谥字本身与公尊称的历史语义不等于修改全库谥称存储约定。琐的旧“宪公”值缺乏现有链接正文依据，邾宪公链接现重定向至邾子琐且未载其谥，故清空谥号并删除概述中的确定宪公称呼；不将未经证实的宪公另存为事实别名。本条取代2026-10-02说明中保留琐谥号宪公的取舍。克仍采用庄公，惠公、安公异称沿用既有检索与来源；考公、穆公本名未考保持为空，六位失名君主name规范为“？”。清空琐、何的旧reign.title本名组合，称谓通过共用人物字段回退解析；不改变世系、日期、在位几何或置信度。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zou-r7、zou-r11、zou-r13、zou-r14、zou-r15、zou-r16、zou-r17、zou-r18、zou-r19、zou-kaogong、zou-mu-gong。"
     ]
   }
 }

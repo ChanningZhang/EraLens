@@ -132,7 +132,7 @@ export const PersonSchema = z.object({
       }),
     )
     .default([]),
-  /** Comma-separated in DB; parsed to array at runtime. */
+  /** CSV in DB; pre-Qin values are pure 谥字, with the full appellation in title. */
   posthumousNames: z.array(z.string()).default([]),
   /** Comma-separated in DB; parsed to array at runtime. */
   templeNames: z.array(z.string()).default([]),

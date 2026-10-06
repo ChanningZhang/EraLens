@@ -8,7 +8,7 @@
 | `persons.alt_names` | JSON text | 别名，供搜索 |
 | `persons.ancestral_xing` | text? | 姓 |
 | `persons.clan_shi` | text? | 氏 |
-| `persons.posthumous_name` | text? | 谥号 CSV |
+| `persons.posthumous_name` | text? | 谥号 CSV；先秦仅谥字，爵称放 persons.title |
 | `persons.temple_name` | text? | 庙号 CSV |
 | `reigns.title` | text | 卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`） |
 | `reigns.era_names` | text? | 年号 CSV |
@@ -63,3 +63,5 @@
 ```
 
 该对象位于包 `cache.json` 顶层；`manifest.json` 是统一生成器写出的副本，不直接编辑。
+
+先秦称谓约定：`posthumousNames: ["庄"]`、`title: "庄公"`；卡片与详情大字优先级为 `reigns.title → persons.title → posthumousNames → persons.name`。详情称呼有 reign 焦点同前三项；无焦点仍为谥字 → persons.title。

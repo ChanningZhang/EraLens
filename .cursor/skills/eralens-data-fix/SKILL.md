@@ -105,7 +105,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | `persons.name` | 常用可检索姓名；先秦人物不带已拆入结构化字段的姓或氏（如存 `狂`，不存 `己狂`） | 先秦姓/氏前缀、谥号/庙号/年号、国号前缀 |
 | `ancestral_xing` | 姓（姬、姜、嬴） | 氏、国名 |
 | `clan_shi` | 氏（齐、晋、赵） | 姓 |
-| `posthumous_name` | 谥号本体 CSV（`武王`、`孝文皇帝`） | 国号、`少帝`/`末帝`/`后主` 等史称 |
+| `posthumous_name` | 谥号 CSV（先秦纯谥字如 `武`；帝制如 `孝文皇帝`） | 国号、`少帝`/`末帝`/`后主` 等史称 |
 | `temple_name` | 庙号本体 CSV（`太宗`、`高祖`） | 国号 |
 | `reigns.title` | 泳道卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`；明清预存年号式卡片称呼） | 不应替代庙谥列 |
 | `reigns.era_names` | 完整年号 CSV（`贞观,永徽`），用于事实展示 | 不参与运行时称呼选择 |
@@ -121,10 +121,18 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
 - 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，随后依次回退 `reigns.title`、`persons.title`、人物姓名。此规则与泳道卡片优先 title 的规则分开维护。
-- 先秦在位卡片大字与人物详情大字统一按 `persons.posthumous_name` → `persons.title` → `persons.name` 回退；卡片副行仍从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
+- 先秦在位卡片大字与人物详情大字统一按 `reigns.title` → `persons.title` → `persons.posthumous_name` → `persons.name` 回退；卡片副行仍从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。
+
+## 先秦称谓与纯谥字（2026-10-06）
+
+- 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
+- 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`，完整旧称可保留在 `altNames`。
+- 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
+- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝优先 `claimLabel`，其次 `dynasties.altNames[0]`。
+- 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 
 ## 常见数据病与正确修法
 

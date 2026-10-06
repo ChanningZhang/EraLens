@@ -31,13 +31,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "召公"
+        "召"
       ],
       "templeNames": [],
-      "title": "燕召公",
+      "title": "召公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕召公"
+      ]
     },
     {
       "id": "yan-r1",
@@ -153,13 +156,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠侯"
+        "惠"
       ],
       "templeNames": [],
-      "title": "燕惠侯",
+      "title": "惠侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕惠侯"
+      ]
     },
     {
       "id": "yan-r5",
@@ -185,13 +191,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐侯"
+        "釐"
       ],
       "templeNames": [],
-      "title": "燕釐侯",
+      "title": "釐侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕釐侯"
+      ]
     },
     {
       "id": "yan-r6",
@@ -213,13 +222,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "顷侯"
+        "顷"
       ],
       "templeNames": [],
-      "title": "燕顷侯",
+      "title": "顷侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕顷侯"
+      ]
     },
     {
       "id": "yan-r7",
@@ -241,13 +253,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀侯"
+        "哀"
       ],
       "templeNames": [],
-      "title": "燕哀侯",
+      "title": "哀侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕哀侯"
+      ]
     },
     {
       "id": "yan-r8",
@@ -295,13 +310,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆侯"
+        "穆"
       ],
       "templeNames": [],
-      "title": "燕穆侯",
+      "title": "穆侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕穆侯"
+      ]
     },
     {
       "id": "yan-r10",
@@ -323,13 +341,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣侯"
+        "宣"
       ],
       "templeNames": [],
-      "title": "燕宣侯",
+      "title": "宣侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕宣侯"
+      ]
     },
     {
       "id": "yan-r11",
@@ -351,13 +372,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓侯"
+        "桓"
       ],
       "templeNames": [],
-      "title": "燕桓侯",
+      "title": "桓侯",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕桓侯"
+      ]
     },
     {
       "id": "yan-r12",
@@ -383,13 +407,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "燕庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕庄公"
+      ]
     },
     {
       "id": "yan-r13",
@@ -411,13 +438,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "燕襄公",
+      "title": "襄公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕襄公"
+      ]
     },
     {
       "id": "yan-r14",
@@ -439,13 +469,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "燕桓公",
+      "title": "桓公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕桓公"
+      ]
     },
     {
       "id": "yan-r15",
@@ -467,13 +500,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "燕宣公",
+      "title": "宣公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕宣公"
+      ]
     },
     {
       "id": "yan-r16",
@@ -495,13 +531,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "燕昭公",
+      "title": "昭公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕昭公"
+      ]
     },
     {
       "id": "yan-r17",
@@ -523,13 +562,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "燕武公",
+      "title": "武公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕武公"
+      ]
     },
     {
       "id": "yan-r18",
@@ -551,13 +593,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "燕文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕文公"
+      ]
     },
     {
       "id": "yan-r19",
@@ -579,13 +624,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "懿公"
+        "懿"
       ],
       "templeNames": [],
-      "title": "燕懿公",
+      "title": "懿公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕懿公"
+      ]
     },
     {
       "id": "yan-r20",
@@ -607,13 +655,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "燕惠公",
+      "title": "惠公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕惠公"
+      ]
     },
     {
       "id": "yan-r21",
@@ -635,13 +686,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "燕悼公",
+      "title": "悼公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕悼公"
+      ]
     },
     {
       "id": "yan-r22",
@@ -663,13 +717,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "燕共公",
+      "title": "共公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕共公"
+      ]
     },
     {
       "id": "yan-r23",
@@ -691,13 +748,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
-      "title": "燕平公",
+      "title": "平公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕平公"
+      ]
     },
     {
       "id": "yan-r24",
@@ -719,13 +779,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
-      "title": "燕简公",
+      "title": "简公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕简公"
+      ]
     },
     {
       "id": "yan-r25",
@@ -743,13 +806,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝公"
+        "孝"
       ],
       "templeNames": [],
-      "title": "燕孝公",
+      "title": "孝公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕孝公"
+      ]
     },
     {
       "id": "yan-r26",
@@ -767,13 +833,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "燕成公",
+      "title": "成公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕成公"
+      ]
     },
     {
       "id": "yan-r27",
@@ -795,13 +864,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "闵公"
+        "闵"
       ],
       "templeNames": [],
-      "title": "燕闵公",
+      "title": "闵公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕闵公"
+      ]
     },
     {
       "id": "yan-r28",
@@ -819,13 +891,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
-      "title": "燕简公",
+      "title": "简公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕简公"
+      ]
     },
     {
       "id": "yan-r30",
@@ -847,13 +922,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "燕后文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕后文公"
+      ]
     },
     {
       "id": "yan-r31",
@@ -883,13 +961,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "易王"
+        "易"
       ],
       "templeNames": [],
-      "title": "燕易王",
+      "title": "易王",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕易王"
+      ]
     },
     {
       "id": "yan-r32",
@@ -929,13 +1010,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭王"
+        "昭"
       ],
       "templeNames": [],
-      "title": "燕昭王",
+      "title": "昭王",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕昭王"
+      ]
     },
     {
       "id": "yan-r34",
@@ -957,13 +1041,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠王"
+        "惠"
       ],
       "templeNames": [],
-      "title": "燕惠王",
+      "title": "惠王",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕惠王"
+      ]
     },
     {
       "id": "yan-r35",
@@ -981,13 +1068,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武成王"
+        "武成"
       ],
       "templeNames": [],
-      "title": "燕武成王",
+      "title": "武成王",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕武成王"
+      ]
     },
     {
       "id": "yan-r36",
@@ -1005,13 +1095,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝王"
+        "孝"
       ],
       "templeNames": [],
-      "title": "燕孝王",
+      "title": "孝王",
       "ancestralXing": "姬",
       "clanShi": "匽",
-      "dynastyId": "yan-chunqiu"
+      "dynastyId": "yan-chunqiu",
+      "altNames": [
+        "燕孝王"
+      ]
     },
     {
       "id": "yan-r37",
@@ -2521,7 +2614,8 @@
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06爵称变动事件：yan-yi-assumes-kingship，对应yan-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：ji-shi、yan-r4、yan-r5、yan-r6、yan-r7、yan-r9、yan-r10、yan-r11、yan-r12、yan-r13、yan-r14、yan-r15、yan-r16、yan-r17、yan-r18、yan-r19、yan-r20、yan-r21、yan-r22、yan-r23、yan-r24、yan-r25、yan-r26、yan-r27、yan-r28、yan-r30、yan-r31、yan-r33、yan-r34、yan-r35、yan-r36。"
     ]
   }
 }

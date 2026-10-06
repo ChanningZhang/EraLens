@@ -139,12 +139,7 @@ export function resolvePersonDetailTitle(
   options: { preQin?: boolean; reignTitle?: string | null } = {},
 ): string {
   if (options.preQin) {
-    return firstNonEmpty(
-      options.reignTitle,
-      resolvePosthumousAppellation(personContext)?.name,
-      personContext?.title,
-      personName,
-    ) ?? (hasPreQinAppellation(personName, personContext) ? "" : "？");
+    return resolvePreQinPrimary(options.reignTitle, personContext, personName) ?? "";
   }
   return firstNonEmpty(
     personName,
@@ -197,15 +192,15 @@ export function resolvePreQinNameFacts(
 }
 
 /** Pre-Qin card primary follows the shared large-title priority order. */
-function resolvePreQinCardPrimary(
-  reign: ReignLabelFields,
+function resolvePreQinPrimary(
+  reignTitle: string | null | undefined,
   personContext?: PersonDisplayContext | null,
   personName?: string | null,
 ): string | null {
   return firstNonEmpty(
-    reign.title,
-    firstAppellation(personContext?.posthumousNames),
+    reignTitle,
     personContext?.title,
+    firstAppellation(personContext?.posthumousNames),
     personName,
   ) ?? (hasPreQinAppellation(personName, personContext) ? null : "？");
 }
@@ -217,7 +212,7 @@ function resolvePreQinGivenName(
 ): string | null {
   if (!personName || isPlaceholderPersonName(personName)) return null;
   const appellation =
-    resolvePreQinCardPrimary(reign, personContext, personName) ??
+    resolvePreQinPrimary(reign.title, personContext, personName) ??
     firstNonEmpty(reign.title) ??
     personName;
   if (!appellation || givenNameIsRedundant(appellation, personName)) return null;
@@ -236,7 +231,7 @@ export function resolveReignPrimaryLabel(
 ): string {
   const personalName = personalNamePrimary(personName);
   if (usesPreQinCardLayout(reign)) {
-    return resolvePreQinCardPrimary(reign, personContext, personalName) ?? "";
+    return resolvePreQinPrimary(reign.title, personContext, personalName) ?? "";
   }
   if (!personalName) {
     return firstNonEmpty(
@@ -429,7 +424,7 @@ export function resolveReignDetailHeading(
     if (year == null || year >= REPUBLIC_ERA_START_YEAR) return "";
     const fallback =
       year < PRE_IMPERIAL_START_YEAR
-        ? posthumous
+        ? personTitle ?? posthumous
         : year < TEMPLE_ERA_START_YEAR
           ? posthumous ?? personTitle
           : temple ?? posthumous ?? personTitle;

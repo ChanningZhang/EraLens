@@ -44,13 +44,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "薛献公"
+      ],
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛献公",
+      "title": "献公",
       "dynastyId": "xue-chunqiu"
     },
     {
@@ -68,13 +70,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "薛襄公"
+      ],
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛襄公",
+      "title": "襄公",
       "dynastyId": "xue-chunqiu"
     },
     {
@@ -114,13 +118,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "薛惠公"
+      ],
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛惠公",
+      "title": "惠公",
       "dynastyId": "xue-chunqiu"
     },
     {
@@ -340,7 +346,7 @@
         "姬毂"
       ],
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -466,7 +472,7 @@
       "death": null,
       "altNames": [],
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -538,7 +544,7 @@
         "姬辙"
       ],
       "posthumousNames": [
-        "孝侯"
+        "孝"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -576,7 +582,7 @@
         "姬毛伯"
       ],
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -764,14 +770,15 @@
       "death": null,
       "altNames": [
         "滕文公（春秋）",
-        "姬绣"
+        "姬绣",
+        "滕文公"
       ],
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕文公",
+      "title": "文公",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -798,14 +805,15 @@
       "birth": null,
       "death": null,
       "altNames": [
-        "姬泉"
+        "姬泉",
+        "滕成公"
       ],
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕成公",
+      "title": "成公",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -831,13 +839,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "滕悼公"
+      ],
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕悼公",
+      "title": "悼公",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -863,13 +873,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "滕顷公"
+      ],
       "posthumousNames": [
-        "顷公"
+        "顷"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕顷公",
+      "title": "顷公",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -896,14 +908,15 @@
       "birth": null,
       "death": null,
       "altNames": [
-        "姬虞母"
+        "姬虞母",
+        "滕隐公"
       ],
       "posthumousNames": [
-        "隐公"
+        "隐"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕隐公",
+      "title": "隐公",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -925,13 +938,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞武公"
+      ],
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞武公",
+      "title": "武公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -953,13 +968,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞靖公"
+      ],
       "posthumousNames": [
-        "靖公"
+        "靖"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞靖公",
+      "title": "靖公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -981,13 +998,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞共公"
+      ],
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞共公",
+      "title": "共公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1009,13 +1028,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞德公"
+      ],
       "posthumousNames": [
-        "德公"
+        "德"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞德公",
+      "title": "德公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1037,13 +1058,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞成公"
+      ],
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞成公",
+      "title": "成公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1061,13 +1084,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞桓公"
+      ],
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞桓公",
+      "title": "桓公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1089,13 +1114,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞孝公"
+      ],
       "posthumousNames": [
-        "孝公"
+        "孝"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞孝公",
+      "title": "孝公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1113,13 +1140,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞文公"
+      ],
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞文公",
+      "title": "文公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1137,13 +1166,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞平公"
+      ],
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞平公",
+      "title": "平公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1165,13 +1196,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞悼公"
+      ],
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞悼公",
+      "title": "悼公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1189,13 +1222,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞隐公"
+      ],
       "posthumousNames": [
-        "隐公"
+        "隐"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞隐公",
+      "title": "隐公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1213,13 +1248,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞僖公"
+      ],
       "posthumousNames": [
-        "僖公"
+        "僖"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞僖公",
+      "title": "僖公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1245,13 +1282,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞湣公"
+      ],
       "posthumousNames": [
-        "湣公"
+        "湣"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞湣公",
+      "title": "湣公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1273,13 +1312,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞哀公"
+      ],
       "posthumousNames": [
-        "哀公"
+        "哀"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞哀公",
+      "title": "哀公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1305,13 +1346,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞出公"
+      ],
       "posthumousNames": [
-        "出公"
+        "出"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞出公",
+      "title": "出公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1333,13 +1376,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "杞简公"
+      ],
       "posthumousNames": [
-        "简公"
+        "简"
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞简公",
+      "title": "简公",
       "dynastyId": "qi-state-chunqiu"
     },
     {
@@ -1357,13 +1402,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒纪公"
+      ],
       "posthumousNames": [
-        "纪公"
+        "纪"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒纪公",
+      "title": "纪公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1381,13 +1428,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒厉公"
+      ],
       "posthumousNames": [
-        "厉公"
+        "厉"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒厉公",
+      "title": "厉公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1405,13 +1454,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒渠丘公"
+      ],
       "posthumousNames": [
-        "渠丘公"
+        "渠丘"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒渠丘公",
+      "title": "渠丘公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1429,13 +1480,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒犂比公"
+      ],
       "posthumousNames": [
-        "犂比公"
+        "犂比"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒犂比公",
+      "title": "犂比公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1475,13 +1528,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒著丘公"
+      ],
       "posthumousNames": [
-        "著丘公"
+        "著丘"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒著丘公",
+      "title": "著丘公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1499,13 +1554,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒共公"
+      ],
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒共公",
+      "title": "共公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1523,13 +1580,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "莒郊公"
+      ],
       "posthumousNames": [
-        "郊公"
+        "郊"
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒郊公",
+      "title": "郊公",
       "dynastyId": "ju-chunqiu"
     },
     {
@@ -1605,13 +1664,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "西周桓公"
+      ],
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周桓公",
+      "title": "桓公",
       "dynastyId": "zhou-guo-west"
     },
     {
@@ -1629,13 +1690,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "西周威公"
+      ],
       "posthumousNames": [
-        "威公"
+        "威"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周威公",
+      "title": "威公",
       "dynastyId": "zhou-guo-west"
     },
     {
@@ -1653,13 +1716,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "西周惠公"
+      ],
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周惠公",
+      "title": "惠公",
       "dynastyId": "zhou-guo-west"
     },
     {
@@ -1683,7 +1748,7 @@
       "death": null,
       "altNames": [],
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -1705,13 +1770,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "西周文公"
+      ],
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周文公",
+      "title": "文公",
       "dynastyId": "zhou-guo-west"
     },
     {
@@ -1737,13 +1804,15 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": [],
+      "altNames": [
+        "东周惠公"
+      ],
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "东周惠公",
+      "title": "惠公",
       "dynastyId": "zhou-guo-east"
     },
     {
@@ -1780,8 +1849,8 @@
         "姬糜"
       ],
       "posthumousNames": [
-        "定公",
-        "考公"
+        "定",
+        "考"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -1825,8 +1894,8 @@
         "姬宏"
       ],
       "posthumousNames": [
-        "文公",
-        "元公"
+        "文",
+        "元"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -2066,7 +2135,7 @@
       "death": null,
       "altNames": [],
       "posthumousNames": [
-        "昭文君"
+        "昭文"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -2094,7 +2163,7 @@
       "death": null,
       "altNames": [],
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
       "ancestralXing": "姬",
@@ -4960,7 +5029,8 @@
       "滕国爵称沿革复核（2026-10-05）：用户提供的模板截图明确将西周、春秋栏滕国标为“侯”。《春秋》前712年（鲁隐公十一年）称滕侯；《春秋左传正义》释鲁桓公二年（前710）“隐十一年称侯，今称子者，盖时王所黜”，并言“自是以下，滕当称子”。故数据以前710年首见“滕子”的记事年作为称子分期起点，精度为年；该年是称谓最早明证，不断言正式降爵恰发生于该年。",
       "2026-10-06爵称变动事件：teng-first-zi-title，对应teng-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
       "2026-10-06爵称变动审计暂缓三项：xue-chunqiu侯→伯(-453)、ju-chunqiu侯→子(-453)原值只是春秋/战国分类边界，不能生成该年实际改爵事件。《春秋》已有更早的薛伯、莒子记载；zhou-guo-east公→君(约-279)为用户指定的末君定位，正史无该年降爵证据，“公贬为君”见小说《东周列国志》，不生成小说情节为史实事件。保留原字段，后续修订需分别考证。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：xue-r1、xue-r2、xue-r4、teng-r1、teng-r7、teng-r8、teng-r9、teng-r2、teng-r3、teng-r4、teng-r5、teng-r6、qi-state-r1、qi-state-r1b、qi-state-gong、qi-state-de、qi-state-r1c、qi-state-r2、qi-state-xiao、qi-state-r3、qi-state-r4、qi-state-dao、qi-state-yin、qi-state-xi、qi-state-r5、qi-state-ai、qi-state-chu、qi-state-r6、ju-r1、ju-r1b、ju-r2、ju-r3、ju-r5、ju-r6、ju-r7、zhou-guo-jie、zhou-guo-zao、zhou-guo-chao、zhou-guo-wugong、zhou-guo-jiu、zhou-guo-gen、teng-r16、teng-r17、zhou-guo-zhaowenjun、zhou-guo-wu。"
     ]
   }
 }

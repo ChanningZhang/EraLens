@@ -419,13 +419,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武王"
+        "武"
       ],
       "templeNames": [],
-      "title": "楚武王",
+      "title": "武王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚武王"
+      ]
     },
     {
       "id": "chu-r17",
@@ -443,13 +446,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文王"
+        "文"
       ],
       "templeNames": [],
-      "title": "楚文王",
+      "title": "文王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚文王"
+      ]
     },
     {
       "id": "chu-r18",
@@ -489,13 +495,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成王"
+        "成"
       ],
       "templeNames": [],
-      "title": "楚成王",
+      "title": "成王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚成王"
+      ]
     },
     {
       "id": "chu-r20",
@@ -513,13 +522,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆王"
+        "穆"
       ],
       "templeNames": [],
-      "title": "楚穆王",
+      "title": "穆王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚穆王"
+      ]
     },
     {
       "id": "xiong-zhuang",
@@ -537,13 +549,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄王"
+        "庄"
       ],
       "templeNames": [],
-      "title": "楚庄王",
+      "title": "庄王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚庄王"
+      ]
     },
     {
       "id": "chu-r22",
@@ -561,13 +576,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共王"
+        "共"
       ],
       "templeNames": [],
-      "title": "楚共王",
+      "title": "共王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚共王"
+      ]
     },
     {
       "id": "chu-r23",
@@ -585,13 +603,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康王"
+        "康"
       ],
       "templeNames": [],
-      "title": "楚康王",
+      "title": "康王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚康王"
+      ]
     },
     {
       "id": "chu-r24",
@@ -631,13 +652,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "灵王"
+        "灵"
       ],
       "templeNames": [],
-      "title": "楚灵王",
+      "title": "灵王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚灵王"
+      ]
     },
     {
       "id": "chu-r26",
@@ -677,13 +701,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平王"
+        "平"
       ],
       "templeNames": [],
-      "title": "楚平王",
+      "title": "平王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚平王"
+      ]
     },
     {
       "id": "chu-r28",
@@ -701,13 +728,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭王"
+        "昭"
       ],
       "templeNames": [],
-      "title": "楚昭王",
+      "title": "昭王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚昭王"
+      ]
     },
     {
       "id": "chu-r29",
@@ -725,13 +755,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠王"
+        "惠"
       ],
       "templeNames": [],
-      "title": "楚惠王",
+      "title": "惠王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚惠王"
+      ]
     },
     {
       "id": "chu-r30",
@@ -749,13 +782,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "简王"
+        "简"
       ],
       "templeNames": [],
-      "title": "楚简王",
+      "title": "简王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚简王"
+      ]
     },
     {
       "id": "chu-r31",
@@ -773,13 +809,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "声王"
+        "声"
       ],
       "templeNames": [],
-      "title": "楚声王",
+      "title": "声王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚声王"
+      ]
     },
     {
       "id": "chu-r32",
@@ -797,13 +836,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼王"
+        "悼"
       ],
       "templeNames": [],
-      "title": "楚悼王",
+      "title": "悼王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚悼王"
+      ]
     },
     {
       "id": "chu-r33",
@@ -821,13 +863,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "肃王"
+        "肃"
       ],
       "templeNames": [],
-      "title": "楚肃王",
+      "title": "肃王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚肃王"
+      ]
     },
     {
       "id": "chu-r34",
@@ -845,13 +890,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣王"
+        "宣"
       ],
       "templeNames": [],
-      "title": "楚宣王",
+      "title": "宣王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚宣王"
+      ]
     },
     {
       "id": "chu-r35",
@@ -869,13 +917,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "威王"
+        "威"
       ],
       "templeNames": [],
-      "title": "楚威王",
+      "title": "威王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚威王"
+      ]
     },
     {
       "id": "chu-r36",
@@ -893,13 +944,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "怀王"
+        "怀"
       ],
       "templeNames": [],
-      "title": "楚怀王",
+      "title": "怀王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚怀王"
+      ]
     },
     {
       "id": "chu-r37",
@@ -917,13 +971,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "顷襄王"
+        "顷襄"
       ],
       "templeNames": [],
-      "title": "楚顷襄王",
+      "title": "顷襄王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚顷襄王"
+      ]
     },
     {
       "id": "chu-r38",
@@ -941,13 +998,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "考烈王"
+        "考烈"
       ],
       "templeNames": [],
-      "title": "楚考烈王",
+      "title": "考烈王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚考烈王"
+      ]
     },
     {
       "id": "chu-r39",
@@ -965,13 +1025,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "幽王"
+        "幽"
       ],
       "templeNames": [],
-      "title": "楚幽王",
+      "title": "幽王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚幽王"
+      ]
     },
     {
       "id": "chu-r40",
@@ -989,13 +1052,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀王"
+        "哀"
       ],
       "templeNames": [],
-      "title": "楚哀王",
+      "title": "哀王",
       "ancestralXing": "芈",
       "clanShi": "熊",
-      "dynastyId": "chu-chunqiu"
+      "dynastyId": "chu-chunqiu",
+      "altNames": [
+        "楚哀王"
+      ]
     },
     {
       "id": "chu-r41",
@@ -2807,7 +2873,8 @@
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06爵称变动事件：chu-wu-assumes-kingship，对应chu-chunqiu的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：chu-r16、chu-r17、chu-r19、chu-r20、xiong-zhuang、chu-r22、chu-r23、chu-r25、chu-r27、chu-r28、chu-r29、chu-r30、chu-r31、chu-r32、chu-r33、chu-r34、chu-r35、chu-r36、chu-r37、chu-r38、chu-r39、chu-r40。"
     ]
   }
 }

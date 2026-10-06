@@ -75,6 +75,14 @@ description: >-
 - 新增或丰富人物/在位信息时必须同步更新对应 person 的 `links` 和所属包的 `manifest.sources`，按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 执行，确保详情“来源”栏包含本次采用的依据。
 - 修改人物、reign 归属/称号或王朝名后，确认 `persons.search_terms` 触发器刷新；批量改写后执行 `SELECT rebuild_person_search_terms();`。
 
+## 先秦称谓与纯谥字（2026-10-06）
+
+- 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
+- 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`，完整旧称可保留在 `altNames`。
+- 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
+- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝优先 `claimLabel`，其次 `dynasties.altNames[0]`。
+- 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
+
 ## 人物与帝王概述
 
 ### 内容完整性与开国经历

@@ -47,13 +47,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "康伯"
+        "康"
       ],
       "templeNames": [],
-      "title": "卫康伯",
+      "title": "康伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫康伯"
+      ]
     },
     {
       "id": "weiguo-r2",
@@ -71,13 +74,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "考伯"
+        "考"
       ],
       "templeNames": [],
-      "title": "卫考伯",
+      "title": "考伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫考伯"
+      ]
     },
     {
       "id": "weiguo-r3",
@@ -95,13 +101,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "嗣伯"
+        "嗣"
       ],
       "templeNames": [],
-      "title": "卫嗣伯",
+      "title": "嗣伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫嗣伯"
+      ]
     },
     {
       "id": "weiguo-r4",
@@ -119,13 +128,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "疌伯"
+        "疌"
       ],
       "templeNames": [],
-      "title": "卫疌伯",
+      "title": "疌伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫疌伯"
+      ]
     },
     {
       "id": "weiguo-r5",
@@ -143,13 +155,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "靖伯"
+        "靖"
       ],
       "templeNames": [],
-      "title": "卫靖伯",
+      "title": "靖伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫靖伯"
+      ]
     },
     {
       "id": "weiguo-r6",
@@ -167,13 +182,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "贞伯"
+        "贞"
       ],
       "templeNames": [],
-      "title": "卫贞伯",
+      "title": "贞伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫贞伯"
+      ]
     },
     {
       "id": "weiguo-r7",
@@ -191,13 +209,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "顷侯"
+        "顷"
       ],
       "templeNames": [],
-      "title": "卫顷侯",
+      "title": "顷侯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫顷侯"
+      ]
     },
     {
       "id": "weiguo-r8",
@@ -215,13 +236,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐侯"
+        "釐"
       ],
       "templeNames": [],
-      "title": "卫釐侯",
+      "title": "釐侯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫釐侯"
+      ]
     },
     {
       "id": "weiguo-r9",
@@ -239,13 +263,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共伯"
+        "共"
       ],
       "templeNames": [],
-      "title": "卫共伯",
+      "title": "共伯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫共伯"
+      ]
     },
     {
       "id": "weiguo-r10",
@@ -263,13 +290,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "卫武公",
+      "title": "武公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫武公"
+      ]
     },
     {
       "id": "weiguo-r11",
@@ -287,13 +317,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "卫庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫庄公"
+      ]
     },
     {
       "id": "weiguo-r12",
@@ -311,13 +344,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "卫桓公",
+      "title": "桓公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫桓公"
+      ]
     },
     {
       "id": "weiguo-r13",
@@ -357,13 +393,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "卫宣公",
+      "title": "宣公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫宣公"
+      ]
     },
     {
       "id": "weiguo-r15",
@@ -381,13 +420,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠公"
+        "惠"
       ],
       "templeNames": [],
-      "title": "卫惠公",
+      "title": "惠公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫惠公"
+      ]
     },
     {
       "id": "weiguo-r16",
@@ -427,13 +469,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "懿公"
+        "懿"
       ],
       "templeNames": [],
-      "title": "卫懿公",
+      "title": "懿公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫懿公"
+      ]
     },
     {
       "id": "weiguo-r19",
@@ -451,13 +496,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "戴公"
+        "戴"
       ],
       "templeNames": [],
-      "title": "卫戴公",
+      "title": "戴公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫戴公"
+      ]
     },
     {
       "id": "weiguo-r20",
@@ -475,13 +523,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "卫文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫文公"
+      ]
     },
     {
       "id": "weiguo-r21",
@@ -499,13 +550,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "卫成公",
+      "title": "成公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫成公"
+      ]
     },
     {
       "id": "weiguo-r22",
@@ -545,13 +599,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "卫穆公",
+      "title": "穆公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫穆公"
+      ]
     },
     {
       "id": "weiguo-r24",
@@ -569,13 +626,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "定公"
+        "定"
       ],
       "templeNames": [],
-      "title": "卫定公",
+      "title": "定公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫定公"
+      ]
     },
     {
       "id": "weiguo-r25",
@@ -593,13 +653,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "献公"
+        "献"
       ],
       "templeNames": [],
-      "title": "卫献公",
+      "title": "献公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫献公"
+      ]
     },
     {
       "id": "weiguo-r26",
@@ -617,13 +680,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "殇公"
+        "殇"
       ],
       "templeNames": [],
-      "title": "卫殇公",
+      "title": "殇公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫殇公"
+      ]
     },
     {
       "id": "weiguo-r28",
@@ -641,13 +707,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "襄公"
+        "襄"
       ],
       "templeNames": [],
-      "title": "卫襄公",
+      "title": "襄公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫襄公"
+      ]
     },
     {
       "id": "weiguo-r29",
@@ -665,13 +734,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "灵公"
+        "灵"
       ],
       "templeNames": [],
-      "title": "卫灵公",
+      "title": "灵公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫灵公"
+      ]
     },
     {
       "id": "weiguo-r30",
@@ -689,13 +761,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "出公"
+        "出"
       ],
       "templeNames": [],
-      "title": "卫出公",
+      "title": "出公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫出公"
+      ]
     },
     {
       "id": "weiguo-r31",
@@ -713,13 +788,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "卫庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫庄公"
+      ]
     },
     {
       "id": "weiguo-r32",
@@ -781,13 +859,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "卫悼公",
+      "title": "悼公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫悼公"
+      ]
     },
     {
       "id": "weiguo-r36",
@@ -805,13 +886,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "敬公"
+        "敬"
       ],
       "templeNames": [],
-      "title": "卫敬公",
+      "title": "敬公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫敬公"
+      ]
     },
     {
       "id": "weiguo-r37",
@@ -829,13 +913,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "卫昭公",
+      "title": "昭公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫昭公"
+      ]
     },
     {
       "id": "weiguo-r38",
@@ -853,13 +940,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "怀公"
+        "怀"
       ],
       "templeNames": [],
-      "title": "卫怀公",
+      "title": "怀公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫怀公"
+      ]
     },
     {
       "id": "weiguo-r39",
@@ -877,13 +967,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "慎公"
+        "慎"
       ],
       "templeNames": [],
-      "title": "卫慎公",
+      "title": "慎公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫慎公"
+      ]
     },
     {
       "id": "weiguo-r40",
@@ -901,13 +994,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "声公"
+        "声"
       ],
       "templeNames": [],
-      "title": "卫声公",
+      "title": "声公",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫声公"
+      ]
     },
     {
       "id": "weiguo-r41",
@@ -925,13 +1021,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成侯"
+        "成"
       ],
       "templeNames": [],
-      "title": "卫成侯",
+      "title": "成侯",
       "ancestralXing": "姬",
       "clanShi": "卫",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫成侯"
+      ]
     },
     {
       "id": "weiguo-r42",
@@ -949,13 +1048,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平侯"
+        "平"
       ],
       "templeNames": [],
-      "title": "卫平侯",
+      "title": "平侯",
       "ancestralXing": "姬",
       "clanShi": "子南",
-      "dynastyId": "wei-weiguo"
+      "dynastyId": "wei-weiguo",
+      "altNames": [
+        "卫平侯"
+      ]
     },
     {
       "id": "weiguo-r43",
@@ -981,7 +1083,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "嗣君"
+        "嗣"
       ],
       "templeNames": [],
       "title": "嗣君",
@@ -1005,7 +1107,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "怀君"
+        "怀"
       ],
       "templeNames": [],
       "title": "怀君",
@@ -1029,7 +1131,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "元君"
+        "元"
       ],
       "templeNames": [],
       "title": "元君",
@@ -2820,7 +2922,8 @@
       "卫嗣君自降侯称君据《史记·卫康叔世家》“嗣君五年，更贬号曰君，独有濮阳”，换算年有前330、前320等异说；数据按原模板所用前330年标 approximate_year，并记录纪年争议。",
       "“君”依条目语境标记：如东周国为国君称号、卫嗣君为降等后的称号；它不是公、侯、伯、子、男之外的一等通用爵。各条具体含义不由程序统一推断。",
       "2026-10-06爵称变动事件：wei-si-demotes-to-jun，对应wei-weiguo的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
-      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。"
+      "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：weiguo-r1、weiguo-r2、weiguo-r3、weiguo-r4、weiguo-r5、weiguo-r6、weiguo-r7、weiguo-r8、weiguo-r9、weiguo-r10、weiguo-r11、weiguo-r12、weiguo-r14、weiguo-r15、weiguo-r18、weiguo-r19、weiguo-r20、weiguo-r21、weiguo-r23、weiguo-r24、weiguo-r25、weiguo-r26、weiguo-r28、weiguo-r29、weiguo-r30、weiguo-r31、weiguo-r35、weiguo-r36、weiguo-r37、weiguo-r38、weiguo-r39、weiguo-r40、weiguo-r41、weiguo-r42、weiguo-r43、weiguo-r44、weiguo-r45。"
     ]
   }
 }

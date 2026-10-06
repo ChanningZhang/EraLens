@@ -45,13 +45,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "太伯"
+        "太"
       ],
       "templeNames": [],
-      "title": "曹太伯",
+      "title": "太伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹太伯"
+      ]
     },
     {
       "id": "cao-r2",
@@ -91,13 +94,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宫伯"
+        "宫"
       ],
       "templeNames": [],
-      "title": "曹宫伯",
+      "title": "宫伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹宫伯"
+      ]
     },
     {
       "id": "cao-r4",
@@ -115,13 +121,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "孝伯"
+        "孝"
       ],
       "templeNames": [],
-      "title": "曹孝伯",
+      "title": "孝伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹孝伯"
+      ]
     },
     {
       "id": "cao-r5",
@@ -139,13 +148,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "夷伯"
+        "夷"
       ],
       "templeNames": [],
-      "title": "曹夷伯",
+      "title": "夷伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹夷伯"
+      ]
     },
     {
       "id": "cao-r6",
@@ -163,13 +175,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "幽伯"
+        "幽"
       ],
       "templeNames": [],
-      "title": "曹幽伯",
+      "title": "幽伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹幽伯"
+      ]
     },
     {
       "id": "cao-r7",
@@ -187,13 +202,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "戴伯"
+        "戴"
       ],
       "templeNames": [],
-      "title": "曹戴伯",
+      "title": "戴伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹戴伯"
+      ]
     },
     {
       "id": "cao-r8",
@@ -211,13 +229,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "惠伯"
+        "惠"
       ],
       "templeNames": [],
-      "title": "曹惠伯",
+      "title": "惠伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹惠伯"
+      ]
     },
     {
       "id": "cao-r9",
@@ -235,13 +256,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "废伯"
+        "废"
       ],
       "templeNames": [],
-      "title": "曹废伯",
+      "title": "废伯",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹废伯"
+      ]
     },
     {
       "id": "cao-r10",
@@ -259,13 +283,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "穆公"
+        "穆"
       ],
       "templeNames": [],
-      "title": "曹穆公",
+      "title": "穆公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹穆公"
+      ]
     },
     {
       "id": "cao-r11",
@@ -283,13 +310,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "桓公"
+        "桓"
       ],
       "templeNames": [],
-      "title": "曹桓公",
+      "title": "桓公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹桓公"
+      ]
     },
     {
       "id": "cao-r12",
@@ -307,13 +337,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "庄公"
+        "庄"
       ],
       "templeNames": [],
-      "title": "曹庄公",
+      "title": "庄公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹庄公"
+      ]
     },
     {
       "id": "cao-r13",
@@ -331,13 +364,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "釐公"
+        "釐"
       ],
       "templeNames": [],
-      "title": "曹釐公",
+      "title": "釐公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹釐公"
+      ]
     },
     {
       "id": "cao-r14",
@@ -355,13 +391,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "昭公"
+        "昭"
       ],
       "templeNames": [],
-      "title": "曹昭公",
+      "title": "昭公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹昭公"
+      ]
     },
     {
       "id": "cao-r15",
@@ -379,13 +418,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "共公"
+        "共"
       ],
       "templeNames": [],
-      "title": "曹共公",
+      "title": "共公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹共公"
+      ]
     },
     {
       "id": "cao-r16",
@@ -403,13 +445,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文公"
+        "文"
       ],
       "templeNames": [],
-      "title": "曹文公",
+      "title": "文公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹文公"
+      ]
     },
     {
       "id": "cao-r17",
@@ -427,13 +472,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "宣公"
+        "宣"
       ],
       "templeNames": [],
-      "title": "曹宣公",
+      "title": "宣公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹宣公"
+      ]
     },
     {
       "id": "cao-r18",
@@ -451,13 +499,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "成公"
+        "成"
       ],
       "templeNames": [],
-      "title": "曹成公",
+      "title": "成公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹成公"
+      ]
     },
     {
       "id": "cao-r19",
@@ -475,13 +526,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "武公"
+        "武"
       ],
       "templeNames": [],
-      "title": "曹武公",
+      "title": "武公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹武公"
+      ]
     },
     {
       "id": "cao-r20",
@@ -499,13 +553,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "平公"
+        "平"
       ],
       "templeNames": [],
-      "title": "曹平公",
+      "title": "平公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹平公"
+      ]
     },
     {
       "id": "cao-r21",
@@ -523,13 +580,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "悼公"
+        "悼"
       ],
       "templeNames": [],
-      "title": "曹悼公",
+      "title": "悼公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹悼公"
+      ]
     },
     {
       "id": "cao-r22",
@@ -547,13 +607,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "声公"
+        "声"
       ],
       "templeNames": [],
-      "title": "曹声公",
+      "title": "声公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹声公"
+      ]
     },
     {
       "id": "cao-r23",
@@ -571,13 +634,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "隐公"
+        "隐"
       ],
       "templeNames": [],
-      "title": "曹隐公",
+      "title": "隐公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹隐公"
+      ]
     },
     {
       "id": "cao-r24",
@@ -595,13 +661,16 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "靖公"
+        "靖"
       ],
       "templeNames": [],
-      "title": "曹靖公",
+      "title": "靖公",
       "ancestralXing": "姬",
       "clanShi": "曹",
-      "dynastyId": "cao-chunqiu"
+      "dynastyId": "cao-chunqiu",
+      "altNames": [
+        "曹靖公"
+      ]
     },
     {
       "id": "cao-r25",
@@ -1625,7 +1694,8 @@
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：开国经历逐条复核并改写：cao-r0。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：cao-r1、cao-r3、cao-r4、cao-r5、cao-r6、cao-r7、cao-r8、cao-r9、cao-r10、cao-r11、cao-r12、cao-r13、cao-r14、cao-r15、cao-r16、cao-r17、cao-r18、cao-r19、cao-r20、cao-r21、cao-r22、cao-r23、cao-r24。"
     ]
   }
 }

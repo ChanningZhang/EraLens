@@ -671,7 +671,8 @@
         "汤",
         "成汤",
         "天乙",
-        "大乙"
+        "大乙",
+        "商汤"
       ],
       "roles": [
         "君主"
@@ -692,12 +693,12 @@
         }
       ],
       "posthumousNames": [
-        "武王"
+        "武"
       ],
       "templeNames": [
         "高祖"
       ],
-      "title": "商汤",
+      "title": "武王",
       "clanShi": "殷",
       "dynastyId": "shang"
     },
@@ -1855,11 +1856,14 @@
         }
       ],
       "posthumousNames": [
-        "武王"
+        "武"
       ],
       "templeNames": [],
-      "title": "周武王",
-      "dynastyId": "zhou-west"
+      "title": "武王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周武王"
+      ]
     },
     {
       "id": "ji-dan",
@@ -1895,11 +1899,14 @@
         }
       ],
       "posthumousNames": [
-        "成王"
+        "成"
       ],
       "templeNames": [],
-      "title": "周成王",
-      "dynastyId": "zhou-west"
+      "title": "成王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周成王"
+      ]
     },
     {
       "id": "ji-zhao",
@@ -1916,11 +1923,14 @@
         }
       ],
       "posthumousNames": [
-        "康王"
+        "康"
       ],
       "templeNames": [],
-      "title": "周康王",
-      "dynastyId": "zhou-west"
+      "title": "康王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周康王"
+      ]
     },
     {
       "id": "ji-xia",
@@ -1937,11 +1947,14 @@
         }
       ],
       "posthumousNames": [
-        "昭王"
+        "昭"
       ],
       "templeNames": [],
-      "title": "周昭王",
-      "dynastyId": "zhou-west"
+      "title": "昭王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周昭王"
+      ]
     },
     {
       "id": "ji-man",
@@ -1958,11 +1971,14 @@
         }
       ],
       "posthumousNames": [
-        "穆王"
+        "穆"
       ],
       "templeNames": [],
-      "title": "周穆王",
-      "dynastyId": "zhou-west"
+      "title": "穆王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周穆王"
+      ]
     },
     {
       "id": "ji-yihu",
@@ -1979,11 +1995,14 @@
         }
       ],
       "posthumousNames": [
-        "共王"
+        "共"
       ],
       "templeNames": [],
-      "title": "周共王",
-      "dynastyId": "zhou-west"
+      "title": "共王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周共王"
+      ]
     },
     {
       "id": "ji-jian",
@@ -2000,11 +2019,14 @@
         }
       ],
       "posthumousNames": [
-        "懿王"
+        "懿"
       ],
       "templeNames": [],
-      "title": "周懿王",
-      "dynastyId": "zhou-west"
+      "title": "懿王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周懿王"
+      ]
     },
     {
       "id": "ji-pifang",
@@ -2021,11 +2043,14 @@
         }
       ],
       "posthumousNames": [
-        "孝王"
+        "孝"
       ],
       "templeNames": [],
-      "title": "周孝王",
-      "dynastyId": "zhou-west"
+      "title": "孝王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周孝王"
+      ]
     },
     {
       "id": "ji-xie",
@@ -2042,11 +2067,14 @@
         }
       ],
       "posthumousNames": [
-        "夷王"
+        "夷"
       ],
       "templeNames": [],
-      "title": "周夷王",
-      "dynastyId": "zhou-west"
+      "title": "夷王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周夷王"
+      ]
     },
     {
       "id": "ji-hu",
@@ -2063,11 +2091,14 @@
         }
       ],
       "posthumousNames": [
-        "厉王"
+        "厉"
       ],
       "templeNames": [],
-      "title": "周厉王",
-      "dynastyId": "zhou-west"
+      "title": "厉王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周厉王"
+      ]
     },
     {
       "id": "ji-jing",
@@ -2084,11 +2115,14 @@
         }
       ],
       "posthumousNames": [
-        "宣王"
+        "宣"
       ],
       "templeNames": [],
-      "title": "周宣王",
-      "dynastyId": "zhou-west"
+      "title": "宣王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周宣王"
+      ]
     },
     {
       "id": "ji-gongsheng",
@@ -2105,11 +2139,14 @@
         }
       ],
       "posthumousNames": [
-        "幽王"
+        "幽"
       ],
       "templeNames": [],
-      "title": "周幽王",
-      "dynastyId": "zhou-west"
+      "title": "幽王",
+      "dynastyId": "zhou-west",
+      "altNames": [
+        "周幽王"
+      ]
     },
     {
       "id": "ji-yijiu",
@@ -2126,11 +2163,14 @@
         }
       ],
       "posthumousNames": [
-        "平王"
+        "平"
       ],
       "templeNames": [],
-      "title": "周平王",
-      "dynastyId": "zhou-east"
+      "title": "平王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周平王"
+      ]
     },
     {
       "id": "ji-yuchen",
@@ -2147,11 +2187,14 @@
         }
       ],
       "posthumousNames": [
-        "携王"
+        "携"
       ],
       "templeNames": [],
-      "title": "周携王",
-      "dynastyId": "zhou-east"
+      "title": "携王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周携王"
+      ]
     },
     {
       "id": "ji-lin",
@@ -2168,11 +2211,14 @@
         }
       ],
       "posthumousNames": [
-        "桓王"
+        "桓"
       ],
       "templeNames": [],
-      "title": "周桓王",
-      "dynastyId": "zhou-east"
+      "title": "桓王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周桓王"
+      ]
     },
     {
       "id": "ji-tuo",
@@ -2189,11 +2235,14 @@
         }
       ],
       "posthumousNames": [
-        "庄王"
+        "庄"
       ],
       "templeNames": [],
-      "title": "周庄王",
-      "dynastyId": "zhou-east"
+      "title": "庄王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周庄王"
+      ]
     },
     {
       "id": "ji-huqi",
@@ -2210,11 +2259,14 @@
         }
       ],
       "posthumousNames": [
-        "釐王"
+        "釐"
       ],
       "templeNames": [],
-      "title": "周釐王",
-      "dynastyId": "zhou-east"
+      "title": "釐王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周釐王"
+      ]
     },
     {
       "id": "ji-lang",
@@ -2231,11 +2283,14 @@
         }
       ],
       "posthumousNames": [
-        "惠王"
+        "惠"
       ],
       "templeNames": [],
-      "title": "周惠王",
-      "dynastyId": "zhou-east"
+      "title": "惠王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周惠王"
+      ]
     },
     {
       "id": "ji-zheng",
@@ -2252,11 +2307,14 @@
         }
       ],
       "posthumousNames": [
-        "襄王"
+        "襄"
       ],
       "templeNames": [],
-      "title": "周襄王",
-      "dynastyId": "zhou-east"
+      "title": "襄王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周襄王"
+      ]
     },
     {
       "id": "ji-renchen",
@@ -2273,11 +2331,14 @@
         }
       ],
       "posthumousNames": [
-        "顷王"
+        "顷"
       ],
       "templeNames": [],
-      "title": "周顷王",
-      "dynastyId": "zhou-east"
+      "title": "顷王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周顷王"
+      ]
     },
     {
       "id": "ji-ban",
@@ -2294,11 +2355,14 @@
         }
       ],
       "posthumousNames": [
-        "匡王"
+        "匡"
       ],
       "templeNames": [],
-      "title": "周匡王",
-      "dynastyId": "zhou-east"
+      "title": "匡王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周匡王"
+      ]
     },
     {
       "id": "ji-yu",
@@ -2315,11 +2379,14 @@
         }
       ],
       "posthumousNames": [
-        "定王"
+        "定"
       ],
       "templeNames": [],
-      "title": "周定王",
-      "dynastyId": "zhou-east"
+      "title": "定王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周定王"
+      ]
     },
     {
       "id": "ji-yi",
@@ -2336,11 +2403,14 @@
         }
       ],
       "posthumousNames": [
-        "简王"
+        "简"
       ],
       "templeNames": [],
-      "title": "周简王",
-      "dynastyId": "zhou-east"
+      "title": "简王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周简王"
+      ]
     },
     {
       "id": "ji-xiexin",
@@ -2357,11 +2427,14 @@
         }
       ],
       "posthumousNames": [
-        "灵王"
+        "灵"
       ],
       "templeNames": [],
-      "title": "周灵王",
-      "dynastyId": "zhou-east"
+      "title": "灵王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周灵王"
+      ]
     },
     {
       "id": "ji-gui",
@@ -2378,11 +2451,14 @@
         }
       ],
       "posthumousNames": [
-        "景王"
+        "景"
       ],
       "templeNames": [],
-      "title": "周景王",
-      "dynastyId": "zhou-east"
+      "title": "景王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周景王"
+      ]
     },
     {
       "id": "ji-meng",
@@ -2399,11 +2475,14 @@
         }
       ],
       "posthumousNames": [
-        "悼王"
+        "悼"
       ],
       "templeNames": [],
-      "title": "周悼王",
-      "dynastyId": "zhou-east"
+      "title": "悼王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周悼王"
+      ]
     },
     {
       "id": "ji-gai",
@@ -2420,11 +2499,14 @@
         }
       ],
       "posthumousNames": [
-        "敬王"
+        "敬"
       ],
       "templeNames": [],
-      "title": "周敬王",
-      "dynastyId": "zhou-east"
+      "title": "敬王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周敬王"
+      ]
     },
     {
       "id": "ji-ren",
@@ -2441,11 +2523,14 @@
         }
       ],
       "posthumousNames": [
-        "元王"
+        "元"
       ],
       "templeNames": [],
-      "title": "周元王",
-      "dynastyId": "zhou-east"
+      "title": "元王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周元王"
+      ]
     },
     {
       "id": "ji-jie",
@@ -2462,11 +2547,14 @@
         }
       ],
       "posthumousNames": [
-        "贞定王"
+        "贞定"
       ],
       "templeNames": [],
-      "title": "周贞定王",
-      "dynastyId": "zhou-east"
+      "title": "贞定王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周贞定王"
+      ]
     },
     {
       "id": "ji-quji",
@@ -2483,11 +2571,14 @@
         }
       ],
       "posthumousNames": [
-        "哀王"
+        "哀"
       ],
       "templeNames": [],
-      "title": "周哀王",
-      "dynastyId": "zhou-east"
+      "title": "哀王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周哀王"
+      ]
     },
     {
       "id": "ji-shu",
@@ -2504,11 +2595,14 @@
         }
       ],
       "posthumousNames": [
-        "思王"
+        "思"
       ],
       "templeNames": [],
-      "title": "周思王",
-      "dynastyId": "zhou-east"
+      "title": "思王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周思王"
+      ]
     },
     {
       "id": "ji-wei",
@@ -2525,11 +2619,14 @@
         }
       ],
       "posthumousNames": [
-        "考王"
+        "考"
       ],
       "templeNames": [],
-      "title": "周考王",
-      "dynastyId": "zhou-east"
+      "title": "考王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周考王"
+      ]
     },
     {
       "id": "ji-wu",
@@ -2546,11 +2643,14 @@
         }
       ],
       "posthumousNames": [
-        "威烈王"
+        "威烈"
       ],
       "templeNames": [],
-      "title": "周威烈王",
-      "dynastyId": "zhou-east"
+      "title": "威烈王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周威烈王"
+      ]
     },
     {
       "id": "ji-jiao",
@@ -2567,11 +2667,14 @@
         }
       ],
       "posthumousNames": [
-        "安王"
+        "安"
       ],
       "templeNames": [],
-      "title": "周安王",
-      "dynastyId": "zhou-east"
+      "title": "安王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周安王"
+      ]
     },
     {
       "id": "ji-xi",
@@ -2588,11 +2691,14 @@
         }
       ],
       "posthumousNames": [
-        "烈王"
+        "烈"
       ],
       "templeNames": [],
-      "title": "周烈王",
-      "dynastyId": "zhou-east"
+      "title": "烈王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周烈王"
+      ]
     },
     {
       "id": "ji-bian",
@@ -2609,11 +2715,14 @@
         }
       ],
       "posthumousNames": [
-        "显王"
+        "显"
       ],
       "templeNames": [],
-      "title": "周显王",
-      "dynastyId": "zhou-east"
+      "title": "显王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周显王"
+      ]
     },
     {
       "id": "ji-ding",
@@ -2630,11 +2739,14 @@
         }
       ],
       "posthumousNames": [
-        "慎靓王"
+        "慎靓"
       ],
       "templeNames": [],
-      "title": "周慎靓王",
-      "dynastyId": "zhou-east"
+      "title": "慎靓王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周慎靓王"
+      ]
     },
     {
       "id": "ji-yan",
@@ -2651,11 +2763,14 @@
         }
       ],
       "posthumousNames": [
-        "赧王"
+        "赧"
       ],
       "templeNames": [],
-      "title": "周赧王",
-      "dynastyId": "zhou-east"
+      "title": "赧王",
+      "dynastyId": "zhou-east",
+      "altNames": [
+        "周赧王"
+      ]
     },
     {
       "id": "guan-zhong",
@@ -6942,7 +7057,8 @@
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：开国候选逐项复核后保留原概述：si-yu、si-qi、zi-tang、ji-fa、ji-yijiu。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
-      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zi-tang、ji-fa、ji-song、ji-zhao、ji-xia、ji-man、ji-yihu、ji-jian、ji-pifang、ji-xie、ji-hu、ji-jing、ji-gongsheng、ji-yijiu、ji-yuchen、ji-lin、ji-tuo、ji-huqi、ji-lang、ji-zheng、ji-renchen、ji-ban、ji-yu、ji-yi、ji-xiexin、ji-gui、ji-meng、ji-gai、ji-ren、ji-jie、ji-quji、ji-shu、ji-wei、ji-wu、ji-jiao、ji-xi、ji-bian、ji-ding、ji-yan。"
     ]
   }
 }
