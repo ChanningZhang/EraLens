@@ -141,23 +141,6 @@
   pointer-events: none;
 }
 
-.conqueredDynastyCount {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  z-index: 2;
-  min-width: 14px;
-  padding: 2px 4px;
-  border: 1px solid color-mix(in srgb, var(--dynasty-color) 24%, var(--color-border));
-  border-radius: 5px;
-  background: color-mix(in srgb, var(--dynasty-color) 12%, var(--color-surface));
-  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 10%, transparent);
-  color: var(--color-ink-secondary);
-  font: 400 8px/1 var(--font-sans);
-  text-align: center;
-  pointer-events: none;
-}
-
 .cards {
   position: absolute;
   inset: 0;

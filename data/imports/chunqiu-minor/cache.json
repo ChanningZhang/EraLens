@@ -2396,7 +2396,7 @@
         "abs": -5149,
         "confidence": "month"
       },
-      "note": "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。",
+      "note": "周初封兹舆期为莒君。春秋早期至前616年前后，莒国君主世系与在位年代记载不详；前481年以后至楚灭莒前，君主世系亦有缺载。",
       "feudalRank": {
         "periods": [
           {
@@ -5113,7 +5113,8 @@
       "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
       "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：xue-r1、xue-r2、xue-r4、teng-r1、teng-r7、teng-r8、teng-r9、teng-r2、teng-r3、teng-r4、teng-r5、teng-r6、qi-state-r1、qi-state-r1b、qi-state-gong、qi-state-de、qi-state-r1c、qi-state-r2、qi-state-xiao、qi-state-r3、qi-state-r4、qi-state-dao、qi-state-yin、qi-state-xi、qi-state-r5、qi-state-ai、qi-state-chu、qi-state-r6、ju-r1、ju-r1b、ju-r2、ju-r3、ju-r5、ju-r6、ju-r7、zhou-guo-jie、zhou-guo-zao、zhou-guo-chao、zhou-guo-wugong、zhou-guo-jiu、zhou-guo-gen、teng-r16、teng-r17、zhou-guo-zhaowenjun、zhou-guo-wu。",
       "2026-10-06单字爵称修复：全量检查persons.title的54条单字记录，14条为无可核谥号君主的孤立爵称，恢复有来源的完整称呼，保留独立persons.name与空posthumousNames；另40条为单字本名或尧、舜、禹、纣等通称，不能按单字长度机械补国名或爵称。本包修复：teng-r18→滕侯昃、teng-r19→滕公丘、teng-hou-su→滕侯苏。滕侯昃、滕公丘沿用列表及人物链接称呼；苏采用已有释名“苏”，完整称呼作滕侯苏，滕侯𩵦仍保留为检索异名；沿用原有身份争议与来源取舍，不提高世系或年代置信度。",
-      "2026-10-06：修复田巿被杀命运线的错误对象。依据《史记·田儋列传》，新增田荣及楚汉之际据齐自立的齐政权、田荣在位记录，使田巿→田荣关系可解析；前206年为追杀田巿、自立齐王之年，田荣败死于前205年。失载月份按年精度处理，12月为年桶占位。"
+      "2026-10-06：修复田巿被杀命运线的错误对象。依据《史记·田儋列传》，新增田荣及楚汉之际据齐自立的齐政权、田荣在位记录，使田巿→田荣关系可解析；前206年为追杀田巿、自立齐王之年，田荣败死于前205年。失载月份按年精度处理，12月为年桶占位。",
+      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
     ]
   }
 }

@@ -2893,7 +2893,7 @@
         "abs": -19177,
         "confidence": "month"
       },
-      "note": "王朝窗口取断代工程前2070–前1600。各王起迄依今本《竹书纪年》在位年数自夏始顺推（桀用《帝王世纪》五十二年以接商汤），全部标 interpolated。相、少康之间有穷后羿、寒浞占夏行而非夏后正统。"
+      "note": "夏的年代常采用夏商周断代工程所定约前2070年至前1600年。夏王世系及在位年数主要见于今本《竹书纪年》等传世文献，具体年代仍有争议；桀的在位年数另有《帝王世纪》五十二年说。相、少康之间，传世文献记有穷后羿与寒浞据夏政。"
     },
     {
       "id": "shang",
@@ -4965,7 +4965,7 @@
   "events": [
     {
       "kind": "other",
-      "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度；原不确定范围：-2100年1月至-2070年12月；按既有事件说明转为代表时点。",
+      "dateNote": "治水传说见《史记·夏本纪》等，具体年月不可考，年代约在夏朝建立前后。",
       "id": "yu-flood-control",
       "name": "大禹治水",
       "timeMode": "point",
@@ -4981,7 +4981,7 @@
     },
     {
       "kind": "battle",
-      "dateNote": "《尚书·甘誓》载启伐有扈；绝对年取今本竹书年数自夏始顺推后的启在位段，标推算；原不确定范围：-2060年1月至-2045年12月；按既有事件说明转为代表时点。",
+      "dateNote": "《尚书·甘誓》载启伐有扈。事件年代缺少直接纪年材料，后世依今本《竹书纪年》传统积年系于夏启时期。",
       "id": "gan-battle",
       "name": "甘之战",
       "timeMode": "point",
@@ -4997,7 +4997,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "太康失位传说。窗口取太康在位段（前2044–前2041）。；原不确定范围：-2044年1月至-2041年12月；按既有事件说明转为代表时点。",
+      "dateNote": "太康失位见于传世文献，具体年代不可考。",
       "id": "taikang-lost",
       "name": "太康失国",
       "timeMode": "point",
@@ -5013,7 +5013,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "少康灭寒浞、恢复夏政；窗口取今本竹书年数顺推后的少康在位段，标推算；原不确定范围：-1959年1月至-1939年12月；按既有事件说明转为持续区间。",
+      "dateNote": "少康灭寒浞、恢复夏政；具体年代主要依今本《竹书纪年》传统积年推算，缺少独立纪年材料。",
       "id": "shaokang-zhongxing",
       "name": "少康中兴",
       "timeMode": "span",
@@ -5037,7 +5037,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "《史记·夏本纪》记孔甲好鬼神、夏德衰；绝对年取今本竹书年数顺推后的孔甲在位段，标推算；原不确定范围：-1709年1月至-1679年12月；按既有事件说明转为持续区间。",
+      "dateNote": "《史记·夏本纪》记孔甲好鬼神、夏德衰；其绝对年代缺乏同时代纪年证据。",
       "id": "kongjia-decline",
       "name": "孔甲乱德",
       "timeMode": "span",
@@ -5061,7 +5061,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "桀杀关龙逢出于《韩诗外传》等，具体年份不可考；窗取桀在位末段，标推算；原不确定范围：-1609年1月至-1600年12月；按既有事件说明转为代表时点。",
+      "dateNote": "桀杀关龙逢见《韩诗外传》等，具体年份不可考。",
       "id": "guanlongpang-remonstrance",
       "name": "关龙逢谏桀",
       "timeMode": "point",
@@ -5077,7 +5077,7 @@
     },
     {
       "kind": "battle",
-      "dateNote": "夏商分界取断代工程约前1600年，战役月日不详；原不确定范围：-1610年1月至-1600年12月；按既有事件说明转为代表时点。",
+      "dateNote": "夏商分界依夏商周断代工程约定前1600年；鸣条之战具体年月无明确记载。",
       "id": "mingtiao",
       "name": "鸣条之战",
       "timeMode": "point",
@@ -5093,7 +5093,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考；原不确定范围：-1560年1月至-1548年12月；按既有事件说明转为代表时点。",
+      "dateNote": "伊尹放太甲见《史记》等传世记载，具体年份不可考。",
       "id": "yiyin-taijia",
       "name": "伊尹放太甲",
       "timeMode": "point",
@@ -5109,7 +5109,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "《史记》记太戊立伊陟为相、用巫咸；绝对年取本表太戊在位前十年（竹书积年，非实测）；原不确定范围：-1494年1月至-1485年12月；按既有事件说明转为持续区间。",
+      "dateNote": "《史记》记太戊立伊陟为相、用巫咸；前1494至前1485年为今本《竹书纪年》传统积年推算，并非直接纪年。",
       "id": "taiwu-revival",
       "name": "太戊修德",
       "timeMode": "span",
@@ -5133,7 +5133,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "断代工程估定迁殷约前1300年，起迄年不详；原不确定范围：-1310年1月至-1290年12月；按既有事件说明转为代表时点。",
+      "dateNote": "夏商周断代工程估定盘庚迁殷约在前1300年，传世材料未载具体起讫年。",
       "id": "pangeng-move-yin",
       "name": "盘庚迁殷",
       "timeMode": "point",
@@ -5171,7 +5171,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "《史记》《说命》记武丁梦傅说、举于傅岩；年份不详，窗取武丁在位前十年；原不确定范围：-1250年1月至-1241年12月；按既有事件说明转为代表时点。",
+      "dateNote": "《史记》《说命》记武丁梦傅说、举于傅岩；具体年份不详，后世将此事系于武丁在位时期。",
       "id": "fuyue-fuyan",
       "name": "武丁举傅说",
       "timeMode": "point",
@@ -5187,7 +5187,7 @@
     },
     {
       "kind": "politics",
-      "dateNote": "《今本竹书》系于帝辛末年杀王子比干；绝对年取牧野前1046年，月日不详；原不确定范围：-1047年1月至-1046年12月；按既有事件说明转为代表时点。",
+      "dateNote": "《今本竹书纪年》将比干之死系于帝辛末年；其绝对年代依牧野之战约前1046年推定，月份不详。",
       "id": "bigan-killed",
       "name": "比干谏死",
       "timeMode": "point",
@@ -5218,7 +5218,7 @@
     },
     {
       "kind": "battle",
-      "dateNote": "成王初、周公摄政期间，绝对年据西周初框架；原不确定范围：-1042年1月至-1036年12月；按既有事件说明转为持续区间。",
+      "dateNote": "三监之乱发生于周成王初年、周公摄政期间；具体年份在西周初年断代框架下仍有争议。",
       "id": "sanjian-rebellion",
       "name": "三监之乱",
       "timeMode": "span",
@@ -5264,7 +5264,7 @@
     },
     {
       "kind": "battle",
-      "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详；原不确定范围：-995年1月至-977年12月；按既有事件说明转为代表时点。",
+      "dateNote": "周昭王卒年依夏商周断代工程系于前977年；南征次数及具体月份不详。",
       "id": "zhaowang-south",
       "name": "昭王南征",
       "timeMode": "point",
@@ -5487,7 +5487,7 @@
     },
     {
       "kind": "culture",
-      "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年；原不确定范围：-551年1月至-221年12月；按既有事件说明转为持续区间。",
+      "dateNote": "百家争鸣是春秋晚期至秦统一前后思想活跃的历史阶段，并无单一明确的起讫年份。",
       "id": "baijia-zhengming",
       "name": "百家争鸣",
       "timeMode": "span",
@@ -7058,7 +7058,8 @@
       "2026-10-05：开国候选逐项复核后保留原概述：si-yu、si-qi、zi-tang、ji-fa、ji-yijiu。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
-      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zi-tang、ji-fa、ji-song、ji-zhao、ji-xia、ji-man、ji-yihu、ji-jian、ji-pifang、ji-xie、ji-hu、ji-jing、ji-gongsheng、ji-yijiu、ji-yuchen、ji-lin、ji-tuo、ji-huqi、ji-lang、ji-zheng、ji-renchen、ji-ban、ji-yu、ji-yi、ji-xiexin、ji-gui、ji-meng、ji-gai、ji-ren、ji-jie、ji-quji、ji-shu、ji-wei、ji-wu、ji-jiao、ji-xi、ji-bian、ji-ding、ji-yan。"
+      "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zi-tang、ji-fa、ji-song、ji-zhao、ji-xia、ji-man、ji-yihu、ji-jian、ji-pifang、ji-xie、ji-hu、ji-jing、ji-gongsheng、ji-yijiu、ji-yuchen、ji-lin、ji-tuo、ji-huqi、ji-lang、ji-zheng、ji-renchen、ji-ban、ji-yu、ji-yi、ji-xiexin、ji-gui、ji-meng、ji-gai、ji-ren、ji-jie、ji-quji、ji-shu、ji-wei、ji-wu、ji-jiao、ji-xi、ji-bian、ji-ding、ji-yan。",
+      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
     ]
   }
 }

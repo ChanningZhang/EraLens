@@ -17,8 +17,18 @@
       "id": "jiahu",
       "name": "贾湖文化",
       "dateNote": "贾湖遗址三期约距今9000–7800年；骨笛分期作前7000–前5800。一说属裴李岗文化类型。",
-      "start": { "year": -7000, "month": 1, "abs": -83988, "confidence": "approximate_year" },
-      "end": { "year": -5800, "month": 12, "abs": -69577, "confidence": "approximate_year" },
+      "start": {
+        "year": -7000,
+        "month": 1,
+        "abs": -83988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -5800,
+        "month": 12,
+        "abs": -69577,
+        "confidence": "approximate_year"
+      },
       "summary": "河南舞阳贾湖，新石器早期聚落。出土七声音阶骨笛、炭化稻、龟甲契刻符号，为黄河—淮河间早期文化的代表。",
       "startAbs": -83988,
       "endAbs": -69577
@@ -29,8 +39,18 @@
       "id": "peiligang",
       "name": "裴李岗文化",
       "dateNote": "约前7000—前5000年；区域遗址年代与分期略有差异。贾湖遗存二、三期与裴李岗文化大体同时，一期较早；学界对贾湖遗存是否单列为文化或归入裴李岗文化有不同处理。",
-      "start": { "year": -7000, "month": 1, "abs": -83988, "confidence": "approximate_year" },
-      "end": { "year": -5000, "month": 12, "abs": -59977, "confidence": "approximate_year" },
+      "start": {
+        "year": -7000,
+        "month": 1,
+        "abs": -83988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -5000,
+        "month": 12,
+        "abs": -59977,
+        "confidence": "approximate_year"
+      },
       "summary": "河南中西部至淮河上游的新石器文化，聚落、墓地、陶器及磨盘磨棒等遗存显示定居生活和农业发展。贾湖遗存与其有密切的年代和文化联系，但分类关系仍有不同说法。",
       "startAbs": -83988,
       "endAbs": -59977
@@ -41,8 +61,18 @@
       "id": "laoguantai-dadiwan-i",
       "name": "老官台／大地湾一期文化",
       "dateNote": "约前6000—前5000年；老官台、大地湾一期、白家村等名称及涵盖范围在学界存在分歧，年代为前仰韶阶段的概括范围。",
-      "start": { "year": -6000, "month": 1, "abs": -71988, "confidence": "approximate_year" },
-      "end": { "year": -5000, "month": 12, "abs": -59977, "confidence": "approximate_year" },
+      "start": {
+        "year": -6000,
+        "month": 1,
+        "abs": -71988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -5000,
+        "month": 12,
+        "abs": -59977,
+        "confidence": "approximate_year"
+      },
       "summary": "渭河流域的前仰韶时期遗存，以秦安大地湾一期、临潼老官台等遗址为代表。陶器、石器、房址和农业相关遗存，呈现西北地区由采集狩猎向定居与早期农业发展的过程。",
       "startAbs": -71988,
       "endAbs": -59977
@@ -53,8 +83,18 @@
       "id": "cishan",
       "name": "磁山文化",
       "dateNote": "约前6000—前5600年；碳十四测年和校正年代的表述因测年批次及采用框架而异。",
-      "start": { "year": -6000, "month": 1, "abs": -71988, "confidence": "approximate_year" },
-      "end": { "year": -5600, "month": 12, "abs": -67177, "confidence": "approximate_year" },
+      "start": {
+        "year": -6000,
+        "month": 1,
+        "abs": -71988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -5600,
+        "month": 12,
+        "abs": -67177,
+        "confidence": "approximate_year"
+      },
       "summary": "河北南部太行山东麓的新石器文化，以磁山遗址命名。陶盂与支架、石磨盘和磨棒、窖穴及植物遗存，为研究北方早期定居聚落和农业生计提供了重要材料。",
       "startAbs": -71988,
       "endAbs": -67177
@@ -65,8 +105,18 @@
       "id": "hemudu",
       "name": "河姆渡文化",
       "dateNote": "河姆渡遗址四期碳十四：一期约前5000–前4500，四期约前3600–前3300；亦作前5000–前3000。",
-      "start": { "year": -5000, "month": 1, "abs": -59988, "confidence": "approximate_year" },
-      "end": { "year": -3300, "month": 12, "abs": -39577, "confidence": "approximate_year" },
+      "start": {
+        "year": -5000,
+        "month": 1,
+        "abs": -59988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -3300,
+        "month": 12,
+        "abs": -39577,
+        "confidence": "approximate_year"
+      },
       "summary": "浙江余姚河姆渡，长江下游新石器文化。干栏式建筑、夹炭黑陶与大量栽培稻谷，证明江南史前稻作与定居。",
       "startAbs": -59988,
       "endAbs": -39577
@@ -77,8 +127,18 @@
       "id": "yangshao",
       "name": "仰韶文化",
       "dateNote": "约前5000–前2700。半坡、庙底沟等为地方类型。",
-      "start": { "year": -5000, "month": 1, "abs": -59988, "confidence": "approximate_year" },
-      "end": { "year": -2700, "month": 12, "abs": -32377, "confidence": "approximate_year" },
+      "start": {
+        "year": -5000,
+        "month": 1,
+        "abs": -59988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2700,
+        "month": 12,
+        "abs": -32377,
+        "confidence": "approximate_year"
+      },
       "summary": "以河南渑池仰韶村命名，分布于黄河中游。彩陶、农业村落与半地穴房屋，是中原新石器中期的主干文化。",
       "startAbs": -59988,
       "endAbs": -32377
@@ -89,8 +149,18 @@
       "id": "hongshan",
       "name": "红山文化",
       "dateNote": "约前4700–前2900，与仰韶中晚期相当。",
-      "start": { "year": -4700, "month": 1, "abs": -56388, "confidence": "approximate_year" },
-      "end": { "year": -2900, "month": 12, "abs": -34777, "confidence": "approximate_year" },
+      "start": {
+        "year": -4700,
+        "month": 1,
+        "abs": -56388,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2900,
+        "month": 12,
+        "abs": -34777,
+        "confidence": "approximate_year"
+      },
       "summary": "西辽河流域新石器文化，内蒙古赤峰红山及辽宁牛河梁为代表。玉龙、积石冢与女神庙，显示早期礼仪中心。",
       "startAbs": -56388,
       "endAbs": -34777
@@ -101,8 +171,18 @@
       "id": "dawenkou",
       "name": "大汶口文化",
       "dateNote": "约前4300–前2500；一说稍早自前4500，约前2500过渡为龙山。",
-      "start": { "year": -4300, "month": 1, "abs": -51588, "confidence": "approximate_year" },
-      "end": { "year": -2500, "month": 12, "abs": -29977, "confidence": "approximate_year" },
+      "start": {
+        "year": -4300,
+        "month": 1,
+        "abs": -51588,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2500,
+        "month": 12,
+        "abs": -29977,
+        "confidence": "approximate_year"
+      },
       "summary": "以山东泰安大汶口命名，海岱地区新石器文化。陶鬶、拔牙习俗与陶器刻画符号，下接山东龙山文化。",
       "startAbs": -51588,
       "endAbs": -29977
@@ -113,8 +193,18 @@
       "id": "liangzhu",
       "name": "良渚文化",
       "dateNote": "通行约前3300–前2300；亦记距今约5300–4000年（约前3300–前2000）。",
-      "start": { "year": -3300, "month": 1, "abs": -39588, "confidence": "approximate_year" },
-      "end": { "year": -2300, "month": 12, "abs": -27577, "confidence": "approximate_year" },
+      "start": {
+        "year": -3300,
+        "month": 1,
+        "abs": -39588,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2300,
+        "month": 12,
+        "abs": -27577,
+        "confidence": "approximate_year"
+      },
       "summary": "环太湖地区新石器晚期文化。良渚古城、水利系统与琮璧钺玉礼器，常被视为长江下游早期国家形态。",
       "startAbs": -39588,
       "endAbs": -27577
@@ -125,8 +215,18 @@
       "id": "majiayao",
       "name": "马家窑文化",
       "dateNote": "约前3300–前2100。马家窑、半山、马厂为同一文化诸类型。",
-      "start": { "year": -3300, "month": 1, "abs": -39588, "confidence": "approximate_year" },
-      "end": { "year": -2100, "month": 12, "abs": -25177, "confidence": "approximate_year" },
+      "start": {
+        "year": -3300,
+        "month": 1,
+        "abs": -39588,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2100,
+        "month": 12,
+        "abs": -25177,
+        "confidence": "approximate_year"
+      },
       "summary": "甘青地区新石器文化，仰韶西向发展的一支。以精美彩陶著称，林家等地出土早期青铜小刀。",
       "startAbs": -39588,
       "endAbs": -25177
@@ -137,8 +237,18 @@
       "id": "longshan",
       "name": "龙山文化",
       "dateNote": "距今约5000–4000年；山东龙山约前2500–前2000。此取黄河中下游龙山时代总范围。",
-      "start": { "year": -3000, "month": 1, "abs": -35988, "confidence": "approximate_year" },
-      "end": { "year": -2000, "month": 12, "abs": -23977, "confidence": "approximate_year" },
+      "start": {
+        "year": -3000,
+        "month": 1,
+        "abs": -35988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -2000,
+        "month": 12,
+        "abs": -23977,
+        "confidence": "approximate_year"
+      },
       "summary": "新石器晚期黑陶文化，分布于山东、河南、山西、陕西等地。蛋壳黑陶、夯土城址，下接二里头等早期青铜文化。",
       "startAbs": -35988,
       "endAbs": -23977
@@ -149,8 +259,18 @@
       "id": "taosi",
       "name": "陶寺文化",
       "dateNote": "陶寺中期约前2100–前2000；观象台或可上溯至距今约4700年。此取龙山时代晋南陶寺通行年。",
-      "start": { "year": -2300, "month": 1, "abs": -27588, "confidence": "approximate_year" },
-      "end": { "year": -1900, "month": 12, "abs": -22777, "confidence": "approximate_year" },
+      "start": {
+        "year": -2300,
+        "month": 1,
+        "abs": -27588,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1900,
+        "month": 12,
+        "abs": -22777,
+        "confidence": "approximate_year"
+      },
       "summary": "山西襄汾陶寺，晋南龙山时代都邑。宫殿、观象台、朱书扁壶与等级墓葬，常被用以探索早期国家与尧都传说。",
       "startAbs": -27588,
       "endAbs": -22777
@@ -161,8 +281,18 @@
       "id": "shimao",
       "name": "石峁",
       "dateNote": "石峁城址属龙山晚期，通行碳十四约前2300–前1800（距今约4300–3800年）。",
-      "start": { "year": -2300, "month": 1, "abs": -27588, "confidence": "approximate_year" },
-      "end": { "year": -1800, "month": 12, "abs": -21577, "confidence": "approximate_year" },
+      "start": {
+        "year": -2300,
+        "month": 1,
+        "abs": -27588,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1800,
+        "month": 12,
+        "abs": -21577,
+        "confidence": "approximate_year"
+      },
       "summary": "陕西神木石峁，目前所见中国史前规模最大的石构城址。皇城台、玉器与石雕，为河套—陕北早期邦国遗存。",
       "startAbs": -27588,
       "endAbs": -21577
@@ -173,8 +303,18 @@
       "id": "erlitou",
       "name": "二里头文化",
       "dateNote": "2015年AMS：文化早不过前1900、晚不过前1500；一期约前1750，四期约止于前1520。亦作约前1800–前1500。与文献夏朝不能简单等同。",
-      "start": { "year": -1750, "month": 1, "abs": -20988, "confidence": "approximate_year" },
-      "end": { "year": -1520, "month": 12, "abs": -18217, "confidence": "approximate_year" },
+      "start": {
+        "year": -1750,
+        "month": 1,
+        "abs": -20988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1520,
+        "month": 12,
+        "abs": -18217,
+        "confidence": "approximate_year"
+      },
       "summary": "河南偃师二里头，中原最早的大型都邑之一。宫城、青铜礼器与绿松石龙，是探索夏商分界与早期国家的核心遗存。",
       "startAbs": -20988,
       "endAbs": -18217
@@ -185,8 +325,18 @@
       "id": "sanxingdui",
       "name": "三星堆文化",
       "dateNote": "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
-      "start": { "year": -2000, "month": 1, "abs": -23988, "confidence": "approximate_year" },
-      "end": { "year": -1100, "month": 12, "abs": -13177, "confidence": "approximate_year" },
+      "start": {
+        "year": -2000,
+        "month": 1,
+        "abs": -23988,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1100,
+        "month": 12,
+        "abs": -13177,
+        "confidence": "approximate_year"
+      },
       "summary": "四川广汉三星堆，古蜀青铜文明。纵目面具、神树、金杖与大型祭祀坑，与中原夏商并行而风格迥异。",
       "startAbs": -23988,
       "endAbs": -13177
@@ -393,7 +543,8 @@
       "2026-10：按用户要求补充前仰韶阶段代表文化裴李岗、老官台／大地湾一期及磁山文化，扩展原有代表性条目范围以填补贾湖与仰韶条目间的时间线空档；各条目按各自区域文化范围并行展示，不表示单线继承。年代采用可核来源支持的约略范围；贾湖与裴李岗的分类关系、老官台／大地湾命名范围及磁山测年存在学术差异，已保留在 dateNote。",
       "各文化按考古文化或遗址的年代范围使用 span；起止端点以 approximate_year 表示约略年代，1月和12月仅作年精度区间定位，不代表考古学上的已知月份。三星堆按三星堆文化二三期起点至该遗址下限建模，祭祀坑年代保留在 dateNote 中。",
       "三星堆条自二三期（约前2000）起至遗址下限前1100，含祭祀坑，不含宝墩一期。半坡、庙底沟、马家窑诸类型不另立事件。",
-      "2026-10：为15条史前文化记录添加命名或代表遗址地点映射，使用 WGS84 遗址代表点；空间精度标记为 approximate。考古文化分布范围通常大于单一遗址点，地图点只表示关联遗址，不表示文化边界。"
+      "2026-10：为15条史前文化记录添加命名或代表遗址地点映射，使用 WGS84 遗址代表点；空间精度标记为 approximate。考古文化分布范围通常大于单一遗址点，地图点只表示关联遗址，不表示文化边界。",
+      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
     ]
   },
   "locationMappings": [
@@ -403,7 +554,6 @@
       "kind": "event",
       "externalId": "jiahu",
       "historicalName": "贾湖遗址",
-      "note": "以贾湖遗址中心为代表点；文化与遗址范围不由单点表示。",
       "links": [
         {
           "label": "河南省文物考古研究院：贾湖遗址",
@@ -422,7 +572,7 @@
       "kind": "event",
       "externalId": "hemudu",
       "historicalName": "河姆渡遗址",
-      "note": "采用河姆渡遗址范围代表点；河姆渡文化分布范围更广。",
+      "note": "河姆渡文化分布范围更广。",
       "links": [
         {
           "label": "河姆渡遗址",
@@ -441,7 +591,7 @@
       "kind": "event",
       "externalId": "yangshao",
       "historicalName": "仰韶村遗址",
-      "note": "采用仰韶村遗址文化剖面附近代表点；仰韶文化分布范围更广。",
+      "note": "仰韶文化分布范围更广。",
       "links": [
         {
           "label": "渑池县人民政府：仰韶村遗址简介",
@@ -460,7 +610,6 @@
       "kind": "event",
       "externalId": "hongshan",
       "historicalName": "红山后遗址",
-      "note": "红山文化的命名地代表点；红山文化分布跨越多个区域，该点不表示文化边界。",
       "links": [
         {
           "label": "赤峰市红山区人民政府：红山文化遗址",
@@ -479,7 +628,7 @@
       "kind": "event",
       "externalId": "dawenkou",
       "historicalName": "大汶口遗址",
-      "note": "以大汶口文化命名遗址为代表点；文化分布范围更广。",
+      "note": "文化分布范围更广。",
       "links": [
         {
           "label": "泰安市人民政府：大汶口国家考古遗址公园",
@@ -498,7 +647,7 @@
       "kind": "event",
       "externalId": "liangzhu",
       "historicalName": "良渚古城遗址",
-      "note": "采用良渚古城遗址代表点；良渚遗址群及文化分布范围更广。",
+      "note": "良渚遗址群及文化分布范围更广。",
       "links": [
         {
           "label": "联合国教科文组织世界遗产中心：良渚古城遗址",
@@ -517,7 +666,7 @@
       "kind": "event",
       "externalId": "majiayao",
       "historicalName": "马家窑遗址",
-      "note": "以马家窑文化命名遗址为代表点；马家窑文化分布范围更广。",
+      "note": "马家窑文化分布范围更广。",
       "links": [
         {
           "label": "临洮县博物馆：马家窑遗址",
@@ -536,7 +685,7 @@
       "kind": "event",
       "externalId": "longshan",
       "historicalName": "城子崖遗址",
-      "note": "采用龙山文化命名遗址城子崖代表点；龙山文化分布范围更广。",
+      "note": "龙山文化分布范围更广。",
       "links": [
         {
           "label": "山东地情档案：城子崖遗址",
@@ -555,7 +704,6 @@
       "kind": "event",
       "externalId": "taosi",
       "historicalName": "陶寺遗址",
-      "note": "采用陶寺遗址代表点；点位仅作地图定位，不表示遗址边界。",
       "links": [
         {
           "label": "陶寺遗址聚落形态考古研究",
@@ -574,7 +722,6 @@
       "kind": "event",
       "externalId": "shimao",
       "historicalName": "石峁遗址",
-      "note": "采用石峁遗址代表点；点位仅作地图定位，不表示遗址边界。",
       "links": [
         {
           "label": "陕西省：石峁遗址保护条例",
@@ -593,7 +740,7 @@
       "kind": "event",
       "externalId": "erlitou",
       "historicalName": "二里头遗址",
-      "note": "采用二里头遗址代表点；不据此将二里头文化等同文献夏朝。",
+      "note": "不据此将二里头文化等同文献夏朝。",
       "links": [
         {
           "label": "河南省人民政府：二里头遗址",
@@ -612,7 +759,7 @@
       "kind": "event",
       "externalId": "sanxingdui",
       "historicalName": "三星堆遗址",
-      "note": "采用三星堆遗址代表点；不据此将三星堆文化等同商朝。",
+      "note": "不据此将三星堆文化等同商朝。",
       "links": [
         {
           "label": "四川省文物考古研究院：三星堆遗址考古研究",
@@ -631,7 +778,7 @@
       "kind": "event",
       "externalId": "peiligang",
       "historicalName": "裴李岗遗址",
-      "note": "以裴李岗村附近位置表示文化命名遗址；地图点为近似定位，不表示遗址边界或文化分布范围。",
+      "note": "以裴李岗村附近位置表示文化命名遗址。",
       "links": [
         {
           "label": "郑州市文物局：裴李岗遗址",
@@ -650,7 +797,7 @@
       "kind": "event",
       "externalId": "laoguantai-dadiwan-i",
       "historicalName": "大地湾遗址",
-      "note": "采用老官台／大地湾一期代表遗址大地湾遗址定位；坐标为遗址代表点，不表示文化分布范围。",
+      "note": "老官台文化一期的代表性遗址为大地湾遗址。",
       "links": [
         {
           "label": "天水市人民政府：大地湾文化",
@@ -669,7 +816,6 @@
       "kind": "event",
       "externalId": "cishan",
       "historicalName": "磁山遗址",
-      "note": "采用磁山文化命名遗址代表点；地图点不表示遗址边界或文化分布范围。",
       "links": [
         {
           "label": "故宫博物院：磁山文化",

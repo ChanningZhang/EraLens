@@ -123,7 +123,6 @@ export function DynastyLane({
   height,
   badges,
 }: Props) {
-  const conqueredDynastyCount = dynasty.conqueredDynastyCount ?? 0;
   const viewport = useViewport();
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
@@ -173,11 +172,7 @@ export function DynastyLane({
           );
           selectionStore.syncToUrl(viewport.centerAbs);
         }}
-        aria-label={`${frozenLabel}（${[
-          dynasty.ethnicity,
-          feudalRank,
-          `灭掉${conqueredDynastyCount}个王朝`,
-        ].filter(Boolean).join("，")}）`}
+        aria-label={frozenLabel}
         aria-pressed={selected}
       >
         <span className={styles.labelText}>
@@ -205,13 +200,6 @@ export function DynastyLane({
             {feudalRank}
           </span>
         )}
-        <span
-          className={styles.conqueredDynastyCount}
-          aria-label={`灭掉${conqueredDynastyCount}个王朝`}
-          title={`灭掉${conqueredDynastyCount}个王朝`}
-        >
-          {conqueredDynastyCount}
-        </span>
       </button>}
 
       <div className={styles.reignSequence}>

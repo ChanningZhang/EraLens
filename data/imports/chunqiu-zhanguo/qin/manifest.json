@@ -452,6 +452,7 @@
     "秦前288年秦、齐短暂称帝后旋即去帝号，史籍仅能支持年内短期变化，未将其伪装成年精度连续分期；保留稳定阶段秦伯、秦王及前221年秦帝制的分期。",
     "2026-10-06爵称变动事件：qin-huiwen-assumes-kingship，对应qin的分期变动；按用户要求收录称号政治背景。事件与人物、王朝关联集中维护，年代及异说见dateNote。",
     "2026-10-06：爵称变动事件的史料依据移入events.links，由详情“来源”展示；content仅用于史料正文，不再承载来源目录。",
-    "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：ying-qi、qin-r1、qin-r2、qin-r4、qin-r5、qin-r6、qin-r7、qin-r8、qin-r9、qin-r10、qin-r11、qin-r12、qin-r13、qin-r14、qin-r15、qin-r16、qin-r17、qin-r18、qin-r19、qin-r20、qin-r21、qin-r22、qin-r23、ying-quliang、qin-r25、qin-r26、qin-r27、qin-r28、qin-r29。"
+    "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：ying-qi、qin-r1、qin-r2、qin-r4、qin-r5、qin-r6、qin-r7、qin-r8、qin-r9、qin-r10、qin-r11、qin-r12、qin-r13、qin-r14、qin-r15、qin-r16、qin-r17、qin-r18、qin-r19、qin-r20、qin-r21、qin-r22、qin-r23、ying-quliang、qin-r25、qin-r26、qin-r27、qin-r28、qin-r29。",
+    "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
   ]
 }
