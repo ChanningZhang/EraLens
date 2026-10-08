@@ -60,7 +60,7 @@ export function CursorGuide({ stageRef }: Props) {
       line.style.transform = `translate3d(${x}px, 0, 0)`;
 
       const abs = absFromStageX(viewport, x);
-      label.textContent = formatCursorGuideLabel(abs, viewport.pxPerMonth);
+      label.textContent = formatCursorGuideLabel(abs);
       const labelX = clampCursorGuideLabelX(
         x,
         rect.width,

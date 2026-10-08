@@ -23,13 +23,9 @@ describe("cursorGuideStageX", () => {
 });
 
 describe("formatCursorGuideLabel", () => {
-  it("shows compact years that match the ruler", () => {
-    expect(formatCursorGuideLabel(absMonth(200, 6), 1.5)).toBe("200年");
-    expect(formatCursorGuideLabel(absMonth(-221, 10), 1.5)).toBe("-221年");
-  });
-
-  it("adds the month when zoomed to month lod", () => {
-    expect(formatCursorGuideLabel(absMonth(200, 6), 4)).toBe("200年6月");
+  it("always shows the month at every zoom level", () => {
+    expect(formatCursorGuideLabel(absMonth(200, 6))).toBe("200年6月");
+    expect(formatCursorGuideLabel(absMonth(-221, 10))).toBe("-221年10月");
   });
 });
 

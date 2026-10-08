@@ -1,5 +1,4 @@
 import { fromAbsMonth } from "@eralens/shared";
-import { LOD_THRESHOLDS } from "./lod";
 import { formatRulerYear } from "./rulerTicks";
 
 export function cursorGuideStageX(
@@ -14,13 +13,10 @@ export function cursorGuideStageX(
   return x;
 }
 
-export function formatCursorGuideLabel(abs: number, pxPerMonth: number): string {
+export function formatCursorGuideLabel(abs: number): string {
   const { year, month } = fromAbsMonth(abs);
   const yearText = `${formatRulerYear(year)}年`;
-  if (pxPerMonth >= LOD_THRESHOLDS.month) {
-    return `${yearText}${month}月`;
-  }
-  return yearText;
+  return `${yearText}${month}月`;
 }
 
 export function clampCursorGuideLabelX(
