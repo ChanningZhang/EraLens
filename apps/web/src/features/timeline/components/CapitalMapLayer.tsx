@@ -95,10 +95,11 @@ export function CapitalMapLayer({
       {placed.map(({ capital, dynastyName, x, y, color }) => {
         const isSelected =
           selection.selected?.type === "location_mapping" && selection.selected.id === capital.id;
+        const label = capital.claimLabel ?? dynastyName;
         return (
         <InfoPopover
           key={capital.id}
-          text={`${dynastyName} · ${capital.historicalName} · ${capital.modernName}`}
+          text={`${capital.claimLabel ? `${capital.claimLabel} · ` : ""}${dynastyName} · ${capital.historicalName} · ${capital.modernName}`}
         >
           {(handlers) => (
             <button
@@ -109,7 +110,7 @@ export function CapitalMapLayer({
                 top: `${offset.y + y * scale}px`,
                 ["--capital-color" as string]: color,
               }}
-              aria-label={`${dynastyName}都城${capital.historicalName}（${capital.modernName}）`}
+              aria-label={`${label}都城${capital.historicalName}（${capital.modernName}）`}
               aria-pressed={isSelected}
               onClick={() => {
                 selectionStore.select({ type: "location_mapping", id: capital.id }, atAbs);
@@ -117,7 +118,7 @@ export function CapitalMapLayer({
               {...handlers}
             >
               <span className={`${styles.dot} ${roleClassName(capital.role)}`} aria-hidden="true" />
-              <span className={styles.label}>{dynastyName}</span>
+              <span className={styles.label}>{label}</span>
             </button>
           )}
         </InfoPopover>

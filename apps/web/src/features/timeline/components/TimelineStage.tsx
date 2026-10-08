@@ -4,6 +4,8 @@ import {
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
   capitalsForReigns,
+  activeReignsAtAbs,
+  isParallelClaim,
   clusterLaneGapForPresentation,
   clusterFramesForLanes,
   collectLaneReigns,
@@ -269,9 +271,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         capitals.filter((capital) => capital.mappingKind !== "reign"),
         labelAnchorAbs,
       );
+      const parallelReigns = activeReignsAtAbs(capitalReigns, labelAnchorAbs)
+        .filter(isParallelClaim);
+      const parallelCapitals = capitalsActiveAtAbs(
+        capitalsForReigns(parallelReigns, capitalReigns, capitals),
+        labelAnchorAbs,
+      );
       const selected = selection.selected;
       if (!selected) {
-        return visible;
+        return [...new Map([...visible, ...parallelCapitals].map((capital) => [capital.id, capital])).values()];
       }
       const selectedReignId = selected.type === "reign"
         ? selected.id
@@ -286,7 +294,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           : selectedReignId
             ? capitals.filter((capital) => capital.reignIds?.includes(selectedReignId))
             : capitalsForReigns(personReigns, capitalReigns, capitals);
-      return [...new Map([...visible, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
+      return [...new Map([...visible, ...parallelCapitals, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
     },
     [capitalsQuery.data, labelAnchorAbs, selection.selected, selection.focusReignId, capitalReigns],
   );

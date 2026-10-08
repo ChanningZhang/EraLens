@@ -180,6 +180,7 @@ export const CapitalLocationSchema = z.object({
   endConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),
   claimTrack: z.string().optional(),
+  claimLabel: z.string().optional(),
   /** Explicit reign mapping owners; an empty list never establishes a reign tenure. */
   reignIds: z.array(z.string()).optional(),
   note: z.string().optional(),
