@@ -326,7 +326,8 @@
       "商王在位都城关联已逐条按商朝君主世系及都城记录复核；沃甲及祖乙、祖辛、祖丁改为庇，南庚、阳甲改为奄，盘庚按约前1300年迁殷切分，后继诸王为殷。仲丁至南庚的迁置作为在位王的治所记录；朝代层另区分主都与辅都。相关古都地望及盘庚迁殷年代存在争议，详见各 mapping note；盘庚切分为约略年界。",
       "2026-10-06：为中华民国行内伪满洲国 claim track 添加长春/新京都城及溥仪执政、皇帝两段在位映射。1932-03-10定都长春，同月改称新京；更名日的地方资料有3月14日与15日两种记载，故执政阶段同址古称合列，不按争议日切分。",
       "2026-10-06：为汪伪政府 nanjing claim track 补南京主要治所映射，分别关联汪精卫代主席、主席及陈公博代主席三段在位；城市地点复用既有南京GCJ02记录。",
-      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
+      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
+      "2026-10-08：魏王朝东魏、西魏君主任期都城映射的起讫精确到对应帝王在位日期；投影时由关联 reign 继承东魏/西魏 claimTrack。日期沿用 nanbei-chao 包已核定的公历换算，城市地点及都城属性仍按本包来源。"
     ]
   },
   "locationMappings": [
@@ -24220,19 +24221,21 @@
     },
     {
       "start": {
-        "year": 535,
-        "month": 1,
-        "abs": 6420,
-        "confidence": "year"
+        "year": 554,
+        "month": 12,
+        "day": 12,
+        "abs": 6659,
+        "confidence": "day"
       },
       "end": {
         "year": 557,
-        "month": 12,
-        "abs": 6695,
-        "confidence": "month"
+        "month": 2,
+        "day": 16,
+        "abs": 6685,
+        "confidence": "day"
       },
-      "startAbs": 6420,
-      "endAbs": 6695,
+      "startAbs": 6659,
+      "endAbs": 6685,
       "role": "primary",
       "note": "西魏都城长安。",
       "links": [
@@ -31089,18 +31092,20 @@
     {
       "start": {
         "year": 535,
-        "month": 1,
-        "abs": 6420,
-        "confidence": "year"
+        "month": 2,
+        "day": 18,
+        "abs": 6421,
+        "confidence": "day"
       },
       "end": {
-        "year": 557,
-        "month": 12,
-        "abs": 6695,
-        "confidence": "month"
+        "year": 551,
+        "month": 3,
+        "day": 8,
+        "abs": 6614,
+        "confidence": "day"
       },
-      "startAbs": 6420,
-      "endAbs": 6695,
+      "startAbs": 6421,
+      "endAbs": 6614,
       "role": "primary",
       "note": "西魏都城长安。",
       "links": [
@@ -31233,19 +31238,21 @@
     },
     {
       "start": {
-        "year": 535,
-        "month": 1,
-        "abs": 6420,
-        "confidence": "year"
+        "year": 551,
+        "month": 3,
+        "day": 8,
+        "abs": 6614,
+        "confidence": "day"
       },
       "end": {
-        "year": 557,
+        "year": 554,
         "month": 12,
-        "abs": 6695,
-        "confidence": "month"
+        "day": 12,
+        "abs": 6659,
+        "confidence": "day"
       },
-      "startAbs": 6420,
-      "endAbs": 6695,
+      "startAbs": 6614,
+      "endAbs": 6659,
       "role": "primary",
       "note": "西魏都城长安。",
       "links": [
@@ -31263,18 +31270,20 @@
     {
       "start": {
         "year": 534,
-        "month": 1,
-        "abs": 6408,
-        "confidence": "year"
+        "month": 11,
+        "day": 8,
+        "abs": 6418,
+        "confidence": "day"
       },
       "end": {
         "year": 550,
-        "month": 12,
-        "abs": 6611,
-        "confidence": "month"
+        "month": 2,
+        "day": 9,
+        "abs": 6601,
+        "confidence": "day"
       },
-      "startAbs": 6408,
-      "endAbs": 6611,
+      "startAbs": 6418,
+      "endAbs": 6601,
       "role": "primary",
       "note": "东魏都城邺。",
       "links": [

@@ -978,7 +978,7 @@
       ],
       "templeNames": [],
       "title": "魏孝静帝",
-      "dynastyId": "wei-east"
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-bao-ju",
@@ -1000,7 +1000,7 @@
       ],
       "templeNames": [],
       "title": "魏文帝",
-      "dynastyId": "wei-west"
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-qin",
@@ -1020,7 +1020,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "魏废帝",
-      "dynastyId": "wei-west"
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-kuo",
@@ -1042,7 +1042,7 @@
       ],
       "templeNames": [],
       "title": "魏恭帝",
-      "dynastyId": "wei-west"
+      "dynastyId": "wei-north"
     },
     {
       "id": "gao-yang",
@@ -1535,7 +1535,7 @@
   "dynasties": [
     {
       "id": "wei-north",
-      "name": "{\"default\":\"北魏\",\"periods\":[{\"name\":\"代\",\"start\":{\"year\":386,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"}},{\"name\":\"魏\",\"start\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"},\"end\":{\"year\":535,\"month\":2,\"day\":3,\"confidence\":\"day\"}}]}",
+      "name": "{\"default\":\"北魏\",\"periods\":[{\"name\":\"代\",\"start\":{\"year\":386,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"}},{\"name\":\"魏\",\"start\":{\"year\":386,\"month\":6,\"confidence\":\"approximate_month\"},\"end\":{\"year\":557,\"month\":2,\"day\":16,\"confidence\":\"day\"}}]}",
       "altNames": [
         "魏",
         "北魏",
@@ -1550,14 +1550,14 @@
         "confidence": "year"
       },
       "end": {
-        "year": 535,
+        "year": 557,
         "month": 2,
-        "abs": 6421,
-        "day": 3,
+        "abs": 6685,
+        "day": 16,
         "confidence": "day"
       },
       "groupId": "bei-chao",
-      "note": "拓跋珪386年重建代国并改称魏，439年太武帝灭北凉、统一北方。孝文帝迁都洛阳并推行制度与风俗改革；六镇之乱后政权衰弱，534年分裂为东魏、西魏，535年北魏名义终结。",
+      "note": "拓跋珪386年重建代国并改称魏，439年太武帝灭北凉、统一北方。孝文帝迁都洛阳并推行制度与风俗改革；六镇之乱后政权衰弱，534年孝武帝西奔后，东魏与西魏分别由高欢、宇文泰控制，沿用魏号并立；557年西魏禅代于北周，魏的政权序列结束。",
       "ethnicity": "拓跋鲜卑"
     },
     {
@@ -1728,56 +1728,6 @@
       "groupId": "bei-chao",
       "note": "宇文觉557年受禅建周，都长安，实际政权先受宇文护控制。武帝亲政后整军并于577年灭北齐、统一北方；581年杨坚受禅建隋，北周结束。",
       "ethnicity": "宇文鲜卑"
-    },
-    {
-      "id": "wei-east",
-      "name": "东魏",
-      "altNames": [
-        "魏"
-      ],
-      "scope": "cn",
-      "region": "east_asia",
-      "start": {
-        "year": 534,
-        "month": 11,
-        "abs": 6418,
-        "day": 8,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 550,
-        "month": 2,
-        "abs": 6601,
-        "confidence": "month"
-      },
-      "groupId": "bei-chao",
-      "note": "高欢于532年控制北魏朝政；534年孝武帝西奔长安，高欢另立元善见、迁都邺，东魏由此建立。皇帝长期受高氏控制，550年高欢之子高洋受禅建北齐，东魏结束。",
-      "ethnicity": "拓跋鲜卑"
-    },
-    {
-      "id": "wei-west",
-      "name": "西魏",
-      "altNames": [
-        "魏"
-      ],
-      "scope": "cn",
-      "region": "east_asia",
-      "start": {
-        "year": 535,
-        "month": 2,
-        "abs": 6421,
-        "day": 18,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 557,
-        "month": 2,
-        "abs": 6685,
-        "confidence": "month"
-      },
-      "groupId": "bei-chao",
-      "note": "宇文泰于535年在长安拥立元宝炬，建立西魏，与高欢控制的东魏对峙。西魏朝廷由宇文泰掌握，557年宇文觉受禅建北周，西魏结束。",
-      "ethnicity": "拓跋鲜卑"
     }
   ],
   "reigns": [
@@ -2149,7 +2099,7 @@
     },
     {
       "id": "reign-yuan-shan-jian",
-      "dynastyId": "wei-east",
+      "dynastyId": "wei-north",
       "personId": "yuan-shan-jian",
       "title": "",
       "eraNames": [],
@@ -2169,11 +2119,13 @@
       },
       "startAbs": 6418,
       "endAbs": 6601,
-      "isMain": false
+      "isMain": false,
+      "claimTrack": "east-wei",
+      "claimLabel": "东魏"
     },
     {
       "id": "reign-yuan-bao-ju",
-      "dynastyId": "wei-west",
+      "dynastyId": "wei-north",
       "personId": "yuan-bao-ju",
       "title": "",
       "eraNames": [],
@@ -2193,11 +2145,13 @@
       },
       "startAbs": 6421,
       "endAbs": 6614,
-      "isMain": false
+      "isMain": false,
+      "claimTrack": "west-wei",
+      "claimLabel": "西魏"
     },
     {
       "id": "reign-yuan-qin",
-      "dynastyId": "wei-west",
+      "dynastyId": "wei-north",
       "personId": "yuan-qin",
       "title": "",
       "eraNames": [],
@@ -2217,11 +2171,13 @@
       },
       "startAbs": 6614,
       "endAbs": 6659,
-      "isMain": false
+      "isMain": false,
+      "claimTrack": "west-wei",
+      "claimLabel": "西魏"
     },
     {
       "id": "reign-tuoba-kuo",
-      "dynastyId": "wei-west",
+      "dynastyId": "wei-north",
       "personId": "tuoba-kuo",
       "title": "",
       "eraNames": [],
@@ -2241,7 +2197,9 @@
       },
       "startAbs": 6659,
       "endAbs": 6685,
-      "isMain": false
+      "isMain": false,
+      "claimTrack": "west-wei",
+      "claimLabel": "西魏"
     },
     {
       "id": "reign-liu-yu-jin",
@@ -3627,7 +3585,7 @@
     "generatedAt": "2026-09-18",
     "counts": {
       "persons": 63,
-      "dynasties": 10,
+      "dynasties": 8,
       "reigns": 57,
       "events": 9,
       "relations": 45
@@ -4056,12 +4014,16 @@
       {
         "label": "中国哲学书电子化计划：东魏天平年号日期换算",
         "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=412054"
+      },
+      {
+        "label": "《魏书·孝武帝纪》《北史·魏本纪》：北魏分裂及魏号延续",
+        "url": "https://zh.wikisource.org/wiki/魏書"
       }
     ],
     "notes": [
-      "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈；江陵西梁（555–587）在 nanbei-sixteen-extra，同属 nan-chao。",
+      "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏（包括东魏、西魏并立 claimTrack）、北齐、北周，南朝含刘宋、南齐、南梁、南陈；江陵西梁（555–587）在 nanbei-sixteen-extra，同属 nan-chao。",
       "全部53位君主在位日取维基百科君主条目公历换算（已核定公历日期直接记录在缓存，confidence=day）。",
-      "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
+      "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏、西魏按魏王朝下的并立 claimTrack 表达。",
       "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
       "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
       "补入侯景所建汉政权（han-houjing）：552年正月至五月以建康为都；萧栋按551年10月2日至552年1月1日的实日期间补入南梁主线。",
@@ -4082,10 +4044,11 @@
       "2026-10-03族属口径修订：dynasties.ethnicity 按各政权在位皇帝所属皇族/宗族标注，不按实际掌权的权臣集团标注。北魏分裂后的东魏、西魏皇帝均出自北魏拓跋皇族，孝文帝改姓元，故两政权统一标“拓跋鲜卑”；不因高欢或宇文泰掌权而改变。",
       "2026-10-05：逐人补充开国前身份、势力积累、掌权与建国过程，区分称王、称帝、迁都和统一；文字保持中立简洁，按经历组织而不套固定句式。本批人物：xiao-daocheng、xiao-yan、chen-baxian、tuoba-gui、yuan-shan-jian、yuan-bao-ju、gao-yang、yuwen-jue、yang-jian。概述年份叙述历史行为，在位年桶归属另按共享日期规则；不将原历月日写成公历。",
       "2026-10-05：开国经历逐条复核并改写：hou-jing。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：liang-nan、han-houjing、wei-east。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：liang-nan、han-houjing、wei-north。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
       "2026-10-06：按用户要求恢复 name JSON 的 default 与 periods；default 保存俗称，未指定时点或时点不在名称阶段时使用 default。altNames[0] 恢复代表国号/自称，人物与在位详情仍优先 claimLabel、其次 altNames[0]；取代此前将代表显示名放入首项的约定。wei-north：default=北魏，altNames[0]=魏。名称日期及精度不变；国号/自称选用本包已有别名与来源。",
       "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
-      "2026-10-08：提高北魏分裂处王朝端点的日期精度。孝静帝元善见于534-11-08即位（《魏书·孝静纪》冬十月丙寅），北魏孝武帝元修于535-02-03被杀（《魏书·出帝纪》闰十二月癸巳），西魏文帝元宝炬于535-02-18即位（《北史·魏本纪》大统元年正月戊申）；与已核定君主在位日期及公历换算交叉核对。北魏终点及分时国号“魏”的终点更新为535-02-03，东魏起点更新为534-11-08，西魏起点更新为535-02-18；日精度仅表示换算后的公历日期，不改变原史料所记农历纪日。"
+      "2026-10-08：提高北魏分裂处王朝端点的日期精度。孝静帝元善见于534-11-08即位（《魏书·孝静纪》冬十月丙寅），北魏孝武帝元修于535-02-03被杀（《魏书·出帝纪》闰十二月癸巳），西魏文帝元宝炬于535-02-18即位（《北史·魏本纪》大统元年正月戊申）；与已核定君主在位日期及公历换算交叉核对。北魏终点及分时国号“魏”的终点更新为535-02-03，东魏起点更新为534-11-08，西魏起点更新为535-02-18；日精度仅表示换算后的公历日期，不改变原史料所记农历纪日。",
+      "2026-10-08：按用户要求将东魏、西魏合并为北魏（wei-north）下的并立 claimTrack。孝静帝元善见任期设 east-wei/东魏；元宝炬、元钦、拓跋廓任期设 west-wei/西魏；人物与任期统一归属北魏王朝记录，保留原在位日期、元修于535-02-03遇害的主线终点，并将魏分时名称及王朝总终点延至西魏亡于557-02-16。"
     ]
   }
 }

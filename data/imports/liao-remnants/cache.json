@@ -171,9 +171,9 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "posthumousNames": [],
+      "posthumousNames": ["孝章皇帝"],
       "templeNames": [],
-      "title": "北辽皇帝",
+      "title": "",
       "dynastyId": "liao"
     },
     {
@@ -593,7 +593,7 @@
       "startAbs": 13467,
       "endAbs": 13470,
       "claimTrack": "beiliao",
-      "claimLabel": "燕京",
+      "claimLabel": "北辽",
       "isMain": false
     },
     {

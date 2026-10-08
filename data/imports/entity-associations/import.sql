@@ -447,7 +447,6 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dyn
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','tang','event','zhenguan-rule');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','teng-chunqiu','event','chunqiu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','teng-chunqiu','event','teng-first-zi-title');
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-east','event','wei-split');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-north','event','chen-qingzhi-luoyang');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-north','event','he-yin-massacre');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-north','event','idiom-fen-dao-yang-biao');
@@ -472,7 +471,6 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dyn
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-weiguo','event','chunqiu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-weiguo','event','kuiqiu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-weiguo','event','wei-si-demotes-to-jun');
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei-west','event','wei-split');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei','event','changban');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei','event','chibi');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','wei','event','deng-ai-crosses-yinping');
