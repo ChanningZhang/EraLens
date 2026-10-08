@@ -44,7 +44,7 @@ node data/imports/generate.mjs --all
 
 API 与移动 SQLite 的契约对比使用 `pnpm data:mobile:contract`；附加 `--all-entities` 可检查全部王朝、人物、事件与在位详情。
 
-## 统一内容数据契约（schema 10 / contract 10）
+## 统一内容数据契约（schema 12 / contract 13）
 
 `dynasties.ethnicity` 是可选的非汉族属显示字段，按该政权皇帝所属皇族/宗族的族属填写简短通行称谓，不按摄政者或实际掌权集团填写。王朝分期中皇族变更且无法用一个称谓准确表达，或皇族族属有争议时留空。该字段用于时间轴左侧王朝标签，不替代王朝概述、国号或别名。`dynasties.feudalRank` 是可选分期 JSON `{periods:[{rank,start,end}]}`，每段日期都带 `HistoricalDate` 精度，保存来源表括号中的单字爵称/君主称谓并由共享时间分期规则解析。`君`不属于公侯伯子男五等爵；它在来源中有不同语境，须按具体条目核实。来源表只按春秋、战国分栏而未明确改称时间时，使用 `approximate_year` 表示分类栏界，并在包级 `manifest.notes` 说明不可视作确切改爵年。该字段记录来源用语，不把所有标签定义成可严格比较的爵位等级。
 

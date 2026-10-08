@@ -53,6 +53,7 @@ export function mapDynasty(row: Row): Dynasty {
     region: row.region, start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: point(row.end_year, row.end_month, row.end_day) ? { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence } : undefined,
     startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence ?? undefined,
     colorToken: row.color_token, parentId: own(row, "parent_id"), groupId: own(row, "group_id"), note: own(row, "note"),
+    isDeleted: row.is_deleted == null ? null : Boolean(row.is_deleted),
   });
 }
 
@@ -157,7 +158,8 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const unique = [...new Set(ids)];
     for (let start = 0; start < unique.length; start += 200) {
       const chunk = unique.slice(start, start + 200);
-      result.push(...await rows(db, `SELECT ${projection} FROM ${table} WHERE ${column} IN (${chunk.map(() => "?").join(",")}) ORDER BY rowid`, chunk));
+      const dynastyVisibility = table === "dynasties" ? " AND is_deleted IS NOT TRUE" : "";
+      result.push(...await rows(db, `SELECT ${projection} FROM ${table} WHERE ${column} IN (${chunk.map(() => "?").join(",")})${dynastyVisibility} ORDER BY rowid`, chunk));
     }
     return result;
   }
@@ -214,7 +216,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
   private async reignLayer(query: TimelineQuery, version: string): Promise<ReignTimeline> {
     const db = await this.database();
     const window = timelineCandidateWindow(query);
-    const dynastyRaw = await rows(db, `SELECT * FROM dynasties WHERE start_abs<=? AND end_abs>=?${query.scope ? " AND scope=?" : ""} ORDER BY rowid`, [window.toAbs,window.fromAbs,...(query.scope ? [query.scope] : [])]);
+    const dynastyRaw = await rows(db, `SELECT * FROM dynasties WHERE is_deleted IS NOT TRUE AND start_abs<=? AND end_abs>=?${query.scope ? " AND scope=?" : ""} ORDER BY rowid`, [window.toAbs,window.fromAbs,...(query.scope ? [query.scope] : [])]);
     this.cancelled(query.signal);
     const relations = (await rows(db, "SELECT * FROM relations WHERE kind<>'succession' AND at_abs>=? AND at_abs<=? ORDER BY rowid", [query.fromAbs,query.toAbs])).map(mapRelation);
     this.cancelled(query.signal);
@@ -352,7 +354,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
   getTimelineCatalog(scope?: string): Promise<TimelineCatalog> {
     return this.consistent(async () => {
       const db = await this.database();
-      return { dynasties: (await rows(db, `SELECT * FROM dynasties${scope ? " WHERE scope=?" : ""} ORDER BY rowid`,scope ? [scope] : [])).map(mapDynasty),
+      return { dynasties: (await rows(db, `SELECT * FROM dynasties WHERE is_deleted IS NOT TRUE${scope ? " AND scope=?" : ""} ORDER BY rowid`,scope ? [scope] : [])).map(mapDynasty),
         dynastyGroups: (await rows(db,"SELECT * FROM dynasty_groups ORDER BY rowid")).map(mapGroup) };
     });
   }
@@ -458,7 +460,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
   getBounds(): Promise<{ minAbs: number; maxAbs: number }> {
     return this.consistent(async () => {
       const db = await this.database();
-      const dynasties = (await rows(db,"SELECT start_abs,end_abs FROM dynasties"));
+      const dynasties = (await rows(db,"SELECT start_abs,end_abs FROM dynasties WHERE is_deleted IS NOT TRUE"));
       const events = await rows(db,"SELECT at_year,at_month,at_day,at_abs,start_year,start_month,start_day,start_abs,end_year,end_month,end_day,end_abs FROM events");
       const spans = events.map(e => eventSpanAbs({at:point(e.at_year,e.at_month,e.at_day),atAbs:n(e.at_abs),start:point(e.start_year,e.start_month,e.start_day),startAbs:n(e.start_abs),end:point(e.end_year,e.end_month,e.end_day),endAbs:n(e.end_abs)}));
       return { minAbs:Math.min(...dynasties.map(d => Number(d.start_abs)),...spans.map(e => e.startAbs)), maxAbs:Math.max(...dynasties.map(d => Number(d.end_abs)),...spans.map(e => e.endAbs)) };

@@ -215,7 +215,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   }, [data]);
 
   const boundsQuery = useDataBounds();
-  const capitalsQuery = useCapitalLocations(boundsQuery.data, data?.reigns);
+  const capitalReigns = useMemo(
+    () => [...new Map([...(data?.reigns ?? []), ...(context?.reigns ?? [])].map((reign) => [reign.id, reign])).values()],
+    [data?.reigns, context?.reigns],
+  );
+  const capitalsQuery = useCapitalLocations(boundsQuery.data, capitalReigns);
   const allCapitals = capitalsQuery.data;
   const timelineCatalog = useTimelineCatalog();
 
@@ -269,22 +273,22 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (!selected) {
         return visible;
       }
-      const reign = selected.type === "reign"
-        ? data?.reigns.find((item) => item.id === selected.id)
-        : selected.type === "person" && selection.focusReignId
-          ? data?.reigns.find((item) => item.id === selection.focusReignId)
-          : undefined;
-      const personReigns = selected.type === "person" ? data?.reigns.filter((item) => item.personId === selected.id) ?? [] : [];
+      const selectedReignId = selected.type === "reign"
+        ? selected.id
+        : selected.type === "person" ? selection.focusReignId : null;
+      const personReigns = selected.type === "person"
+        ? capitalReigns.filter((item) => item.personId === selected.id)
+        : [];
       const selectedCapitals = selected.type === "location_mapping"
         ? capitals.filter((capital) => capital.id === selected.id)
         : selected.type === "dynasty"
           ? capitals.filter((capital) => capital.dynastyId === selected.id)
-          : reign
-            ? capitals.filter((capital) => capital.reignIds?.includes(reign.id))
-            : capitalsForReigns(personReigns, data?.reigns ?? [], capitals);
+          : selectedReignId
+            ? capitals.filter((capital) => capital.reignIds?.includes(selectedReignId))
+            : capitalsForReigns(personReigns, capitalReigns, capitals);
       return [...new Map([...visible, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
     },
-    [capitalsQuery.data, labelAnchorAbs, selection.selected, selection.focusReignId, data?.reigns],
+    [capitalsQuery.data, labelAnchorAbs, selection.selected, selection.focusReignId, capitalReigns],
   );
   const nearbyEvents = useMemo(() => {
     if (!data) return [];

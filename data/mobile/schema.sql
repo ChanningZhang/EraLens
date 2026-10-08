@@ -19,7 +19,7 @@ CREATE TABLE dynasties (
   region TEXT NOT NULL, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, end_year INTEGER,
   end_month INTEGER, end_day INTEGER, end_confidence TEXT, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
   start_day INTEGER, start_confidence TEXT NOT NULL, color_token TEXT NOT NULL, parent_id TEXT, group_id TEXT,
-  note TEXT, FOREIGN KEY(group_id) REFERENCES dynasty_groups(id)
+  note TEXT, is_deleted INTEGER DEFAULT NULL, FOREIGN KEY(group_id) REFERENCES dynasty_groups(id)
 );
 CREATE TABLE reigns (
   id TEXT PRIMARY KEY, dynasty_id TEXT NOT NULL, person_id TEXT NOT NULL, title TEXT NOT NULL,

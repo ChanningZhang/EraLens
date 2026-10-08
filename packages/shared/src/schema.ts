@@ -104,6 +104,7 @@ export const DynastySchema = z.object({
   parentId: z.string().optional(),
   groupId: z.string().optional(),
   note: z.string().optional(),
+  isDeleted: z.boolean().nullable().optional(),
 }).superRefine((dynasty, ctx) => {
   try { validateDynastyName(dynasty); } catch (error) {
     ctx.addIssue({ code: "custom", path: ["name"], message: error instanceof Error ? error.message : "Invalid dynasty name" });
