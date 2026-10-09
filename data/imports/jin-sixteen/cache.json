@@ -2077,8 +2077,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
+      "posthumousNames": ["武皇帝"],
+      "templeNames": ["高祖"],
       "title": null,
       "dynastyId": "song-liu"
     },

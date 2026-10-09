@@ -38,7 +38,7 @@
         "中宗"
       ],
       "title": "梁宣帝",
-      "dynastyId": "xiliang"
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-kui",
@@ -71,7 +71,7 @@
         "世宗"
       ],
       "title": "梁明帝",
-      "dynastyId": "xiliang"
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-cong",
@@ -102,7 +102,7 @@
       ],
       "templeNames": [],
       "title": "梁孝靖帝",
-      "dynastyId": "xiliang"
+      "dynastyId": "liang-nan"
     },
     {
       "id": "ran-min",
@@ -473,31 +473,6 @@
   "dynastyGroups": [],
   "dynasties": [
     {
-      "id": "xiliang",
-      "name": "西梁",
-      "altNames": [
-        "梁",
-        "后梁",
-        "萧梁"
-      ],
-      "scope": "cn",
-      "region": "east_asia",
-      "start": {
-        "year": 555,
-        "month": 2,
-        "abs": 6661,
-        "confidence": "month"
-      },
-      "end": {
-        "year": 587,
-        "month": 10,
-        "abs": 7053,
-        "confidence": "month"
-      },
-      "groupId": "nan-chao",
-      "note": "西魏攻陷江陵、梁元帝被杀后，西魏于555年扶立萧詧为梁主，江陵成为依附西魏的缓冲政权。西梁沿用梁制，疆域狭小，历萧詧、萧巋、萧琮三代；先后依附西魏、北周并与隋通婚。587年隋文帝召萧琮入朝并废国，西梁并入隋。它延续了梁的皇室名号与礼制，但政治自主受到宗主国限制。"
-    },
-    {
       "id": "ranwei",
       "name": "冉魏",
       "altNames": [
@@ -572,7 +547,7 @@
   "reigns": [
     {
       "id": "reign-xiao-cha-xiliang",
-      "dynastyId": "xiliang",
+      "dynastyId": "liang-nan",
       "personId": "xiao-cha",
       "title": "",
       "eraNames": [
@@ -592,12 +567,13 @@
       },
       "startAbs": 6661,
       "endAbs": 6745,
-      "claimTrack": null,
-      "isMain": false
+      "claimTrack": "west-liang",
+      "isMain": false,
+      "dynastyName": "西梁"
     },
     {
       "id": "reign-xiao-kui-xiliang",
-      "dynastyId": "xiliang",
+      "dynastyId": "liang-nan",
       "personId": "xiao-kui",
       "title": "",
       "eraNames": [
@@ -617,12 +593,13 @@
       },
       "startAbs": 6745,
       "endAbs": 7024,
-      "claimTrack": null,
-      "isMain": false
+      "claimTrack": "west-liang",
+      "isMain": false,
+      "dynastyName": "西梁"
     },
     {
       "id": "reign-xiao-cong-xiliang",
-      "dynastyId": "xiliang",
+      "dynastyId": "liang-nan",
       "personId": "xiao-cong",
       "title": "",
       "eraNames": [
@@ -643,8 +620,9 @@
       },
       "startAbs": 7024,
       "endAbs": 7053,
-      "claimTrack": null,
-      "isMain": false
+      "claimTrack": "west-liang",
+      "isMain": false,
+      "dynastyName": "西梁"
     },
     {
       "id": "reign-ran-min-ranwei",
@@ -1168,7 +1146,7 @@
     "generatedAt": "2026-09-27",
     "counts": {
       "persons": 20,
-      "dynasties": 4,
+      "dynasties": 3,
       "reigns": 20,
       "events": 0,
       "relations": 16
@@ -1257,12 +1235,20 @@
       {
         "label": "《中国民族史》：西晋至南北朝时期的氐族政权（仇池）",
         "url": "https://szzy.7lue.cn/read/5635ed7e662cffd3f7946e6453f91d82/7d9d1deff89dc635acf3e790cae402b7.md"
+      },
+      {
+        "label": "《梁书》卷五·元帝纪",
+        "url": "https://zh.wikisource.org/zh-hans/梁書/卷05"
+      },
+      {
+        "label": "《周书》卷四十八·萧詧等传",
+        "url": "https://zh.wikisource.org/wiki/周書/卷48"
       }
     ],
     "notes": [
       "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
-      "冉魏、西燕、仇池均不入崔鸿《十六国春秋》，不属 dynasty_groups.wuhu，单独成行（与十六国框分开）。西梁属 dynasty_groups.nan-chao（555–587，落在南朝框 420–589 内，与南陈并存）。",
-      "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。三帝为萧詧、萧巋、萧琮；萧庄是王琳在郢州另立的梁帝，不属江陵西梁。",
+      "冉魏、西燕、仇池均不入崔鸿《十六国春秋》，不属 dynasty_groups.wuhu，单独成行（与十六国框分开）。西梁归入南梁（liang-nan）的并立 claimTrack（555–587），与南陈并存。",
+      "西梁称谓用于南梁王朝下的西梁并立轨道；三帝为萧詧、萧巋、萧琮。萧庄是王琳在郢州另立的梁帝，不属江陵西梁。",
       "萧詧起迄月取维基即位（555年2月）与《周书》保定二年二月薨；萧巋接天保始年二月，卒于天保二十四年五月；萧琮亡国取广运二年九月十九日（587年10月26日）。",
       "仇池取296–371前仇池窗口，九君为杨茂搜、杨难敌、杨毅、杨初、杨国、杨俊、杨世、杨统、杨纂；杨统年有争议仍单列。杨难当属后仇池，不在此包。",
       "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。",
@@ -1274,7 +1260,8 @@
       "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：yang-tong-chouchi 原概述：前仇池末期杨氏宗室，史料多记为武都太守，并记载他与杨纂争夺权位。371年前秦攻仇池时，杨统率武都部众降秦。不同史料对其是否曾短暂自立及具体继位次序记载不一，故不将其统治范围写得更确定。",
       "2026-10-03：西燕由慕容氏建立，逐项核对为慕容鲜卑。仇池政权按杨氏氐人统治集团标“氐”；仇池诸政权阶段长、周边羌氐等族群交错，标签只指主要统治集团。",
       "2026-10-05：开国经历逐条复核并改写：xiao-cha。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-05：开国候选逐项复核后保留原概述：ran-min、murong-hong、yang-maosou。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+      "2026-10-05：开国候选逐项复核后保留原概述：ran-min、murong-hong、yang-maosou。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+      "2026-10-09：按用户要求将江陵西梁并入南梁（liang-nan）王朝记录，以 claimTrack=west-liang、dynastyName=西梁表达并立政权，不再保留独立 dynasty 行；三帝人物与在位记录统一关联南梁。南梁王朝总范围延至西梁于587年被隋废除，主线仍于557年结束。历史脉络据《梁书》卷五、《周书》卷四十八。原在位日期与江陵都城时段不变。"
     ]
   }
 }

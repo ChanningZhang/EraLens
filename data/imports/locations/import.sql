@@ -199,6 +199,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-fead7761c1222e82e7341856395fad7d','广东省肇庆市',112.465245,23.047747,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ff4af19f35888f76f9a4eb3164b61196','山东省淄博市临淄区',118.309398,36.826882,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-luotuocheng-founder-review','甘肃省张掖市高台县骆驼城遗址',99.56879,39.34957,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-pingliang-xia-capital-approx','甘肃省平凉市崆峒区市区一带',106.664913,35.542417,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-cishan-site','河北省邯郸市武安市磁山镇磁山遗址',114.117989,36.575589,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-dadiwan-site','甘肃省天水市秦安县五营镇邵店村大地湾遗址',105.904,35.015,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-dawenkou-site','山东省泰安市岱岳区大汶口镇大汶口遗址',117.08597,35.9453,'WGS84');
