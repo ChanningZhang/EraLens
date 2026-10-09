@@ -92,7 +92,6 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dyn
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','han-zhao','event','liu-yao-change-country-name');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','han-zhao','event','wuhu-chaos');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','han-zhao','event','yongjia-disaster');
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','jiaodong-warring','event','zhanguo');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','jin-chunqiu','event','chengpu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','jin-chunqiu','event','chunqiu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','jin-chunqiu','event','idiom-bian-chang-mo-ji');

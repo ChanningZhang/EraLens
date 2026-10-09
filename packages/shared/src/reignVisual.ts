@@ -10,6 +10,7 @@ import { confidencePrecision } from "./historicalDate";
 import {
   effectiveIntervalEndPoint,
   effectiveIntervalStartPoint,
+  timelineInterval,
   type LeftOpenRightClosedInterval,
 } from "./timelineIntervals";
 
@@ -165,6 +166,11 @@ export function formatReignDurationLabel(
     return undefined;
   }
   const approximate = isApproximateConfidence(startConfidence) || isApproximateConfidence(endConfidence);
+  // Approximate tooltips omit duration. Calculate it from the dated interval
+  // instead of treating that omission as a single-month/year reign.
+  if (approximate && !interval) {
+    interval = timelineInterval(reign.start, reign.end, reign.precision ?? "month");
+  }
   if (interval) {
     const start = effectiveIntervalStartPoint(interval);
     const end = effectiveIntervalEndPoint(interval);

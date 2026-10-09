@@ -123,6 +123,16 @@ describe("uncertain date presentation", () => {
     expect(formatReignDurationLabel(knownReign)).toBe("39年");
   });
 
+  it.each([
+    { start: { year: -209, month: 10, confidence: "approximate_month" as const }, end: { year: -208, month: 7, confidence: "approximate_month" as const }, expected: "约10个月" },
+    { start: { year: -208, month: 9, confidence: "approximate_month" as const }, end: { year: -206, month: 3, confidence: "approximate_month" as const }, expected: "约1年7个月" },
+    { start: { year: 1200, month: 1, confidence: "approximate_year" as const }, end: { year: 1202, month: 12, confidence: "year" as const }, expected: "约3年" },
+  ])("computes approximate duration across the full dated interval: $expected", ({ start, end, expected }) => {
+    const reign = { ...knownReign, start, end, startAbs: absMonth(start.year, start.month), endAbs: absMonth(end.year, end.month) };
+    expect(formatReignDurationLabel(reign)).toBe(expected);
+    expect(formatReignDurationLabel(reign, timelineInterval(start, end, reign.precision))).toBe(expected);
+  });
+
   it("formats certain capital days and clips their tenure using shared ownership", () => {
     const reign = {
       ...knownReign, precision: "day" as const,

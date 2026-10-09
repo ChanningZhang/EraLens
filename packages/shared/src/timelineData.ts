@@ -3,7 +3,6 @@ import { relatedEntityRefs, type EntityAssociation } from "./entityAssociations.
 import { capitalLocations } from "./locationMappings";
 import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalLocationRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
-import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
   buildPreQinClanContext,
   resolvePersonDetailTitle,
@@ -179,10 +178,14 @@ function fateRelationRelatedItems(
     isFateRelationKind(rel.kind) && (refs.has(rel.fromRef) || refs.has(rel.toRef)),
   ).flatMap(rel => {
     const other = parseRef(refs.has(rel.fromRef) ? rel.toRef : rel.fromRef);
-    return other ? [{
+    // A fate relation can be anchored to someone else's reign and point to this
+    // person (for example, a victim's reign -> their killer). Do not present
+    // that external reign as one of this person's own reigns in their detail.
+    if (!other || other.type === "reign") return [];
+    return [{
       ...summary(other), abs: rel.atAbs,
-      group: other.type === "reign" ? "reign" as const : "person" as const,
-    }] : [];
+      group: "person" as const,
+    }];
   });
 }
 
@@ -239,17 +242,17 @@ function buildPersonEntityDetail(
     return rows;
   });
   const clan = buildPreQinClanContext(person);
-  const preQinReign = personReigns.find((reign) => usesPreQinCardLayout(reign));
-  const preQinByBirth =
-    !preQinReign &&
-    person.birth != null &&
-    person.birth.year < PRE_IMPERIAL_START_YEAR;
+  // Person-detail appellation rules follow the selected/earliest reign period,
+  // never the person's birth year.
+  const detailReign = focusReign ?? personReigns[0];
+  const preQinReign = detailReign && usesPreQinCardLayout(detailReign)
+    ? detailReign
+    : undefined;
 
   const focusReignIndex = focusReign
     ? options.focusReignIndex ?? personReigns.findIndex((reign) => reign.id === focusReign.id) + 1
     : undefined;
   const reignCount = options.reignCount ?? personReigns.length;
-  const detailReign = focusReign ?? personReigns[0];
   const headingDynasty = detailReign
     ? dynastyMap.get(detailReign.dynastyId)
     : person.dynastyId
@@ -265,7 +268,7 @@ function buildPersonEntityDetail(
     clan,
     {
       focusedReign: Boolean(focusReign),
-      periodYear: detailReign?.start.year ?? person.birth?.year,
+      periodYear: detailReign?.start.year,
     },
   );
   const displayHeading = heading;
@@ -275,7 +278,7 @@ function buildPersonEntityDetail(
       : displayHeading
     : undefined;
   const title = resolvePersonDetailTitle(person.name, clan, {
-    preQin: Boolean(preQinReign || preQinByBirth),
+    preQin: Boolean(preQinReign),
     reignTitle: (focusReign && usesPreQinCardLayout(focusReign)
       ? focusReign
       : preQinReign)?.title,
@@ -286,7 +289,7 @@ function buildPersonEntityDetail(
   );
 
   const commonFacts = [
-    ...(preQinReign || preQinByBirth
+    ...(preQinReign
       ? resolvePreQinNameFacts(person.name, clan, preQinReign)
       : []),
     ...((person.posthumousNames ?? []).length

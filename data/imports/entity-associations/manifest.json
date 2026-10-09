@@ -5,7 +5,7 @@
   "importPhase": "post",
   "postImportOrder": 100,
   "counts": {
-    "associations": 1221,
+    "associations": 1220,
     "persons": 0,
     "dynastyGroups": 0,
     "dynasties": 0,
@@ -7043,12 +7043,29 @@
     {
       "label": "《魏书》卷二·太祖纪",
       "url": "https://wk.100ke.info/wiki/魏書/卷2"
+    },
+    {
+      "label": "《史记·田儋列传》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷094"
+    },
+    {
+      "label": "《史记·秦楚之际月表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷016"
+    },
+    {
+      "label": "中国历代朔闰表：秦、西汉及新朝（李忠林秦汉历法复原）",
+      "url": "https://ytliu0.github.io/ChineseCalendar/table_period_simp.html?period=qinhanxin"
+    },
+    {
+      "label": "秦与汉初历法的复原方法",
+      "url": "https://ytliu0.github.io/ChineseCalendar/QinHanCalendars_simp.html"
     }
   ],
   "notes": [
     "无方向、无标签；端点按 UTF-8 字节顺序排列。来源为原事件连接记录与普通 relations 的去重并集。",
     "原始维护包及迁入记录数：{\"chunqiu-minor\": 15, \"chunqiu-zhanguo/cao-chunqiu\": 3, \"chunqiu-zhanguo/chu-chunqiu\": 4, \"chunqiu-zhanguo/guo-chunqiu\": 5, \"chunqiu-zhanguo/guo-east\": 4, \"chunqiu-zhanguo/han-warring\": 2, \"chunqiu-zhanguo/jin-chunqiu\": 8, \"chunqiu-zhanguo/lu-chunqiu\": 3, \"chunqiu-zhanguo/qi-chunqiu\": 4, \"chunqiu-zhanguo/qin\": 9, \"chunqiu-zhanguo/song-chunqiu\": 3, \"chunqiu-zhanguo/wei-warring\": 14, \"chunqiu-zhanguo/wei-weiguo\": 3, \"chunqiu-zhanguo/wu-chunqiu\": 1, \"chunqiu-zhanguo/yan-chunqiu\": 1, \"chunqiu-zhanguo/yue-chunqiu\": 1, \"chunqiu-zhanguo/zhao-warring\": 2, \"chunqiu-zhanguo/zheng-chunqiu\": 2, \"chunqiu-zhanguo/zhongshan\": 1, \"commercial-events\": 10, \"disaster-events\": 3, \"financial-events\": 3, \"idioms\": 190, \"jin-sixteen\": 37, \"liao-remnants\": 6, \"major-events\": 62, \"ming-end\": 6, \"minguo\": 79, \"mongol-pre-yuan\": 24, \"nanbei-chao\": 29, \"nanzhao-dali\": 5, \"poetry\": 93, \"prc\": 36, \"qin-han\": 81, \"qin-han-extra\": 6, \"sanhuang-wudi\": 5, \"song-liao-jin\": 34, \"sui-tang-wudai-song\": 59, \"taiping\": 23, \"tang-border\": 4, \"three-kingdoms-battles\": 53, \"three-kingdoms-late\": 3, \"three-kingdoms-warlord\": 25, \"xia-shang-zhou\": 96, \"xinan-guozheng\": 13, \"xixia\": 7, \"yuan-ming-qing\": 191}",
     "拓跋珪改国号为魏事件关联北魏与拓跋珪；事件原文与王朝关联依据《魏书·太祖纪》及“代（十六国）”条目。",
-    "2026-10-08：将原 dynasty:wei-east 与 dynasty:wei-west 的事件关联迁入 dynasty:wei-north；魏分裂事件保留唯一北魏关联。"
+    "2026-10-08：将原 dynasty:wei-east 与 dynasty:wei-west 的事件关联迁入 dynasty:wei-north；魏分裂事件保留唯一北魏关联。",
+    "2026-10-09：删除胶东与战国事件关联；田巿的胶东王阶段始于汉元年（前206年），不属于战国。"
   ]
 }
