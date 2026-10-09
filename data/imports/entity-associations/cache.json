@@ -138,7 +138,7 @@
       "bRef": "event:xiangliang-death"
     },
     {
-      "aRef": "dynasty:dai-warring",
+      "aRef": "dynasty:zhao-warring",
       "bRef": "event:zhanguo"
     },
     {
@@ -2192,10 +2192,6 @@
     {
       "aRef": "dynasty:zhao-warring",
       "bRef": "event:sanjia-fenjin"
-    },
-    {
-      "aRef": "dynasty:zhao-warring",
-      "bRef": "event:zhanguo"
     },
     {
       "aRef": "dynasty:zhao-warring",
@@ -4889,7 +4885,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1220
+      "associations": 1219
     },
     "sources": [
       {

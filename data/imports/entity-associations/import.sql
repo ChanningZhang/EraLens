@@ -34,7 +34,6 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dyn
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','chu-west','event','julu-battle');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','chu-west','event','poetry-gaixia-ge');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','chu-west','event','xiangliang-death');
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','dai-warring','event','zhanguo');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','dali','event','mongol-conquer-dali');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','dian','event','dian-surrender-han');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','dongliao','event','dongliao-yelu-sibu-rebel');

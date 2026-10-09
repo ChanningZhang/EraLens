@@ -25,8 +25,8 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "location_mapping": 230,
-      "locationMappings": 229
+      "location_mapping": 228,
+      "locationMappings": 228
     },
     "sources": [
       {
@@ -2200,35 +2200,6 @@
       "kind": "dynasty",
       "externalId": "dian",
       "historicalName": "滇池"
-    },
-    {
-      "start": {
-        "year": -228,
-        "month": 1,
-        "abs": -2724,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -222,
-        "month": 12,
-        "abs": -2641,
-        "confidence": "month"
-      },
-      "startAbs": -2724,
-      "endAbs": -2641,
-      "role": "primary",
-      "note": "代国都城代。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/代国"
-        }
-      ],
-      "id": "cap-dai-warring-dai-228",
-      "locationId": "loc-3493a5d321fb7ecbe010ac93a915b133",
-      "kind": "dynasty",
-      "externalId": "dai-warring",
-      "historicalName": "代"
     },
     {
       "start": {
