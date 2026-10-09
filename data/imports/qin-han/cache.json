@@ -396,7 +396,7 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉后少帝",
+      "title": "后少帝",
       "dynastyId": "han-west"
     },
     {
@@ -1228,9 +1228,9 @@
           "url": "https://zh.wikipedia.org/wiki/汉少帝刘辩"
         }
       ],
-      "posthumousNames": [],
+      "posthumousNames": ["怀王"],
       "templeNames": [],
-      "title": "汉后少帝",
+      "title": "弘农王",
       "dynastyId": "han-east"
     },
     {
