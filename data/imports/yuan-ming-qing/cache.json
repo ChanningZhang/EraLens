@@ -2515,7 +2515,8 @@
       },
       "startAbs": 15263,
       "endAbs": 15313,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "元"
     },
     {
       "id": "reign-hu-bilie-yuan-unified",
@@ -2541,7 +2542,8 @@
       },
       "startAbs": 15313,
       "endAbs": 15529,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-temur-yuan",
@@ -2565,7 +2567,8 @@
       },
       "startAbs": 15532,
       "endAbs": 15685,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-khayishan-yuan",
@@ -2589,7 +2592,8 @@
       },
       "startAbs": 15689,
       "endAbs": 15732,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-ayurbarwada-yuan",
@@ -2613,7 +2617,8 @@
       },
       "startAbs": 15735,
       "endAbs": 15842,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-shidebala-yuan",
@@ -2637,7 +2642,8 @@
       },
       "startAbs": 15843,
       "endAbs": 15884,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-yeshuntuemur-yuan",
@@ -2664,7 +2670,8 @@
       },
       "startAbs": 15884,
       "endAbs": 15943,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-tugh-temur-yuan",
@@ -2690,7 +2697,8 @@
       },
       "startAbs": 15945,
       "endAbs": 15949,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-khoshila-yuan",
@@ -2714,7 +2722,8 @@
       },
       "startAbs": 15949,
       "endAbs": 15955,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-tugh-temur-yuan-2",
@@ -2741,7 +2750,8 @@
       },
       "startAbs": 15956,
       "endAbs": 15992,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-irinchibal-yuan",
@@ -2765,7 +2775,8 @@
       },
       "startAbs": 15992,
       "endAbs": 15995,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-togon-temur-yuan",
@@ -2789,7 +2800,8 @@
       },
       "startAbs": 16002,
       "endAbs": 16424,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "元"
     },
     {
       "id": "reign-togon-temur-yuan-north",
@@ -2815,7 +2827,8 @@
       },
       "startAbs": 16424,
       "endAbs": 16444,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "元"
     },
     {
       "id": "reign-ayushiridara-yuan",
@@ -2841,7 +2854,8 @@
       },
       "startAbs": 16444,
       "endAbs": 16540,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "元"
     },
     {
       "id": "reign-togus-temur-yuan",
@@ -2867,7 +2881,8 @@
       },
       "startAbs": 16540,
       "endAbs": 16666,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "元"
     },
     {
       "id": "reign-ragibagh-yuan",
@@ -2894,8 +2909,8 @@
       "startAbs": 15945,
       "endAbs": 15946,
       "claimTrack": "shangdu",
-      "claimLabel": "上都",
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "上都"
     },
     {
       "id": "reign-xu-shouhui-song-xu",
@@ -3106,7 +3121,8 @@
       },
       "startAbs": 16369,
       "endAbs": 16416,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "吴"
     },
     {
       "id": "reign-zhu-yuanzhang-ming",
@@ -3132,7 +3148,8 @@
       },
       "startAbs": 16416,
       "endAbs": 16781,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-yunwen-ming",
@@ -3158,7 +3175,8 @@
       },
       "startAbs": 16781,
       "endAbs": 16830,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-di-ming",
@@ -3184,7 +3202,8 @@
       },
       "startAbs": 16830,
       "endAbs": 17095,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-gaochi-ming",
@@ -3210,7 +3229,8 @@
       },
       "startAbs": 17095,
       "endAbs": 17104,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-zhanji-ming",
@@ -3236,7 +3256,8 @@
       },
       "startAbs": 17104,
       "endAbs": 17220,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-qizhen-ming",
@@ -3262,7 +3283,8 @@
       },
       "startAbs": 17220,
       "endAbs": 17396,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-qiyu-ming",
@@ -3288,7 +3310,8 @@
       },
       "startAbs": 17396,
       "endAbs": 17485,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-qizhen-ming-2",
@@ -3314,7 +3337,8 @@
       },
       "startAbs": 17485,
       "endAbs": 17569,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-jianshen-ming",
@@ -3340,7 +3364,8 @@
       },
       "startAbs": 17569,
       "endAbs": 17852,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-youcheng-ming",
@@ -3366,7 +3391,8 @@
       },
       "startAbs": 17852,
       "endAbs": 18065,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-houzhao-ming",
@@ -3392,7 +3418,8 @@
       },
       "startAbs": 18065,
       "endAbs": 18255,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-houcong-ming",
@@ -3418,7 +3445,8 @@
       },
       "startAbs": 18256,
       "endAbs": 18804,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-zaihou-ming",
@@ -3444,7 +3472,8 @@
       },
       "startAbs": 18804,
       "endAbs": 18870,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-yiming-ming",
@@ -3470,7 +3499,8 @@
       },
       "startAbs": 18870,
       "endAbs": 19447,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-changluo-ming",
@@ -3496,7 +3526,8 @@
       },
       "startAbs": 19447,
       "endAbs": 19448,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-youjiao-ming",
@@ -3522,7 +3553,8 @@
       },
       "startAbs": 19448,
       "endAbs": 19532,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-youjian-ming",
@@ -3548,7 +3580,8 @@
       },
       "startAbs": 19533,
       "endAbs": 19731,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "明"
     },
     {
       "id": "reign-zhu-yousong-ming-south",
@@ -3574,7 +3607,8 @@
       },
       "startAbs": 19733,
       "endAbs": 19745,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "南明"
     },
     {
       "id": "reign-zhu-yujian-ming-south",
@@ -3600,7 +3634,8 @@
       },
       "startAbs": 19747,
       "endAbs": 19761,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "南明"
     },
     {
       "id": "reign-zhu-youlang-ming-south",
@@ -3626,7 +3661,8 @@
       },
       "startAbs": 19763,
       "endAbs": 19949,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "南明"
     },
     {
       "id": "reign-zhu-yihai-ming-south",
@@ -3651,9 +3687,9 @@
       "startAbs": 19748,
       "endAbs": 19838,
       "claimTrack": "lu-jian",
-      "claimLabel": "绍兴",
       "isMain": false,
-      "isInformalMonarch": true
+      "isInformalMonarch": true,
+      "dynastyName": "绍兴"
     },
     {
       "id": "reign-zhu-yuyue-ming-south",
@@ -3680,8 +3716,8 @@
       "startAbs": 19763,
       "endAbs": 19764,
       "claimTrack": "shaowu",
-      "claimLabel": "绍武",
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "绍武"
     },
     {
       "id": "reign-nurhaci-qing",
@@ -3707,7 +3743,8 @@
       },
       "startAbs": 19393,
       "endAbs": 19520,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "金"
     },
     {
       "id": "reign-huang-taiji-qing",
@@ -3734,7 +3771,8 @@
       },
       "startAbs": 19521,
       "endAbs": 19724,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "金"
     },
     {
       "id": "reign-fulin-qing",
@@ -3760,7 +3798,8 @@
       },
       "startAbs": 19725,
       "endAbs": 19933,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-xuanye-qing",
@@ -3786,7 +3825,8 @@
       },
       "startAbs": 19933,
       "endAbs": 20675,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-yinzhen-qing",
@@ -3812,7 +3852,8 @@
       },
       "startAbs": 20675,
       "endAbs": 20829,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-hongli-qing",
@@ -3838,7 +3879,8 @@
       },
       "startAbs": 20829,
       "endAbs": 21553,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-yongyan-qing",
@@ -3864,7 +3906,8 @@
       },
       "startAbs": 21553,
       "endAbs": 21848,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-minning-qing",
@@ -3890,7 +3933,8 @@
       },
       "startAbs": 21849,
       "endAbs": 22201,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-yizhu-qing",
@@ -3916,7 +3960,8 @@
       },
       "startAbs": 22202,
       "endAbs": 22339,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-zaichun-qing",
@@ -3942,7 +3987,8 @@
       },
       "startAbs": 22342,
       "endAbs": 22500,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-zaitian-qing",
@@ -3968,7 +4014,8 @@
       },
       "startAbs": 22501,
       "endAbs": 22906,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     },
     {
       "id": "reign-puyi-qing",
@@ -3994,7 +4041,8 @@
       },
       "startAbs": 22907,
       "endAbs": 22945,
-      "isMain": true
+      "isMain": true,
+      "dynastyName": "清"
     }
   ],
   "events": [
@@ -6192,7 +6240,9 @@
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：song-han、ming。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
       "2026-10-06：按用户要求恢复 name JSON 的 default 与 periods；default 保存俗称，未指定时点或时点不在名称阶段时使用 default。altNames[0] 恢复代表国号/自称，人物与在位详情仍优先 claimLabel、其次 altNames[0]；取代此前将代表显示名放入首项的约定。yuan：default=元，altNames[0]=大元；ming：default=明，altNames[0]=大明；qing：default=清，altNames[0]=大清。名称日期及精度不变；国号/自称选用本包已有别名与来源。",
       "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
-      "明军攻占大都事件据《明史》洪武元年八月庚午徐达入元都，结合中国历代朔闰表换算为1368-09-14（项目儒略历日期），由原公历月精度改为日精度。"
+      "明军攻占大都事件据《明史》洪武元年八月庚午徐达入元都，结合中国历代朔闰表换算为1368-09-14（项目儒略历日期），由原公历月精度改为日精度。",
+      "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。",
+      "2026-10：分时名称王朝所属主线 reign 的 dynastyName 按已有 name.periods 和共享 reign/phase 归属区间计算，取累计使用日数最多的名称；同名阶段累计，阶段外回退 default，时长相同取较早阶段。并立政权保留其已有 dynastyName，不参与主线名称回填；日期与并立轨道不作调整。"
     ]
   }
 }

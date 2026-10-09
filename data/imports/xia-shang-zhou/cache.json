@@ -4431,8 +4431,8 @@
       "startAbs": -9228,
       "endAbs": -8977,
       "claimTrack": "xie",
-      "claimLabel": "携",
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "携"
     },
     {
       "id": "reign-ji-lin",
@@ -7075,7 +7075,8 @@
       "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
       "2026-10-06先秦谥号与称谓拆分：按既有来源所载称谓，将谥号末尾的公、伯、侯、子、男、王、君移出posthumousNames，仅保存谥字；首选完整谥称（不含国名）写入persons.title，原有不同人物称号保留为检索别名。未新增历史判断、未从爵称或私名推造谥号，未改日期、世系、在位或来源依据；同人的所有在位共用人物字段。展示遵循reigns.title→persons.title→persons.posthumousNames→persons.name，无reign焦点的详情称呼仍以谥号优先。旧说明中保留带爵称谥号的约定由本条取代。涉及人物：zi-tang、ji-fa、ji-song、ji-zhao、ji-xia、ji-man、ji-yihu、ji-jian、ji-pifang、ji-xie、ji-hu、ji-jing、ji-gongsheng、ji-yijiu、ji-yuchen、ji-lin、ji-tuo、ji-huqi、ji-lang、ji-zheng、ji-renchen、ji-ban、ji-yu、ji-yi、ji-xiexin、ji-gui、ji-meng、ji-gai、ji-ren、ji-jie、ji-quji、ji-shu、ji-wei、ji-wu、ji-jiao、ji-xi、ji-bian、ji-ding、ji-yan。",
       "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
-      "2026-10-08：bigan-killed 原将比干之死与克商同置前1046年年桶右缘。《今本竹书纪年》在帝辛五十一年条中记杀比干，支持帝辛末期、伐殷之前的叙事先后，但其在位年数与本包采用的断代工程三十年框架不同，不能直接换算为已知绝对年。按用户要求从亡国尾端前移，依所采帝辛前1075至前1046年的在位锚点，选前1050年作末期代表坐标，confidence=interpolated_by_other；此为关联推定的展示位置，不是史料确认的发生年份。12月为年桶占位，不表示已知月份。"
+      "2026-10-08：bigan-killed 原将比干之死与克商同置前1046年年桶右缘。《今本竹书纪年》在帝辛五十一年条中记杀比干，支持帝辛末期、伐殷之前的叙事先后，但其在位年数与本包采用的断代工程三十年框架不同，不能直接换算为已知绝对年。按用户要求从亡国尾端前移，依所采帝辛前1075至前1046年的在位锚点，选前1050年作末期代表坐标，confidence=interpolated_by_other；此为关联推定的展示位置，不是史料确认的发生年份。12月为年桶占位，不表示已知月份。",
+      "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。"
     ]
   }
 }

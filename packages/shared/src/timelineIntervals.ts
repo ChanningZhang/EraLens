@@ -134,6 +134,11 @@ export function intervalsIntersect(
     b.startExclusive < a.endInclusive;
 }
 
+/** Number of calendar days shared by two owned intervals. */
+export function intervalOverlapDays(a: LeftOpenRightClosedInterval, b: LeftOpenRightClosedInterval): number {
+  return Math.max(0, Math.min(a.endInclusive, b.endInclusive) - Math.max(a.startExclusive, b.startExclusive));
+}
+
 export function intervalPrecedes(
   candidate: LeftOpenRightClosedInterval,
   interval: LeftOpenRightClosedInterval,

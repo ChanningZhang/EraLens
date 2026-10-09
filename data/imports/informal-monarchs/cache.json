@@ -219,7 +219,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "isInformalMonarch": true,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-toregene-mongol",
@@ -246,7 +247,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "isInformalMonarch": true,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-oghul-qaimish-mongol",
@@ -273,7 +275,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "isInformalMonarch": true,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     }
   ],
   "events": [],
@@ -343,7 +346,8 @@
       "段祺瑞、张作霖：北洋军阀时期临时执政、陆海军大元帅，非正式国家元首。",
       "宋庆龄、董必武、全国人大常委会：国家副主席代行、代主席、机构行使元首职权，非正式国家主席。",
       "既有 reign 的 isInformalMonarch 标记已迁入对应在位记录的唯一所有者包；本包不再通过 UPDATE 改写其他包记录。",
-      "朱祁钰监国不再建临时 reign；监国任命改为 yuan-ming-qing 包中的单点事件，事件按年精度记录以保留农历原记而不擅自换算公历日期。"
+      "朱祁钰监国不再建临时 reign；监国任命改为 yuan-ming-qing 包中的单点事件，事件按年精度记录以保留农历原记而不擅自换算公历日期。",
+      "2026-10：分时名称王朝所属主线 reign 的 dynastyName 按已有 name.periods 和共享 reign/phase 归属区间计算，取累计使用日数最多的名称；同名阶段累计，阶段外回退 default，时长相同取较早阶段。并立政权保留其已有 dynastyName，不参与主线名称回填；日期与并立轨道不作调整。"
     ]
   }
 }

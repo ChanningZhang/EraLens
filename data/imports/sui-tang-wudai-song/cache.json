@@ -4017,8 +4017,8 @@
       "startAbs": 7415,
       "endAbs": 7421,
       "claimTrack": "changan",
-      "claimLabel": "长安",
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "长安"
     },
     {
       "id": "reign-yang-tong",
@@ -4043,8 +4043,8 @@
       "startAbs": 7421,
       "endAbs": 7432,
       "claimTrack": "luoyang",
-      "claimLabel": "洛阳",
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "洛阳"
     },
     {
       "id": "reign-yuwen-huaji-xu",
@@ -8404,7 +8404,8 @@
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：逐人补充开国前身份、势力积累、掌权与建国过程，区分称王、称帝、迁都和统一；文字保持中立简洁，按经历组织而不套固定句式。本批人物：yuwen-huaji、dou-jiande、wang-shichong、li-yuan、wu-zetian、zhu-wen、li-cunxu、shi-jingtang、liu-zhiyuan、guo-wei、yang-xingmi、li-bian、qian-liu、wang-shenzhi、liu-yan、wang-jian-shu、meng-zhixiang、gao-jixing、ma-yin、liu-min、zhao-kuangyin、zhao-gou、an-lushan。概述年份叙述历史行为，在位年桶归属另按共享日期规则；不将原历月日写成公历。",
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：wu-shi、tang-hou、jin-hou、han-hou、tang-nan。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
-      "后唐王朝起讫同步采用本包已有李存勖923-05-14即位及李从珂937-01-11自焚锚点；936为原历清泰三年，末帝终点公历已进入937年，不沿用936年年桶。后晋938年迁汴，据《通鉴》天福三年原历十月，以年精度记录迁都。"
+      "后唐王朝起讫同步采用本包已有李存勖923-05-14即位及李从珂937-01-11自焚锚点；936为原历清泰三年，末帝终点公历已进入937年，不沿用936年年桶。后晋938年迁汴，据《通鉴》天福三年原历十月，以年精度记录迁都。",
+      "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。"
     ]
   }
 }

@@ -60,7 +60,7 @@ export function rowsForPackage(slug, cache) {
     coordinate_system: row.coordinateSystem,
   }));
   const reigns = (cache.reigns ?? []).map(row => ({
-    id: row.id, dynasty_id: row.dynastyId, person_id: row.personId, title: row.title ?? "",
+    id: row.id, dynasty_id: row.dynastyId, ...(row.dynastyName == null ? {} : { dynasty_name: row.dynastyName }), person_id: row.personId, title: row.title ?? "",
     era_names: csv(row.eraNames), ...point(row.start, "start"), start_confidence: confidence(row.start, row.startConfidence),
     ...point(row.end, "end"), end_confidence: confidence(row.end, row.endConfidence),
     start_abs: row.startAbs ?? row.start.abs, end_abs: row.endAbs ?? row.end?.abs ?? null,

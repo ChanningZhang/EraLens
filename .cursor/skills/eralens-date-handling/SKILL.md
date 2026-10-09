@@ -73,7 +73,8 @@ description: >-
 
 - `dynasties.name` 中 JSON `periods` 的起止日期使用 HistoricalDate 和独立端点 confidence；JSON `default` 保存俗称；`altNames[0]` 独立保存代表国号或自称。
 - 名称阶段归属通过共享 `phaseOwnershipInterval()` 与 `timelineIntervals.ts` 裁定，不按 reign 边界拆分，也不手写年月截断。
-- 人物与在位详情优先 claimLabel，其次 altNames[0]；泳道与地图按视口时点解析阶段名称，无时点或阶段范围外回退 default。
+- 分时名称王朝的主线 `reigns.dynastyName` 在导入源中按在位区间与各名称阶段的重叠日数填写，取累计使用时间最长的名称；同名阶段累计，等长取较早阶段，阶段外按 `default` 计算。统一使用共享 `resolveReignDynastyNameByDuration()`，不手写改名日期特判。并立政权保留已有名称，通过共享 `isParallelClaim()` 排除，不按主线名称阶段覆盖。
+- 人物与在位详情的王朝名读取 `dynastyName`，为空回退 `altNames[0]` 和默认名；适用时保留 `claimLabel` 轨道称谓优先级。泳道与地图按视口时点解析阶段名称，无时点或阶段范围外回退 default。
 
 ## 共享实现与复核
 

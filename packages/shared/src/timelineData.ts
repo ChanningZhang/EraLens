@@ -256,7 +256,7 @@ function buildPersonEntityDetail(
       ? dynastyMap.get(person.dynastyId)
       : undefined;
   const headingDynastyName = headingDynasty
-    ? headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
+    ? detailReign?.dynastyName?.trim() || headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
     : undefined;
   const claimLabel = focusReign?.claimLabel?.trim();
   const heading = resolveReignDetailHeading(

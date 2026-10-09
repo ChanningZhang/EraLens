@@ -26,6 +26,7 @@ iPhone 17 Pro 与 iPad (A16) / iOS 26.4 模拟器验证：首次启动暴露本�
 | 事件导入 Skill | `.cursor/skills/eralens-event-import/SKILL.md` | 已列出并说明农业事件适用范围 |
 | `RelationKindSchema` | `packages/shared/src/schema.ts` | 含 `politics`；与导入数据中的一般政治关联一致 |
 | SQLite 导出映射 | 第 1 批 | 保留原枚举字符串，并由共享 DTO 契约校验 |
+| `ReignSchema.dynastyName` / SQLite `reigns.dynasty_name` | `packages/shared/src/schema.ts` / `data/mobile/schema.sql` | 可选的在位王朝名覆盖；详情优先使用，空值回退 `dynasties.alt_names[0]` |
 
 ## 后续变更门禁
 

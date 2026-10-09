@@ -1,7 +1,8 @@
 import { parseDynastyName, resolveDynastyDefaultName } from "./dynastyNameFormat.mjs";
 import { confidencePrecision } from "./historicalDate";
-import { phaseOwnershipInterval } from "./timelineOwnership";
-import { effectiveIntervalStartAbs, intervalContainsAbs } from "./timelineIntervals";
+import { phaseOwnershipInterval, reignOwnershipInterval } from "./timelineOwnership";
+import { effectiveIntervalStartAbs, intervalContainsAbs, intervalOverlapDays } from "./timelineIntervals";
+import type { Reign } from "./schema";
 
 export { DynastyNameDefinitionSchema, parseDynastyName, resolveDynastyDefaultName, dynastyNameTerms, validateDynastyName } from "./dynastyNameFormat.mjs";
 export type { DynastyNameDefinition } from "./dynastyNameFormat.mjs";
@@ -30,4 +31,31 @@ export function dynastyNameSearchEntries(dynasty: { name: string; altNames?: str
   const defaultName = resolveDynastyDefaultName(dynasty);
   if (!entries.some(entry => entry.name === defaultName)) entries.push({ name: defaultName, abs: fallbackAbs });
   return entries;
+}
+
+/** Import-time assignment; repeated phases with the same name count together. */
+export function reignDynastyNameDurations(dynasty: { name: string }, reign: Reign, reigns: readonly Reign[]): Array<{ name: string; days: number }> {
+  const interval = reignOwnershipInterval(reign, reigns);
+  const totalDays = Math.max(0, interval.endInclusive - interval.startExclusive);
+  if (!totalDays) return [{ name: resolveDynastyName(dynasty, reign.startAbs), days: 0 }];
+  const periods = dynastyNamePeriods(dynasty.name);
+  const durations = new Map<string, number>();
+  let coveredDays = 0;
+  for (const period of periods) {
+    const days = intervalOverlapDays(interval, phaseOwnershipInterval(period, periods));
+    if (!days) continue;
+    coveredDays += days;
+    durations.set(period.name, (durations.get(period.name) ?? 0) + days);
+  }
+  const uncoveredDays = Math.max(0, totalDays - coveredDays);
+  if (uncoveredDays) {
+    const name = resolveDynastyDefaultName(dynasty);
+    durations.set(name, (durations.get(name) ?? 0) + uncoveredDays);
+  }
+  return [...durations].map(([name, days]) => ({ name, days }));
+}
+
+/** Ties retain the earliest represented name phase. */
+export function resolveReignDynastyNameByDuration(dynasty: { name: string }, reign: Reign, reigns: readonly Reign[]): string {
+  return reignDynastyNameDurations(dynasty, reign, reigns).reduce((best, candidate) => candidate.days > best.days ? candidate : best).name;
 }

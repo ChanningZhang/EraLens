@@ -71,7 +71,7 @@ export function mapReign(row: Row): Reign {
   const fallbackEnd = fromAbsMonth(endAbs);
   const claimTrack = own(row, "claim_track");
   return ReignSchema.parse({
-    id: row.id, dynastyId: row.dynasty_id, personId: row.person_id, title: row.title,
+    id: row.id, dynastyId: row.dynasty_id, dynastyName: own(row, "dynasty_name"), personId: row.person_id, title: row.title,
     eraNames: csv(row.era_names), start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence },
     end: { ...point(row.end_year ?? fallbackEnd.year, row.end_month ?? fallbackEnd.month, row.end_day), confidence: row.end_confidence },
     startAbs: Number(row.start_abs), endAbs, isOngoing: row.end_year == null || row.end_month == null,
@@ -313,6 +313,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
              ) AS person_json,
              CASE WHEN rr.id IS NULL THEN NULL ELSE json_object(
                'id', rr.id, 'dynasty_id', rr.dynasty_id,
+               'dynasty_name', rr.dynasty_name,
                'person_id', rr.person_id, 'title', rr.title,
                'era_names', rr.era_names,
                'start_year', rr.start_year, 'start_month', rr.start_month,

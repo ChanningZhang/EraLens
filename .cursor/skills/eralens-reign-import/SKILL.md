@@ -68,6 +68,8 @@ description: >-
 - `persons.name` 保存常用姓名。先秦人物的姓、氏分别维护在 `ancestral_xing` / `clan_shi`，`name` 不重复姓氏；数据库搜索词会生成姓氏组合。其他时期保留通行全名。
 - `persons.posthumous_name`、`persons.temple_name` 只存谥号/庙号本体，不带国号；多值用逗号 CSV。
 - `reigns.era_names` 存年号 CSV。自汉武帝起使用；不要再建 `era_names` 子表。
+- `reigns.dynasty_name` 可按在位记录指定详情页王朝名；留空时详情回退到所属 `dynasties.alt_names[0]`，再回退王朝默认名。只在该 reign 的称呼确需区别于王朝通用首名时填写。
+- 王朝 `name` 为分时名称 JSON 时，所属主线 reign（含补充包）填写 `dynastyName`；跨更名的 reign 按共享 `resolveReignDynastyNameByDuration()` 取累计使用日数最多的名称。并立政权通过共享 `isParallelClaim()` 识别并跳过，保留已有 `dynastyName`，不得按主线阶段覆盖。批量计算命令：`pnpm --filter @eralens/api exec node --import tsx ../../data/imports/assign-reign-dynasty-names.mjs --apply`；不带 `--apply` 仅列出计算结果。
 - `reigns.title` 存泳道卡片称号/史称。少帝、末帝、后主不是谥号；无谥号的先秦称号写不带国名本体；明清皇帝的年号式卡片称呼也在导入时明确写入此列。朱元璋吴王段（吴）、努尔哈赤（太祖）、皇太极（太宗）保留原称号例外。
 - 运行时称呼不读取 `era_names`：泳道卡片优先展示非空 `reigns.title`；人物详情按年代优先展示庙谥（唐代起包括明清优先庙号，唐以前优先谥号），没有庙谥时才回退 `reigns.title`。
 - **人物/在位概述不能过于简单**：`bio` 应简略交代人物身份与世系/继承背景、主要相关人物或政权关系、在位年代，以及能说明其历史脉络的关键事迹或转折。凡史料可考，应明确写出国君的身世或父祖关系，例如“某某之子”“某某之孙”；若关系有异说，注明依据或保留限定，史料未载则不推断。保持精炼但信息完整，不能只写身份标签、单句评价或空泛结论；资料不足时如实限定，不补造细节。
@@ -80,7 +82,7 @@ description: >-
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
 - 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
 - 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
-- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝优先 `claimLabel`，其次 `dynasties.altNames[0]`。
+- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `reigns.dynastyName`，其后按共享详情逻辑回退到 `dynasties.altNames[0]`；王朝默认名作为最后兜底。适用时仍保留 `claimLabel` 的轨道称谓优先级。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 
 ## 人物与帝王概述

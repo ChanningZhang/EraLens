@@ -93,7 +93,7 @@
     },
     {
       "id": "guo-r3",
-      "name": "城公",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -268,12 +268,12 @@
           "url": "https://zh.wikipedia.org/wiki/虢公翰"
         }
       ],
-      "altNames": [],
+      "altNames": ["虢公翰"],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公翰",
+      "title": "",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -289,12 +289,12 @@
           "url": "https://zh.wikipedia.org/wiki/虢公忌父"
         }
       ],
-      "altNames": [],
+      "altNames": ["虢公忌父"],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公忌父",
+      "title": "",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -317,7 +317,7 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公林父",
+      "title": "",
       "dynastyId": "guo-chunqiu"
     },
     {
@@ -345,7 +345,7 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公丑",
+      "title": "",
       "dynastyId": "guo-chunqiu"
     },
     {

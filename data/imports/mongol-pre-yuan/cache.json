@@ -204,7 +204,8 @@
       },
       "startAbs": 14476,
       "endAbs": 14731,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-ogedei-mongol-empire",
@@ -228,7 +229,8 @@
       },
       "startAbs": 14756,
       "endAbs": 14903,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-guyuk-mongol-empire",
@@ -252,7 +254,8 @@
       },
       "startAbs": 14959,
       "endAbs": 14979,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-mongke-mongol-empire",
@@ -276,7 +279,8 @@
       },
       "startAbs": 15018,
       "endAbs": 15115,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     },
     {
       "id": "reign-hu-bilie-mongol-empire",
@@ -300,7 +304,8 @@
       },
       "startAbs": 15124,
       "endAbs": 15263,
-      "isMain": false
+      "isMain": false,
+      "dynastyName": "蒙古帝国"
     }
   ],
   "events": [
@@ -524,7 +529,8 @@
       "2026-10-03：本包不再拥有独立 mongol-empire 王朝行；保留人物、在位、事件与命运记录，在位引用 yuan。统一王朝及分时名称由 yuan-ming-qing 包维护。",
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：开国经历逐条复核并改写：temujin、hu-bilie。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
+      "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
+      "2026-10：分时名称王朝所属主线 reign 的 dynastyName 按已有 name.periods 和共享 reign/phase 归属区间计算，取累计使用日数最多的名称；同名阶段累计，阶段外回退 default，时长相同取较早阶段。并立政权保留其已有 dynastyName，不参与主线名称回填；日期与并立轨道不作调整。"
     ]
   }
 }

@@ -4,7 +4,7 @@ import { DynastySchema, type Reign } from "./schema";
 import { buildEntityDetail, searchEntities, type TimelineDataStore } from "./timelineData";
 import { resolveReignVisualSpan } from "./reignBoundaries";
 import { resolveFrozenLaneLabel } from "./timelineLanes";
-import { parseDynastyName, resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries } from "./dynastyNames";
+import { parseDynastyName, resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries, reignDynastyNameDurations, resolveReignDynastyNameByDuration } from "./dynastyNames";
 import { buildPersonSearchTerms } from "./personSearchTerms";
 
 const date = (year: number, month = 1, day = 1) => ({ year, month, day, confidence: "day" as const });
@@ -27,6 +27,26 @@ const store: TimelineDataStore = {
 };
 
 describe("dynasty names", () => {
+  it("assigns a reign spanning a rename to the name used longest", () => {
+    expect(resolveReignDynastyNameByDuration(dynasty, reign, [reign])).toBe("新名");
+    const short = { ...reign, end: date(1901, 2), endAbs: absMonth(1901, 2) };
+    expect(resolveReignDynastyNameByDuration(dynasty, short, [short])).toBe("旧名");
+    expect(reignDynastyNameDurations(dynasty, reign, [reign])).toEqual([
+      { name: "旧名", days: 380 }, { name: "新名", days: 715 },
+    ]);
+  });
+
+  it("sums repeated name phases and uses default for uncovered days", () => {
+    const changing = { name: JSON.stringify({ default: "默认", periods: [
+      { name: "同名", start: date(1900), end: date(1900, 12, 31) },
+      { name: "别名", start: date(1901), end: date(1901, 12, 31) },
+      { name: "同名", start: date(1902), end: date(1902, 12, 31) },
+    ] }) };
+    expect(resolveReignDynastyNameByDuration(changing, reign, [reign])).toBe("同名");
+    const outside = { ...reign, end: date(1910), endAbs: absMonth(1910) };
+    expect(resolveReignDynastyNameByDuration(changing, outside, [outside])).toBe("默认");
+  });
+
   it("leaves plain names unchanged even when aliases differ", () => {
     expect(resolveDynastyName({ name: "唐", altNames: ["大唐"] }, absMonth(700))).toBe("唐");
     expect(resolveDynastyDefaultName({ name: "唐", altNames: ["大唐"] })).toBe("唐");

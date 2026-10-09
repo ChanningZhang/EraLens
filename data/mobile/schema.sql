@@ -22,7 +22,7 @@ CREATE TABLE dynasties (
   note TEXT, is_deleted INTEGER DEFAULT NULL, FOREIGN KEY(group_id) REFERENCES dynasty_groups(id)
 );
 CREATE TABLE reigns (
-  id TEXT PRIMARY KEY, dynasty_id TEXT NOT NULL, person_id TEXT NOT NULL, title TEXT NOT NULL,
+  id TEXT PRIMARY KEY, dynasty_id TEXT NOT NULL, dynasty_name TEXT, person_id TEXT NOT NULL, title TEXT NOT NULL,
   era_names TEXT, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, start_day INTEGER,
   end_year INTEGER, end_month INTEGER, end_day INTEGER, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
   start_confidence TEXT NOT NULL, end_confidence TEXT NOT NULL,

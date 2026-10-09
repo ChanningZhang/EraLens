@@ -197,6 +197,8 @@ export const CapitalLocationSchema = z.object({
 export const ReignSchema = z.object({
   id: z.string(),
   dynastyId: z.string(),
+  /** Optional dynasty label for this reign; details fall back to the dynasty's primary alias. */
+  dynastyName: z.string().optional(),
   personId: z.string(),
   title: z.string(),
   /** Comma-separated in DB; parsed to array at runtime. */

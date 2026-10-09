@@ -102,6 +102,7 @@ export function normalizeEraNameList(eraNames = []) {
 export function reign({
   id,
   dynastyId,
+  dynastyName = null,
   personId,
   title,
   posthumousName,
@@ -116,6 +117,7 @@ export function reign({
   return {
     id,
     dynastyId,
+    dynastyName,
     personId,
     title,
     posthumousName,
