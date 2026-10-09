@@ -505,9 +505,9 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "posthumousNames": [],
+      "posthumousNames": ["幽"],
       "templeNames": [],
-      "title": "成汉幽公",
+      "title": "幽公",
       "dynastyId": "cheng-han"
     },
     {
@@ -569,7 +569,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "成汉末帝",
+      "title": "归义侯",
       "dynastyId": "cheng-han"
     },
     {
@@ -657,9 +657,9 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "posthumousNames": [],
+      "posthumousNames": ["隐皇帝"],
       "templeNames": [],
-      "title": "汉赵末帝",
+      "title": "",
       "dynastyId": "han-zhao"
     },
     {
@@ -680,7 +680,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉赵末帝",
+      "title": "末帝",
       "dynastyId": "han-zhao"
     },
     {
@@ -792,7 +792,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "后赵少帝",
+      "title": "少帝",
       "dynastyId": "zhao-back"
     },
     {
@@ -813,7 +813,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "后赵皇帝",
+      "title": "",
       "dynastyId": "zhao-back"
     },
     {
@@ -834,7 +834,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "后赵皇帝",
+      "title": "",
       "dynastyId": "zhao-back"
     },
     {
@@ -855,7 +855,7 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "后赵末帝",
+      "title": "末帝",
       "dynastyId": "zhao-back"
     },
     {
