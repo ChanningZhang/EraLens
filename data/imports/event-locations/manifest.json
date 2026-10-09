@@ -17,12 +17,12 @@
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 85,
-    "location_mapping": 85,
+    "eventLocations": 87,
+    "location_mapping": 87,
+    "locationMappings": 87,
     "dynastyGroups": 0,
     "associations": 0,
-    "locations": 0,
-    "locationMappings": 85
+    "locations": 0
   },
   "sources": [
     {
@@ -412,6 +412,26 @@
     {
       "label": "OpenStreetMap：天通庵路附近代表点坐标（WGS84）",
       "url": "https://www.openstreetmap.org/#map=15/31.276/121.483"
+    },
+    {
+      "label": "广西档案信息网：桂平市金田村太平天国起义旧址",
+      "url": "https://www.gxdag.org.cn/show/143/3649"
+    },
+    {
+      "label": "OpenStreetMap：金田起义地址坐标（WGS84）",
+      "url": "https://www.openstreetmap.org/node/11413801492"
+    },
+    {
+      "label": "辛亥革命博物院：起义门旧址遗迹",
+      "url": "https://www.1911museum.cn/view_2908.html"
+    },
+    {
+      "label": "湖北省文化和旅游厅：辛亥革命为何在武汉首义和首胜",
+      "url": "https://wlt.hubei.gov.cn/bmdt/mtjj/202207/t20220714_4219794.shtml"
+    },
+    {
+      "label": "OpenStreetMap：起义门坐标（WGS84）",
+      "url": "https://www.openstreetmap.org/way/1085891197"
     }
   ],
   "notes": [
@@ -422,6 +442,7 @@
     "2026-10：为九一八事变添加北大营代表地点；事变始于柳条湖铁路段并扩展至北大营、沈阳城，单点选择北大营以代表初期主要交战。坐标由高德GCJ-02点位按常用逆迭代方法转换为WGS84，精度为approximate。",
     "2026-10：为一·二八淞沪抗战添加闸北天通庵车站附近代表地点；战事扩及上海多处，坐标仅表示初期战斗区域，WGS84 approximate。",
     "2026-10-03：地理记录迁移为显式 locationMappings，坐标集中引用 locations；君主都城关联已固化，运行时不再按 claimTrack 自动推断。",
-    "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。"
+    "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
+    "2026-10-09：新增金田起义与辛亥革命地点关联。辛亥革命采用武昌首义起义门为全国性事件代表点；具体地点和代表范围在 mapping note 中说明。"
   ]
 }

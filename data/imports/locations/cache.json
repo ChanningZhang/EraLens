@@ -1519,6 +1519,20 @@
       "longitude": 106.664913,
       "latitude": 35.542417,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-23b0fa470a8ad4465297188b55f67aa1",
+      "modernName": "广西壮族自治区贵港市桂平市金田镇金田村犀牛岭金田起义遗址",
+      "longitude": 110.07727,
+      "latitude": 23.59065,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-d8fb572e70a8f9f2bd43ef6c2f6b1940",
+      "modernName": "湖北省武汉市武昌区起义门",
+      "longitude": 114.30196,
+      "latitude": 30.52808,
+      "coordinateSystem": "WGS84"
     }
   ],
   "manifest": {
@@ -1532,7 +1546,7 @@
     },
     "scope": "cn",
     "counts": {
-      "locations": 217
+      "locations": 219
     },
     "sources": [
       {
@@ -1614,6 +1628,22 @@
       {
         "label": "高德地图：平凉市人民政府坐标（GCJ-02）",
         "url": "https://www.amap.com/place/B03A5006YV"
+      },
+      {
+        "label": "广西档案信息网：桂平市金田村太平天国起义旧址",
+        "url": "https://www.gxdag.org.cn/show/143/3649"
+      },
+      {
+        "label": "OpenStreetMap：金田起义地址坐标（WGS84）",
+        "url": "https://www.openstreetmap.org/node/11413801492"
+      },
+      {
+        "label": "辛亥革命博物院：起义门旧址遗迹",
+        "url": "https://www.1911museum.cn/view_2908.html"
+      },
+      {
+        "label": "OpenStreetMap：起义门坐标（WGS84）",
+        "url": "https://www.openstreetmap.org/way/1085891197"
       }
     ],
     "notes": [
@@ -1624,7 +1654,8 @@
       "新增 loc-shang-bi-yuncheng-approx 仅表示郓城县区域中心，系《古本竹书纪年》系统及相关辞书所指庇地望的一种推定范围；并非已确认的商代都城遗址点；GCJ02 坐标由县城中心 WGS84 坐标按常用 GCJ-02 转换计算。",
       "2026-10-05：新增蔡国上蔡、新蔡、州来/下蔡都城地点。上蔡取高德蔡国故城遗址公园POI坐标（GCJ02）；新蔡以Chinese Text Project新蔡地名坐标为基础，转换至GCJ02后表示县城西北新蔡故城区域；州来点依凤台县城关镇北端古城区域描述作近似示意。后两者均非考古测绘坐标，见对应都城mapping精度说明。",
       "2026-10-06：新增长春城市级代表点，供伪满洲国都城新京使用。坐标据地名规范资料库所列长春市中心坐标，按常用GCJ-02公式转换；原坐标为GRS67，城市级约略点不代表特定历史官署或遗址。",
-      "2026-10-09：新增胡夏末期平凉都城的市区约略代表点。历史记载确认赫连定即位于平凉城，但未据此将现代市政府坐标冒充古城遗址；坐标取高德地图平凉市人民政府位置，仅用于市区约略定位。"
+      "2026-10-09：新增胡夏末期平凉都城的市区约略代表点。历史记载确认赫连定即位于平凉城，但未据此将现代市政府坐标冒充古城遗址；坐标取高德地图平凉市人民政府位置，仅用于市区约略定位。",
+      "2026-10-09：新增金田起义地址遗址与武昌起义门事件代表点，坐标取 OpenStreetMap WGS84；两处均用于事件代表点，不表示遗址边界。"
     ]
   }
 }

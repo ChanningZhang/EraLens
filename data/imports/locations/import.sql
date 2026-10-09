@@ -25,6 +25,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-21798e9ca7e2d2124da0f0a34e2bd98f','河南省安阳市殷都区殷墟遗址',114.316,36.125,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-227b3fea624a14a6bb463e7d139d66dc','河南省开封市兰考县一带',114.82,34.82,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-232c7689608a0537eb34bb8a0040b929','河南省新乡市封丘县陈桥镇陈桥村',114.46,35.03,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-23b0fa470a8ad4465297188b55f67aa1','广西壮族自治区贵港市桂平市金田镇金田村犀牛岭金田起义遗址',110.07727,23.59065,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-23f1d257b9588a187a0a5ab7711e4d0d','台湾海峡澎湖群岛至台湾岛',119.57,23.57,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-248ff7be823a2f4964045f586e347281','江苏省南京市',118.796624,32.059344,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-24efec2923a46f6eb4e54600192eee01','江苏省苏州市',120.585294,31.299758,'GCJ02');
@@ -162,6 +163,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d53a7e8dc6daf311385b6562f9d0c6b6','山西省运城市夏县',111.219946,35.140733,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d6e8c98d9c6656204b7084c156fb4b7b','湖北省襄阳市襄城区、樊城区',112.145,32.043,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d72838809319e2d5bdbf43e3acd89c5f','山西省忻州市忻府区忻口镇',112.735,38.5661,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-d8fb572e70a8f9f2bd43ef6c2f6b1940','湖北省武汉市武昌区起义门',114.30196,30.52808,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-db68921f59e025dcfe7f014a4d2018cf','中蒙边界贝尔湖一带',117.706,47.802,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ddc05c80683b244a8afca7d6ae64a131','青海省海南藏族自治州共和县',100.619405,36.284158,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-de1476d3a8e1aacc647d05f427e7185c','陕西省西安市',108.94,34.34,'WGS84');
