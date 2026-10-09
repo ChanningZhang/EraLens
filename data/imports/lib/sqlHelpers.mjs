@@ -112,7 +112,6 @@ export function reign({
   endAbs: explicitEndAbs = null,
   eraNames = [],
   claimTrack = null,
-  claimLabel = null,
 }) {
   return {
     id,
@@ -128,7 +127,7 @@ export function reign({
     startAbs: start.abs,
     endAbs: explicitEndAbs ?? end?.abs ?? null,
     claimTrack,
-    claimLabel,
+    dynastyName,
   };
 }
 

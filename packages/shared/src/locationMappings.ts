@@ -29,7 +29,7 @@ export function projectCapitalLocations(mappings: readonly LocationMapping[], re
       startConfidence:m.startConfidence, endConfidence:m.endConfidence,
       precision:confidencePrecision(m.start.confidence ?? m.startConfidence ?? "year"),
       endPrecision:confidencePrecision(m.end.confidence ?? m.endConfidence ?? "year"),
-      role:m.role, claimTrack:reign?.claimTrack, claimLabel:reign?.claimLabel,
+      role:m.role, claimTrack:reign?.claimTrack, dynastyName:reign?.dynastyName,
       reignIds:reign ? [reign.id] : [], note:m.note, links:m.links}];
   });
 }

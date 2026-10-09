@@ -52,7 +52,7 @@ describe("pre-Qin pure posthumous names and display priorities", () => {
     const detail = buildEntityDetail(store, { type: "reign", id: reign.id });
     expect(detail).toMatchObject({ title: "庄公", subtitle: "邾 · 庄公" });
     expect(detail.facts).toContainEqual({ label: "谥号", value: "庄" });
-    expect(buildEntityDetail({ ...store, reigns: [{ ...reign, claimLabel: "并立称号" }] }, { type: "reign", id: reign.id }).subtitle)
+    expect(buildEntityDetail({ ...store, reigns: [{ ...reign, dynastyName: "并立称号" }] }, { type: "reign", id: reign.id }).subtitle)
       .toBe("并立称号 · 庄公");
   });
 

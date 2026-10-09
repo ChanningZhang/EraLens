@@ -95,11 +95,11 @@ export function CapitalMapLayer({
       {placed.map(({ capital, dynastyName, x, y, color }) => {
         const isSelected =
           selection.selected?.type === "location_mapping" && selection.selected.id === capital.id;
-        const label = capital.claimLabel ?? dynastyName;
+        const label = capital.dynastyName ?? dynastyName;
         return (
         <InfoPopover
           key={capital.id}
-          text={`${capital.claimLabel ? `${capital.claimLabel} · ` : ""}${dynastyName} · ${capital.historicalName} · ${capital.modernName}`}
+          text={`${capital.dynastyName ? `${capital.dynastyName} · ` : ""}${dynastyName} · ${capital.historicalName} · ${capital.modernName}`}
         >
           {(handlers) => (
             <button

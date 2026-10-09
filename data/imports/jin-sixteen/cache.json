@@ -2927,8 +2927,7 @@
       "startAbs": 2989,
       "endAbs": 3020,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-shi-wuyang-hou",
@@ -2953,8 +2952,7 @@
       "startAbs": 3020,
       "endAbs": 3062,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-zhao-gaodu-hou",
@@ -2979,8 +2977,7 @@
       "startAbs": 3062,
       "endAbs": 3167,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-zhao-jin-gong",
@@ -3005,8 +3002,7 @@
       "startAbs": 3167,
       "endAbs": 3172,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-zhao-jin-wang",
@@ -3031,8 +3027,7 @@
       "startAbs": 3172,
       "endAbs": 3188,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-yan-jin-wang",
@@ -3057,8 +3052,7 @@
       "startAbs": 3188,
       "endAbs": 3193,
       "isMain": false,
-      "claimTrack": null,
-      "claimLabel": null
+      "claimTrack": null
     },
     {
       "id": "reign-sima-yan",

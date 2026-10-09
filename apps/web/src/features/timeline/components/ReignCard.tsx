@@ -94,7 +94,7 @@ function ReignCardImpl({
     const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
     const regionLabel = resolveDynastyName(dynasty, reign.startAbs);
     const timeTooltip = formatReignSpanTooltip(reign);
-    const claimTooltip = parallel && reign.claimLabel ? reign.claimLabel : undefined;
+    const claimTooltip = parallel && reign.dynastyName ? reign.dynastyName : undefined;
     const tooltipText = buildReignCardTooltip({
       showMeta: showMeta && detail !== "below", meta,
       timeTooltip,

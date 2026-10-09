@@ -180,7 +180,7 @@ export const CapitalLocationSchema = z.object({
   endConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),
   claimTrack: z.string().optional(),
-  claimLabel: z.string().optional(),
+  dynastyName: z.string().optional(),
   /** Explicit reign mapping owners; an empty list never establishes a reign tenure. */
   reignIds: z.array(z.string()).optional(),
   note: z.string().optional(),
@@ -215,8 +215,6 @@ export const ReignSchema = z.object({
   endConfidence: DateConfidenceSchema.optional(),
   /** Parallel-claim lane key; absent puts the reign on the main track. */
   claimTrack: z.string().optional(),
-  /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */
-  claimLabel: z.string().optional(),
   /** Non-formal sovereign: regent, acting head, joint vice-chair, etc. Renders with diagonal stripes. */
   isInformalMonarch: z.boolean().default(false),
   /** Explicitly marked main-line ruler; null/omitted means unclassified. */

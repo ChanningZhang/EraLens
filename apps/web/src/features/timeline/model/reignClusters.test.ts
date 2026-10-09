@@ -115,12 +115,12 @@ describe("assignReignStacks", () => {
     const you = {
       ...reign("yang-you", absMonth(617, 1), absMonth(618, 12)),
       claimTrack: "changan",
-      claimLabel: "长安",
+      dynastyName: "长安",
     };
     const tong = {
       ...reign("yang-tong", absMonth(618, 1), absMonth(619, 12)),
       claimTrack: "luoyang",
-      claimLabel: "洛阳",
+      dynastyName: "洛阳",
     };
     const all = [guang, you, tong];
 

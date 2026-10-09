@@ -124,11 +124,11 @@ describe("dynasty names", () => {
     ["蜀汉", ["汉", "蜀", "季汉"], "并立称号", "并立称号"],
     ["蜀汉", ["汉", "蜀", "季汉"], "  ", "汉"],
     ["蜀汉", [], undefined, "蜀汉"],
-  ])("uses claim label then first alias for a focused plain dynasty: %s / %s / %s", (name, altNames, claimLabel, expected) => {
+  ])("uses claim label then first alias for a focused plain dynasty: %s / %s / %s", (name, altNames, dynastyName, expected) => {
     const plainStore: TimelineDataStore = {
       ...store,
       dynasties: [{ ...dynasty, name, altNames }],
-      reigns: [{ ...reign, claimLabel }],
+      reigns: [{ ...reign, dynastyName }],
     };
     expect(buildEntityDetail(plainStore, { type: "reign", id: reign.id }).subtitle).toBe(`${expected} · 君主`);
     expect(buildEntityDetail(plainStore, { type: "person", id: "ruler" }, { focusReignId: reign.id }).subtitle)

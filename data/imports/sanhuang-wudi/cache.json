@@ -289,7 +289,6 @@
       "startAbs": -33636,
       "endAbs": -32317,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -315,7 +314,6 @@
       "startAbs": -32316,
       "endAbs": -30997,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -341,7 +339,6 @@
       "startAbs": -30996,
       "endAbs": -29557,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -367,7 +364,6 @@
       "startAbs": -29556,
       "endAbs": -28357,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -393,7 +389,6 @@
       "startAbs": -28356,
       "endAbs": -27421,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -419,7 +414,6 @@
       "startAbs": -27420,
       "endAbs": -26581,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -445,7 +439,6 @@
       "startAbs": -26580,
       "endAbs": -26473,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -471,7 +464,6 @@
       "startAbs": -26472,
       "endAbs": -25297,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -497,7 +489,6 @@
       "startAbs": -25296,
       "endAbs": -24829,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"

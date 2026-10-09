@@ -96,7 +96,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 ## 人名与称谓：列职责
 
-王朝 `alt_names` 与人物别名用途不同：首项为核实后的国号或自称；人物归属以 `persons.dynasty_id` 记录，人物总览副标题通过该 ID 实时读取王朝 `alt_names[0]`。在位详情的王朝名可由 `reigns.dynasty_name` 按 reign 指定，空值回退 `alt_names[0]`，再回退王朝默认名。其余王朝别名保留史称、地域名称及检索词。首项允许与王朝 `name` 相同。跨改号时期的静态首项取舍写入所属包 `manifest.notes`，来源写入 `manifest.sources`；三皇、五帝等无统一政权自称的集合记录清空 `altNames`，隐藏副标题。不得在生成器或前端按王朝 ID 自动改写自称。分时名称王朝的 `name` 是含 `default` 与 `periods` 的 JSON 字符串：`default` 存俗称（如成汉），`altNames[0]` 仍存代表国号或自称（如成），两者独立。适用时在位详情仍优先显示 `claimLabel`；泳道与地图按时点解析，无时点或阶段范围外取 default。
+王朝 `alt_names` 与人物别名用途不同：首项为核实后的国号或自称；人物归属以 `persons.dynasty_id` 记录，人物总览副标题通过该 ID 实时读取王朝 `alt_names[0]`。在位详情的王朝名可由 `reigns.dynasty_name` 按 reign 指定，空值回退 `alt_names[0]`，再回退王朝默认名。其余王朝别名保留史称、地域名称及检索词。首项允许与王朝 `name` 相同。跨改号时期的静态首项取舍写入所属包 `manifest.notes`，来源写入 `manifest.sources`；三皇、五帝等无统一政权自称的集合记录清空 `altNames`，隐藏副标题。不得在生成器或前端按王朝 ID 自动改写自称。分时名称王朝的 `name` 是含 `default` 与 `periods` 的 JSON 字符串：`default` 存俗称（如成汉），`altNames[0]` 仍存代表国号或自称（如成），两者独立。并立轨道名称使用 `reigns.dynasty_name`；泳道与地图按时点解析，无时点或阶段范围外取 default。
 
 **原则：拆开识别，各归其列。** 不要把谥号写进 `name`，不要仅为重复私名而填 `title`；无谥号者有来源的完整称呼（如「邾子车辅」）可包含本名，不要指望运行时代 `title` 反推庙谥。
 
@@ -131,7 +131,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
 - 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
 - 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
-- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `claimLabel`，其次 `reigns.dynastyName`，然后 `dynasties.altNames[0]` 和王朝默认名。
+- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `reigns.dynastyName`，然后 `dynasties.altNames[0]` 和王朝默认名。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 
 ## 常见数据病与正确修法

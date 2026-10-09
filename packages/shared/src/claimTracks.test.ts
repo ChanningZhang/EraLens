@@ -41,11 +41,11 @@ describe("groupByClaimTrack", () => {
       reign("yang-guang", 604, 618),
       reign("yang-tong", 618, 619, {
         claimTrack: "luoyang",
-        claimLabel: "洛阳",
+        dynastyName: "洛阳",
       }),
       reign("yang-you", 617, 618, {
         claimTrack: "changan",
-        claimLabel: "长安",
+        dynastyName: "长安",
       }),
     ]);
 
@@ -84,7 +84,7 @@ describe("groupByClaimTrack — early Zhou dual kings", () => {
       reign("ji-yuchen", -770, -750, {
         dynastyId: "zhou-east",
         claimTrack: "xie",
-        claimLabel: "携",
+        dynastyName: "携",
       }),
     ]);
 
@@ -99,7 +99,7 @@ describe("groupByClaimTrack — posthumous successor vs same-year rival", () => 
       reign("main-b", 535, 551),
       reign("rival-a", 534, 550, {
         claimTrack: "ye",
-        claimLabel: "邺",
+        dynastyName: "邺",
       }),
     ]);
 
@@ -139,10 +139,10 @@ describe("claimDetailFacts", () => {
     expect(
       claimDetailFacts({
         claimTrack: "lu-jian",
-        claimLabel: "绍兴监国",
+        dynastyName: "绍兴监国",
       }),
     ).toEqual([
-      { label: "据点", value: "绍兴监国" },
+      { label: "并立称谓", value: "绍兴监国" },
     ]);
   });
 

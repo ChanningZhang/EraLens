@@ -52,7 +52,7 @@ description: >-
 
 ## 并立、主线与正统
 
-- 前任仍在位时另一政权另立，或同年真实分立：填 `claim_track`、`claim_label`。
+- 前任仍在位时另一政权另立，或同年真实分立：填 `claim_track`，并用 `dynastyName` 标明该 reign 的政权/称谓；详情与轨道提示共用此名称。
 - 前帝身后才即位，即使由权臣拥立，也走主线，不填 `claim_track`。
 - 主行上的非约定正统代政可不填 track；不要串入通行 succession。
 - `is_main` 只标正统覆盖窗口；并立 track 不标主线。不得给王朝写 `color_token='gold'`。
@@ -82,7 +82,7 @@ description: >-
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
 - 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
 - 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
-- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `reigns.dynastyName`，其后按共享详情逻辑回退到 `dynasties.altNames[0]`；王朝默认名作为最后兜底。适用时仍保留 `claimLabel` 的轨道称谓优先级。
+- 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `reigns.dynastyName`，其后按共享详情逻辑回退到 `dynasties.altNames[0]`；王朝默认名作为最后兜底。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 
 ## 人物与帝王概述
@@ -134,7 +134,7 @@ Task Progress:
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
-直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、confidence 和世系关系写入记录；日期格式统一见日期处理 Skill。来源与取舍也写在 `manifest.sources` / `manifest.notes`。正统覆盖标记使用 `isMain`，并立轨道使用 `claimTrack` / `claimLabel`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
+直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、confidence 和世系关系写入记录；日期格式统一见日期处理 Skill。来源与取舍也写在 `manifest.sources` / `manifest.notes`。正统覆盖标记使用 `isMain`，并立轨道使用 `claimTrack`，轨道展示名称使用 `dynastyName`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
 
 ```bash
 node data/imports/generate.mjs {slug}

@@ -136,7 +136,6 @@
       "startAbs": -10080,
       "endAbs": -9913,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -163,7 +162,6 @@
       "startAbs": 11120,
       "endAbs": 11135,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": false
     },
@@ -190,7 +188,6 @@
       "startAbs": 11412,
       "endAbs": 11413,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": false
     },
@@ -217,7 +214,6 @@
       "startAbs": 14731,
       "endAbs": 14756,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": false,
       "dynastyName": "蒙古帝国"
@@ -245,7 +241,6 @@
       "startAbs": 14903,
       "endAbs": 14959,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": false,
       "dynastyName": "蒙古帝国"
@@ -273,7 +268,6 @@
       "startAbs": 14979,
       "endAbs": 15017,
       "claimTrack": null,
-      "claimLabel": null,
       "isInformalMonarch": true,
       "isMain": false,
       "dynastyName": "蒙古帝国"

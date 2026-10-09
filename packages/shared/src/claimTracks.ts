@@ -9,7 +9,7 @@ import { rangesIntersect } from "./time";
  *
  * - omitted / `main` — conventionally counted succession (文帝→炀帝, 弘光→隆武→永历)
  * - other kebab-case keys — one vertical sub-row per seat (`changan`, `lu-jian`)
- * - `claimLabel` — seat shown in tooltip / detail (长安 / 绍兴监国)
+ * - `dynastyName` — claimant name shown in tooltip / detail (长安 / 绍兴监国)
  * Sequencing, clipping, and succession chains stay *inside* a track. Tracks
  * stack so overlapping reigns render side by side.
  */
@@ -131,11 +131,11 @@ export function resolveConcurrencySpans(
 }
 
 export function claimDetailFacts(
-  reign: Pick<Reign, "claimTrack" | "claimLabel">,
+  reign: Pick<Reign, "claimTrack" | "dynastyName">,
 ): Array<{ label: string; value: string }> {
   const facts: Array<{ label: string; value: string }> = [];
-  if (reign.claimLabel) {
-    facts.push({ label: "据点", value: reign.claimLabel });
+  if (reign.dynastyName) {
+    facts.push({ label: "并立称谓", value: reign.dynastyName });
   }
   return facts;
 }

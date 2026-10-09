@@ -51,7 +51,7 @@
 ## 关键展示语义
 
 - 金色是正统覆盖色，泳道本色由完整目录顺序稳定分配；禁止把 `color_token` 写为 `gold`。正统覆盖由 `reigns.is_main` 标记，并立 track 不标为正统主线。
-- 同一王朝行内的并立君主、竞争政权或政治主张用 `claim_track` 分行，并以 `claim_label` 标明轨道身份；不得把 `dynasty_groups` 当作并立政权轨道。`dynasty_groups` 仅将多条独立王朝记录聚为共同历史类别/时期。确需独立王朝泳道时才新增 `dynasties` 记录。同一王朝的改名阶段合并为一条 `dynasties` 记录，`name` 的 JSON `periods` 保存分时名称。人物总览读取 `alt_names` 首项；在位详情王朝名按 `claim_label`、`reigns.dynasty_name`、`dynasties.alt_names[0]`、王朝默认名顺序回退；泳道按视口时间通过共享解析函数取名，名称切换不依赖 reign 边界。
+- 同一王朝行内的并立君主、竞争政权或政治主张用 `claim_track` 分行，并以 `reigns.dynasty_name` 标明轨道名称；不得把 `dynasty_groups` 当作并立政权轨道。`dynasty_groups` 仅将多条独立王朝记录聚为共同历史类别/时期。确需独立王朝泳道时才新增 `dynasties` 记录。同一王朝的改名阶段合并为一条 `dynasties` 记录，`name` 的 JSON `periods` 保存分时名称。人物总览读取 `alt_names` 首项；在位详情王朝名按 `reigns.dynasty_name`、`dynasties.alt_names[0]`、王朝默认名顺序回退；泳道按视口时间通过共享解析函数取名，名称切换不依赖 reign 边界。
 - 卡片宽度遵循在位时长与缩放比例；文字放不下时调整排版，不改变时间几何。相续泳道的标签颜色取舞台中线对应相位。
 - 无 reign 且生卒可核的人物显示在人物层，君主不重复进入人物层。帝王卡、事件、人物和王朝名点击共用详情抽屉。
 - 跨王朝命运线表达有史料依据的杀害、投降、禅让、被俘或灭国关系；灭国线从末君指向灭国方当时的君主，不据此推断末君被杀或被俘。事件时点是纵向主轴，端点解析与绘制沿用 `reignFateRelations.ts` 和 `reignFateLayout.ts`。

@@ -64,7 +64,7 @@ export function rowsForPackage(slug, cache) {
     era_names: csv(row.eraNames), ...point(row.start, "start"), start_confidence: confidence(row.start, row.startConfidence),
     ...point(row.end, "end"), end_confidence: confidence(row.end, row.endConfidence),
     start_abs: row.startAbs ?? row.start.abs, end_abs: row.endAbs ?? row.end?.abs ?? null,
-    claim_track: row.claimTrack ?? null, claim_label: row.claimLabel ?? null,
+    claim_track: row.claimTrack ?? null,
     is_informal_monarch: row.isInformalMonarch ?? false, is_main: row.isMain ?? null,
   }));
   const events = (cache.events ?? []).map(row => ({

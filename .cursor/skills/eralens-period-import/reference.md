@@ -193,14 +193,14 @@ INSERT INTO dynasties (
 
 泳道卡片优先读取 `reigns.title`；人物详情页按日期处理 Skill 展示置信日期。人物庙号和谥号仍写入 `persons.temple_name` / `persons.posthumous_name`。称呼选择不读取 `era_names`。明清年号式卡片称呼直接写入 `reigns.title`，原有吴王、努尔哈赤和皇太极称号例外照旧。
 
-起止日期分别写 `start_year/month/day/start_confidence` 和 `end_year/month/day/end_confidence`。开放终点仍保留空 end date 与 display cap `end_abs`。并立君主使用 `claim_track`、`claim_label` 表达，不改变日期归属规则。
+起止日期分别写 `start_year/month/day/start_confidence` 和 `end_year/month/day/end_confidence`。开放终点仍保留空 end date 与 display cap `end_abs`。并立君主使用 `claim_track` 区分轨道，并用 `dynasty_name` 写该 reign 的政权/称谓，不改变日期归属规则。
 
 ```sql
 INSERT INTO reigns (
   id, dynasty_id, person_id, title, era_names,
   start_year, start_month, start_day, start_confidence,
   end_year, end_month, end_day, end_confidence,
-  start_abs, end_abs, claim_track, claim_label
+  start_abs, end_abs, claim_track, dynasty_name
 ) VALUES (...);
 ```
 
@@ -275,7 +275,7 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 `dynasties.name` 仍为文本。普通名称原样保存；分时名称保存 JSON 字符串，顶层字段为 `default` 与 `periods`，各项含 `name`、`start`、`end`，日期使用带 confidence 的 HistoricalDate。default 存俗称（如「成汉」），用于无时点或阶段范围外展示；altNames[0] 存代表国号或自称（如「成」），两者独立，其余别名保留检索词。
 
-人物总览、在位详情及相关人物摘要优先 claimLabel，其次 altNames[0]。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
+人物总览读取 altNames[0]；在位详情及相关人物摘要优先 reign.dynastyName，其次 altNames[0] 和王朝 default。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
 
 同一王朝的改名阶段使用单一王朝 ID，跨包只能引用，不能重复拥有王朝行。整库构建直接从唯一所有者缓存写入最终王朝 ID 和全部引用；不再使用 `dynastyMerges` 增量入口。
 

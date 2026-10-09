@@ -1460,7 +1460,7 @@ describe("pre-Qin card layout", () => {
       title: "周携王",
       posthumousName: "携王",
       claimTrack: "xie",
-      claimLabel: "携",
+      dynastyName: "携",
     });
     const zhouClan = buildPreQinClanContext({ ancestralXing: "姬" });
     expect(resolveReignCardLabel(xie, "余臣")).toBe("携王");

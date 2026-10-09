@@ -198,7 +198,7 @@ describe("buildEntityDetail reign", () => {
           end: { year: 1653, month: 12 },
           eraNames: [],
           claimTrack: "lu-jian",
-          claimLabel: "绍兴监国",
+          dynastyName: "绍兴监国",
         }),
       ],
       persons: [

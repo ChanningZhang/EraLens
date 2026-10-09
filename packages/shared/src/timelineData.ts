@@ -258,10 +258,9 @@ function buildPersonEntityDetail(
   const headingDynastyName = headingDynasty
     ? detailReign?.dynastyName?.trim() || headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
     : undefined;
-  const claimLabel = focusReign?.claimLabel?.trim();
   const heading = resolveReignDetailHeading(
     detailReign,
-    claimLabel || headingDynastyName,
+    headingDynastyName,
     person.name,
     clan,
     {
@@ -269,7 +268,7 @@ function buildPersonEntityDetail(
       periodYear: detailReign?.start.year ?? person.birth?.year,
     },
   );
-  const displayHeading = heading || claimLabel;
+  const displayHeading = heading;
   const subtitle = displayHeading
     ? focusReign && reignCount > 1 && focusReignIndex
       ? `${displayHeading} · ${focusReignIndex}/${reignCount}`

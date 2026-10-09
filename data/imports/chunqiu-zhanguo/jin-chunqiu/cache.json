@@ -1361,7 +1361,6 @@
       "startAbs": -12492,
       "endAbs": -12061,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
@@ -1387,7 +1386,6 @@
       "startAbs": -12060,
       "endAbs": -11617,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
@@ -1413,7 +1411,6 @@
       "startAbs": -11616,
       "endAbs": -11173,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
@@ -1439,7 +1436,6 @@
       "startAbs": -11172,
       "endAbs": -10729,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
@@ -1465,7 +1461,6 @@
       "startAbs": -10728,
       "endAbs": -10285,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false,
       "startConfidence": "interpolated_by_generation"
@@ -1490,7 +1485,6 @@
       "startAbs": -10284,
       "endAbs": -10069,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1514,7 +1508,6 @@
       "startAbs": -10068,
       "endAbs": -9853,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1538,7 +1531,6 @@
       "startAbs": -9852,
       "endAbs": -9721,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1562,7 +1554,6 @@
       "startAbs": -9720,
       "endAbs": -9397,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1586,7 +1577,6 @@
       "startAbs": -9396,
       "endAbs": -9349,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1610,7 +1600,6 @@
       "startAbs": -9348,
       "endAbs": -8929,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1634,7 +1623,6 @@
       "startAbs": -8928,
       "endAbs": -8857,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1682,7 +1670,6 @@
       "startAbs": -8856,
       "endAbs": -8665,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1730,7 +1717,6 @@
       "startAbs": -8664,
       "endAbs": -8593,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1754,7 +1740,6 @@
       "startAbs": -8592,
       "endAbs": -8485,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1802,7 +1787,6 @@
       "startAbs": -8124,
       "endAbs": -8101,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1826,7 +1810,6 @@
       "startAbs": -8484,
       "endAbs": -8437,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1850,7 +1833,6 @@
       "startAbs": -8436,
       "endAbs": -8113,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1874,7 +1856,6 @@
       "startAbs": -8100,
       "endAbs": -7793,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1898,7 +1879,6 @@
       "startAbs": -7788,
       "endAbs": -7621,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1922,7 +1902,6 @@
       "startAbs": -7632,
       "endAbs": -7621,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1946,7 +1925,6 @@
       "startAbs": -7620,
       "endAbs": -7513,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1970,7 +1948,6 @@
       "startAbs": -7512,
       "endAbs": -7429,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -1994,7 +1971,6 @@
       "startAbs": -7428,
       "endAbs": -7261,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2018,7 +1994,6 @@
       "startAbs": -7260,
       "endAbs": -7177,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2042,7 +2017,6 @@
       "startAbs": -7176,
       "endAbs": -6949,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2066,7 +2040,6 @@
       "startAbs": -6948,
       "endAbs": -6853,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2090,7 +2063,6 @@
       "startAbs": -6852,
       "endAbs": -6673,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2114,7 +2086,6 @@
       "startAbs": -6672,
       "endAbs": -6361,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2138,7 +2109,6 @@
       "startAbs": -6360,
       "endAbs": -6289,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2162,7 +2132,6 @@
       "startAbs": -6288,
       "endAbs": -6121,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2186,7 +2155,6 @@
       "startAbs": -6120,
       "endAbs": -5677,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2210,7 +2178,6 @@
       "startAbs": -5676,
       "endAbs": -5401,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2234,7 +2201,6 @@
       "startAbs": -5400,
       "endAbs": -5185,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2258,7 +2224,6 @@
       "startAbs": -5184,
       "endAbs": -4969,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2282,7 +2247,6 @@
       "startAbs": -4968,
       "endAbs": -4645,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2306,7 +2270,6 @@
       "startAbs": -4644,
       "endAbs": -4261,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2330,7 +2293,6 @@
       "startAbs": -4260,
       "endAbs": -4165,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2354,7 +2316,6 @@
       "startAbs": -7793,
       "endAbs": -7792,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     },
@@ -2378,7 +2339,6 @@
       "startAbs": -7792,
       "endAbs": -7791,
       "claimTrack": null,
-      "claimLabel": null,
       "eraNames": [],
       "isMain": false
     }

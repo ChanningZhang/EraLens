@@ -75,7 +75,7 @@ export function mapReign(row: Row): Reign {
     end: { ...point(row.end_year ?? fallbackEnd.year, row.end_month ?? fallbackEnd.month, row.end_day), confidence: row.end_confidence },
     startAbs: Number(row.start_abs), endAbs, isOngoing: row.end_year == null || row.end_month == null,
     precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
-    claimTrack, claimLabel: own(row, "claim_label"),
+    claimTrack,
     isInformalMonarch: Boolean(row.is_informal_monarch), isMain: row.is_main == null ? undefined : Boolean(row.is_main),
   });
 }
@@ -219,7 +219,7 @@ export class LegacySqliteTimelineRepository {
                'end_day', rr.end_day,
                'end_confidence', rr.end_confidence,
                'start_abs', rr.start_abs, 'end_abs', rr.end_abs,
-               'claim_track', rr.claim_track, 'claim_label', rr.claim_label,
+               'claim_track', rr.claim_track, 'dynasty_name', rr.dynasty_name,
                'is_informal_monarch', rr.is_informal_monarch,
                'is_main', rr.is_main
              ) END AS reign_json,

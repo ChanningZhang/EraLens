@@ -268,7 +268,9 @@
           "url": "https://zh.wikipedia.org/wiki/虢公翰"
         }
       ],
-      "altNames": ["虢公翰"],
+      "altNames": [
+        "虢公翰"
+      ],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [],
@@ -289,7 +291,9 @@
           "url": "https://zh.wikipedia.org/wiki/虢公忌父"
         }
       ],
-      "altNames": ["虢公忌父"],
+      "altNames": [
+        "虢公忌父"
+      ],
       "ancestralXing": "姬",
       "clanShi": "虢",
       "posthumousNames": [],
@@ -587,7 +591,6 @@
       "startAbs": -12540,
       "endAbs": -12493,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -613,7 +616,6 @@
       "startAbs": -12492,
       "endAbs": -12229,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -639,7 +641,6 @@
       "startAbs": -12228,
       "endAbs": -11929,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -665,7 +666,6 @@
       "startAbs": -11928,
       "endAbs": -11053,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -691,7 +691,6 @@
       "startAbs": -11052,
       "endAbs": -10513,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -717,7 +716,6 @@
       "startAbs": -10512,
       "endAbs": -9913,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -743,7 +741,6 @@
       "startAbs": -9912,
       "endAbs": -9637,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -769,7 +766,6 @@
       "startAbs": -9636,
       "endAbs": -9361,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -795,7 +791,6 @@
       "startAbs": -9360,
       "endAbs": -9229,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -821,7 +816,6 @@
       "startAbs": -9228,
       "endAbs": -8629,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -847,7 +841,6 @@
       "startAbs": -8628,
       "endAbs": -8473,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -873,7 +866,6 @@
       "startAbs": -8472,
       "endAbs": -8413,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -899,7 +891,6 @@
       "startAbs": -8412,
       "endAbs": -7837,
       "claimTrack": null,
-      "claimLabel": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation"
     }
