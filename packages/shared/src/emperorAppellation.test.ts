@@ -806,7 +806,7 @@ describe("resolveReignCardMeta", () => {
     )).toEqual({ label: "谥号", name: "谥号" });
   });
 
-  it("uses person title after posthumous fallback on Qin-to-Sui and Tang-to-Qing cards", () => {
+  it("skips Qin-to-Sui person titles already used as primary and keeps the Tang-to-Qing fallback", () => {
     expect(resolveReignCardMeta(
       source({
         start: { year: 589, month: 1 },
@@ -814,7 +814,7 @@ describe("resolveReignCardMeta", () => {
         personTitle: "隋文帝",
       }),
       "杨坚",
-    )).toEqual({ label: "称号", name: "隋文帝" });
+    )).toBeNull();
     expect(resolveReignCardMeta(
       source({
         start: { year: 900, month: 1 },
@@ -1411,16 +1411,14 @@ describe("pre-Qin card layout", () => {
     });
   });
 
-  it("keeps imperial name-first layout from 始皇帝 onward", () => {
+  it("prefers the person title from 始皇帝 onward and hides duplicate card meta", () => {
     const shi = source({
       start: { year: -221, month: 1 },
-      title: "秦始皇",
+      title: "始皇帝",
+      personTitle: "始皇帝",
     });
-    expect(resolveReignCardLabel(shi, "政")).toBe("政");
-    expect(resolveReignCardMeta(shi, "政")).toEqual({
-      label: "称号",
-      name: "秦始皇",
-    });
+    expect(resolveReignCardLabel(shi, "政")).toBe("始皇帝");
+    expect(resolveReignCardMeta(shi, "政")).toBeNull();
   });
 
   it("uses the stored name as primary and keeps a distinct reign title as meta", () => {

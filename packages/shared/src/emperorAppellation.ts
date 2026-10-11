@@ -119,6 +119,15 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
   return null;
 }
 
+/** Pre-Qin display name composed from the stored 氏 and personal name. */
+function resolvePreQinPersonalName(
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+): string | null {
+  const name = firstNonEmpty(personName);
+  return name ? `${firstNonEmpty(personContext?.personClanShi) ?? ""}${name}` : null;
+}
+
 function hasPreQinAppellation(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
@@ -132,14 +141,19 @@ function hasPreQinAppellation(
   ));
 }
 
-/** Large title in person details. Pre-Qin people prefer appellations over personal names. */
+/** Large title in person details. Pre-Qin names use 氏 + 名 when the name is present. */
 export function resolvePersonDetailTitle(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
-  options: { preQin?: boolean; reignTitle?: string | null } = {},
+  options: { preQin?: boolean } = {},
 ): string {
   if (options.preQin) {
-    return resolvePreQinPrimary(options.reignTitle, personContext, personName) ?? "";
+    const name = resolvePreQinPersonalName(personName, personContext);
+    if (name) return name;
+    return firstNonEmpty(
+      resolvePosthumousAppellation(personContext)?.name,
+      personContext?.title,
+    ) ?? "";
   }
   return firstNonEmpty(
     personName,
@@ -152,7 +166,7 @@ function joinDetailHeading(dynastyName: string | undefined, appellation: string 
   return [dynastyName, appellation].filter(Boolean).join(" · ");
 }
 
-/** True for 天子/诸侯 reigns before 始皇帝; imperial cards keep name-first layout. */
+/** True for 天子/诸侯 reigns before 始皇帝. */
 export function usesPreQinCardLayout(reign: Pick<Reign, "start">): boolean {
   return reign.start.year < PRE_IMPERIAL_START_YEAR;
 }
@@ -191,7 +205,7 @@ export function resolvePreQinNameFacts(
   return facts;
 }
 
-/** Pre-Qin card primary follows the shared large-title priority order. */
+/** Pre-Qin card primary prefers reign and person titles before posthumous and personal names. */
 function resolvePreQinPrimary(
   reignTitle: string | null | undefined,
   personContext?: PersonDisplayContext | null,
@@ -223,7 +237,7 @@ function personalNamePrimary(personName?: string | null): string {
   return personName?.trim() ?? "";
 }
 
-/** Primary label for a reign card or detail title. */
+/** Primary label for a reign card. */
 export function resolveReignPrimaryLabel(
   reign: ReignLabelFields,
   personName?: string | null,
@@ -232,6 +246,9 @@ export function resolveReignPrimaryLabel(
   const personalName = personalNamePrimary(personName);
   if (usesPreQinCardLayout(reign)) {
     return resolvePreQinPrimary(reign.title, personContext, personalName) ?? "";
+  }
+  if (reign.start.year < TEMPLE_ERA_START_YEAR) {
+    return firstNonEmpty(personContext?.title, personalName) ?? "";
   }
   if (!personalName) {
     return firstNonEmpty(
@@ -458,8 +475,8 @@ export function resolveReignCardMeta(
   if (title) candidates.push({ label: APPELLATION_LABELS.regnal, name: title });
 
   if (usesPreQinCardLayout(reign)) {
-    const givenName = firstNonEmpty(personName);
-    if (givenName) candidates.push({ label: "名", name: givenName });
+    const name = resolvePreQinPersonalName(personName, personContext);
+    if (name) candidates.push({ label: "名", name });
   } else {
     const appellation = resolveReignCardAppellation(
       { ...reign, title: "" },

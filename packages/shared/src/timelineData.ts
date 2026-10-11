@@ -279,9 +279,6 @@ function buildPersonEntityDetail(
     : undefined;
   const title = resolvePersonDetailTitle(person.name, clan, {
     preQin: Boolean(preQinReign),
-    reignTitle: (focusReign && usesPreQinCardLayout(focusReign)
-      ? focusReign
-      : preQinReign)?.title,
   });
   const factReigns = focusReign ? [focusReign] : personReigns;
   const factEraNames = factReigns.flatMap((reign) =>

@@ -9,7 +9,7 @@
   "persons": [
     {
       "id": "ying-zheng",
-      "name": "嬴政",
+      "name": "政",
       "altNames": [
         "嬴政",
         "赵政",
@@ -55,7 +55,7 @@
       "templeNames": [],
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "title": "始皇帝",
+      "title": "嬴政",
       "dynastyId": "qin"
     },
     {

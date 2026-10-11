@@ -133,7 +133,7 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 使用常用姓名。先秦人物若姓、氏分别写在 `ancestralXing` / `clanShi`，`name` 只存私名/常用名，不拼姓或氏（如莒郊公存 `狂`，不存 `己狂`；未知姓名存 `？`，不拼姓氏）。其他时期保留通行可检索全名。先秦在位卡片大字与人物详情大字依次回退 `persons.posthumous_name`、`persons.title`、`persons.name`，由 `resolveReignCardLabel` 等共享规则处理，不要为迁就展示去改姓名字段。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`，因此移除 `name` 中的姓氏不会丢失姓氏检索。
+`persons.name` 使用常用姓名。先秦人物若姓、氏分别写在 `ancestralXing` / `clanShi`，`name` 只存私名/常用名，不拼姓或氏（如莒郊公存 `狂`，不存 `己狂`；未知姓名存 `？`，不拼姓氏）。其他时期保留通行可检索全名。先秦在位卡片大字依次回退 `reigns.title`、`persons.title`、`persons.posthumous_name`、`persons.name`；卡片小字按 `reigns.title → persons.clan_shi + persons.name` 取值（氏为空时仅显示本名，本名为空时不拼接氏），跳过与大字相同的候选；人物详情大字在 `persons.name` 非空时显示 `persons.clan_shi + persons.name`（氏为空时仅显示本名），本名为空时按 `persons.posthumous_name → persons.title` 回退。两者由 `resolveReignCardLabel` / `resolvePersonDetailTitle` 等共享规则处理，不要为迁就展示去改姓名字段。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`，因此移除 `name` 中的姓氏不会丢失姓氏检索。
 
 人物主要所属王朝写入 `persons.dynastyId`，帝王与非帝王统一使用该字段，不以是否有 `reign` 决定人物所属王朝。无单一可靠归属时留空。人物详情按 `dynastyId` 实时读取王朝 `altNames[0]`；新增或改动人物归属时编辑人物所属包的 `cache.json`，不要在补充包重复写人物行。
 

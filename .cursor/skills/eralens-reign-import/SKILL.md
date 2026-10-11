@@ -81,7 +81,7 @@ description: >-
 
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
 - 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
-- 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。详情是否采用先秦优先级只看当前聚焦 reign 的 `start`；未聚焦时看人物最早 reign 的 `start`；没有 reign 时不按生年推定先秦。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
+- 先秦卡片大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。详情大字在 `persons.name` 非空时显示 `persons.clan_shi + persons.name`（氏为空时仅显示本名）；本名为空时按 `posthumousNames 首项 → persons.title` 回退。详情是否采用先秦优先级只看当前聚焦 reign 的 `start`；未聚焦时看人物最早 reign 的 `start`；没有 reign 时不按生年推定先秦。卡片小字：`reigns.title → persons.clan_shi + persons.name`（氏为空时仅显示本名，本名为空时不拼接氏），与大字相同则跳过。
 - 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。规则时期按聚焦/最早 reign 的 `start` 判定，不按人物生年。详情王朝名优先 `reigns.dynastyName`，其后按共享详情逻辑回退到 `dynasties.altNames[0]`；王朝默认名作为最后兜底。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 

@@ -739,7 +739,7 @@ describe("buildEntityDetail person", () => {
     expect(detail.capitalTenures).toEqual([]);
   });
 
-  it("shows pre-Qin appellation as title and dynasty-appellation on reign cards", () => {
+  it("shows pre-Qin clan and personal name as the detail title", () => {
     const store = {
       dynasties: [
         {
@@ -787,7 +787,7 @@ describe("buildEntityDetail person", () => {
 
     const detail = buildEntityDetail(store, { type: "person", id: "cao-gongbo" });
 
-    expect(detail.title).toBe("侯");
+    expect(detail.title).toBe("曹侯");
     expect(detail.facts).toEqual([
       { label: "在位", value: "-938年 — -903年 · 36年" },
       { label: "姓", value: "姬" },

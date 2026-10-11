@@ -121,7 +121,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
 - 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，随后依次回退 `reigns.title`、`persons.title`、人物姓名。此规则与泳道卡片优先 title 的规则分开维护。
-- 先秦在位卡片大字与人物详情大字统一按 `reigns.title` → `persons.title` → `persons.posthumous_name` → `persons.name` 回退；卡片副行仍从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
+- 先秦在位卡片大字按 `reigns.title` → `persons.title` → `persons.posthumous_name` → `persons.name` 回退；人物详情大字在 `persons.name` 非空时显示 `persons.clan_shi + persons.name`（氏为空时仅显示本名），本名为空时按 `persons.posthumous_name → persons.title` 回退；卡片副行优先 `reigns.title`，再取 `persons.clan_shi + persons.name`（氏为空时仅显示本名，本名为空时不拼接氏），跳过与大字相同的候选。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。
@@ -130,7 +130,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 - 先秦 `posthumousNames` 只存纯谥字，不带国名及公、伯、侯、子、男、王、君等称谓；例如「庄公」拆为 `posthumousNames: ["庄"]`、`persons.title: "庄公"`。帝制时期的完整皇帝谥号沿用原约定。
 - 无可靠谥号记载者留空，不从「邾子车辅」等爵称与本名组合反推谥号；名存 `persons.name`；`persons.title` 保留有来源的完整称呼（如「邾子车辅」「邾君庆」「滕侯苏」），允许包含国名与本名，不缩为孤立爵称，亦不放入谥号字段。完整称呼可同时保留在 `altNames` 供检索。
-- 先秦卡片和详情大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。卡片小字：`reigns.title → persons.name`，与大字相同则跳过。
+- 先秦卡片大字：`reigns.title → persons.title → posthumousNames 首项 → persons.name`。详情大字在 `persons.name` 非空时显示 `persons.clan_shi + persons.name`（氏为空时仅显示本名）；本名为空时按 `posthumousNames 首项 → persons.title` 回退。卡片小字：`reigns.title → persons.clan_shi + persons.name`（氏为空时仅显示本名，本名为空时不拼接氏），与大字相同则跳过。
 - 先秦详情称呼：有 reign 焦点时 `reigns.title → persons.title → posthumousNames 首项`；无 reign 焦点时 `posthumousNames 首项 → persons.title`。详情王朝名优先 `reigns.dynastyName`，然后 `dynasties.altNames[0]` 和王朝默认名。
 - 本节取代本文件中先秦谥号带爵称及谥号优先于人物称号的旧说明；称谓仍统一经共享函数解析，不在 API/前端重新排序。
 
