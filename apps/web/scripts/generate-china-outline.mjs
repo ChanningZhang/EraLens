@@ -316,6 +316,7 @@ async function main() {
   const yangtzeLines = [toMapCoordinates(riverLines.yangtze)];
   const yellowLines = [toMapCoordinates(riverLines.yellow)];
 
+  // Keep the map unfiltered: a map-wide SVG blur stalls WebKit at large window sizes.
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
   <!-- HydroRIVERS v1.0 Asia; WGS84 converted to GCJ-02. Lehner & Grill (2013), DOI 10.1002/hyp.9740. Main-stem reaches selected by outlet IDs ${RIVER_OUTLETS.yangtze} (Yangtze) and ${RIVER_OUTLETS.yellow} (Yellow). -->
@@ -325,12 +326,9 @@ async function main() {
       <stop offset="55%" stop-color="var(--map-fill-mid, #ddd6c6)" />
       <stop offset="100%" stop-color="var(--map-fill-bottom, #d4cbb8)" />
     </linearGradient>
-    <filter id="mapSoftShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(27,25,23,0.08)" />
-    </filter>
   </defs>
   <g transform="scale(1,-1) translate(0,-${flipSum})">
-    <g class="china-land" fill="url(#chinaFill)" stroke="var(--map-stroke, #c4baa8)" stroke-width="0.05" stroke-linejoin="round" stroke-linecap="round" shape-rendering="geometricPrecision" filter="url(#mapSoftShadow)">
+    <g class="china-land" fill="url(#chinaFill)" stroke="var(--map-stroke, #c4baa8)" stroke-width="0.05" stroke-linejoin="round" stroke-linecap="round" shape-rendering="geometricPrecision">
 ${landPaths.map((d) => `      <path d="${d}" />`).join("\n")}
     </g>
     <g class="china-rivers" stroke-linecap="round" stroke-linejoin="round" shape-rendering="geometricPrecision">
