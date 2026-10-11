@@ -7,7 +7,7 @@ import {
 import { getRepository } from "@/data/repository";
 import { useViewport } from "./useViewport";
 import { shouldShowPersons } from "../model/lod";
-import { assembleTimelineFrame } from "../model/timelineLayerState";
+import { resolveTimelineFrame } from "../model/timelineLayerState";
 
 const SCOPE = "cn";
 const TIMELINE_CACHE_VERSION = 36;
@@ -24,8 +24,10 @@ export function shouldPruneTimelineChunk(key:readonly unknown[], from:number, to
   if (key[0] !== "timeline-layer" || key[1] !== TIMELINE_CACHE_VERSION) return false;
   return typeof key[2] === "number" && typeof key[3] === "number" && (key[3] < from || key[2] > to);
 }
-const OPTIONS = {
-  staleTime:Infinity, gcTime:5*60_000,
+export const TIMELINE_CHUNK_OPTIONS = {
+  // Spatial pruning below bounds the cache. Idle time must not evict nearby
+  // prefetched chunks: the prefetch effect does not rerun until the window moves.
+  staleTime:Infinity, gcTime:Infinity,
   retry:(count:number,error:Error) => !(error instanceof ContentVersionMismatchError) && count < 3,
   refetchOnWindowFocus:(query:{state:{status:string}}) => query.state.status === "error",
   refetchOnReconnect:(query:{state:{status:string}}) => query.state.status === "error",
@@ -52,7 +54,7 @@ function useLayer<T extends {datasetVersion:string}>(
     }
   };
   const queries=useQueries({queries:chunks.map(chunk => ({queryKey:chunkKey(layer,chunk,version ?? "pending"),
-    queryFn:({signal}:{signal:AbortSignal}) => fetchChunk(chunk,signal),enabled:enabled && !!version,...OPTIONS}))});
+    queryFn:({signal}:{signal:AbortSignal}) => fetchChunk(chunk,signal),enabled:enabled && !!version,...TIMELINE_CHUNK_OPTIONS}))});
   const last=useRef<{data:T;sourceKey:string}|undefined>(undefined);
   const revision=`${version}|${enabled}|${sourceKey}|${queries.map(q => `${q.dataUpdatedAt}:${q.status}`).join(":")}`;
   const result=useMemo(() => {
@@ -69,14 +71,14 @@ function useLayer<T extends {datasetVersion:string}>(
     client.removeQueries({predicate:q => q.queryKey[0] === "timeline-layer" && q.getObserversCount() === 0 && q.queryKey[5] === layer &&
       (q.queryKey[6] !== version || shouldPruneTimelineChunk(q.queryKey,chunks[0].fromAbs-size*2,chunks.at(-1)!.toAbs+size*2))});
     for (const chunk of [getAdjacentChunk(chunks[0],-1,lod),getAdjacentChunk(chunks.at(-1)!,1,lod)]) {
-      void client.prefetchQuery({queryKey:chunkKey(layer,chunk,version),queryFn:({signal}) => fetchChunk(chunk,signal),...OPTIONS});
+      void client.prefetchQuery({queryKey:chunkKey(layer,chunk,version),queryFn:({signal}) => fetchChunk(chunk,signal),...TIMELINE_CHUNK_OPTIONS});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[sourceKey,version,enabled,lod,layer,client]);
   useEffect(() => {
     if (!enabled) void client.cancelQueries({predicate:q => q.queryKey[0] === "timeline-layer" && q.queryKey[5] === layer});
   },[enabled,layer,client]);
-  return { ...result, error:queries.find(q => q.error)?.error ?? null,
+  return { ...result, requestedSourceKey:sourceKey, error:queries.find(q => q.error)?.error ?? null,
     isLoading:enabled && !!version && queries.some(q => q.isLoading),isFetching:queries.some(q => q.isFetching) };
 }
 
@@ -90,7 +92,12 @@ export function useTimelineData() {
   const reigns=useLayer<ReignTimeline>("reigns",chunks,viewport.lod,version.data,true,mergeReignTimelineChunks);
   const events=useLayer<EventTimeline>("events",chunks,viewport.lod,version.data,true,items => ({datasetVersion:items[0].datasetVersion,events:[...new Map(items.flatMap(i => i.events).map(e => [e.id,e])).values()]}));
   const persons=useLayer<PersonTimeline>("persons",chunks,viewport.lod,version.data,shouldShowPersons(viewport.lod),items => ({datasetVersion:items[0].datasetVersion,persons:[...new Map(items.flatMap(i => i.persons).map(p => [p.id,p])).values()]}));
-  const frame=useMemo(() => assembleTimelineFrame(reigns,events,persons),[reigns.data,reigns.sourceKey,events.data,events.sourceKey,persons.data,persons.sourceKey]);
+  const previousFrame=useRef<ReturnType<typeof resolveTimelineFrame> | undefined>(undefined);
+  const frame=useMemo(() => {
+    const next=resolveTimelineFrame(previousFrame.current,reigns,events,persons);
+    previousFrame.current=next;
+    return next;
+  },[reigns.data,reigns.sourceKey,reigns.requestedSourceKey,reigns.isLoading,events.data,events.sourceKey,events.isLoading,persons.data,persons.sourceKey,persons.isLoading]);
   return { ...frame,isLoading:version.isLoading || reigns.isLoading,isFetching:reigns.isFetching || events.isFetching || persons.isFetching,
     error:version.error ?? reigns.error,layerErrors:{reigns:reigns.error,events:events.error,persons:persons.error} };
 }

@@ -1,4 +1,6 @@
-# iOS 迁移前基线
+# iOS 迁移前基线（历史记录）
+
+本文记录 Capacitor 迁移阶段的历史基线，不代表当前原生架构。当前 iOS 使用 UIKit + 系统 WKWebView，并通过共享 `packages/apple-native` Swift 包读取只读 SQLite；数据随应用版本更新。迁移方案见仓库根目录 `IOS_MIGRATION_PLAN.md`（该文件也保留为历史记录）。
 
 记录日期：2026-09-27。来源为当前工作树与现有生产数据导入包；屏幕视觉及设备运行数据必须在装有 iOS 16.2 runtime 的 Xcode 主机和真机上补采。
 
@@ -12,8 +14,7 @@
 | Web | React 19 + TypeScript + Vite；HTTP Repository 为默认数据源 |
 | Bundle ID / 显示名 | `com.eralens.app` / `EraLens` |
 | 最低系统版本 | iOS/iPadOS 16.2（工程配置） |
-| Capacitor | core / CLI / iOS 均固定 8.5.2 |
-| SQLite 插件 | `@capacitor-community/sqlite` 8.1.1 |
+| 原生容器 | UIKit + 系统 WKWebView；桥接与 SQLite 服务见 `packages/apple-native` |
 
 Apple Team 尚未配置；这不阻止无签名模拟器构建，连接开发者账号后用于真机签名。
 
@@ -33,7 +34,7 @@ Apple Team 尚未配置；这不阻止无签名模拟器构建，连接开发者
 
 ## 当前可重复构建记录
 
-`pnpm --filter @eralens/web build:ios`：Vite 6.4.3 成功，输出 CSS 45.61 kB、SQLite probe chunk 1.12 kB、两个 Web 插件 chunk 1.25 / 9.63 kB、主 JS 769.06 kB（gzip 分别为 9.09 / 0.71 / 0.58 / 1.34 / 248.20 kB）。主 JS 超过 500 kB 的 Vite 提示作为首轮包体记录，不在第 2 批调整代码拆分。
+历史 Capacitor 包体数据已不再适用。当前通过 `pnpm ios:build:sim` 构建模拟器应用，Xcode 构建阶段会自动生成并嵌入 Web 与 SQLite 资源。
 
 ## 设备覆盖状态
 

@@ -5,6 +5,9 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  /* Horizontal projection changes mount/unmount cards and move lane rows.
+     Keep the user's vertical position instead of anchoring to those cards. */
+  overflow-anchor: none;
   overscroll-behavior: none;
   /* Touch gestures are routed through the stage so horizontal timeline panning
      also works when the gesture starts on an interactive lane card. */

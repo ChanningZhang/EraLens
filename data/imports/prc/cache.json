@@ -1147,9 +1147,15 @@
         "abs": 23442,
         "confidence": "month"
       },
-      "summary": "中国人民志愿军入朝作战，1953年7月签订停战协定。",
+      "summary": "中国人民志愿军于1950年10月入朝作战，与朝鲜人民军共同作战；双方于1953年7月签署停战协定，战线大体回到三八线附近。",
       "startAbs": 23409,
-      "endAbs": 23442
+      "endAbs": 23442,
+      "links": [
+        {
+          "label": "人民网党史：朝鲜战争",
+          "url": "https://cpc.people.com.cn/GB/33837/2534663.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1205,10 +1211,17 @@
         "year": 1971,
         "month": 9,
         "abs": 23660,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 13
       },
-      "summary": "林彪乘机出逃坠亡，接班人安排破裂。",
-      "atAbs": 23660
+      "summary": "林彪在接班安排失序、政治危机加深后，于山海关机场乘机外逃，飞机在蒙古温都尔汗附近坠毁，机上人员全部遇难。",
+      "atAbs": 23660,
+      "links": [
+        {
+          "label": "人民网党史：1971年9月13日",
+          "url": "https://cpc.people.com.cn/GB/64162/64165/70293/70306/index.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1220,10 +1233,17 @@
         "year": 1976,
         "month": 10,
         "abs": 23721,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 6
       },
-      "summary": "江青、张春桥、姚文元、王洪文被隔离审查，文化大革命结束。",
-      "atAbs": 23721
+      "summary": "毛泽东逝世后，华国锋、叶剑英等于中南海采取行动，对江青、张春桥、王洪文、姚文元实行隔离审查；“四人帮”失势，文革结束。",
+      "atAbs": 23721,
+      "links": [
+        {
+          "label": "北京组工：粉碎“四人帮”",
+          "url": "https://www.bjdj.gov.cn/article/33114.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1235,24 +1255,38 @@
         "year": 1978,
         "month": 12,
         "abs": 23747,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 18
       },
-      "summary": "决定把工作重点转到社会主义现代化建设，改革开放起步。",
-      "atAbs": 23747
+      "summary": "全会于北京召开，重新确立实事求是的思想路线，停止“以阶级斗争为纲”，把工作重点转向社会主义现代化建设，开启改革开放新时期。",
+      "atAbs": 23747,
+      "links": [
+        {
+          "label": "中共党史和文献网：十一届三中全会",
+          "url": "https://cpc.people.com.cn/GB/64162/64168/64563/65371/4441896.html"
+        }
+      ]
     },
     {
       "kind": "politics",
       "timeMode": "point",
       "id": "deng-southern-tour",
       "name": "邓小平南巡",
-      "dateNote": "1992年1–2月视察武昌、深圳、珠海、上海",
+      "dateNote": "南巡始于1992年1月18日，至2月21日结束；point 锚定出发日。",
+      "summary": "邓小平先后视察武昌、深圳、珠海、上海并发表谈话，强调改革开放和发展；南方谈话推动当年改革开放重新提速。",
+      "links": [
+        {
+          "label": "中国政府网：邓小平视察南方",
+          "url": "https://www.gov.cn/zhuanti/content_2754129.htm"
+        }
+      ],
       "at": {
         "year": 1992,
         "month": 1,
+        "day": 18,
         "abs": 23904,
-        "confidence": "month"
+        "confidence": "day"
       },
-      "summary": "邓小平南方谈话推动新一轮改革开放。",
       "atAbs": 23904
     },
     {
@@ -1265,10 +1299,17 @@
         "year": 1997,
         "month": 7,
         "abs": 23970,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 1
       },
-      "summary": "香港特别行政区成立，英国结束对香港的管治。",
-      "atAbs": 23970
+      "summary": "中英两国完成香港政权交接，中华人民共和国恢复对香港行使主权，香港特别行政区同日成立。",
+      "atAbs": 23970,
+      "links": [
+        {
+          "label": "香港政府档案处：过渡与回归",
+          "url": "https://www.grs.gov.hk/ws/hip/sc/return.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1280,10 +1321,17 @@
         "year": 1999,
         "month": 12,
         "abs": 23999,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 20
       },
-      "summary": "澳门特别行政区成立，葡萄牙结束对澳门的管治。",
-      "atAbs": 23999
+      "summary": "中葡两国完成政权交接，中华人民共和国恢复对澳门行使主权，澳门特别行政区同日成立。",
+      "atAbs": 23999,
+      "links": [
+        {
+          "label": "外交部：澳门回归",
+          "url": "https://www.fmprc.gov.cn/web/ziliao_674904/historytoday_674971/200312/t20031220_7949232.shtml"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1295,24 +1343,38 @@
         "year": 2001,
         "month": 12,
         "abs": 24023,
-        "confidence": "day"
+        "confidence": "day",
+        "day": 11
       },
-      "summary": "中国加入世界贸易组织，对外开放进入新阶段。",
-      "atAbs": 24023
+      "summary": "中国正式成为世界贸易组织第143个成员，结束多年的入世谈判，并按加入议定书承担相应义务。",
+      "atAbs": 24023,
+      "links": [
+        {
+          "label": "世界贸易组织：中国加入信息",
+          "url": "https://www.wto.org/english/thewto_e/acc_e/a1_chine_e.htm"
+        }
+      ]
     },
     {
       "kind": "culture",
       "timeMode": "point",
       "id": "beijing-olympics-2008",
       "name": "北京奥运会",
-      "dateNote": "2008年8月8日至24日",
+      "dateNote": "2008年8月8日至24日举行；point 锚定开幕日。",
+      "summary": "第二十九届夏季奥运会于北京举行，是中国首次主办夏季奥运会；中国代表团获金牌榜首位。",
+      "links": [
+        {
+          "label": "中国奥委会：第29届北京奥运会",
+          "url": "https://www.olympic.cn/games/summer/summer/2010/0210/24918.html"
+        }
+      ],
       "at": {
         "year": 2008,
         "month": 8,
+        "day": 8,
         "abs": 24103,
-        "confidence": "month"
+        "confidence": "day"
       },
-      "summary": "第二十九届夏季奥林匹克运动会在北京举行。",
       "atAbs": 24103
     },
     {
@@ -1325,10 +1387,17 @@
         "year": 2012,
         "month": 11,
         "abs": 24154,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 8
       },
       "summary": "胡锦涛卸任总书记，习近平当选中共中央总书记、中央军委主席。国家主席至2013年3月交接。",
-      "atAbs": 24154
+      "atAbs": 24154,
+      "links": [
+        {
+          "label": "人民网：中国共产党第十八次全国代表大会",
+          "url": "https://cpc.people.com.cn/n/2012/1107/c349998-19521989.html"
+        }
+      ]
     }
   ],
   "relations": [
@@ -1492,6 +1561,46 @@
       {
         "label": "中華民國總統府：歷任總統",
         "url": "https://www.president.gov.tw/qrcode/16c"
+      },
+      {
+        "label": "人民网党史：1971年9月13日",
+        "url": "https://cpc.people.com.cn/GB/64162/64165/70293/70306/index.html"
+      },
+      {
+        "label": "北京组工：粉碎“四人帮”",
+        "url": "https://www.bjdj.gov.cn/article/33114.html"
+      },
+      {
+        "label": "中共党史和文献网：十一届三中全会",
+        "url": "https://cpc.people.com.cn/GB/64162/64168/64563/65371/4441896.html"
+      },
+      {
+        "label": "香港政府档案处：过渡与回归",
+        "url": "https://www.grs.gov.hk/ws/hip/sc/return.html"
+      },
+      {
+        "label": "外交部：澳门回归",
+        "url": "https://www.fmprc.gov.cn/web/ziliao_674904/historytoday_674971/200312/t20031220_7949232.shtml"
+      },
+      {
+        "label": "世界贸易组织：中国加入信息",
+        "url": "https://www.wto.org/english/thewto_e/acc_e/a1_chine_e.htm"
+      },
+      {
+        "label": "中国政府网：邓小平视察南方",
+        "url": "https://www.gov.cn/zhuanti/content_2754129.htm"
+      },
+      {
+        "label": "中国奥委会：第29届北京奥运会",
+        "url": "https://www.olympic.cn/games/summer/summer/2010/0210/24918.html"
+      },
+      {
+        "label": "人民网党史：朝鲜战争",
+        "url": "https://cpc.people.com.cn/GB/33837/2534663.html"
+      },
+      {
+        "label": "人民网：中国共产党第十八次全国代表大会",
+        "url": "https://cpc.people.com.cn/n/2012/1107/c349998-19521989.html"
       }
     ],
     "notes": [

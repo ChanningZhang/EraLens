@@ -4050,23 +4050,23 @@
       "kind": "politics",
       "id": "wuxu-reform",
       "name": "戊戌变法",
-      "timeMode": "span",
+      "timeMode": "point",
       "dateNote": "光绪二十四年四月二十三日至八月初六（公历1898年6月11日至9月21日），共103天",
-      "start": {
-        "year": 1898,
-        "month": 1,
-        "abs": 22776,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 1898,
-        "month": 1,
-        "abs": 22776,
-        "confidence": "year"
-      },
       "summary": "甲午战败与列强瓜分危机推动维新思潮发展。光绪帝采纳康有为等人的建议，自1898年6月起颁布新政，涉及政治、教育、经济和军事，试图改革清朝制度；慈禧太后于9月发动政变，囚禁光绪帝并废止新法，康有为、梁启超出走，谭嗣同等六人被杀。变法虽仅持续103天，却推动了近代中国的思想启蒙。",
-      "startAbs": 22776,
-      "endAbs": 22776
+      "at": {
+        "year": 1898,
+        "month": 6,
+        "day": 11,
+        "abs": 22781,
+        "confidence": "day"
+      },
+      "atAbs": 22781,
+      "links": [
+        {
+          "label": "故宫博物院：戊戌变法",
+          "url": "https://www.dpm.org.cn/ancient/mingqing/148423.html"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -4178,10 +4178,17 @@
         "year": 1388,
         "month": 5,
         "abs": 16660,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 18
       },
       "summary": "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。",
-      "atAbs": 16660
+      "atAbs": 16660,
+      "links": [
+        {
+          "label": "《明史》卷三·太祖本纪",
+          "url": "https://zh.wikisource.org/zh-hans/明史/卷3"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -4250,10 +4257,17 @@
         "year": 1449,
         "month": 9,
         "abs": 17396,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 1
       },
       "summary": "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。",
-      "atAbs": 17396
+      "atAbs": 17396,
+      "links": [
+        {
+          "label": "《明史》卷十·英宗前纪",
+          "url": "https://zh.wikisource.org/zh-hans/明史/卷10"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -4674,23 +4688,28 @@
     {
       "kind": "battle",
       "id": "sino-tibetan-war",
-      "name": "隆务关之战",
-      "timeMode": "span",
-      "start": {
+      "name": "隆吐山战役",
+      "timeMode": "point",
+      "summary": "锡金与西藏边界争端中，英军于隆吐山下进攻藏军，数日后攻占阵地并打开通往春丕河谷的通道；清廷与英国1890年另订边界条约。",
+      "at": {
         "year": 1888,
-        "month": 1,
-        "abs": 22656,
-        "confidence": "year"
+        "month": 3,
+        "day": 20,
+        "abs": 22658,
+        "confidence": "day"
       },
-      "end": {
-        "year": 1889,
-        "month": 1,
-        "abs": 22668,
-        "confidence": "year"
-      },
-      "summary": "英军入侵西藏隆务关，清军反击后议和，签订中英续议藏印条约。",
-      "startAbs": 22656,
-      "endAbs": 22668
+      "atAbs": 22658,
+      "dateNote": "光绪十四年二月初八（1888年3月20日），英军进攻隆吐山下扎鲁隘口；随后战事延续至藏军撤出隆吐山。",
+      "links": [
+        {
+          "label": "中国藏学研究中心：英国第一次侵藏与隆吐山战役",
+          "url": "https://www.tibetology.ac.cn/2024-01/13/content_42669929.htm"
+        },
+        {
+          "label": "西藏自治区外事办公室：隆吐山战役",
+          "url": "https://wsb.xizang.gov.cn/xzjx/xgzl/201711/t20171122_100912.html"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -4822,10 +4841,17 @@
         "year": 1842,
         "month": 8,
         "abs": 22111,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 29
       },
       "summary": "清政府与英国签订《南京条约》，割让香港岛、赔偿2100万银元，开放广州、厦门、福州、宁波、上海五口通商，并规定英商可不经公行交易、协定进出口税则。条约改变了清代对外贸易的口岸、商人中介和关税格局。",
-      "atAbs": 22111
+      "atAbs": 22111,
+      "links": [
+        {
+          "label": "故宫博物院：南京条约",
+          "url": "https://www.dpm.org.cn/lemmas/241863.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -4877,15 +4903,22 @@
       "timeMode": "point",
       "id": "treaty-of-aigun",
       "name": "瑷珲条约",
-      "dateNote": "咸丰八年五月，中俄签订",
+      "dateNote": "咸丰八年四月十六日（1858年5月28日）签订；清政府当时未批准。",
       "at": {
         "year": 1858,
         "month": 5,
         "abs": 22300,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 28
       },
-      "summary": "俄国趁第二次鸦片战争割占黑龙江以北、乌苏里江以东大片领土。",
-      "atAbs": 22300
+      "summary": "清俄签订《瑷珲条约》，黑龙江以北土地划归俄国，乌苏里江以东至海地区暂由中俄共管；1860年《北京条约》再将共管区划归俄国。",
+      "atAbs": 22300,
+      "links": [
+        {
+          "label": "故宫博物院：《中俄瑷珲条约》",
+          "url": "https://www.dpm.org.cn/lemmas/241746.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -4981,31 +5014,49 @@
       "kind": "politics",
       "timeMode": "point",
       "id": "convention-of-sikkim",
-      "name": "中英续议藏印条约",
-      "dateNote": "光绪十六年十二月，中英签订",
+      "name": "中英藏印条约",
+      "dateNote": "光绪十六年二月二十七日（1890年3月17日）签订；1893年另有《中英藏印续约》。",
       "at": {
         "year": 1890,
-        "month": 12,
-        "abs": 22691,
-        "confidence": "month"
+        "month": 3,
+        "abs": 22682,
+        "confidence": "day",
+        "day": 17
       },
-      "summary": "隆务关之战后议和，划定藏印边界，承认英国对锡金的保护。",
-      "atAbs": 22691
+      "summary": "清政府与英国签订条约，划定锡金与西藏边界，并承认锡金为英国保护国；1893年续约另开放亚东等贸易事项。",
+      "atAbs": 22682,
+      "links": [
+        {
+          "label": "外交部：中英会议藏印条约（1890年3月17日）",
+          "url": "https://www.mfa.gov.cn/web/ziliao_674904/zcwj_674915/201708/P020210830178383640366.pdf"
+        },
+        {
+          "label": "西藏自治区外事办公室：中英藏印条约及续约",
+          "url": "https://wsb.xizang.gov.cn/xzjx/xgzl/201711/t20171122_100912.html"
+        }
+      ]
     },
     {
       "kind": "politics",
       "timeMode": "point",
       "id": "convention-of-burma",
       "name": "中英续议滇缅条约",
-      "dateNote": "光绪二十年十二月，中英签订",
+      "dateNote": "光绪二十年正月二十四日（1894年3月1日）签订《续议滇缅界务商务条款》。",
       "at": {
         "year": 1894,
-        "month": 12,
-        "abs": 22739,
-        "confidence": "month"
+        "month": 3,
+        "abs": 22730,
+        "confidence": "day",
+        "day": 1
       },
-      "summary": "划定滇缅边界，开放蛮耗为商埠，英国进一步渗透西南边疆。",
-      "atAbs": 22739
+      "summary": "清英签订《续议滇缅界务商务条款》，规定部分边界并开放蛮允、盏西商路；北段界线仍待查明后再议。",
+      "atAbs": 22730,
+      "links": [
+        {
+          "label": "谢本书：从片马事件到班洪事件——滇缅边界沿革",
+          "url": "https://www.ynhistory.com/2024/07-08/5740.html"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -5057,15 +5108,22 @@
       "timeMode": "point",
       "id": "treaty-of-renewal-1902",
       "name": "中俄改订条约",
-      "dateNote": "光绪二十八年三月，中俄签订",
+      "dateNote": "光绪二十八年三月初六日（1902年4月8日）签订《交收东三省条约》。",
       "at": {
         "year": 1902,
         "month": 4,
         "abs": 22827,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 8
       },
       "summary": "俄国归还庚子事变后侵占的东北三省，但获中东铁路续租等特权。",
-      "atAbs": 22827
+      "atAbs": 22827,
+      "links": [
+        {
+          "label": "《交收东三省条约》原文",
+          "url": "https://zh.wikisource.org/zh-hans/交收东三省条约"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -6194,6 +6252,42 @@
       {
         "label": "中国历代朔闰表：1368年农历八月与公历换算",
         "url": "https://ytliu0.github.io/ChineseCalendar/table_period_chinese.html?period=ming"
+      },
+      {
+        "label": "中国藏学研究中心：英国第一次侵藏与隆吐山战役",
+        "url": "https://www.tibetology.ac.cn/2024-01/13/content_42669929.htm"
+      },
+      {
+        "label": "西藏自治区外事办公室：隆吐山战役",
+        "url": "https://wsb.xizang.gov.cn/xzjx/xgzl/201711/t20171122_100912.html"
+      },
+      {
+        "label": "故宫博物院：《中俄瑷珲条约》",
+        "url": "https://www.dpm.org.cn/lemmas/241746.html"
+      },
+      {
+        "label": "外交部：中英会议藏印条约（1890年3月17日）",
+        "url": "https://www.mfa.gov.cn/web/ziliao_674904/zcwj_674915/201708/P020210830178383640366.pdf"
+      },
+      {
+        "label": "谢本书：从片马事件到班洪事件——滇缅边界沿革",
+        "url": "https://www.ynhistory.com/2024/07-08/5740.html"
+      },
+      {
+        "label": "《交收东三省条约》原文",
+        "url": "https://zh.wikisource.org/zh-hans/交收东三省条约"
+      },
+      {
+        "label": "故宫博物院：戊戌变法",
+        "url": "https://www.dpm.org.cn/ancient/mingqing/148423.html"
+      },
+      {
+        "label": "《明史》卷十·英宗前纪",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷10"
+      },
+      {
+        "label": "故宫博物院：南京条约",
+        "url": "https://www.dpm.org.cn/lemmas/241863.html"
       }
     ],
     "notes": [
@@ -6242,7 +6336,9 @@
       "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
       "明军攻占大都事件据《明史》洪武元年八月庚午徐达入元都，结合中国历代朔闰表换算为1368-09-14（项目儒略历日期），由原公历月精度改为日精度。",
       "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。",
-      "2026-10：分时名称王朝所属主线 reign 的 dynastyName 按已有 name.periods 和共享 reign/phase 归属区间计算，取累计使用日数最多的名称；同名阶段累计，阶段外回退 default，时长相同取较早阶段。并立政权保留其已有 dynastyName，不参与主线名称回填；日期与并立轨道不作调整。"
+      "2026-10：分时名称王朝所属主线 reign 的 dynastyName 按已有 name.periods 和共享 reign/phase 归属区间计算，取累计使用日数最多的名称；同名阶段累计，阶段外回退 default，时长相同取较早阶段。并立政权保留其已有 dynastyName，不参与主线名称回填；日期与并立轨道不作调整。",
+      "2026-10-10：事件原名“隆务关之战”误写地点，且将1888年战事与1890年《中英藏印条约》合并叙述。依据中国藏学研究中心及西藏自治区外事办公室资料，改名“隆吐山战役”，点位采用1888-03-20英军发动进攻之日；1890年条约仅在摘要中作为后续结果背景。",
+      "2026-10-10：修订边疆条约事件的日期和地理内容。《瑷珲条约》日期校为1858-05-28，乌苏里江以东先为中俄共管、至1860年《北京条约》才划归俄国；《中英藏印条约》为1890-03-17，1893续约另列；《续议滇缅界务商务条款》为1894-03-01，地名为蛮允；《交收东三省条约》为1902-04-08。"
     ]
   }
 }

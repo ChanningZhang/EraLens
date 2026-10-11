@@ -12,4 +12,4 @@
 | SVG | 时间轴、地图轮廓与覆盖层 | 保留当前 SVG 渲染 | 尚未在最低版本运行 |
 | 网络字体 | 当前 Google Fonts 引用 | 移除远程 CSS 引用，走系统字体栈；稀有字仍随包提供 | HTML 已无 Google Fonts 请求；真机字形待确认 |
 
-新 Web API、CSS 属性或 Capacitor 插件接入时，在此登记最低 WebKit 版本、降级路径与验证设备。不得用 User-Agent 代替能力检查。
+新 Web API、CSS 属性或原生桥接能力接入时，在此登记最低 WebKit 版本、降级路径与验证设备。不得用 User-Agent 代替能力检查。

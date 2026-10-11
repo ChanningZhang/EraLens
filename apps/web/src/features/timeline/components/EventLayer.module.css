@@ -79,8 +79,9 @@
   border: var(--marker-border) solid
     color-mix(in srgb, var(--event-color) 34%, var(--color-border));
   border-radius: 999px;
+  /* Panning moves dozens of labels over the map and lane cards. Opaque fills
+     avoid a separate backdrop capture / blur pass for every moving marker. */
   background: var(--event-fill);
-  background: color-mix(in srgb, var(--event-fill) 96%, transparent);
   color: color-mix(in srgb, var(--event-color) 48%, var(--color-ink-secondary));
   box-shadow:
     inset 2px 0 0 color-mix(in srgb, var(--event-color) 70%, transparent),
@@ -88,8 +89,6 @@
   pointer-events: auto;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
   transition:
     border-color var(--motion-fast),
     background var(--motion-fast),
@@ -110,7 +109,6 @@
   transform: none;
   cursor: default;
   pointer-events: none;
-  backdrop-filter: none;
 }
 
 .dot {

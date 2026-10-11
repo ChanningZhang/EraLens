@@ -1,5 +1,6 @@
 import { closePlatformRepository, createPlatformRepository } from "@eralens/data-access";
 import type { TimelineRepository } from "@eralens/data-access";
+import { getNativeBridge } from "./nativePlatform";
 export type { TimelineRepository, TimelineQuery } from "@eralens/data-access";
 
 let repositoryPromise: Promise<TimelineRepository> | null = null;
@@ -11,15 +12,11 @@ async function createRepository(): Promise<TimelineRepository> {
     source,
     apiBase: import.meta.env.VITE_API_BASE ?? "/api",
     mockRepository,
+    nativeBridge: source === "native" ? getNativeBridge() : undefined,
   });
 }
 
 export function getRepository(): Promise<TimelineRepository> {
   repositoryPromise ??= createRepository();
   return repositoryPromise;
-}
-
-export async function closeRepositoryForContentUpdate(): Promise<void> {
-  await closePlatformRepository();
-  repositoryPromise = null;
 }

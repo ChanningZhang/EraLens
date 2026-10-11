@@ -1,6 +1,6 @@
 # iOS 内容快照
 
-`data/imports/` 是历史资料唯一事实源。Web API 与 iOS 共用由 `data/imports/` 全量构建的 SQLite 内容库；不手工编辑快照，也不运行导入 SQL 到设备端。
+`data/imports/` 是历史资料唯一事实源。Web API、iOS 与 macOS 共用由 `data/imports/` 全量构建的 SQLite 内容库；不手工编辑快照，也不运行导入 SQL 到设备端。Apple 应用把只读数据库装入应用包，内容随应用版本更新。
 
 ## 构建与检查
 
@@ -22,9 +22,9 @@ pnpm release:classify -- --base=<last-data-or-app-tag>
 - SQLite 表或索引结构变化时，在 `data/mobile/versions.json` 递增 `schemaVersion`。
 - DTO、枚举或 SQLite 到共享契约映射的兼容性变化时递增 `contractVersion`。
 - schema / contract 变化属于应用发布，不能分类为纯数据更新。
-- `data/mobile/versions.json` 同时定义导出、校验和 SQLite Repository 支持的版本。`pnpm ios:sync` 将其复制为 `public/assets/databases/eralens-content.versions.json`，与数据库一起打包；iOS 原生启动校验与更新清单校验读取这份应用内配置，不另行维护版本常量。版本变更后必须重新同步并构建应用；旧的设备数据库会通过现有恢复流程替换为兼容的内置快照。
-- 启动时 `copyFromAssets(false)` 只补齐缺失的数据库；已安装的数据更新由原生校验、升级和恢复流程处理，避免每次打开应用都被内置快照覆盖。
+- `data/mobile/versions.json` 同时定义导出、校验和 SQLite Repository 支持的版本。`pnpm ios:build:sim`、Xcode Build/Archive 和 `pnpm mac:build` 会验证快照并将版本文件与数据库一起打包；版本不兼容时应用会显示初始化错误，不回退到 HTTP。
+- iOS 与 macOS 的数据库以只读方式从应用资源打开。旧 iOS Capacitor 安装不迁移偏好或下载库，需要卸载后全新安装；新版本应用会保留原生 UserDefaults 设置。
 - `release:classify` 比较候选工作区与基线引用，输出 `DATA_ONLY`、`APP_RELEASE_REQUIRED` 或 `MANUAL_REVIEW`。生成器、SQL 导入物和非安全 manifest 字段会触发人工复核；应用、共享契约、schema、依赖和构建基础设施改动要求发应用版本。
 - 快照 diff 给出各表主键维度的新增、更新和删除数量，便于发布前复核内容变动。
 
-分类器只提供发布门禁输入，不替代历史事实审核、快照验证或签名发布流程。
+分类器只提供发布门禁输入，不替代历史事实审核或快照验证。Apple 端内容直接随应用版本发布，不提供独立的签名数据更新流程。

@@ -1634,15 +1634,23 @@
       "kind": "politics",
       "timeMode": "point",
       "id": "yuan-shikai-emperor",
-      "name": "袁世凯称帝",
+      "name": "袁世凯接受帝位推戴",
       "at": {
         "year": 1915,
         "month": 12,
         "abs": 22991,
-        "confidence": "year"
+        "confidence": "day",
+        "day": 12
       },
-      "summary": "袁世凯改国号中华帝国，遭全国反对，83天后取消。",
-      "atAbs": 22991
+      "summary": "袁世凯接受国民代表推戴，筹备改行君主制并以中华帝国为号；护国战争与各省反对使其于1916年3月取消帝制，未举行登基典礼。",
+      "atAbs": 22991,
+      "links": [
+        {
+          "label": "民国历史纪要：中华帝国与袁世凯称帝",
+          "url": "https://www.rocmgov.org/rocevents"
+        }
+      ],
+      "dateNote": "1915年12月12日接受国民代表推戴；1916年3月22日取消帝制，未举行登基典礼。"
     },
     {
       "kind": "battle",
@@ -1671,15 +1679,22 @@
       "timeMode": "point",
       "id": "may-fourth",
       "name": "五四运动",
-      "dateNote": "1919年5月4日",
+      "dateNote": "1919年5月4日，北京学生举行集会游行。",
       "at": {
         "year": 1919,
         "month": 5,
         "abs": 23032,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 4
       },
-      "summary": "北京学生抗议巴黎和会山东问题，新文化运动与爱国运动高潮。",
-      "atAbs": 23032
+      "summary": "巴黎和会决定将德国在山东的权益转交日本，北京学生于天安门集会游行抗议，要求拒签和约并惩办亲日官员；运动随后扩展至全国。",
+      "atAbs": 23032,
+      "links": [
+        {
+          "label": "外交部：五四运动",
+          "url": "https://www.fmprc.gov.cn/web/ziliao_674904/historytoday_674971/200305/t20030504_9284558.shtml"
+        }
+      ]
     },
     {
       "kind": "politics",
@@ -1749,40 +1764,62 @@
         "year": 1928,
         "month": 12,
         "abs": 23147,
-        "confidence": "year"
+        "confidence": "day",
+        "day": 29
       },
-      "summary": "张学良宣布服从国民政府，改挂青天白日旗，名义上全国统一。",
-      "atAbs": 23147
+      "summary": "张学良改悬青天白日满地红旗并通电服从南京国民政府，北伐至此结束，南北名义统一；东北仍保留相当地方自主。",
+      "atAbs": 23147,
+      "links": [
+        {
+          "label": "辽宁省档案馆：东北易帜和东北新建设",
+          "url": "https://www.lnds.com.cn/lnds/cgzs/jzln/4D8DC4718FE74772AE454010629BAD7C/index.shtml"
+        }
+      ],
+      "dateNote": "1928年12月29日，张学良通电服从南京国民政府并改悬国旗。"
     },
     {
       "kind": "battle",
       "timeMode": "point",
       "id": "mukden-incident",
       "name": "九一八事变",
-      "dateNote": "1931年9月18日",
+      "dateNote": "1931年9月18日夜，关东军在沈阳柳条湖制造铁路爆炸并进攻北大营。",
       "at": {
         "year": 1931,
         "month": 9,
         "abs": 23180,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 18
       },
-      "summary": "日本关东军发动事变，侵占东北，十四年抗战开始。",
-      "atAbs": 23180
+      "summary": "关东军在沈阳柳条湖附近炸毁南满铁路路轨，并诬称中国军队所为，随即进攻北大营和沈阳；日军随后扩大侵占东北。",
+      "atAbs": 23180,
+      "links": [
+        {
+          "label": "人民网党史：九一八事变",
+          "url": "https://dangshi.people.com.cn/n/2015/0918/c85037-27604904.html"
+        }
+      ]
     },
     {
       "kind": "politics",
       "timeMode": "point",
       "id": "xi-an-incident",
       "name": "西安事变",
-      "dateNote": "1936年12月12日",
+      "dateNote": "1936年12月12日，张学良、杨虎城在西安发动兵谏并扣留蒋介石。",
       "at": {
         "year": 1936,
         "month": 12,
         "abs": 23243,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 12
       },
-      "summary": "张学良、杨虎城逼蒋抗日，和平解决，国共二次合作。",
-      "atAbs": 23243
+      "summary": "张学良、杨虎城为迫蒋介石停止内战、联共抗日，于西安扣留蒋介石；事变经谈判和平解决，成为第二次国共合作的重要转折。",
+      "atAbs": 23243,
+      "links": [
+        {
+          "label": "人民网党史：西安事变",
+          "url": "https://cpc.people.com.cn/GB/33837/2534330.html"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -1934,18 +1971,30 @@
         "year": 1937,
         "month": 10,
         "abs": 23253,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 13
       },
       "end": {
         "year": 1937,
         "month": 11,
         "abs": 23254,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 2
       },
       "dateNote": "忻口正面战斗于1937年10月13日开始，战线在11月上旬撤退。",
       "summary": "日军突破内长城防线后，第二战区在忻口组织防御，由阎锡山统筹、卫立煌等指挥前线部队，八路军在日军侧后开展袭扰以配合作战。双方在阵地攻防中持续激战，守军最终因娘子关方向失守及太原受威胁而撤退；这是国共军队协同抗战的重要战例。",
       "startAbs": 23253,
-      "endAbs": 23254
+      "endAbs": 23254,
+      "links": [
+        {
+          "label": "国家档案局：档案里的中国抗战·忻口战役",
+          "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64741.htm"
+        },
+        {
+          "label": "北京市委统战部：忻口战役",
+          "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/42/202/213/214/22894.shtml"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -2000,18 +2049,30 @@
         "year": 1938,
         "month": 3,
         "abs": 23258,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 23
       },
       "end": {
         "year": 1938,
         "month": 4,
         "abs": 23259,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 7
       },
       "dateNote": "1938年3月23日至4月7日；中国第二历史档案馆档案专题采用此战斗区间。",
       "summary": "徐州会战中，日军沿津浦线南下争夺台儿庄。第五战区司令长官李宗仁调集部队防守，并组织侧翼反击；中国军队在台儿庄及其周边与日军反复争夺，迫使日军撤退。这是全面抗战以来正面战场的重要胜利，显著鼓舞了全国抗战士气。",
       "startAbs": 23258,
-      "endAbs": 23259
+      "endAbs": 23259,
+      "links": [
+        {
+          "label": "盐田档案与史志信息网：台儿庄大战开始",
+          "url": "https://www.yantian.gov.cn/ytdayszxxw/lsjt/content/post_11737199.html"
+        },
+        {
+          "label": "国家档案局：台儿庄战役档案专题",
+          "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65286.htm"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -2110,7 +2171,8 @@
         "year": 1940,
         "month": 8,
         "abs": 23287,
-        "confidence": "month"
+        "confidence": "day",
+        "day": 20
       },
       "end": {
         "year": 1941,
@@ -2121,7 +2183,13 @@
       "dateNote": "1940年8月20日发起，战役阶段延续至1941年1月；不同战史对阶段划分有差异。",
       "summary": "为破击华北日军交通线、打击据点封锁，八路军在总部统一指挥下发动大规模进攻，重点攻击正太铁路，并扩展至同蒲、平汉等交通线。战役初期参战部队超过百个团，故称“百团大战”；铁路与据点遭到破坏，日军随后加强报复性“扫荡”，敌后战场的作战形态也随之变化。",
       "startAbs": 23287,
-      "endAbs": 23292
+      "endAbs": 23292,
+      "links": [
+        {
+          "label": "中国共产党新闻网：百团大战",
+          "url": "http://cpc.people.com.cn/GB/64162/64172/85037/85039/6617926.html"
+        }
+      ]
     },
     {
       "kind": "battle",
@@ -2735,6 +2803,42 @@
       {
         "label": "日本亚洲历史资料中心：昭和20年8月满洲国解散与溥仪退位",
         "url": "https://www.jacar.go.jp/shusen80/chapter6"
+      },
+      {
+        "label": "外交部：五四运动",
+        "url": "https://www.fmprc.gov.cn/web/ziliao_674904/historytoday_674971/200305/t20030504_9284558.shtml"
+      },
+      {
+        "label": "辽宁省档案馆：东北易帜和东北新建设",
+        "url": "https://www.lnds.com.cn/lnds/cgzs/jzln/4D8DC4718FE74772AE454010629BAD7C/index.shtml"
+      },
+      {
+        "label": "人民网党史：九一八事变",
+        "url": "https://dangshi.people.com.cn/n/2015/0918/c85037-27604904.html"
+      },
+      {
+        "label": "人民网党史：西安事变",
+        "url": "https://cpc.people.com.cn/GB/33837/2534330.html"
+      },
+      {
+        "label": "国家档案局：档案里的中国抗战·忻口战役",
+        "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64741.htm"
+      },
+      {
+        "label": "北京市委统战部：忻口战役",
+        "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/42/202/213/214/22894.shtml"
+      },
+      {
+        "label": "盐田档案与史志信息网：台儿庄大战开始",
+        "url": "https://www.yantian.gov.cn/ytdayszxxw/lsjt/content/post_11737199.html"
+      },
+      {
+        "label": "国家档案局：台儿庄战役档案专题",
+        "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65286.htm"
+      },
+      {
+        "label": "中国共产党新闻网：百团大战",
+        "url": "http://cpc.people.com.cn/GB/64162/64172/85037/85039/6617926.html"
       }
     ],
     "notes": [
@@ -2758,7 +2862,8 @@
       "2026-10-06：将满洲国作为中华民国王朝行内的并立 claim track 收录，不新增 dynasty 或 dynasty_group。满洲国 1932-03-01 建立，但溥仪 1932-03-09 才就任执政；1934-03-01 改行帝制；1945-08-18 退位并解散。故以溥仪两个连续在位段呈现 claim_track=manchukuo、claim_label=伪满洲国。",
       "2026-10-06：补汪伪政府南京治所映射；为遵循相邻在位边界归属，汪精卫代主席段止于1940-11-27、主席段止于1944-03-21，后任分别从11月28日、3月22日起。",
       "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
-      "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。"
+      "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。",
+      "2026-10-10：复核短概述与精度。袁世凯于1915-12-12接受帝位推戴但未正式登基，1916-03-22取消帝制；修正旧摘要把中华帝国写成已正式改国号及“83天后取消”的表述。为五四运动、九一八事变、西安事变和东北易帜补录来源支持的具体日，并补充背景、经过与影响。"
     ]
   }
 }

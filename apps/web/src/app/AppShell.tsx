@@ -84,6 +84,7 @@ export function AppShell() {
   useEffect(() => {
     if (boundsQuery.data) {
       viewportStore.setBounds(boundsQuery.data.minAbs, boundsQuery.data.maxAbs);
+      viewportStore.initializeAtStart(boundsQuery.data.minAbs);
       return;
     }
     if (boundsQuery.isError) {

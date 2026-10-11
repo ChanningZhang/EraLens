@@ -9,23 +9,9 @@
     "./repository": "./src/repository.ts"
   },
   "peerDependencies": {
-    "@eralens/shared": "workspace:*",
-    "@capacitor-community/sqlite": "8.1.1",
-    "@capacitor/core": "8.5.2",
-    "@capacitor/preferences": "8.0.1"
+    "@eralens/shared": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@eralens/shared": {
-      "optional": true
-    },
-    "@capacitor-community/sqlite": {
-      "optional": true
-    },
-    "@capacitor/core": {
-      "optional": true
-    },
-    "@capacitor/preferences": {
-      "optional": true
-    }
+    "@eralens/shared": { "optional": true }
   }
 }

@@ -24,7 +24,7 @@ docker compose up --build
 
 打开 [http://localhost:8080](http://localhost:8080)。Docker 构建会从真实导入源生成并校验内容快照；设置库保存在 `eralens-state` 持久卷中。无需启动数据库容器。部署切换时如需带入旧 `sys_config` 设置，可将原库导出为 `{ "key": "value" }` JSON，再执行 `pnpm settings:import -- --input=/path/to/settings.json`。
 
-日常修改 `cache.json` 后运行 `pnpm db:import`：它生成全部包级 SQL，在一个事务中按表依赖顺序加载各包、生成搜索索引和版本元信息并校验现有内容库，不需重启 API；`pnpm data:validate` 可单独校验现有快照。`pnpm db:setup` / `pnpm data:build` 会构建临时 SQLite 并替换内容快照，仅用于首次初始化、schema 变更或确有必要的重建。重建或替换文件后必须重启正在运行的 API，否则其连接可能继续读取旧文件；随后核对 `/api/health` 的 `datasetVersion` 与库内版本、相关实体返回值和刷新后的页面。数据变更后运行 `pnpm ios:sync` 将同一快照同步到 iOS。
+日常修改 `cache.json` 后运行 `pnpm db:import`：它生成全部包级 SQL，在一个事务中按表依赖顺序加载各包、生成搜索索引和版本元信息并校验现有内容库，不需重启 API；`pnpm data:validate` 可单独校验现有快照。`pnpm db:setup` / `pnpm data:build` 会构建临时 SQLite 并替换内容快照，仅用于首次初始化、schema 变更或确有必要的重建。重建或替换文件后必须重启正在运行的 API，否则其连接可能继续读取旧文件；随后核对 `/api/health` 的 `datasetVersion` 与库内版本、相关实体返回值和刷新后的页面。iOS 和 macOS 的 Xcode 构建会自动校验并装入当前快照，无需单独同步命令。
 
 ## 使用时间轴
 
@@ -49,7 +49,33 @@ docker compose up --build
 
 项目结构、接口、数据库命令、入库规则和排查约定见 [AGENTS.md](AGENTS.md)。时期数据位于 `data/imports/`；`data/seed/` 是体验和 Mock 使用的示例数据。
 
+### iOS 应用
+
+iOS 和 macOS 使用共享 Swift Package、系统 WKWebView 与只读 SQLite 快照。iOS 构建需要 macOS 与 Xcode；Mac 发布包需要 Apple Silicon。两者还需要 Swift 5.9+、Node.js 22+ 和 pnpm 9+。在 Xcode 中打开项目，Run、Build 或 Archive 会自动校验数据并生成对应的 Web 和 SQLite 资源：
+
+```bash
+pnpm install
+pnpm ios:open      # 打开 Xcode 项目
+pnpm ios:build:sim # 直接构建 iOS Simulator 版本
+pnpm native:test   # 测试共享 Swift 桥接和资源处理
+```
+
+iOS 首次安装从应用内读取内容库，之后的数据随新版应用更新。去掉 Capacitor 后的版本只支持全新安装；旧版 Capacitor 安装请先卸载再安装，原有设置和已下载内容库不会迁移。
+
 人物、事件、王朝的普通关联统一维护在 [entity-associations/cache.json](data/imports/entity-associations/cache.json)，数据库使用无向的 `entity_associations` 表；`relations` 仅保存命运与人物继承关系。导入规则见 [数据维护说明](data/imports/README.md)。移动数据版本统一由 [versions.json](data/mobile/versions.json) 定义；修改数据后重新生成并校验移动数据库。
+
+### macOS 应用
+
+Mac 应用使用系统 WKWebView 与应用内 SQLite 快照，安装后可离线运行。需要 Apple Silicon Mac、Xcode Command Line Tools、Swift 5.9 或更新版本，以及先运行 `pnpm install`。准备内容库后，可以构建、打开应用或生成本地测试 DMG：
+
+```bash
+pnpm db:setup   # 仅首次初始化内容库时运行
+pnpm mac:build  # .build/macos/EraLens.app
+pnpm mac:open   # 构建并打开应用
+pnpm mac:dmg    # .build/macos/EraLens-0.1.0-arm64.dmg
+```
+
+构建会校验现有内容快照；若尚未生成，请先执行 `pnpm db:setup`。DMG 使用 ad-hoc 签名，适合本地测试与复制；正式公开分发仍需 Developer ID 签名和 Apple 公证。
 
 ### 王朝分时名称
 

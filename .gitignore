@@ -1,6 +1,8 @@
 node_modules
 .build/
 apps/web/public/assets/databases/
+apps/web/dist-mac/
+apps/web/dist-ios/
 dist
 .DS_Store
 *.local

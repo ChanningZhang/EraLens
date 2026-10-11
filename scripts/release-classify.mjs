@@ -37,7 +37,7 @@ let classification = "DATA_ONLY";
 const reasons = [];
 const manifestChanges = new Set();
 for (const file of files) {
-  if (/^(apps|packages|scripts)\//.test(file) || /(^|\/)(package\.json|pnpm-lock\.yaml|capacitor\.config\.[cm]?ts|.*\.xcodeproj\/|.*\.xcworkspace\/)/.test(file) || file === "package.json" || file === "pnpm-lock.yaml") {
+  if (/^(apps|packages|scripts)\//.test(file) || /(^|\/)(package\.json|pnpm-lock\.yaml|.*\.xcodeproj\/|.*\.xcworkspace\/)/.test(file) || file === "package.json" || file === "pnpm-lock.yaml") {
     classification = "APP_RELEASE_REQUIRED";
     reasons.push(`${file}: runtime or build infrastructure changed`);
     continue;

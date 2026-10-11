@@ -25,7 +25,7 @@ export type ViewportSnapshot = {
 
 type ViewportListener = () => void;
 
-const DEFAULT_CENTER = absMonth(-221, 1); // Qin Shi Huang's unification of China
+const DEFAULT_CENTER = absMonth(-7000, 1); // Current earliest recorded point; replaced by /bounds on first load.
 const DEFAULT_PX_PER_MONTH = 1.5;
 const MIN_PX = 0.08;
 const MAX_PX = 12;
@@ -37,6 +37,7 @@ const DEFAULT_MIN_ABS = -30_000;
 const DEFAULT_MAX_ABS = 25_000;
 
 let centerAbs = DEFAULT_CENTER;
+let positionChosen = false;
 let pxPerMonth = DEFAULT_PX_PER_MONTH;
 let widthPx = 1200;
 let layoutPreferences = DEFAULT_TIMELINE_LAYOUT_PREFERENCES;
@@ -116,6 +117,7 @@ export const viewportStore = {
       if (typeof saved.pxPerMonth !== "number" || !Number.isFinite(saved.pxPerMonth)) return;
       centerAbs = saved.centerAbs;
       pxPerMonth = Math.min(MAX_PX, Math.max(MIN_PX, saved.pxPerMonth));
+      positionChosen = true;
       notify();
     } catch {
       // Ignore missing or malformed saved state and use the default viewport.
@@ -153,8 +155,16 @@ export const viewportStore = {
   },
   setCenterAbs(next: AbsMonth, { clamp = true } = {}) {
     const nextCenter = clamp ? clampAbs(next, minAbs, maxAbs) : next;
+    positionChosen = true;
     if (Math.abs(centerAbs - nextCenter) < 0.001) return;
     centerAbs = nextCenter;
+    notify();
+  },
+  initializeAtStart(start: AbsMonth) {
+    if (positionChosen) return;
+    positionChosen = true;
+    const visibleMonths = Math.max(1, widthPx - presentation.gutterPx) / pxPerMonth;
+    centerAbs = clampAbs(start + visibleMonths / 2, minAbs, maxAbs);
     notify();
   },
   panByMonths(deltaMonths: number) {

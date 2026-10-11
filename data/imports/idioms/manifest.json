@@ -268,10 +268,23 @@
     {
       "label": "柯镇昌《战国策文系年注析》（目录列〈狐假虎威说〉于前352年）",
       "url": "https://www.newton.com.tw/wiki/%E3%80%8A%E6%88%B0%E5%9C%8B%E7%AD%96%E3%80%8B%E6%96%87%E7%B3%BB%E5%B9%B4%E6%B3%A8%E6%9E%90"
+    },
+    {
+      "label": "《历代名画记》卷七·梁·张僧繇",
+      "url": "https://zh.wikisource.org/wiki/歷代名畫記/卷第七"
+    },
+    {
+      "label": "教育部《成语典》·画龙点睛",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=-383&la=0&webMd=2"
+    },
+    {
+      "label": "《历代名画记》卷一·大中元年题识",
+      "url": "https://zh.wikisource.org/wiki/歷代名畫記/卷第一"
     }
   ],
   "notes": [
     "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker；日期 confidence 按日期处理 Skill 执行。",
+    "2026-10-10：画龙点睛传说见于梁代张僧繇故事，但《历代名画记》原文未给传说具体年份。因事件挂唐朝泳道且典故在唐代文献中见载，将事件点位从550年调整为约847年；《历代名画记》卷一题识为大中元年（847），confidence=approximate_year。该点位代表唐代文献记录，不是传说发生年。补充《历代名画记》卷一、卷七原文与教育部《成语典》来源。",
     "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
     "meaning 存释义，summary 存典故；王朝和人物普通关联由 entity-associations 集中包维护。",
     "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",

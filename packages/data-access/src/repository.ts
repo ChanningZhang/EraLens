@@ -49,3 +49,32 @@ export interface SettingsStore {
   get(key: string): Promise<string | null>;
   set(key: string, value: string): Promise<void>;
 }
+
+export interface NativeAppContentInfo {
+  platform: "ios" | "mac";
+  protocolVersion: 1;
+  datasetVersion: string;
+  schemaVersion: number;
+  contractVersion: number;
+  sourceGitSha: string;
+  builtAt: string;
+  appVersion: string;
+  appBuild: string;
+}
+
+export interface EraLensNativeBridge {
+  platform: "ios" | "mac";
+  protocolVersion: 1;
+  query(sql: string, values: unknown[]): Promise<{ values?: Record<string, unknown>[] }>;
+  closeDatabase(): Promise<void>;
+  getSetting(key: string): Promise<string | null>;
+  setSetting(key: string, value: string): Promise<void>;
+  getContentInfo(): Promise<NativeAppContentInfo>;
+  openExternal(options: { url: string }): Promise<void>;
+}
+
+declare global {
+  interface Window {
+    eralensNative?: EraLensNativeBridge;
+  }
+}

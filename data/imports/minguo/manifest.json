@@ -305,6 +305,42 @@
     {
       "label": "日本亚洲历史资料中心：昭和20年8月满洲国解散与溥仪退位",
       "url": "https://www.jacar.go.jp/shusen80/chapter6"
+    },
+    {
+      "label": "外交部：五四运动",
+      "url": "https://www.fmprc.gov.cn/web/ziliao_674904/historytoday_674971/200305/t20030504_9284558.shtml"
+    },
+    {
+      "label": "辽宁省档案馆：东北易帜和东北新建设",
+      "url": "https://www.lnds.com.cn/lnds/cgzs/jzln/4D8DC4718FE74772AE454010629BAD7C/index.shtml"
+    },
+    {
+      "label": "人民网党史：九一八事变",
+      "url": "https://dangshi.people.com.cn/n/2015/0918/c85037-27604904.html"
+    },
+    {
+      "label": "人民网党史：西安事变",
+      "url": "https://cpc.people.com.cn/GB/33837/2534330.html"
+    },
+    {
+      "label": "国家档案局：档案里的中国抗战·忻口战役",
+      "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64741.htm"
+    },
+    {
+      "label": "北京市委统战部：忻口战役",
+      "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/42/202/213/214/22894.shtml"
+    },
+    {
+      "label": "盐田档案与史志信息网：台儿庄大战开始",
+      "url": "https://www.yantian.gov.cn/ytdayszxxw/lsjt/content/post_11737199.html"
+    },
+    {
+      "label": "国家档案局：台儿庄战役档案专题",
+      "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65286.htm"
+    },
+    {
+      "label": "中国共产党新闻网：百团大战",
+      "url": "http://cpc.people.com.cn/GB/64162/64172/85037/85039/6617926.html"
     }
   ],
   "notes": [
@@ -328,6 +364,7 @@
     "2026-10-06：将满洲国作为中华民国王朝行内的并立 claim track 收录，不新增 dynasty 或 dynasty_group。满洲国 1932-03-01 建立，但溥仪 1932-03-09 才就任执政；1934-03-01 改行帝制；1945-08-18 退位并解散。故以溥仪两个连续在位段呈现 claim_track=manchukuo、claim_label=伪满洲国。",
     "2026-10-06：补汪伪政府南京治所映射；为遵循相邻在位边界归属，汪精卫代主席段止于1940-11-27、主席段止于1944-03-21，后任分别从11月28日、3月22日起。",
     "2026-10-07详情说明清理：将时间轴日期处理、地图坐标选点及记录展示方式等系统说明移出条目正文；正文保留史料依据、年代异说、地望争议与历史背景。",
-    "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。"
+    "2026-10：将既有在位记录的 claimLabel 展示值迁入 dynastyName，并移除这些记录上的 claimLabel；claimTrack 并立轨道键保持不变。",
+    "2026-10-10：复核短概述与精度。袁世凯于1915-12-12接受帝位推戴但未正式登基，1916-03-22取消帝制；修正旧摘要把中华帝国写成已正式改国号及“83天后取消”的表述。为五四运动、九一八事变、西安事变和东北易帜补录来源支持的具体日，并补充背景、经过与影响。"
   ]
 }

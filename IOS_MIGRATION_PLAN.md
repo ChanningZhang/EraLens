@@ -912,3 +912,6 @@ iPad 的 Split View 与 Stage Manager 会产生很多非标准比例，不能只
 - [GitHub Immutable Releases：锁定 tag 与发布 assets](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases)
 - [GitHub REST API 频率限制](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)
 - [SQLite 作为应用文件格式](https://www.sqlite.org/appfileformat.html)
+# 历史方案：已由共享 Swift 原生架构取代
+
+本文件记录早期采用 Capacitor 的迁移计划，已不再描述当前实现。当前方案使用 UIKit/AppKit 外壳、系统 WKWebView 和 `packages/apple-native` 共享 Swift 核心；iOS/macOS 数据随应用版本更新。查看根目录 README 的 iOS/macOS 构建说明与 `docs/ios/mobile-data.md`。

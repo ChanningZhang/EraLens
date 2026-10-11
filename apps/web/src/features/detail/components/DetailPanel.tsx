@@ -3,7 +3,7 @@ import type { EntityDetail, EntityRef } from "@eralens/shared";
 import { entityDetailQueryOptions } from "../entityDetailQuery";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
-import { isNativeApp, openExternalSource } from "@/data/mobileUpdates";
+import { isNativeApp, openExternalSource } from "@/data/nativePlatform";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
 import {
   type SelectionState,
